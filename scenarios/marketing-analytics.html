@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Marketing Analytics: Multi-Channel Campaign ROI & Budget Optimization | InfiniSynapse</title>
+  <meta name="description" content="InfiniSynapse unifies Google Ads, Meta Ads, email, CRM, and web analytics for AI marketing analytics. Covers campaign performance analysis, multi-channel attribution, budget optimization, and automated reporting — no data engineering required.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Editorial team, InfiniSynapse Research">
+
+  <meta property="og:title" content="AI Marketing Analytics: Multi-Channel Campaign ROI & Budget Optimization | InfiniSynapse">
+  <meta property="og:description" content="Unify Google Ads, Meta Ads, email platforms, CRM, and web analytics for AI-driven marketing analytics — campaign performance, cross-channel attribution, and automated reporting without building a data warehouse.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://infinisynapse.com/scenarios/marketing-analytics.html">
+  <meta property="og:image" content="https://infinisynapse.com/og/Infinisynapse_og.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@InfiniSynapse">
+  <meta name="twitter:title" content="AI Marketing Analytics: Multi-Channel Campaign ROI & Budget Optimization">
+  <meta name="twitter:description" content="Unify Google Ads, Meta Ads, email, CRM, and web analytics for AI-driven marketing analytics — no data warehouse required.">
+  <meta name="twitter:image" content="https://infinisynapse.com/og/Infinisynapse_og.png">
+
+  <link rel="canonical" href="https://infinisynapse.com/scenarios/marketing-analytics.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Schema #1: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "InfiniSynapse",
+    "url": "https://infinisynapse.com",
+    "logo": "https://infinisynapse.com/logo.png",
+    "sameAs": ["https://x.com/InfiniSynapse"]
+  }
+  </script>
+
+  <!-- Schema #2: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://infinisynapse.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Scenarios", "item": "https://infinisynapse.com/scenarios/"},
+      {"@type": "ListItem", "position": 3, "name": "AI Marketing Analytics", "item": "https://infinisynapse.com/scenarios/marketing-analytics.html"}
+    ]
+  }
+  </script>
+
+  <!-- Schema #3: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Marketing Analytics: Multi-Channel Campaign ROI, Attribution, and Budget Optimization for Marketing Teams",
+    "description": "How InfiniSynapse unifies Google Ads, Meta Ads, email platforms, CRM, and web analytics for AI-driven marketing analytics — covering multi-channel attribution, campaign performance, budget optimization, and automated reporting without building a data warehouse.",
+    "image": ["https://infinisynapse.com/og/Infinisynapse_og.png"],
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-06-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "InfiniSynapse",
+      "logo": {"@type": "ImageObject", "url": "https://infinisynapse.com/logo.png"}
+    },
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://infinisynapse.com/scenarios/marketing-analytics.html"}
+  }
+  </script>
+
+  <!-- Schema #4: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "InfiniSynapse",
+    "description": "Enterprise AI data analyst with multi-source federation for marketing analytics — unifying Google Ads, Meta Ads, email platforms, CRM, and web analytics for campaign ROI analysis, multi-channel attribution, and budget optimization.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, Windows, macOS, Chrome Extension",
+    "url": "https://infinisynapse.com",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
+  }
+  </script>
+
+  <!-- Schema #5: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Can InfiniSynapse connect directly to Google Ads and Meta Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, through three methods: database connection (if you sync ad data to a data warehouse like BigQuery or Snowflake), CSV export (export campaign reports from Google Ads or Meta Ads Manager and drag them in), or API integration via your existing data pipeline. InfiniSynapse can join ad spend and impression data with your CRM conversion data, email platform metrics, and web analytics — all in one query."}},
+      {"@type": "Question", "name": "How is this different from Google Ads or Meta Ads built-in reporting?", "acceptedAnswer": {"@type": "Answer", "text": "Platform-native reporting shows you what happened inside that platform. It cannot answer: 'Across Google, Meta, and email, which channel drove the highest customer LTV?' InfiniSynapse joins ad data with your CRM (actual revenue), email platform, and web analytics — giving you cross-channel truth that no single platform's dashboard can provide."}},
+      {"@type": "Question", "name": "How does InfiniSynapse compare to Julius AI for marketing analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Julius AI excels at analyzing a single CSV of campaign data quickly. For tactical questions about one channel, Julius is a strong fit. InfiniSynapse differentiates on multi-source federation: connecting ad platforms, CRM, email, and analytics simultaneously so you can answer cross-channel questions like 'which channel drives the highest LTV customers?' without running separate analyses and stitching results manually."}},
+      {"@type": "Question", "name": "What marketing metrics and analyses can I run?", "acceptedAnswer": {"@type": "Answer", "text": "Common workflows: cross-channel ROI analysis, multi-touch attribution, campaign performance comparison, budget optimization, customer acquisition cost by channel and cohort, and automated weekly marketing performance reports delivered to your team."}},
+      {"@type": "Question", "name": "Is my marketing and customer data secure?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. InfiniSynapse supports private deployment (Air-Gapped). All ad spend data, CRM records, customer PII, and campaign performance data stay on your own servers, processed locally. Most AI analytics tools are SaaS-only and require uploading sensitive marketing and customer data to external cloud services."}}
+    ]
+  }
+  </script>
+
+  <!-- Schema #6: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Set Up AI Marketing Analytics with InfiniSynapse",
+    "step": [
+      {"@type": "HowToStep", "position": 1, "name": "Connect your marketing data sources", "text": "Connect your ad platforms (Google Ads, Meta Ads via CSV export or database sync), email marketing platform (Mailchimp, HubSpot via CSV), CRM (Salesforce, HubSpot), and web analytics. InfiniSynapse unifies them without ETL or warehouse modeling."},
+      {"@type": "HowToStep", "position": 2, "name": "Define your marketing metrics and attribution model in the Knowledge Base", "text": "Document your key definitions: what counts as a 'qualified lead,' 'marketing-sourced revenue,' 'CAC,' and your attribution rules. The AI references these definitions on every analysis."},
+      {"@type": "HowToStep", "position": 3, "name": "Ask your first cross-channel marketing question", "text": "Example: 'Compare CAC and 90-day LTV by channel for Q1. Which channel has the lowest CAC but also the lowest LTV? Where should we shift budget?' InfiniSynapse queries ad spend data, CRM revenue, and applies your metric definitions to produce a complete budget recommendation."}
+    ]
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1F2937;background:#F9FAFB;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    ::selection{background:rgba(37,99,235,0.2)}
+    a{color:#2563EB;text-decoration:none}
+    a:hover{color:#1D4ED8}
+
+    /* Nav */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB;padding:14px 0}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px}
+    .nav-logo img{height:28px;width:auto;display:block}
+    .nav-logo span{font-size:16px;font-weight:700;color:#111827;letter-spacing:-0.01em}
+    .nav-links{display:flex;align-items:center;gap:22px;font-size:14px}
+    .nav-links a{color:#4B5563;transition:color 0.15s}
+    .nav-links a:hover{color:#111827}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;background:#111827;color:#FFF!important;border-radius:9999px;padding:9px 22px;font-weight:500;transition:all 0.2s}
+    .nav-cta:hover{background:#1F2937;color:#FFF!important}
+
+    /* Hero */
+    .hero{max-width:1280px;margin:0 auto;padding:64px 24px 48px;text-align:center}
+    .hero-badge{display:inline-block;font-size:13px;font-weight:500;padding:5px 14px;border-radius:9999px;background:rgba(37,99,235,0.08);color:#2563EB;border:1px solid rgba(37,99,235,0.18);margin-bottom:24px}
+    .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;line-height:1.12;color:#0A0A0A;letter-spacing:-0.03em;max-width:800px;margin:0 auto 20px}
+    .hero h1 span{background:linear-gradient(135deg,#2563EB,#4F46E5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-desc{font-size:1.12rem;color:#6B7280;max-width:680px;margin:0 auto 36px;line-height:1.65}
+
+    /* Hero CTA row */
+    .hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:48px}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#2563EB,#4F46E5);color:#FFF;padding:13px 28px;border-radius:9999px;font-weight:600;font-size:15px;transition:all 0.2s;box-shadow:0 2px 8px rgba(37,99,235,0.25)}
+    .btn-primary:hover{opacity:0.92;transform:translateY(-1px);color:#FFF}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:#111827;color:#FFF;padding:13px 28px;border-radius:9999px;font-weight:600;font-size:15px;transition:all 0.2s}
+    .btn-secondary:hover{background:#1F2937;transform:translateY(-1px);color:#FFF}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:#FFF;color:#374151;padding:13px 28px;border-radius:9999px;font-weight:500;font-size:15px;border:1px solid #D1D5DB;transition:all 0.2s}
+    .btn-outline:hover{border-color:#9CA3AF;color:#111827}
+
+    /* Stats bar */
+    .stats-bar{max-width:1280px;margin:0 auto 48px;padding:0 24px}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .stat-item{background:#FFF;border:1px solid #E5E7EB;border-radius:16px;padding:28px 24px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .stat-num{font-size:2.4rem;font-weight:800;color:#0A0A0A;letter-spacing:-0.02em;line-height:1}
+    .stat-label{font-size:14px;color:#6B7280;margin-top:8px}
+
+    /* Section shared */
+    .section{max-width:1280px;margin:0 auto;padding:56px 24px}
+    .section-alt{background:#FFF;border-top:1px solid #E5E7EB;border-bottom:1px solid #E5E7EB}
+    .section-label{font-size:13px;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px}
+    .section h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#0A0A0A;letter-spacing:-0.02em;margin-bottom:16px}
+    .section h3{font-size:1.25rem;font-weight:600;color:#111827;margin-bottom:10px}
+    .section p{color:#4B5563;margin-bottom:16px}
+    .section-lead{font-size:1.08rem;color:#6B7280;max-width:640px;line-height:1.65}
+
+    /* Before/After */
+    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0}
+    .ba-card{border-radius:20px;padding:32px;position:relative;overflow:hidden}
+    .ba-before{background:#FEF2F2;border:1px solid #FECACA}
+    .ba-after{background:#F0FDF4;border:1px solid #BBF7D0}
+    .ba-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px}
+    .ba-before .ba-icon{background:#FEE2E2;color:#DC2626}
+    .ba-after .ba-icon{background:#DCFCE7;color:#16A34A}
+    .ba-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px}
+    .ba-before .ba-label{color:#DC2626}
+    .ba-after .ba-label{color:#16A34A}
+    .ba-text{font-size:14.5px;color:#4B5563;line-height:1.7}
+
+    /* Pain point cards */
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0}
+    .pain-card{background:#FFF;border:1px solid #E5E7EB;border-radius:20px;padding:28px 24px;box-shadow:0 1px 3px rgba(0,0,0,0.04);transition:all 0.3s}
+    .pain-card:hover{box-shadow:0 8px 30px rgba(0,0,0,0.08);transform:translateY(-2px)}
+    .pain-num{display:inline-flex;width:32px;height:32px;background:linear-gradient(135deg,#2563EB,#4F46E5);color:#FFF;border-radius:10px;align-items:center;justify-content:center;font-size:14px;font-weight:700;margin-bottom:16px}
+    .pain-card h3{font-size:1.05rem;margin-bottom:10px}
+    .pain-card p{font-size:14px;color:#6B7280;line-height:1.65}
+
+    /* Comparison */
+    .compare-wrap{background:#FFF;border:1px solid #E5E7EB;border-radius:20px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin:32px 0}
+    .compare-table{width:100%;border-collapse:collapse;font-size:14px}
+    .compare-table th{background:#F9FAFB;color:#111827;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:0.04em;padding:16px 20px;text-align:left;border-bottom:1px solid #E5E7EB}
+    .compare-table td{padding:16px 20px;color:#4B5563;border-bottom:1px solid #F3F4F6;vertical-align:top}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table .col-is{background:rgba(37,99,235,0.03)}
+    .compare-table td:last-child{font-weight:500;color:#1F2937}
+
+    /* SVG viz */
+    .viz-wrap{background:#FFF;border:1px solid #E5E7EB;border-radius:20px;padding:32px;margin:32px 0;text-align:center}
+    .viz-wrap svg{max-width:100%;height:auto}
+    .viz-caption{margin-top:16px;font-size:13px;color:#9CA3AF}
+
+    /* Workflow grid */
+    .wf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:32px 0}
+    .wf-card{background:#FFF;border:1px solid #E5E7EB;border-radius:20px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,0.04);transition:all 0.3s}
+    .wf-card:hover{border-color:#93C5FD;box-shadow:0 4px 20px rgba(37,99,235,0.08)}
+    .wf-num{display:inline-block;font-size:12px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
+    .wf-card h3{font-size:1.05rem;margin-bottom:8px}
+    .wf-card p{font-size:14px;color:#6B7280;line-height:1.65}
+    .wf-card code{background:rgba(37,99,235,0.06);padding:2px 8px;border-radius:5px;font-size:12.5px;color:#2563EB;font-family:'SF Mono','Fira Code',monospace}
+
+    /* Concession */
+    .concession{background:#FFFBEB;border:1px solid #FCD34D;border-radius:20px;padding:32px;margin:32px 0}
+    .concession h3{color:#92400E;margin-bottom:14px;font-size:1.15rem}
+    .concession ul{margin:0;padding-left:20px}
+    .concession li{color:#78350F;font-size:14px;margin:8px 0;line-height:1.6}
+
+    /* Steps */
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0}
+    .step-card{background:#FFF;border:1px solid #E5E7EB;border-radius:20px;padding:28px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.04);position:relative}
+    .step-circle{display:inline-flex;width:44px;height:44px;background:linear-gradient(135deg,#2563EB,#4F46E5);color:#FFF;border-radius:50%;align-items:center;justify-content:center;font-size:18px;font-weight:700;margin-bottom:16px}
+    .step-card h3{font-size:1rem;margin-bottom:8px}
+    .step-card p{font-size:13.5px;color:#6B7280;line-height:1.6}
+
+    /* CTA */
+    .cta-section{text-align:center;padding:64px 24px;background:linear-gradient(180deg,#F9FAFB 0%,#FFF 100%)}
+    .cta-section h2{font-size:2rem;font-weight:700;color:#0A0A0A;max-width:600px;margin:0 auto 14px}
+    .cta-section p{font-size:1.08rem;color:#6B7280;max-width:500px;margin:0 auto 28px}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0}
+    .faq-card{background:#FFF;border:1px solid #E5E7EB;border-radius:16px;padding:24px;transition:all 0.2s}
+    .faq-card:hover{border-color:#93C5FD}
+    .faq-card .faq-q{font-weight:600;font-size:15px;color:#0A0A0A;margin-bottom:8px}
+    .faq-card .faq-a{font-size:14px;color:#6B7280;line-height:1.65}
+
+    /* Related - responsive grid */
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}
+    .related-card{background:#FFF;border:1px solid #E5E7EB;border-radius:16px;padding:22px 20px;transition:all 0.3s;display:flex;flex-direction:column}
+    .related-card:hover{border-color:#93C5FD;box-shadow:0 4px 16px rgba(37,99,235,0.08);transform:translateY(-2px)}
+    .related-card .rel-domain{font-size:11px;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
+    .related-card .rel-title{font-size:14px;font-weight:600;color:#0A0A0A;line-height:1.4}
+    @media(max-width:768px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.related-grid{grid-template-columns:1fr}}
+
+    /* Methodology */
+    .methodology{background:#FFF;border:1px solid #E5E7EB;border-radius:16px;padding:28px 32px;margin:32px 0;font-size:13.5px;color:#6B7280}
+    .methodology h2{font-size:13px;font-weight:700;color:#111827;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px}
+    .methodology p{margin:6px 0}
+
+    /* Footer */
+    .footer{background:#FFF;border-top:1px solid #E5E7EB;padding:56px 24px 40px;margin-top:0}
+    .footer-inner{max-width:1280px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:36px}
+    .footer h4{font-size:12px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px}
+    .footer-links{display:flex;flex-direction:column;gap:12px;font-size:14px}
+    .footer-links a{color:#6B7280;transition:color 0.15s}
+    .footer-links a:hover{color:#111827}
+    .footer-bottom{border-top:1px solid #F3F4F6;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
+
+    @media(max-width:768px){
+      .ba-grid,.pain-grid,.wf-grid,.steps-grid,.faq-grid{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:1fr}
+      .hero{padding:40px 20px 32px}
+      .section{padding:40px 20px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .nav-links a:not(.nav-cta){display:none}
+      .compare-wrap{overflow-x:auto}
+      .compare-table{min-width:600px}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://infinisynapse.com" class="nav-logo">
+        <img src="https://infinisynapse.com/logo.png" alt="InfiniSynapse">
+        <span>InfiniSynapse</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://infinisynapse.com/#features">Features</a>
+        <a href="https://infinisynapse.com/tools">Tools</a>
+        <a href="https://infinisynapse.com/zh/docs">Docs</a>
+        <a href="https://infinisynapse.com/zh/blog">Blog</a>
+        <a href="https://app.infinisynapse.com/" class="nav-cta">Try Online</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">AI Marketing Analytics</div>
+    <h1>Stop Guessing <span>Which Channel Drives ROI</span></h1>
+    <p class="hero-desc">Unify Google Ads, Meta Ads, email, CRM, and web analytics. Ask cross-channel questions in plain English. Get answers backed by actual revenue data — not platform-attributed guesswork.</p>
+    <div class="hero-ctas">
+      <a href="https://app.infinisynapse.com/" class="btn-primary">Try InfiniSynapse Free</a>
+      <a href="#workflows" class="btn-outline">See Marketing Workflows</a>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">5 min</div>
+        <div class="stat-label">Weekly reporting — down from 8 hours of manual CSV merging and VLOOKUPs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Data sources unified in one query — ad platforms, CRM, email, analytics</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Daily</div>
+        <div class="stat-label">Budget optimization cadence — instead of waiting for the monthly retrospective</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Before/After -->
+  <div class="section" style="padding-top:0">
+    <h2 style="text-align:center">Before vs After InfiniSynapse</h2>
+    <div class="ba-grid">
+      <div class="ba-card ba-before">
+        <div class="ba-icon">&#10060;</div>
+        <div class="ba-label">Before</div>
+        <div class="ba-text">Every Monday: export campaign reports from Google Ads, Meta Ads Manager, and your email platform. Each platform has its own attribution window, its own "conversion" definition, and no connection to CRM revenue. Answering "what was our blended CAC last month?" takes 4 hours of CSV merging and pivot tables. "Which channel drives the highest 90-day LTV?" — the answer is simply not available.</div>
+      </div>
+      <div class="ba-card ba-after">
+        <div class="ba-icon">&#9989;</div>
+        <div class="ba-label">After</div>
+        <div class="ba-text">Connect your ad platforms, CRM, email, and analytics once. Ask: "Compare CAC, ROAS, and 90-day LTV by channel for Q1. Where should we shift budget?" InfiniSynapse queries across all sources, applies your attribution rules from the Knowledge Base, and returns channel-level ROAS with LTV context — in under a minute. Budget decisions backed by cross-channel truth, not the last dashboard you checked.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pain points -->
+  <div class="section-alt">
+    <div class="section" style="padding-top:56px;padding-bottom:56px">
+      <h2 style="text-align:center">Three Hard Problems with Fragmented Marketing Data</h2>
+      <p style="text-align:center;color:#6B7280;max-width:640px;margin:0 auto 32px">Marketing teams don't lack data — they lack <strong>unified</strong> data. These problems affect teams spending anywhere from $50K to $50M per month.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-num">1</div>
+          <h3>Each platform reports its own truth</h3>
+          <p>Google uses 30-day click-through attribution. Meta uses 7-day click + 1-day view. Your email platform counts anyone who clicked a link. Your CRM records revenue 45 days after the first ad click. Four platforms, four versions of "this channel drove X conversions" — and none of them reconcile against actual revenue.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">2</div>
+          <h3>Attribution breaks when ad data and revenue data are in separate systems</h3>
+          <p>Last-click attribution credits 100% to the final touchpoint. But a customer might discover you via LinkedIn, nurture via email for 3 weeks, search your brand, and finally convert. Without joining ad impressions + email engagement + CRM revenue, you can't build a real multi-touch model.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">3</div>
+          <h3>Budget optimization is reactive because reporting is slow</h3>
+          <p>Most teams review weekly or monthly because compiling the data takes that long. By the time you see a Meta campaign's CPA spiked 40%, another 7 days of budget have been wasted. Real-time optimization requires the data to already be unified — and that's the hard part.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="section">
+    <h2 style="text-align:center">How InfiniSynapse Compares</h2>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr><th>Capability</th><th>Platform Dashboards</th><th>Single-File AI</th><th class="col-is">InfiniSynapse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Data scope</td><td>One platform only</td><td>One CSV at a time</td><td class="col-is">Ad platforms + CRM + email + web, simultaneously</td></tr>
+          <tr><td>Cross-channel attribution</td><td>Not possible</td><td>Not possible</td><td class="col-is">Define your model once, applied across all analyses</td></tr>
+          <tr><td>Revenue truth</td><td>Platform-attributed</td><td>Whatever is in the CSV</td><td class="col-is">CRM revenue joined against ad spend at customer level</td></tr>
+          <tr><td>Metric governance</td><td>Platform-defined</td><td>No governance layer</td><td class="col-is">Knowledge Base stores CAC, ROAS, LTV definitions</td></tr>
+          <tr><td>Automated reporting</td><td>Per-platform emails</td><td>Not available</td><td class="col-is">Cross-channel automated reports on any schedule</td></tr>
+          <tr><td>Deployment</td><td>SaaS</td><td>SaaS-only</td><td class="col-is">SaaS + Air-Gapped private deployment</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Data flow viz -->
+  <div class="section" style="padding-top:0">
+    <div class="viz-wrap">
+      <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2563EB"/></marker>
+          <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2563EB" stop-opacity="0.12"/><stop offset="100%" stop-color="#4F46E5" stop-opacity="0.12"/></linearGradient>
+        </defs>
+        <rect x="15" y="20" width="130" height="44" rx="10" fill="#FFF" stroke="#E5E7EB" stroke-width="1.5"/>
+        <text x="80" y="40" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Google Ads</text>
+        <text x="80" y="55" text-anchor="middle" font-size="9" fill="#9CA3AF">CSV / BigQuery Sync</text>
+        <rect x="15" y="82" width="130" height="44" rx="10" fill="#FFF" stroke="#E5E7EB" stroke-width="1.5"/>
+        <text x="80" y="102" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Meta Ads</text>
+        <text x="80" y="117" text-anchor="middle" font-size="9" fill="#9CA3AF">Ads Manager Export</text>
+        <rect x="15" y="144" width="130" height="44" rx="10" fill="#FFF" stroke="#E5E7EB" stroke-width="1.5"/>
+        <text x="80" y="164" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">CRM + Email</text>
+        <text x="80" y="179" text-anchor="middle" font-size="9" fill="#9CA3AF">Salesforce · Mailchimp</text>
+        <rect x="15" y="206" width="130" height="44" rx="10" fill="#FFF" stroke="#E5E7EB" stroke-width="1.5"/>
+        <text x="80" y="226" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Web Analytics</text>
+        <text x="80" y="241" text-anchor="middle" font-size="9" fill="#9CA3AF">GA4 · Adobe Analytics</text>
+        <line x1="145" y1="42" x2="280" y2="105" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="145" y1="104" x2="280" y2="120" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="145" y1="166" x2="280" y2="135" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="145" y1="228" x2="280" y2="150" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+        <rect x="285" y="80" width="150" height="80" rx="16" fill="url(#bgGrad)" stroke="#2563EB" stroke-width="2"/>
+        <text x="360" y="112" text-anchor="middle" font-size="14" fill="#2563EB" font-weight="700">InfiniSynapse</text>
+        <text x="360" y="132" text-anchor="middle" font-size="11" fill="#4F46E5">Multi-Source Federation</text>
+        <text x="360" y="148" text-anchor="middle" font-size="10" fill="#6B7280">Zero ETL · Auto JOIN</text>
+        <line x1="435" y1="120" x2="510" y2="120" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+        <rect x="520" y="15" width="185" height="38" rx="9" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="612" y="30" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Cross-Channel ROAS Report</text>
+        <text x="612" y="45" text-anchor="middle" font-size="9" fill="#6B7280">Spend · Revenue · ROAS by Channel</text>
+        <rect x="520" y="68" width="185" height="38" rx="9" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="612" y="83" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Multi-Touch Attribution</text>
+        <text x="612" y="98" text-anchor="middle" font-size="9" fill="#6B7280">Custom Model · Any Lookback</text>
+        <rect x="520" y="121" width="185" height="38" rx="9" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="612" y="136" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Budget Reallocation</text>
+        <text x="612" y="151" text-anchor="middle" font-size="9" fill="#6B7280">Waste Flagging · Shift Recs</text>
+        <rect x="520" y="174" width="185" height="38" rx="9" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="612" y="189" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">CAC & LTV by Channel</text>
+        <text x="612" y="204" text-anchor="middle" font-size="9" fill="#6B7280">Blended · Paid · Organic</text>
+        <rect x="520" y="227" width="185" height="38" rx="9" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="612" y="242" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Automated Daily Reports</text>
+        <text x="612" y="257" text-anchor="middle" font-size="9" fill="#6B7280">Scheduled · Slack · Email</text>
+      </svg>
+      <div class="viz-caption">Four independent marketing data sources connected directly. Zero ETL. Plain-English questions produce unified cross-channel answers.</div>
+    </div>
+  </div>
+
+  <!-- Workflows -->
+  <div class="section-alt" id="workflows">
+    <div class="section" style="padding-top:56px;padding-bottom:56px">
+      <h2 style="text-align:center">Six Core Marketing Analytics Workflows</h2>
+      <div class="wf-grid">
+        <div class="wf-card">
+          <div class="wf-num">Workflow 1</div>
+          <h3>Cross-Channel ROAS and Campaign Performance — <code>campaign performance analysis</code></h3>
+          <p>"Compare ROAS, CPA, and conversion volume across Google Ads, Meta Ads, and email for the last 30 days. Flag any campaign with CPA more than 50% above the channel average." InfiniSynapse pulls spend, CRM revenue, and email engagement in one pass.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">Workflow 2</div>
+          <h3>Multi-Touch Attribution — <code>multi-touch attribution</code></h3>
+          <p>Define your model once in the Knowledge Base, then ask: "For Q1 enterprise deals, show channel contribution using a 40/20/20/20 time-decay model over a 90-day lookback." Joins ad impressions, email timestamps, and CRM opportunity dates across tens of thousands of touchpoints.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">Workflow 3</div>
+          <h3>Budget Waste Identification — <code>marketing budget optimization</code></h3>
+          <p>"Identify campaigns spending over $5K/month with CPA more than 2x channel average and conversion rate declining for 3 consecutive weeks. Recommend reallocation amounts." Cross-channel waste detection that no single-platform dashboard can do.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">Workflow 4</div>
+          <h3>CAC & LTV by Channel & Cohort — <code>customer acquisition cost analysis</code></h3>
+          <p>"Compare CAC, 30-day LTV, and 90-day LTV by channel and monthly cohort for the last 6 months. Which channel's LTV/CAC ratio is improving? Which is deteriorating?" Cross-source join that requires either a mature data warehouse — or InfiniSynapse.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">Workflow 5</div>
+          <h3>Automated Performance Reports — <code>automated marketing reports</code></h3>
+          <p>Set once: "Send a daily marketing summary to #growth Slack: spend, conversions, CPA, ROAS by channel vs. yesterday and vs. same day last week. Flag deviations over 30%." Runs cross-source analysis on schedule and pushes results to Slack or email.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">Workflow 6</div>
+          <h3>Engagement & Conversion Lift — <code>engagement rate analysis</code></h3>
+          <p>"For users who engaged with 3+ marketing emails before converting vs. first-touch converters, compare 90-day LTV, product adoption rate, and churn rate." Connects email data + CRM + product usage — telling you which campaigns drive valuable conversions, not just any conversions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- When not -->
+  <div class="section">
+    <div class="concession">
+      <h3>When InfiniSynapse Is Not the Right Choice</h3>
+      <ul>
+        <li><strong>You spend primarily on 1-2 channels with simple attribution.</strong> If you're a startup spending $20K/month on Meta and Google, and last-click is good enough, platform dashboards + a spreadsheet work fine.</li>
+        <li><strong>You already have a mature marketing data stack.</strong> Fivetran → Snowflake → dbt → BI tool with a built attribution model. InfiniSynapse's strongest value is compressing the path from scattered data to unified truth.</li>
+        <li><strong>Your questions are single-channel and tactical.</strong> "How did our Google brand campaign do yesterday?" is handled perfectly by the Google Ads dashboard.</li>
+      </ul>
+      <p style="margin-top:14px">InfiniSynapse creates the most value when your marketing questions require joining <strong>3+ data sources</strong> that don't naturally talk to each other — and when optimization speed directly impacts ROI.</p>
+    </div>
+  </div>
+
+  <!-- Quick start -->
+  <div class="section" style="padding-top:0">
+    <h2 style="text-align:center">Quick Start: 3 Steps</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-circle">1</div>
+        <h3>Connect Your Sources</h3>
+        <p>Google Ads, Meta Ads, CRM (Salesforce/HubSpot), email platform, web analytics. InfiniSynapse auto-discovers each schema. Air-Gapped deployment available for PII-sensitive teams.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-circle">2</div>
+        <h3>Define Your Metrics</h3>
+        <p>Document CAC, ROAS, LTV, and attribution rules once in the Knowledge Base. The AI enforces consistent methodology across your entire marketing team.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-circle">3</div>
+        <h3>Ask Cross-Channel Questions</h3>
+        <p>"Which channel has the best LTV/CAC ratio over the last 90 days?" InfiniSynapse queries across all sources and returns a definitive, revenue-backed answer in under a minute.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Get the cross-channel truth your dashboards can't give you</h2>
+    <p>Free to start. Connect your ad platforms and CRM. Ask the LTV/CAC by channel question you've been guessing at for months.</p>
+    <a href="https://app.infinisynapse.com/" class="btn-primary" style="font-size:16px;padding:15px 36px">Try InfiniSynapse Free</a>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2 style="text-align:center">FAQ</h2>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <div class="faq-q">Can InfiniSynapse connect directly to Google Ads and Meta Ads?</div>
+        <div class="faq-a">Yes — via database sync (BigQuery/Snowflake), CSV export, or API. InfiniSynapse joins ad data with CRM revenue, email metrics, and web analytics in one query.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How is this different from Google Ads or Meta built-in reporting?</div>
+        <div class="faq-a">Platform-native reporting can't answer cross-platform questions. InfiniSynapse joins ad data with your actual CRM revenue — giving you truth no single platform can provide.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How does InfiniSynapse compare to Julius AI for marketing?</div>
+        <div class="faq-a">Julius AI is excellent for quick single-CSV campaign analysis. InfiniSynapse's multi-source federation connects all your marketing systems at once for ongoing cross-channel analytics.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">What marketing metrics can I analyze?</div>
+        <div class="faq-a">Cross-channel ROAS, multi-touch attribution, CAC by channel, LTV by acquisition source, budget waste analysis, engagement and conversion lift, and automated daily/weekly reports.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Is my marketing and customer data secure?</div>
+        <div class="faq-a">Yes — Air-Gapped private deployment keeps all ad spend, CRM, and PII data on your own servers. Essential for GDPR, CCPA, and custom audience data compliance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related -->
+  <div class="section" style="padding-top:0">
+    <h2 style="text-align:center">Related Guides</h2>
+    <div class="related-grid">
+      <a href="../scenarios/sales-analytics.html" class="related-card"><div class="rel-domain">Sales</div><div class="rel-title">AI Sales Analytics: Pipeline & Forecasting</div></a>
+      <a href="../scenarios/product-analytics.html" class="related-card"><div class="rel-domain">Product</div><div class="rel-title">AI Product Analytics: Feature Adoption & Retention</div></a>
+      <a href="../scenarios/customer-success-analytics.html" class="related-card"><div class="rel-domain">CS</div><div class="rel-title">AI Customer Success: Health Scores & Renewals</div></a>
+      <a href="../scenarios/ecommerce-analytics.html" class="related-card"><div class="rel-domain">E-commerce</div><div class="rel-title">Ecommerce Analytics: Cross-Platform Without ETL</div></a>
+      <a href="../scenarios/competitive-analysis.html" class="related-card"><div class="rel-domain">CI</div><div class="rel-title">AI Competitive Intelligence: Browser Use</div></a>
+      <a href="../scenarios/user-behavior-analytics.html" class="related-card"><div class="rel-domain">UX</div><div class="rel-title">User Behavior Analytics: Churn & Segmentation</div></a>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="section" style="padding-top:0">
+    <div class="methodology">
+      <h2>About This Guide</h2>
+      <p><strong>Last updated:</strong> 2026-06-01. Competitor capability descriptions sourced from official documentation of Julius AI, Powerdrill, Google Ads, Meta Ads, and other marketing analytics tools (accessed May 2026).</p>
+      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher. We explicitly call out where platform-native dashboards or single-file AI tools are the better fit.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div style="font-size:18px;font-weight:700;color:#111827;margin-bottom:14px">InfiniSynapse</div>
+          <p style="font-size:14px;color:#6B7280;max-width:300px;margin-bottom:18px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
+          <a href="https://app.infinisynapse.com/" class="btn-secondary" style="padding:9px 22px;font-size:13px">Try Online</a>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <div class="footer-links">
+            <a href="https://infinisynapse.com/#features">Features</a>
+            <a href="https://infinisynapse.com/tools">Tools Market</a>
+            <a href="https://app.infinisynapse.com/">Try Online</a>
+            <a href="https://infinisynapse.com/download">Download</a>
+          </div>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="https://infinisynapse.com/zh/docs">Documentation</a>
+            <a href="https://infinisynapse.com/zh/blog">Blog</a>
+            <a href="https://infinisynapse.com/#vision">Vision</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="https://infinisynapse.com/#contact">Contact</a>
+            <a href="https://infinisynapse.com/careers">Careers</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 InfiniSynapse. All rights reserved.</span>
+        <span>From question to insight, in seconds.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

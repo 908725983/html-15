@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Business Analytics: Self-Service Insights Across Departments | InfiniSynapse</title>
+  <meta name="description" content="InfiniSynapse delivers AI business analytics across sales, marketing, finance, and operations. Self-service plain-English queries, cross-department KPI dashboards, and automated reporting — no SQL, no Python, no data engineering required.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Editorial team, InfiniSynapse Research">
+
+  <meta property="og:title" content="AI Business Analytics: Self-Service Insights Across Departments | InfiniSynapse">
+  <meta property="og:description" content="Self-service business analytics with plain-English queries across sales, marketing, finance, and operations. Cross-department KPI dashboards and automated reporting — no SQL or Python required.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://infinisynapse.com/scenarios/business-analytics.html">
+  <meta property="og:image" content="https://infinisynapse.com/og/Infinisynapse_og.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@InfiniSynapse">
+  <meta name="twitter:title" content="AI Business Analytics: Self-Service Insights Across Departments">
+  <meta name="twitter:description" content="Self-service business analytics across sales, marketing, finance, and operations — plain-English queries, no SQL or Python required.">
+  <meta name="twitter:image" content="https://infinisynapse.com/og/Infinisynapse_og.png">
+
+  <link rel="canonical" href="https://infinisynapse.com/scenarios/business-analytics.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Schema #1: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "InfiniSynapse",
+    "url": "https://infinisynapse.com",
+    "logo": "https://infinisynapse.com/logo.png",
+    "sameAs": ["https://x.com/InfiniSynapse"]
+  }
+  </script>
+
+  <!-- Schema #2: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://infinisynapse.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Scenarios", "item": "https://infinisynapse.com/scenarios/"},
+      {"@type": "ListItem", "position": 3, "name": "AI Business Analytics", "item": "https://infinisynapse.com/scenarios/business-analytics.html"}
+    ]
+  }
+  </script>
+
+  <!-- Schema #3: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Business Analytics: Self-Service Insights, Cross-Department KPIs, and Automated Reporting for Business Teams",
+    "description": "How InfiniSynapse delivers AI business analytics across sales, marketing, finance, and operations — self-service plain-English queries, cross-department KPI dashboards, and automated reporting without SQL, Python, or data engineering.",
+    "image": ["https://infinisynapse.com/og/Infinisynapse_og.png"],
+    "datePublished": "2026-06-01",
+    "dateModified": "2026-06-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "InfiniSynapse",
+      "logo": {"@type": "ImageObject", "url": "https://infinisynapse.com/logo.png"}
+    },
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://infinisynapse.com/scenarios/business-analytics.html"}
+  }
+  </script>
+
+  <!-- Schema #4: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "InfiniSynapse",
+    "description": "Enterprise AI data analyst with multi-source federation for business analytics — self-service plain-English queries, cross-department KPI dashboards, and automated reporting across sales, marketing, finance, and operations data.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, Windows, macOS, Chrome Extension",
+    "url": "https://infinisynapse.com",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
+  }
+  </script>
+
+  <!-- Schema #5: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Can non-technical business users really use InfiniSynapse?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. InfiniSynapse is designed for business users — you ask questions in plain English, exactly as you would ask a human analyst. No SQL, no Python, no pivot tables required. The AI translates your question into the appropriate queries across all connected data sources and returns answers with visualizations."}},
+      {"@type": "Question", "name": "How many data sources can I connect for cross-department analysis?", "acceptedAnswer": {"@type": "Answer", "text": "InfiniSynapse supports simultaneous connection to multiple databases, CSV files, and APIs — so you can query sales data (CRM), marketing data (ad platforms), finance data (ERP/accounting), and operations data (production DBs) all at once. There is no hard limit on the number of sources; performance depends on the size and complexity of your queries."}},
+      {"@type": "Question", "name": "How does InfiniSynapse compare to Julius AI for business analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Julius AI positions as 'AI for instant business insights' and excels at analyzing a single CSV of business data quickly. For ad-hoc questions about one dataset, Julius is a strong fit. InfiniSynapse differentiates on multi-source federation: connecting sales, marketing, finance, and operations databases simultaneously so you can answer cross-department questions without exporting and merging data from four systems. Julius = quick single-dataset insights. InfiniSynapse = ongoing cross-department business analytics across your entire data estate."}},
+      {"@type": "Question", "name": "What kinds of business questions can I ask?", "acceptedAnswer": {"@type": "Answer", "text": "Common cross-department questions include: 'Compare revenue growth, CAC, and gross margin by product line this quarter vs. last quarter,' 'Which sales regions are above quota but have the longest sales cycles?,' 'What's the correlation between marketing spend, pipeline generated, and closed-won revenue over the last 6 quarters?,' and 'Show me customer LTV by acquisition channel, broken out by product tier.' Because InfiniSynapse joins sales, marketing, finance, and product data simultaneously, you can ask questions that span your entire business."}},
+      {"@type": "Question", "name": "Is my business data secure?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. InfiniSynapse supports private deployment (Air-Gapped). All financial data, sales records, customer PII, strategic KPIs, and sensitive business information stay on your own servers, processed locally. Most AI analytics tools are SaaS-only and require uploading sensitive business data to external cloud services. Private deployment is essential for companies handling financial data, board-level KPIs, or operating under regulatory requirements."}}
+    ]
+  }
+  </script>
+
+  <!-- Schema #6: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Set Up AI Business Analytics with InfiniSynapse",
+    "step": [
+      {"@type": "HowToStep", "position": 1, "name": "Connect your business data sources", "text": "Connect your CRM (sales), ad platforms and email platform (marketing), ERP/accounting system (finance), and production databases (operations). InfiniSynapse auto-discovers schemas and unifies them without ETL or warehouse modeling."},
+      {"@type": "HowToStep", "position": 2, "name": "Define your business KPIs in the Knowledge Base", "text": "Document your key metric definitions: how revenue is recognized, what counts as a qualified lead, how CAC and LTV are calculated, gross margin formula, and any departmental KPI logic. The AI enforces these definitions on every analysis."},
+      {"@type": "HowToStep", "position": 3, "name": "Ask your first cross-department business question", "text": "Example: 'Show me quarterly revenue growth by product line, alongside marketing spend and sales headcount for the same period. Where is revenue growth outpacing or lagging investment?' InfiniSynapse queries CRM, marketing, and finance systems simultaneously."}
+    ]
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1F2937;background:#F9FAFB;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    ::selection{background:rgba(37,99,235,0.18)}
+
+    /* Nav */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo img{height:28px;width:auto;display:block}
+    .nav-logo span{font-size:16px;font-weight:600;color:#0A0A0A;letter-spacing:-0.01em}
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:14px}
+    .nav-links a{color:#374151;text-decoration:none;transition:color .15s}
+    .nav-links a:hover{color:#0A0A0A}
+    .nav-cta{background:#0A0A0A!important;color:#FFF!important;border-radius:24px;padding:9px 20px;font-weight:500}
+    .nav-cta:hover{background:#1F2937!important;color:#FFF!important}
+
+    /* Container */
+    .container{max-width:1280px;margin:0 auto;padding:0 28px}
+
+    /* Breadcrumb */
+    .breadcrumb{font-size:13px;color:#9CA3AF;padding:20px 0}
+    .breadcrumb a{color:#6B7280;text-decoration:none}
+    .breadcrumb a:hover{color:#2563EB}
+    .breadcrumb span{margin:0 6px}
+
+    /* Hero — full-width gradient */
+    .hero-section{background:linear-gradient(135deg,#1E3A5F 0%,#1E40AF 30%,#312E81 70%,#1E3A5F 100%);padding:64px 0 80px;margin-bottom:0;position:relative;overflow:hidden}
+    .hero-section::before{content:'';position:absolute;top:-80px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(96,165,250,0.25),transparent 70%);border-radius:50%;pointer-events:none}
+    .hero-section::after{content:'';position:absolute;bottom:-60px;left:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(129,140,248,0.2),transparent 70%);border-radius:50%;pointer-events:none}
+    .hero-inner{max-width:1280px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+    .hero-badge{display:inline-block;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);font-size:13px;font-weight:500;padding:6px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.18);margin-bottom:24px;letter-spacing:.02em}
+    .hero h1{font-size:3rem;font-weight:900;line-height:1.15;color:#FFFFFF;letter-spacing:-0.03em;max-width:800px;margin-bottom:20px}
+    .hero h1 span{background:linear-gradient(135deg,#93C5FD,#A5B4FC,#C4B5FD);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-desc{font-size:1.1rem;color:rgba(255,255,255,0.75);max-width:620px;line-height:1.65;margin-bottom:32px}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-black{display:inline-flex;align-items:center;gap:6px;background:#0A0A0A;color:#FFF;padding:13px 28px;border-radius:28px;font-weight:600;font-size:15px;text-decoration:none;transition:all .2s;border:none;cursor:pointer}
+    .btn-black:hover{background:#1F2937;transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+    .btn-white{display:inline-flex;align-items:center;gap:6px;background:#FFFFFF;color:#1E3A5F;padding:13px 28px;border-radius:28px;font-weight:600;font-size:15px;text-decoration:none;transition:all .2s}
+    .btn-white:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}
+
+    /* Dashboard preview card in hero */
+    .hero-dash{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:28px 32px;margin-top:48px;backdrop-filter:blur(8px)}
+    .dash-label{font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px}
+    .dash-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .dash-kpi{text-align:center}
+    .dash-kpi-val{font-size:2rem;font-weight:800;color:#FFFFFF;letter-spacing:-0.02em;line-height:1}
+    .dash-kpi-label{font-size:12px;color:rgba(255,255,255,0.55);margin-top:6px;line-height:1.3}
+    .dash-kpi-delta{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;margin-top:4px}
+    .dash-kpi-delta.up{background:rgba(52,211,153,0.2);color:#6EE7B7}
+    .dash-kpi-delta.down{background:rgba(252,165,165,0.2);color:#FCA5A5}
+
+    /* Stats bar */
+    .stats-section{padding:32px 0;background:#FFFFFF;border-bottom:1px solid #E5E7EB}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+    .stat-item{text-align:center;padding:8px 16px;border-right:1px solid #F3F4F6}
+    .stat-item:last-child{border-right:none}
+    .stat-num{font-size:2rem;font-weight:800;color:#0A0A0A;letter-spacing:-0.02em;line-height:1.1}
+    .stat-label{font-size:13px;color:#6B7280;margin-top:4px}
+
+    /* Section */
+    .section{padding:64px 0}
+    .section-label{font-size:11px;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+    .section h2{font-size:1.75rem;font-weight:700;color:#0A0A0A;letter-spacing:-0.02em;margin-bottom:12px}
+    .section-lead{font-size:1.05rem;color:#6B7280;max-width:640px;margin-bottom:36px;line-height:1.6}
+
+    /* TL;DR */
+    .tldr-box{background:#FFFFFF;border:2px solid #DBEAFE;border-radius:20px;padding:28px 32px;margin-bottom:0;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .tldr-box .section-label{margin-bottom:16px}
+    .tldr-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .tldr-list li{padding:0;font-size:14.5px;color:#4B5563;line-height:1.65}
+    .tldr-list li strong{display:block;font-size:12px;color:#2563EB;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600}
+    .tldr-list li em{font-style:italic;color:#9CA3AF}
+
+    /* Pain cards — horizontal row */
+    .pain-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .pain-card{background:#FFFFFF;border:1px solid #E5E7EB;border-radius:20px;padding:28px 24px;transition:all .25s;position:relative;overflow:hidden}
+    .pain-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.08);border-color:#BFDBFE}
+    .pain-card-num{font-size:3rem;font-weight:900;color:#F3F4F6;position:absolute;top:12px;right:20px;line-height:1;pointer-events:none}
+    .pain-card-icon{font-size:2rem;margin-bottom:12px}
+    .pain-card h3{font-size:1rem;font-weight:700;color:#0A0A0A;margin-bottom:8px;position:relative}
+    .pain-card p{font-size:14px;color:#6B7280;line-height:1.65;position:relative}
+
+    /* Before/After — dramatic VS */
+    .ba-section{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch}
+    .ba-panel{padding:36px 28px;border-radius:20px}
+    .ba-before{background:#FEF2F2;border:2px solid #FECACA}
+    .ba-after{background:#F0FDF4;border:2px solid #BBF7D0}
+    .ba-vs{display:flex;align-items:center;justify-content:center;padding:0 20px}
+    .ba-vs-circle{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#4F46E5);color:#FFF;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+    .ba-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .ba-before .ba-label{color:#DC2626}
+    .ba-after .ba-label{color:#16A34A}
+    .ba-text{font-size:14.5px;color:#4B5563;line-height:1.75}
+
+    /* How it works — horizontal pipeline */
+    .pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:40px}
+    .pipeline-step{text-align:center;position:relative;padding:0 12px}
+    .pipeline-step::after{content:'';position:absolute;top:28px;left:calc(50% + 20px);width:calc(100% - 40px);height:2px;background:linear-gradient(90deg,#2563EB,#4F46E5)}
+    .pipeline-step:last-child::after{display:none}
+    .pipe-num{display:inline-flex;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#4F46E5);color:#FFF;align-items:center;justify-content:center;font-weight:800;font-size:20px;position:relative;z-index:1;margin-bottom:14px}
+    .pipeline-step h4{font-size:15px;font-weight:700;color:#0A0A0A;margin-bottom:6px}
+    .pipeline-step p{font-size:13px;color:#6B7280;line-height:1.55}
+
+    /* Comparison table */
+    .compare-wrap{overflow-x:auto;border-radius:16px;border:1px solid #E5E7EB}
+    .compare-table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}
+    .compare-table thead{background:linear-gradient(135deg,#1E3A5F,#312E81)}
+    .compare-table thead th{color:#FFF;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.8px;padding:14px 16px;text-align:left}
+    .compare-table thead th:first-child{border-radius:16px 0 0 0}
+    .compare-table thead th:last-child{border-radius:0 16px 0 0}
+    .compare-table tbody td{padding:13px 16px;border-bottom:1px solid #F3F4F6;color:#4B5563;vertical-align:top}
+    .compare-table tbody tr:nth-child(even) td{background:#F9FAFB}
+    .compare-table tbody tr:last-child td:first-child{border-radius:0 0 0 16px}
+    .compare-table tbody tr:last-child td:last-child{border-radius:0 0 16px 0}
+    .col-ours{background:rgba(37,99,235,0.04)!important;font-weight:500;color:#1E40AF!important}
+
+    /* Workflow bento grid */
+    .wf-bento{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:18px}
+    .wf-card{background:#FFFFFF;border:1px solid #E5E7EB;border-radius:18px;padding:24px;transition:all .25s;position:relative}
+    .wf-card:hover{border-color:#BFDBFE;box-shadow:0 6px 20px rgba(37,99,235,0.06)}
+    .wf-card.bento-wide{grid-column:span 2}
+    .wf-card-num{font-size:11px;font-weight:700;color:#2563EB;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
+    .wf-card h4{font-size:1rem;font-weight:700;color:#0A0A0A;margin-bottom:8px}
+    .wf-card p{font-size:14px;color:#6B7280;line-height:1.65}
+    .wf-card code{background:#F0F4FF;color:#2563EB;padding:2px 8px;border-radius:5px;font-size:13px;font-family:'SF Mono','Fira Code','JetBrains Mono',monospace}
+
+    /* Concession */
+    .concession{background:#FFFBEB;border:2px solid #FDE68A;border-radius:20px;padding:32px;margin-top:48px}
+    .concession h3{font-size:1.15rem;font-weight:700;color:#92400E;margin-bottom:14px}
+    .concession ul{margin:0;padding:0;list-style:none}
+    .concession li{font-size:14.5px;color:#78350F;padding:8px 0;padding-left:20px;position:relative;line-height:1.6}
+    .concession li::before{content:'•';position:absolute;left:0;color:#F59E0B;font-weight:700}
+
+    /* Steps */
+    .steps-vert{display:flex;flex-direction:column;gap:20px}
+    .step-card{display:grid;grid-template-columns:auto 1fr;gap:20px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:18px;padding:24px 28px;transition:all .25s;align-items:start}
+    .step-card:hover{border-color:#BFDBFE;box-shadow:0 4px 16px rgba(37,99,235,0.06)}
+    .step-marker{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#2563EB,#4F46E5);color:#FFF;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+    .step-card h4{font-size:1rem;font-weight:700;color:#0A0A0A;margin-bottom:4px}
+    .step-card p{font-size:14px;color:#6B7280;line-height:1.6;margin:0}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,#1E3A5F,#312E81);border-radius:24px;padding:56px 48px;text-align:center;margin-top:48px}
+    .cta-section h3{font-size:1.65rem;font-weight:800;color:#FFF;letter-spacing:-0.02em;margin-bottom:10px}
+    .cta-section p{color:rgba(255,255,255,0.7);font-size:1rem;margin-bottom:28px}
+    .cta-section .btn-black{background:#FFF;color:#1E3A5F}
+    .cta-section .btn-black:hover{background:#F3F4F6;box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .faq-card{background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;padding:24px;transition:all .2s}
+    .faq-card:hover{border-color:#BFDBFE}
+    .faq-q{font-weight:700;font-size:15px;color:#0A0A0A;margin-bottom:10px}
+    .faq-a{font-size:14px;color:#6B7280;line-height:1.7}
+
+    /* Methodology */
+    .methodology{background:#FFFFFF;border:1px solid #E5E7EB;border-radius:16px;padding:24px 28px;margin-top:48px}
+    .methodology h3{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:14px}
+    .methodology p{font-size:13.5px;color:#6B7280;margin:4px 0;line-height:1.6}
+
+    /* Related */
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .related-card{display:block;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:14px;padding:20px 22px;text-decoration:none;transition:all .25s}
+    .related-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,0.08);border-color:#2563EB}
+    .related-card span{font-size:14.5px;font-weight:600;color:#2563EB;line-height:1.4}
+
+    /* Footer */
+    .footer{background:#FFFFFF;border-top:1px solid #E5E7EB;margin-top:64px}
+    .footer-inner{max-width:1280px;margin:0 auto;padding:48px 28px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+    .footer h4{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .footer-links{display:flex;flex-direction:column;gap:10px;font-size:14px}
+    .footer-links a{color:#6B7280;text-decoration:none}
+    .footer-links a:hover{color:#0A0A0A}
+    .footer-bottom{border-top:1px solid #E5E7EB;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
+
+    /* SVG */
+    .viz-wrap{background:#FFFFFF;border:1px solid #E5E7EB;border-radius:20px;padding:32px;margin:36px 0}
+    .viz-caption{margin-top:16px;font-size:13px;color:#9CA3AF;text-align:center;font-style:italic}
+
+    @media(max-width:768px){
+      .nav-links a:not(.nav-cta){display:none}
+      .hero h1{font-size:1.8rem}
+      .hero-section{padding:40px 0 48px}
+      .hero-dash{padding:20px}
+      .dash-kpis{grid-template-columns:repeat(2,1fr);gap:16px}
+      .stats-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+      .stat-item{border-right:none}
+      .tldr-list{grid-template-columns:1fr;gap:16px}
+      .pain-row{grid-template-columns:1fr}
+      .ba-section{grid-template-columns:1fr;gap:20px}
+      .ba-vs{transform:rotate(90deg);padding:8px 0}
+      .pipeline{grid-template-columns:1fr;gap:24px}
+      .pipeline-step::after{display:none}
+      .wf-bento{grid-template-columns:1fr}
+      .wf-card.bento-wide{grid-column:span 1}
+      .faq-grid{grid-template-columns:1fr}
+      .related-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .section{padding:40px 0}
+      .container{padding:0 20px}
+      .hero-inner{padding:0 20px}
+      .section h2{font-size:1.4rem}
+      .cta-section{padding:36px 24px}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://infinisynapse.com" class="nav-logo">
+        <img src="https://infinisynapse.com/logo.png" alt="InfiniSynapse">
+        <span>InfiniSynapse</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://infinisynapse.com/#features">Features</a>
+        <a href="https://infinisynapse.com/tools">Tools</a>
+        <a href="https://infinisynapse.com/zh/docs">Docs</a>
+        <a href="https://infinisynapse.com/zh/blog">Blog</a>
+        <a href="https://app.infinisynapse.com/" class="nav-cta">Try Online</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-badge">AI Business Analytics</div>
+      <h1>Get Answers From Your <span>Entire Business</span> in Plain English — No SQL, No Python</h1>
+      <p class="hero-desc">Connect your CRM, marketing platforms, finance system, and operations databases. Ask any cross-department question. Get answers with visualizations in minutes — not days.</p>
+      <div class="hero-btns">
+        <a href="https://app.infinisynapse.com/" class="btn-black">Try InfiniSynapse Free</a>
+        <a href="#how-it-works" class="btn-white">See How It Works</a>
+      </div>
+
+      <div class="hero-dash">
+        <div class="dash-label">Live Business Dashboard Preview</div>
+        <div class="dash-kpis">
+          <div class="dash-kpi">
+            <div class="dash-kpi-val">$12.4M</div>
+            <div class="dash-kpi-label">Quarterly Revenue</div>
+            <span class="dash-kpi-delta up">+18.2% QoQ</span>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-val">34.2%</div>
+            <div class="dash-kpi-label">Gross Margin</div>
+            <span class="dash-kpi-delta up">+2.1pp</span>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-val">$842</div>
+            <div class="dash-kpi-label">Blended CAC</div>
+            <span class="dash-kpi-delta down">-8.4%</span>
+          </div>
+          <div class="dash-kpi">
+            <div class="dash-kpi-val">118%</div>
+            <div class="dash-kpi-label">Net Revenue Retention</div>
+            <span class="dash-kpi-delta up">+5.3pp</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Stats Bar ===== -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Data Sources Connected Simultaneously</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">&lt;2 min</div>
+          <div class="stat-label">Average Time to Answer After Asking</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Departments Unified (Sales, Mktg, Finance, Ops, CS)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Consistent KPI Definitions Across Teams</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TL;DR ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="tldr-box">
+        <div class="section-label">TL;DR</div>
+        <ul class="tldr-list">
+          <li><strong>Problem</strong>The most valuable business questions span sales, marketing, finance, and operations — but each department's data lives in a different system with different access controls. Cross-department answers require a data team ticket and 3–5 days of waiting. <em>Single-file AI tools analyze one CSV at a time — they can't join across systems.</em></li>
+          <li><strong>Solution</strong>InfiniSynapse connects to your CRM, marketing platforms, ERP, and operational databases simultaneously. Any business user asks a question in plain English. The AI queries across all relevant systems, applies your KPI definitions, and returns answers with visualizations in minutes.</li>
+          <li><strong>Result</strong>Cross-department business questions go from 3–5 day data team tickets to 2-minute self-service answers. Board deck metrics update automatically. Department heads work from the same Knowledge Base definitions — one source of truth.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== What is AI Business Analytics ===== -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-label">Definition</div>
+      <h2>What is AI-powered business analytics?</h2>
+      <p class="section-lead">AI-powered business analytics uses an AI data analyst to connect sales, marketing, finance, and operations data — then let anyone in the organization ask business questions in plain English and get answers with visualizations in minutes, without SQL, Python, or a data team.</p>
+    </div>
+  </section>
+
+  <!-- ===== Pain Points ===== -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-label">The Problem</div>
+      <h2>Three hard problems with traditional business analytics</h2>
+      <p class="section-lead">Business teams don't lack questions — they lack timely answers. These three problems affect organizations of every size.</p>
+      <div class="pain-row">
+        <div class="pain-card">
+          <div class="pain-card-num">01</div>
+          <div class="pain-card-icon">🔗</div>
+          <h3>Cross-department questions require cross-system data</h3>
+          <p>The most valuable questions span 3–4 different systems (CRM, ad platforms, ERP, support desk). Answering them requires a formal data request and 3–5 days of waiting — because no single person has access to all the systems.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-num">02</div>
+          <div class="pain-card-icon">📐</div>
+          <h3>Every department defines KPIs differently</h3>
+          <p>Marketing defines "lead" one way, Sales another. Finance recognizes revenue on a different calendar. The CEO asks a question and gets three different answers. Metric definitions live in people's heads and spreadsheets — not in a shared system.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-num">03</div>
+          <div class="pain-card-icon">📊</div>
+          <h3>BI dashboards answer yesterday's questions</h3>
+          <p>Dashboards are built for known, recurring questions. But real business questions are ad-hoc and cross-department: "Is the pipeline decline a lead quality issue or competitive pressure, and is it concentrated in specific regions?" You can't dashboard what you haven't anticipated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Before vs After ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">The Transformation</div>
+      <h2>Before vs After: data team bottleneck vs self-service</h2>
+      <p class="section-lead">The difference between traditional cross-department analysis and InfiniSynapse is measured in days saved, questions answered, and decisions accelerated.</p>
+      <div class="ba-section">
+        <div class="ba-panel ba-before">
+          <div class="ba-label">Before — Traditional approach</div>
+          <div class="ba-text">The VP of Sales wants to know: "Which product lines have the highest win rate but the longest sales cycle, and how does that correlate with marketing spend?" She asks the data team. They have a 3-day queue. An analyst exports opportunities from Salesforce, marketing spend from ad platforms, and product data from the ERP — three separate CSVs, a weekend of VLOOKUPs. The answer arrives 5 days later. By then, the pipeline review has passed and the question has changed.</div>
+        </div>
+        <div class="ba-vs">
+          <div class="ba-vs-circle">VS</div>
+        </div>
+        <div class="ba-panel ba-after">
+          <div class="ba-label">After — With InfiniSynapse</div>
+          <div class="ba-text">The VP of Sales opens InfiniSynapse and types the same question in plain English. InfiniSynapse queries the CRM for opportunities, the ad platforms for marketing spend, and the finance system for revenue — joins across all three — and returns a scatter plot of win rate vs. sales cycle, sized by marketing spend, with trend lines by quarter. Answer in under a minute. No data team ticket. No CSVs. No VLOOKUPs.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== How It Works (Pipeline) ===== -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-label">How It Works</div>
+      <h2>How InfiniSynapse delivers self-service business analytics</h2>
+      <p class="section-lead">Four steps from scattered departmental data to unified business answers — zero ETL, zero data modeling, zero engineering.</p>
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="pipe-num">1</div>
+          <h4>Connect Sources</h4>
+          <p>Plug in your CRM, marketing platforms, finance system, and operational databases. Auto schema discovery — no ETL needed.</p>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipe-num">2</div>
+          <h4>Define KPIs Once</h4>
+          <p>Document metric definitions in the Knowledge Base. Revenue recognition, CAC formula, lead criteria — the AI enforces them on every query.</p>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipe-num">3</div>
+          <h4>Ask Plain English</h4>
+          <p>Any business user types a question. The AI translates it into queries, auto-joins across systems, and returns answers with visualization.</p>
+        </div>
+        <div class="pipeline-step">
+          <div class="pipe-num">4</div>
+          <h4>Decide Faster</h4>
+          <p>Cross-department answers arrive in minutes. Board reports auto-generate. Everyone works from the same governed numbers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Comparison Table ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Comparison</div>
+      <h2>InfiniSynapse vs Traditional BI vs Single-File AI</h2>
+      <p class="section-lead">Where InfiniSynapse fits in the business analytics landscape — and where other tools may be the better choice.</p>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Traditional BI (Tableau, Looker, Power BI)</th>
+              <th>Single-File AI (Julius AI, Powerdrill)</th>
+              <th>InfiniSynapse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Query method</strong></td>
+              <td>Pre-built dashboards or SQL</td>
+              <td>Plain English (single file)</td>
+              <td class="col-ours">Plain English (all connected sources simultaneously)</td>
+            </tr>
+            <tr>
+              <td><strong>Cross-department questions</strong></td>
+              <td>Requires data model joining all sources first</td>
+              <td>Not possible — single-file limitation</td>
+              <td class="col-ours">Built-in: auto-joins across CRM, marketing, finance, ops</td>
+            </tr>
+            <tr>
+              <td><strong>Technical skill required</strong></td>
+              <td>Dashboard: none. New questions: SQL + data modeling</td>
+              <td>None — upload CSV and ask</td>
+              <td class="col-ours">None — connect once, ask anything</td>
+            </tr>
+            <tr>
+              <td><strong>Metric governance</strong></td>
+              <td>Metrics defined in data model (if built)</td>
+              <td>No governance layer</td>
+              <td class="col-ours">Knowledge Base enforces shared definitions across all users</td>
+            </tr>
+            <tr>
+              <td><strong>Time to answer (new question)</strong></td>
+              <td>3–5 days (data team queue)</td>
+              <td>Minutes (single dataset)</td>
+              <td class="col-ours">Minutes (all datasets)</td>
+            </tr>
+            <tr>
+              <td><strong>Deployment</strong></td>
+              <td>SaaS or on-premise</td>
+              <td>SaaS-only</td>
+              <td class="col-ours">SaaS + private deployment (Air-Gapped)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SVG Data Flow ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="viz-wrap">
+        <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+          <defs>
+            <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2563EB" stop-opacity="0.08"/>
+              <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.12"/>
+            </linearGradient>
+            <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2563EB"/></marker>
+          </defs>
+          <rect width="720" height="300" rx="16" fill="url(#bgGrad)"/>
+          <!-- Sources -->
+          <rect x="18" y="18" width="130" height="48" rx="8" fill="#FFF" stroke="#D1D5DB" stroke-width="1.5"/>
+          <text x="83" y="37" text-anchor="middle" font-size="11" fill="#1F2937" font-weight="600">Sales · CRM</text>
+          <text x="83" y="53" text-anchor="middle" font-size="9" fill="#9CA3AF">Salesforce · HubSpot</text>
+          <rect x="18" y="82" width="130" height="48" rx="8" fill="#FFF" stroke="#D1D5DB" stroke-width="1.5"/>
+          <text x="83" y="101" text-anchor="middle" font-size="11" fill="#1F2937" font-weight="600">Marketing</text>
+          <text x="83" y="117" text-anchor="middle" font-size="9" fill="#9CA3AF">Ads · Email · Analytics</text>
+          <rect x="18" y="146" width="130" height="48" rx="8" fill="#FFF" stroke="#D1D5DB" stroke-width="1.5"/>
+          <text x="83" y="165" text-anchor="middle" font-size="11" fill="#1F2937" font-weight="600">Finance</text>
+          <text x="83" y="181" text-anchor="middle" font-size="9" fill="#9CA3AF">ERP · QuickBooks</text>
+          <rect x="18" y="210" width="130" height="48" rx="8" fill="#FFF" stroke="#D1D5DB" stroke-width="1.5"/>
+          <text x="83" y="229" text-anchor="middle" font-size="11" fill="#1F2937" font-weight="600">Operations</text>
+          <text x="83" y="245" text-anchor="middle" font-size="9" fill="#9CA3AF">Production DBs · Support</text>
+          <!-- Arrows to center -->
+          <line x1="148" y1="42" x2="272" y2="108" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+          <line x1="148" y1="106" x2="272" y2="120" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+          <line x1="148" y1="170" x2="272" y2="132" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+          <line x1="148" y1="234" x2="272" y2="144" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+          <!-- Center engine -->
+          <rect x="278" y="82" width="160" height="82" rx="14" fill="#FFF" stroke="#2563EB" stroke-width="2.5"/>
+          <text x="358" y="114" text-anchor="middle" font-size="15" fill="#2563EB" font-weight="700">InfiniSynapse</text>
+          <text x="358" y="134" text-anchor="middle" font-size="11" fill="#4B5563">Multi-Source Federation</text>
+          <text x="358" y="150" text-anchor="middle" font-size="10" fill="#9CA3AF">Zero ETL · Auto JOIN</text>
+          <!-- Arrow to outputs -->
+          <line x1="438" y1="123" x2="505" y2="123" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+          <!-- Outputs -->
+          <rect x="512" y="14" width="195" height="38" rx="7" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+          <text x="610" y="30" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Revenue & Growth Analysis</text>
+          <text x="610" y="44" text-anchor="middle" font-size="9" fill="#6B7280">By Product · Region · Segment</text>
+          <rect x="512" y="66" width="195" height="38" rx="7" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+          <text x="610" y="82" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Cross-Department KPI Dashboard</text>
+          <text x="610" y="96" text-anchor="middle" font-size="9" fill="#6B7280">One Source of Truth</text>
+          <rect x="512" y="118" width="195" height="38" rx="7" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+          <text x="610" y="134" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Automated Executive Reports</text>
+          <text x="610" y="148" text-anchor="middle" font-size="9" fill="#6B7280">Scheduled · Multi-Source</text>
+          <rect x="512" y="170" width="195" height="38" rx="7" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+          <text x="610" y="186" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Ad-Hoc Business Questions</text>
+          <text x="610" y="200" text-anchor="middle" font-size="9" fill="#6B7280">Plain English · No SQL</text>
+          <rect x="512" y="222" width="195" height="38" rx="7" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+          <text x="610" y="238" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Metric Governance Layer</text>
+          <text x="610" y="252" text-anchor="middle" font-size="9" fill="#6B7280">Shared Definitions · Enforced</text>
+        </svg>
+        <div class="viz-caption">InfiniSynapse business analytics data flow: four departmental data sources connected directly, zero ETL, plain-English questions produce cross-department answers accessible to any business user.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Workflows - Bento Grid ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Core Workflows</div>
+      <h2>Five core business analytics workflows</h2>
+      <p class="section-lead">The highest-frequency business analytics workflows leadership and cross-functional teams run on InfiniSynapse.</p>
+      <div class="wf-bento">
+        <div class="wf-card bento-wide">
+          <div class="wf-card-num">Workflow 01</div>
+          <h4>Cross-Department KPI Monitoring</h4>
+          <p>Ask: <code>Show me this quarter's performance across sales, marketing, finance, and customer success — all in one view with QoQ and YoY comparisons.</code> InfiniSynapse queries four systems simultaneously, producing a unified snapshot that normally takes a week of cross-department coordination.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-card-num">Workflow 02</div>
+          <h4>Revenue Growth & Profitability</h4>
+          <p>Break down revenue by product line, segment, and region. Flag segments where revenue is growing but margin is declining — joining CRM, finance, and marketing data in one query.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-card-num">Workflow 03</div>
+          <h4>Ad-Hoc Business Questions</h4>
+          <p>Ask anything, anytime: <code>Which enterprise customers haven't expanded in 12+ months but have above-average usage?</code> True self-service analytics across your entire data estate.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-card-num">Workflow 04</div>
+          <h4>Automated Executive Reporting</h4>
+          <p>Set once: <code>Every Monday at 8am, send revenue vs. plan, pipeline coverage, NRR, and top 3 risks to the exec team.</code> The 2-day manual report becomes an automated, always-current snapshot.</p>
+        </div>
+        <div class="wf-card bento-wide">
+          <div class="wf-card-num">Workflow 05</div>
+          <h4>Marketing ROI & Sales Efficiency</h4>
+          <p>Ask: <code>Calculate blended CAC by quarter for 2 years, broken down by paid vs. organic. Show CAC trend correlation with sales headcount growth and quota attainment.</code> A four-source analysis (marketing spend, CRM pipeline, HR headcount, finance revenue) that answers the fundamental question: "Are we building an increasingly efficient go-to-market engine?"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Concession ===== -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="concession">
+        <h3>When InfiniSynapse is not the right choice for business analytics</h3>
+        <ul>
+          <li><strong>Your business questions are single-department and well-defined.</strong> If every question lives in one system and your existing dashboard answers it — you're well-served. InfiniSynapse's value grows with cross-department complexity.</li>
+          <li><strong>You already have a mature, well-governed BI stack.</strong> If you have a data warehouse with modeled cross-department data, a semantic layer with governed metrics, and a BI tool business users can query — InfiniSynapse may be additive rather than transformative.</li>
+          <li><strong>Your organization has fewer than 50 people and simple data.</strong> In a small company where data lives in 1–2 systems, the cross-department data problem is manageable without specialized tooling.</li>
+        </ul>
+        <p style="margin-top:14px;font-size:14px;color:#78350F;">InfiniSynapse creates the most value when business questions span <strong>3+ departmental data sources</strong>, when the data team is a bottleneck, and when decision speed (minutes vs. days) directly impacts business outcomes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Quick Start Steps ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Quick Start</div>
+      <h2>3 steps to AI business analytics</h2>
+      <p class="section-lead">Go from scattered departmental data to unified business answers in three steps.</p>
+      <div class="steps-vert">
+        <div class="step-card">
+          <div class="step-marker">1</div>
+          <div>
+            <h4>Connect your business data sources</h4>
+            <p>Connect your CRM (Salesforce/HubSpot), marketing platforms (Google Ads, Meta Ads, email ESP), finance system (ERP/QuickBooks/Netsuite), and operational databases. InfiniSynapse auto-discovers each source's schema. Private deployment available for financial data and board-level KPIs.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-marker">2</div>
+          <div>
+            <h4>Define your business KPIs in the Knowledge Base</h4>
+            <p>Document your organization's metric definitions once: revenue recognition rules, CAC formula, qualified lead criteria, churn definition, margin calculation. The AI enforces these on every analysis — your CEO, VP of Sales, and Head of Marketing all get numbers calculated the same way from the same data.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-marker">3</div>
+          <div>
+            <h4>Ask your first cross-department question</h4>
+            <p>Start with the question that currently requires a data team ticket: "What's the relationship between marketing spend, sales pipeline, and revenue this quarter vs. last quarter?" InfiniSynapse queries across CRM, marketing, and finance simultaneously — answer in under a minute.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <h3>Get answers to your business questions in minutes, not days</h3>
+        <p>Free to start. Connect your CRM and finance system. Ask the cross-department question you've been waiting on the data team to answer.</p>
+        <a href="https://app.infinisynapse.com/" class="btn-black">Try InfiniSynapse Free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2>Frequently asked questions</h2>
+      <p class="section-lead">Common questions about AI business analytics with InfiniSynapse.</p>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <div class="faq-q">Can non-technical business users really use InfiniSynapse?</div>
+          <div class="faq-a">Yes. InfiniSynapse is designed for business users — you ask questions in plain English, exactly as you would ask a human analyst. No SQL, no Python, no pivot tables required. The AI translates your question into the appropriate queries across all connected data sources and returns answers with visualizations.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">How many data sources can I connect for cross-department analysis?</div>
+          <div class="faq-a">InfiniSynapse supports simultaneous connection to multiple databases, CSV files, and APIs — so you can query sales data (CRM), marketing data (ad platforms), finance data (ERP/accounting), and operations data (production DBs) all at once. There is no hard limit on the number of sources; performance depends on the size and complexity of your queries.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">How does InfiniSynapse compare to Julius AI for business analytics?</div>
+          <div class="faq-a">Julius AI positions as "AI for instant business insights" and excels at analyzing a single CSV quickly. For ad-hoc questions about one dataset, Julius is a strong fit. InfiniSynapse differentiates on multi-source federation: connecting sales, marketing, finance, and operations databases simultaneously so you can answer cross-department questions without exporting and merging data from four systems.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">What kinds of business questions can I ask?</div>
+          <div class="faq-a">Common cross-department questions include: "Compare revenue growth, CAC, and gross margin by product line this quarter vs. last quarter," "Which sales regions are above quota but have the longest sales cycles?," "What's the correlation between marketing spend, pipeline generated, and closed-won revenue?" Because InfiniSynapse joins sales, marketing, finance, and product data simultaneously, you can ask questions that span your entire business.</div>
+        </div>
+        <div class="faq-card" style="grid-column:1/-1">
+          <div class="faq-q">Is my business data secure?</div>
+          <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All financial data, sales records, customer PII, strategic KPIs, and sensitive business information stay on your own servers, processed locally. Most AI analytics tools are SaaS-only and require uploading sensitive business data to external cloud services. Private deployment is essential for companies handling financial data, board-level KPIs, or operating under regulatory requirements.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Methodology ===== -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="methodology">
+        <h3>About this guide</h3>
+        <p><strong>Last updated:</strong> 2026-06-01</p>
+        <p><strong>Methodology:</strong> Business analytics scenarios described here are based on InfiniSynapse product capabilities matched against common leadership, strategy, and cross-functional business workflows. Competitor capability descriptions are sourced from official documentation and product pages of Julius AI, Powerdrill, Tableau, Looker, Power BI, and other business analytics tools (accessed May 2026).</p>
+        <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher of this page. We explicitly call out scenarios where traditional BI (Tableau, Looker, Power BI) or single-file AI tools are the better fit.</p>
+        <p><strong>Update cadence:</strong> Reviewed quarterly. Competitor product capabilities, business intelligence integrations, and pricing refreshed every 90 days.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Related Guides ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Related Guides</div>
+      <h2>Explore other scenarios</h2>
+      <p class="section-lead">InfiniSynapse adapts to your industry and data stack. See how it works in other contexts.</p>
+      <div class="related-grid">
+        <a href="../scenarios/sales-analytics.html" class="related-card"><span>AI Sales Analytics: Pipeline Health & Revenue Forecasting</span></a>
+        <a href="../scenarios/marketing-analytics.html" class="related-card"><span>AI Marketing Analytics: Multi-Channel ROI & Attribution</span></a>
+        <a href="../scenarios/product-analytics.html" class="related-card"><span>AI Product Analytics: Feature Adoption & Retention</span></a>
+        <a href="../scenarios/customer-success-analytics.html" class="related-card"><span>AI Customer Success Analytics: Health Scores & Renewals</span></a>
+        <a href="../scenarios/operations-analytics.html" class="related-card"><span>AI Operations Analytics: OEE, Scheduling & Resource Planning</span></a>
+        <a href="../scenarios/saas-analytics.html" class="related-card"><span>AI SaaS Analytics: MRR/ARR, Subscription & PLG Metrics</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div style="font-size:18px;font-weight:600;color:#0A0A0A;margin-bottom:12px">InfiniSynapse</div>
+          <p style="font-size:14px;color:#6B7280;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
+          <a href="https://app.infinisynapse.com/" class="btn-black" style="padding:8px 20px;font-size:13px">Try Online →</a>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <div class="footer-links">
+            <a href="https://infinisynapse.com/#features">Features</a>
+            <a href="https://infinisynapse.com/tools">Tools Market</a>
+            <a href="https://app.infinisynapse.com/">Try Online</a>
+            <a href="https://infinisynapse.com/download">Download</a>
+          </div>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="https://infinisynapse.com/zh/docs">Documentation</a>
+            <a href="https://infinisynapse.com/zh/blog">Blog</a>
+            <a href="https://infinisynapse.com/#vision">Vision</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="https://infinisynapse.com/#contact">Contact</a>
+            <a href="https://infinisynapse.com/careers">Careers</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 InfiniSynapse. All rights reserved.</span>
+        <span>From question to insight, in seconds.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
