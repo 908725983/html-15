@@ -117,133 +117,174 @@
 
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1F2937;background:#FFFFFF;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
-    ::selection{background:rgba(91,91,255,0.2)}
-    a{color:#5B5BFF;text-decoration:none}
-    a:hover{color:#5B5BFF}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1E293B;background:#F8FAFC;font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased}
+    ::selection{background:rgba(2,132,199,0.18)}
 
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB;padding:14px 0}
-    .nav-inner{max-width:1024px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{display:flex;align-items:center;gap:10px}
-    .nav-logo-mark{height:28px;display:flex;align-items:center}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(248,250,252,0.88);backdrop-filter:blur(16px);border-bottom:1px solid #E2E8F0;padding:14px 0}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo-mark{height:28px}
     .nav-logo-mark img{height:28px;width:auto;display:block}
-    .nav-logo span{font-size:16px;font-weight:600;color:#0A0A0A;letter-spacing:-0.01em}
+    .nav-logo span{font-size:16px;font-weight:600;color:#0F172A;letter-spacing:-0.01em}
     .nav-links{display:flex;align-items:center;gap:22px;font-size:14px}
-    .nav-links a{color:#374151;transition:color 0.15s}
-    .nav-links a:hover{color:#0A0A0A}
-    .nav-cta{background:#0A0A0A !important;color:#FFF !important;border-radius:24px;padding:9px 20px}
-    .nav-cta:hover{background:#1F2937 !important;color:#FFF !important;opacity:1}
+    .nav-links a{color:#475569;text-decoration:none;transition:color 0.15s}
+    .nav-links a:hover{color:#0F172A}
+    .nav-cta{background:#0F172A;color:#FFF;border-radius:24px;padding:9px 20px;text-decoration:none}
+    .nav-cta:hover{background:#334155;color:#FFF}
 
-    .wrap{max-width:1024px;margin:0 auto;padding:48px 24px}
+    .container{max-width:1280px;margin:0 auto;padding:0 28px}
 
-    h1{font-size:2.8rem;font-weight:800;line-height:1.15;margin-bottom:16px;color:#0A0A0A;letter-spacing:-0.03em}
-    h2{font-size:1.32rem;font-weight:600;margin:44px 0 16px;color:#0A0A0A;border-bottom:1px solid #E5E7EB;padding-bottom:10px;letter-spacing:-0.01em}
-    h3{font-size:17px;font-weight:600;margin:26px 0 10px;color:#111827}
-    p{margin:0 0 18px;color:#4B5563}
-    strong{color:#0A0A0A;font-weight:600}
-    ul,ol{margin:14px 0 18px 24px}
-    li{margin:8px 0;color:#4B5563}
-    code{background:rgba(91,91,255,0.08);padding:2px 7px;border-radius:4px;font-size:14px;font-family:'SF Mono','Fira Code','JetBrains Mono',monospace;color:#5B5BFF;border:1px solid rgba(91,91,255,0.14)}
+    /* ── Hero: Control Tower ── */
+    .hero{background:linear-gradient(170deg,#F1F5F9 0%,#F8FAFC 40%,#E0F2FE 100%);border-bottom:1px solid #E2E8F0;padding:52px 0 0;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+    .hero-badge{display:inline-block;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px;background:#E0F2FE;color:#0284C7;border:1px solid #7DD3FC;letter-spacing:0.3px}
+    .hero h1{font-size:2.6rem;font-weight:800;line-height:1.12;color:#0F172A;letter-spacing:-0.03em;margin-bottom:14px}
+    .hero h1 em{font-style:normal;color:#0284C7}
+    .hero-desc{font-size:1.02rem;color:#64748B;line-height:1.6;margin-bottom:22px}
+    .hero-cta{display:inline-flex;align-items:center;gap:8px;background:#0F172A;color:#FFF;padding:13px 28px;border-radius:26px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s}
+    .hero-cta:hover{background:#0284C7;transform:translateY(-1px)}
 
-    .meta-desc{font-size:1.08rem;color:#6B7280;margin-bottom:32px;line-height:1.55;max-width:740px}
-    .breadcrumb{font-size:13px;color:#9CA3AF;margin-bottom:20px}
-    .breadcrumb a{color:#6B7280}
-    .breadcrumb a:hover{color:#5B5BFF}
-    .breadcrumb span{margin:0 6px}
-    .badge{display:inline-block;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;margin-right:8px;margin-bottom:14px}
-    .badge-client{background:rgba(91,91,255,0.08);color:#5B5BFF;border:1px solid rgba(91,91,255,0.25)}
-    .badge-cat{background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB}
+    .hero-network{background:#FFF;border:1px solid #E2E8F0;border-radius:18px;padding:24px;box-shadow:0 4px 24px rgba(2,132,199,0.06)}
+    .net-label{font-size:10.5px;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:16px;text-align:center}
+    .net-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+    .net-node{font-size:11px;font-weight:600;padding:8px 16px;border-radius:8px;background:#F1F5F9;color:#475569;border:1.5px solid #E2E8F0;white-space:nowrap}
+    .net-node.core{background:#0284C7;color:#FFF;border-color:#0284C7;font-size:12px;padding:10px 20px}
+    .net-arrow{color:#94A3B8;font-size:14px;font-weight:700}
+    .net-out{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid #F1F5F9}
+    .net-out-item{text-align:center;font-size:10px;color:#64748B;padding:8px 4px;background:#F0FDF4;border-radius:8px;border:1px solid #BBF7D0}
+    .net-out-item strong{display:block;font-size:11.5px;color:#16A34A;margin-bottom:2px}
 
-    .toc{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 22px;margin:0 0 36px}
-    .toc-label{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
-    .toc ul{margin:0;padding-left:18px;font-size:14.5px}
-    .toc a{color:#374151}
-    .toc a:hover{color:#5B5BFF}
+    /* ── Stats ── */
+    .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #E2E8F0;background:#FFF}
+    .stat-item{text-align:center;padding:26px 16px;border-right:1px solid #F1F5F9}
+    .stat-item:last-child{border-right:none}
+    .stat-val{font-size:1.7rem;font-weight:800;color:#0F172A;letter-spacing:-0.02em}
+    .stat-val span{color:#0284C7}
+    .stat-label{font-size:12px;color:#64748B;margin-top:3px;font-weight:500}
 
-    .author-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;padding:16px 0;border-bottom:1px solid #F3F4F6}
-    .author-meta img{width:44px;height:44px;border-radius:50%}
-    .author-info{font-size:14px;color:#374151}
-    .author-info a{font-weight:600;color:#0A0A0A}
-    .author-bio{font-size:13px;color:#6B7280;margin:2px 0 0}
-    .dates{margin-left:auto;font-size:13px;color:#9CA3AF;text-align:right;line-height:1.6}
+    /* ── Section ── */
+    .section{padding:48px 0}
+    .sec-label{font-size:11.5px;font-weight:700;color:#0284C7;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+    .section h2{font-size:1.75rem;font-weight:700;color:#0F172A;letter-spacing:-0.02em;margin-bottom:10px;line-height:1.2}
+    .sec-lead{color:#64748B;font-size:1rem;max-width:700px;margin-bottom:24px;line-height:1.6}
 
-    .tldr{background:rgba(91,91,255,0.05);border-left:3px solid #5B5BFF;border-radius:0 10px 10px 0;padding:18px 22px;margin:0 0 32px}
-    .tldr-label{font-size:12px;font-weight:600;color:#5B5BFF;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px}
-    .tldr ul{margin:0;padding-left:18px;font-size:14.5px}
-    .tldr li{color:#374151;margin:5px 0}
+    /* ── TL;DR ── */
+    .tldr-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
+    .tldr-card{border-radius:14px;padding:22px 24px;border:1px solid #E2E8F0;background:#FFF}
+    .tldr-card .tldr-icon{font-size:20px;margin-bottom:8px}
+    .tldr-card h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px}
+    .tldr-card:nth-child(1) h4{color:#DC2626}
+    .tldr-card:nth-child(2) h4{color:#0284C7}
+    .tldr-card:nth-child(3) h4{color:#16A34A}
+    .tldr-card p{font-size:13px;color:#475569;line-height:1.6}
 
-    .snippet-answer{background:#F9FAFB;border-left:3px solid #5B5BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:15.5px;color:#1F2937;margin:8px 0 24px}
+    /* ── Pain: Alert cards ── */
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .pain-card{background:#FFF;border-radius:14px;padding:0;overflow:hidden;border:1px solid #E2E8F0;transition:box-shadow 0.2s}
+    .pain-card:hover{box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+    .pain-sev{padding:8px 18px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#FFF}
+    .pain-sev.critical{background:#DC2626}
+    .pain-sev.high{background:#EA580C}
+    .pain-sev.medium{background:#CA8A04}
+    .pain-body{padding:18px}
+    .pain-body h4{font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px}
+    .pain-body p{font-size:13px;color:#64748B;line-height:1.6}
 
-    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-    .ba-card{border-radius:10px;padding:20px 24px}
+    /* ── Before/After: Side panels ── */
+    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .ba-panel{border-radius:16px;padding:26px;position:relative;overflow:hidden}
     .ba-before{background:#FEF2F2;border:1px solid #FECACA}
     .ba-after{background:#F0FDF4;border:1px solid #BBF7D0}
-    .ba-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
-    .ba-before .ba-label{color:#DC2626}
-    .ba-after .ba-label{color:#16A34A}
-    .ba-text{font-size:14.5px;color:#4B5563;line-height:1.7}
+    .ba-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;padding:4px 12px;border-radius:10px;margin-bottom:10px}
+    .ba-before .ba-tag{background:#FEE2E2;color:#DC2626}
+    .ba-after .ba-tag{background:#DCFCE7;color:#16A34A}
+    .ba-panel h4{font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px}
+    .ba-panel p{font-size:13.5px;color:#475569;line-height:1.65}
 
-    .viz{margin:28px 0;padding:24px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px}
-    .viz img,.viz svg{width:100%;height:auto;display:block;border-radius:8px}
-    .viz-caption{margin-top:12px;font-size:13px;color:#6B7280;text-align:center;font-style:italic}
+    /* ── Comparison table ── */
+    .comp-table{width:100%;border-collapse:collapse;font-size:13.5px;border-radius:14px;overflow:hidden;border:1px solid #E2E8F0}
+    .comp-table thead{background:#0F172A}
+    .comp-table thead th{color:#FFF;padding:13px 14px;text-align:left;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.8px}
+    .comp-table thead th:last-child{background:#0284C7}
+    .comp-table td{padding:12px 14px;border-bottom:1px solid #F1F5F9;color:#475569;vertical-align:top}
+    .comp-table tbody tr:nth-child(even){background:#FFF}
+    .comp-table tbody tr:nth-child(odd){background:#F8FAFC}
+    .comp-table td:last-child{font-weight:500;color:#0F172A}
 
-    .compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-    .compare-table th,.compare-table td{padding:13px 12px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
-    .compare-table th{background:#F9FAFB;color:#111827;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:0.5px}
-    .compare-table td{color:#4B5563}
+    /* ── Workflows: 2×3 Grid ── */
+    .wf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .wf-card{background:#FFF;border:1px solid #E2E8F0;border-radius:14px;padding:20px;transition:all 0.2s}
+    .wf-card:hover{border-color:#0284C7;box-shadow:0 4px 16px rgba(2,132,199,0.06)}
+    .wf-num{font-size:2rem;font-weight:900;color:#E0F2FE;line-height:1;margin-bottom:4px}
+    .wf-card h4{font-size:14px;font-weight:700;color:#0F172A;margin-bottom:6px}
+    .wf-card p{font-size:12.5px;color:#64748B;line-height:1.55}
 
-    .step-box{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 20px;margin:14px 0;transition:border-color 0.2s}
-    .step-box:hover{border-color:#5B5BFF}
-    .step-num{display:inline-flex;width:26px;height:26px;background:#0A0A0A;color:#FFFFFF;border-radius:50%;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-right:10px;vertical-align:middle}
-    .step-box strong{display:inline;vertical-align:middle;font-size:15.5px;color:#0A0A0A}
-    .step-box p{margin:8px 0 0 36px;font-size:14.5px;color:#4B5563}
+    /* ── Steps: Pipeline ── */
+    .steps-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+    .steps-flow::before{content:'';position:absolute;top:30px;left:16.67%;right:16.67%;height:3px;background:linear-gradient(90deg,#7DD3FC,#0284C7,#0369A1);z-index:0;border-radius:2px}
+    .step-node{text-align:center;position:relative;z-index:1;padding:0 20px}
+    .step-dot{width:60px;height:60px;border-radius:50%;background:#FFF;border:3px solid #0284C7;color:#0284C7;display:inline-flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;margin-bottom:14px}
+    .step-node h4{font-size:15px;font-weight:700;color:#0F172A;margin-bottom:6px}
+    .step-node p{font-size:13px;color:#64748B;line-height:1.55}
 
-    .concession-box{background:#FFFBEB;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:8px;padding:20px 24px;margin:24px 0;color:#1F2937}
-    .concession-box h3{color:#78350F;margin:0 0 10px;font-size:17px}
-    .concession-box p{color:#374151;margin:6px 0;font-size:14.5px}
-    .concession-box ul{margin:8px 0 4px 22px}
-    .concession-box li{color:#374151;font-size:14.5px}
+    /* ── When Not ── */
+    .concession{background:#FFF;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0}
+    .concession h4{font-size:12px;font-weight:700;color:#92400E;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:10px}
+    .concession p{font-size:13.5px;color:#475569;line-height:1.6;margin-bottom:8px}
 
-    .cta-box{background:linear-gradient(135deg,rgba(91,91,255,0.08),rgba(91,91,255,0.03));border:1px solid rgba(91,91,255,0.22);text-align:center;padding:40px;border-radius:14px;margin:48px 0}
-    .cta-box h3{color:#0A0A0A;margin:0 0 10px;font-size:22px;font-weight:600;border:none;padding:0}
-    .cta-box p{color:#4B5563;margin:0 0 22px;font-size:15px}
-    .cta-btn{display:inline-block;background:#0A0A0A;color:#FFFFFF;padding:13px 36px;border-radius:28px;font-weight:600;font-size:15px;transition:all 0.2s;text-decoration:none}
-    .cta-btn:hover{background:#1F2937;color:#FFFFFF;transform:translateY(-1px)}
+    /* ── FAQ ── */
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .faq-item{border-bottom:1px solid #E2E8F0;padding:22px 0}
+    .faq-item:nth-child(odd){padding-right:24px}
+    .faq-item:nth-child(even){padding-left:24px;border-left:1px solid #E2E8F0}
+    .faq-q{font-weight:600;font-size:15px;color:#0F172A;margin-bottom:8px}
+    .faq-a{color:#64748B;font-size:13.5px;line-height:1.65}
 
-    .faq-item{border-bottom:1px solid #E5E7EB;padding:20px 0}
-    .faq-q{font-weight:600;font-size:16px;color:#0A0A0A}
-    .faq-a{margin-top:10px;color:#4B5563;font-size:14.5px;line-height:1.7}
+    /* ── CTA ── */
+    .cta-block{background:linear-gradient(135deg,#0F172A 0%,#0C4A6E 100%);border-radius:20px;padding:48px 40px;text-align:center;margin-top:40px}
+    .cta-block h3{color:#FFF;font-size:1.6rem;font-weight:700;margin-bottom:10px;letter-spacing:-0.02em}
+    .cta-block p{color:#7DD3FC;margin-bottom:24px;font-size:15px}
+    .cta-block .cta-btn{display:inline-block;background:#0284C7;color:#FFF;padding:14px 36px;border-radius:28px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s}
+    .cta-block .cta-btn:hover{background:#0369A1;transform:translateY(-1px)}
 
-    .methodology{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:22px 26px;margin:36px 0;font-size:14px;color:#4B5563}
-    .methodology h2{font-size:13px;border:none;padding:0;margin:0 0 14px;color:#111827;text-transform:uppercase;letter-spacing:1.2px}
-    .methodology p{margin:6px 0;font-size:13.5px}
+    /* ── Related ── */
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .related-grid a{display:block;padding:18px;background:#FFF;border:1px solid #E2E8F0;border-radius:12px;color:#0284C7;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}
+    .related-grid a:hover{background:#F0F9FF;border-color:#0284C7}
 
-    .related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
-    .related a{display:block;padding:16px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:10px;color:#5B5BFF;font-size:14px;font-weight:500;transition:all 0.2s;line-height:1.5}
-    .related a:hover{background:rgba(91,91,255,0.04);border-color:#5B5BFF}
+    /* ── Methodology ── */
+    .methodology{background:#FFF;border:1px solid #E2E8F0;border-radius:14px;padding:22px 26px;margin-top:36px;font-size:13.5px;color:#64748B}
+    .methodology h2{font-size:12px;font-weight:700;padding:0;margin:0 0 14px;color:#0F172A;text-transform:uppercase;letter-spacing:1.2px;border:none}
+    .methodology p{margin:6px 0;font-size:13px}
 
-    .footer{background:#F9FAFB;border-top:1px solid #E5E7EB;padding:48px 24px;margin-top:60px}
-    .footer-inner{max-width:1024px;margin:0 auto}
+    /* ── Footer ── */
+    .footer{background:#FFF;border-top:1px solid #E2E8F0;padding:48px 28px;margin-top:60px}
+    .footer-inner{max-width:1280px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
-    .footer h4{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .footer h4{font-size:12px;font-weight:600;color:#94A3B8;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
     .footer-links{display:flex;flex-direction:column;gap:10px;font-size:14px}
-    .footer-links a{color:#6B7280}
-    .footer-links a:hover{color:#0A0A0A}
-    .footer-bottom{border-top:1px solid #E5E7EB;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
+    .footer-links a{color:#64748B;text-decoration:none}
+    .footer-links a:hover{color:#0F172A}
+    .footer-bottom{border-top:1px solid #F1F5F9;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#94A3B8}
 
-    @media(max-width:720px){
+    @media(max-width:768px){
+      .hero-grid{grid-template-columns:1fr;gap:24px}
+      .hero h1{font-size:1.85rem}
+      .stats-bar{grid-template-columns:repeat(2,1fr)}
+      .tldr-row{grid-template-columns:1fr}
+      .pain-grid{grid-template-columns:1fr}
       .ba-grid{grid-template-columns:1fr}
-      .related{grid-template-columns:1fr}
-      h1{font-size:1.85rem}
-      h2{font-size:1.18rem}
+      .wf-grid{grid-template-columns:1fr}
+      .steps-flow{grid-template-columns:1fr;gap:16px}
+      .steps-flow::before{display:none}
+      .faq-grid{grid-template-columns:1fr}
+      .faq-item:nth-child(even){padding-left:0;border-left:none}
+      .related-grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
       .nav-links a:not(.nav-cta){display:none}
-      .wrap{padding:32px 20px}
-      .compare-table{font-size:12px}
-      .compare-table th,.compare-table td{padding:8px 6px}
-      .step-box p{margin-left:0}
-      .author-meta{flex-wrap:wrap}
-      .dates{margin-left:0;text-align:left}
+      .container{padding:0 20px}
+      .comp-table{font-size:11px}
+      .comp-table th,.comp-table td{padding:8px 6px}
     }
   </style>
 </head>
@@ -265,278 +306,321 @@
     </div>
   </nav>
 
-  <div class="wrap">
-
-    <nav class="breadcrumb">
-      <a href="https://infinisynapse.com">Home</a><span>/</span>
-      <a href="https://infinisynapse.com/scenarios/">Scenarios</a><span>/</span>
-      AI Supply Chain Analytics
-    </nav>
-
-    <div>
-      <span class="badge badge-client">InfiniSynapse</span>
-      <span class="badge badge-cat">Scenario</span>
-    </div>
-
-    <h1>AI Supply Chain Analytics: From Fragmented Logistics Data to Unified Supply Chain Intelligence</h1>
-
-    <p class="meta-desc">A practical guide to <strong>AI supply chain analytics</strong> for procurement, logistics, and supply chain planning teams. Covers <strong>OTIF performance tracking</strong>, <strong>inventory optimization</strong>, <strong>supplier performance scorecards</strong>, <strong>freight cost analysis</strong>, and <strong>Perfect Order Rate optimization</strong> — unifying ERP, WMS, TMS, and demand planning data without a data engineering team.</p>
-
-    <div class="author-meta">
-      <img src="https://infinisynapse.com/authors/editorial-team.jpg" alt="InfiniSynapse Editorial Team" width="44" height="44">
-      <div class="author-info">
-        <a href="https://infinisynapse.com/authors/editorial-team">InfiniSynapse Editorial Team</a> · Enterprise AI Analytics Research
-        <p class="author-bio">Specializing in AI-powered supply chain analytics and multi-system logistics intelligence, serving procurement, logistics, and supply chain planning teams.</p>
+  <!-- ════ Hero ════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">Supply Chain Control Tower</div>
+          <h1>From fragmented logistics data to <em>unified supply chain intelligence</em></h1>
+          <p class="hero-desc">Connect your ERP, WMS, TMS, and demand planning systems. Ask supply chain questions in plain English. Get answers drawn from <strong>all</strong> your operational systems — OTIF, inventory, suppliers, freight — in one place.</p>
+          <a href="https://app.infinisynapse.com/" class="hero-cta">Start Analyzing Free →</a>
+        </div>
+        <div class="hero-network">
+          <div class="net-label">Supply Chain Data Fabric</div>
+          <div class="net-row">
+            <span class="net-node">ERP</span><span class="net-arrow">→</span>
+            <span class="net-node">WMS</span><span class="net-arrow">→</span>
+            <span class="net-node">TMS</span><span class="net-arrow">→</span>
+            <span class="net-node">Demand</span>
+          </div>
+          <div class="net-row" style="margin-top:4px"><span class="net-node core">InfiniSynapse · Multi-Source Federation</span></div>
+          <div class="net-out">
+            <div class="net-out-item"><strong>OTIF</strong>Tracking</div>
+            <div class="net-out-item"><strong>Inventory</strong>Optimization</div>
+            <div class="net-out-item"><strong>Suppliers</strong>Scorecards</div>
+            <div class="net-out-item"><strong>Freight</strong>Cost Analysis</div>
+          </div>
+        </div>
       </div>
-      <div class="dates">
-        <span>Published: 2026-06-01</span><br>
-        <span>Last Updated: 2026-06-01</span>
-      </div>
     </div>
-
-    <nav class="toc">
-      <div class="toc-label">Contents</div>
-      <ul>
-        <li><a href="#snippet">What is AI-powered supply chain analytics?</a></li>
-        <li><a href="#before-after">Before vs After: siloed logistics reports vs unified supply chain intelligence</a></li>
-        <li><a href="#pain">Three hard problems with fragmented supply chain data</a></li>
-        <li><a href="#solution">How InfiniSynapse unifies supply chain analytics</a></li>
-        <li><a href="#workflows">Six core supply chain analytics workflows</a></li>
-        <li><a href="#why-not">When InfiniSynapse is not the right choice</a></li>
-        <li><a href="#quickstart">Quick start: 3 steps to AI supply chain analytics</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-
-    <div class="tldr">
-      <div class="tldr-label">TL;DR</div>
-      <ul>
-        <li><strong>Problem:</strong> Supply chain teams manage data across ERP (SAP/Oracle/Netsuite), WMS (Manhattan/Blue Yonder), TMS, and demand planning systems — each with its own reporting, its own definition of "on-time," and no connection between inventory levels and supplier performance. Answering "which suppliers are causing the most OTIF misses across our distribution network?" requires manually exporting data from 3-4 systems and stitching it in Excel. ThoughtSpot's supply chain page frames the need: teams must <em>"surface inventory imbalances across distribution nodes"</em> and <em>"reduce the time from exception alert to corrective action"</em> — but still spend days compiling reports instead of acting on exceptions.</li>
-        <li><strong>Solution:</strong> InfiniSynapse connects to your ERP, WMS, TMS, and demand planning systems simultaneously. You ask supply chain questions in plain English. It queries across all sources, applies your metric definitions (OTIF formula, Perfect Order criteria, safety stock calculations) from the Knowledge Base, and returns unified answers.</li>
-        <li><strong>Result:</strong> OTIF root-cause analysis goes from 3 days of manual data gathering to 2 minutes. Inventory imbalance detection becomes proactive instead of reactive. Supplier scorecards update automatically from live operational data instead of quarterly manual reviews.</li>
-      </ul>
+    <div class="stats-bar" style="margin-top:40px">
+      <div class="stat-item"><div class="stat-val"><span>4</span> systems</div><div class="stat-label">ERP + WMS + TMS + Demand Planning</div></div>
+      <div class="stat-item"><div class="stat-val">0<span> ETL</span></div><div class="stat-label">No warehouse modeling needed</div></div>
+      <div class="stat-item"><div class="stat-val">2<span>min</span></div><div class="stat-label">OTIF root-cause analysis</div></div>
+      <div class="stat-item"><div class="stat-val">24/7</div><div class="stat-label">Cross-system exception monitoring</div></div>
     </div>
+  </section>
 
-    <h2 id="snippet">What is AI-powered supply chain analytics?</h2>
-    <p class="snippet-answer"><strong>AI-powered supply chain analytics uses an AI data analyst to automatically integrate ERP procurement data, WMS inventory data, TMS shipment data, and demand planning forecasts — then perform OTIF tracking, supplier performance analysis, inventory optimization, and freight cost analysis in plain English. Unlike ERP-native reporting that only shows what happened inside one system, or BI tools that require a pre-built data warehouse, InfiniSynapse gives you cross-system supply chain intelligence directly from operational data.</strong></p>
+  <div class="container">
 
-    <h2 id="before-after">Before vs After: siloed logistics reports vs AI-driven supply chain intelligence</h2>
-    <div class="ba-grid">
-      <div class="ba-card ba-before">
-        <div class="ba-label">Before — Traditional approach</div>
-        <div class="ba-text">Every Monday, the supply chain team pulls inventory reports from the WMS, supplier delivery data from the ERP, and freight invoices from the TMS. Each system has its own definition of "on-time delivery" and its own date format. To answer "which suppliers missed OTIF targets last month and what was the cost impact?", someone spends 2 days merging CSVs, reconciling supplier IDs across systems, and building a pivot table. To answer "are inventory levels imbalanced across our DCs relative to regional demand?", the analysis takes a week — by which time the imbalance has already caused stockouts or excess carrying costs. ThoughtSpot's supply chain materials highlight the need to <em>"surface inventory imbalances across distribution nodes"</em> and <em>"monitor supplier on-time delivery"</em> — but traditional approaches make this a multi-day data engineering exercise, not an operational capability.</div>
-      </div>
-      <div class="ba-card ba-after">
-        <div class="ba-label">After — With InfiniSynapse</div>
-        <div class="ba-text">Connect your ERP, WMS, TMS, and demand planning systems once. Then ask: "Rank suppliers by OTIF miss rate across all DCs last quarter. For the bottom 5, break down the root cause — late shipment vs. short shipment vs. quality rejection. Calculate total cost impact including expedited freight and lost margin from stockouts." InfiniSynapse queries purchase orders from ERP, receipts from WMS, and freight costs from TMS simultaneously — normalizing supplier IDs and date formats automatically — and returns a complete root-cause analysis in under a minute. Supplier reviews go from quarterly manual exercises to always-current scorecards. Inventory rebalancing becomes a daily check instead of a monthly fire drill.</div>
+    <!-- TL;DR -->
+    <div class="section">
+      <div class="tldr-row">
+        <div class="tldr-card">
+          <div class="tldr-icon">⚠️</div>
+          <h4>Problem</h4>
+          <p>Supply chain teams manage data across ERP, WMS, TMS, and demand planning — each with its own reporting and its own definition of "on-time." Answering "which suppliers cause the most OTIF misses?" requires manually exporting from 3-4 systems and stitching in Excel. A multi-day exercise done monthly at best.</p>
+        </div>
+        <div class="tldr-card">
+          <div class="tldr-icon">🔗</div>
+          <h4>Solution</h4>
+          <p>InfiniSynapse connects to ERP, WMS, TMS, and demand planning simultaneously. Ask questions in plain English. It queries all sources, applies your metric definitions (OTIF formula, Perfect Order criteria, safety stock logic), and returns unified answers — no ETL, no warehouse.</p>
+        </div>
+        <div class="tldr-card">
+          <div class="tldr-icon">✅</div>
+          <h4>Result</h4>
+          <p>OTIF root-cause analysis: 3 days → 2 minutes. Inventory imbalance detection: reactive → proactive. Supplier scorecards: quarterly manual → always-current from live operational data. Exception response: discover-by-checking → auto-alerted.</p>
+        </div>
       </div>
     </div>
 
-    <h2 id="pain">Three hard problems with fragmented supply chain data</h2>
-    <p>Supply chain teams do not lack data — they lack <strong>connected</strong> data. These three problems affect organizations managing anywhere from 3 to 300 suppliers across multiple distribution nodes:</p>
+    <!-- Pain Points -->
+    <div class="section">
+      <div class="sec-label">Supply Chain Disruptions</div>
+      <h2>Three data disconnects that delay every shipment</h2>
+      <p class="sec-lead">Supply chain teams don't lack data — they lack <strong>connected</strong> data. Each system knows its piece. No system sees the full picture.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-sev critical">Critical · Systems Gap</div>
+          <div class="pain-body">
+            <h4>OTIF needs 3 systems that don't talk</h4>
+            <p>On Time In Full requires purchase orders (ERP), receiving data (WMS), and quality results (QMS/ERP). Most teams calculate OTIF monthly in Excel by exporting from all three and manually reconciling — too slow to catch issues before the next order cycle.</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-sev high">High · Blind Spot</div>
+          <div class="pain-body">
+            <h4>Inventory optimization is blind to supplier reality</h4>
+            <p>Safety stock formulas are straightforward — but optimal levels depend on supplier lead time variability (ERP), current stock across nodes (WMS), and demand signals (channels). Most teams optimize within one system, blind to the other two.</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-sev medium">Medium · Reactive</div>
+          <div class="pain-body">
+            <h4>Exceptions surface too late</h4>
+            <p>When a shipment is late (TMS knows), inventory drops (WMS knows), and a PO is delayed (ERP knows) — but no system alerts the others. Teams discover exceptions by manually checking each system, or worse, when a customer order can't be fulfilled.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <h3>Problem 1: OTIF tracking requires data from three separate systems</h3>
-    <p>On Time In Full is the universal supply chain KPI — but calculating it requires joining purchase order data (from ERP: what was ordered, by when), receiving data (from WMS: what arrived, when, and in what quantity), and quality data (from QMS or ERP: what was rejected). Most supply chain teams calculate OTIF in Excel by exporting from all three systems and manually reconciling — a process so time-consuming it's typically done monthly at best. ThoughtSpot's supply chain page identifies <em>"OTIF Performance Tracking"</em> as a core use case, but the bottleneck isn't the analytics layer — it's the data unification step that precedes it. InfiniSynapse compresses the unification and analysis into a single step: connect the three sources, define OTIF logic in the Knowledge Base, and the AI handles the cross-source join and calculation.</p>
+    <!-- Before/After -->
+    <div class="section">
+      <div class="sec-label">The Shift</div>
+      <h2>Siloed reports → Connected supply chain intelligence</h2>
+      <div class="ba-grid">
+        <div class="ba-panel ba-before">
+          <span class="ba-tag">Before · Disconnected</span>
+          <h4>3 systems, 3 exports, 2 days of Excel</h4>
+          <p>Every Monday: pull inventory from WMS, supplier deliveries from ERP, freight invoices from TMS. Each system has its own "on-time" definition and date format. "Which suppliers missed OTIF and what did it cost?" takes <strong>2 days</strong> of merging CSVs, reconciling supplier IDs, and building pivot tables. Inventory rebalancing analysis takes a week — by which time the imbalance has already caused stockouts.</p>
+        </div>
+        <div class="ba-panel ba-after">
+          <span class="ba-tag">After · InfiniSynapse</span>
+          <h4>One question, all systems, under a minute</h4>
+          <p>Connect ERP, WMS, TMS, and demand planning once. Ask: "Rank suppliers by OTIF miss rate. For the bottom 5, break down root cause — late vs. short vs. quality rejection. Calculate total cost impact including expedited freight and stockout margin loss." InfiniSynapse queries all systems, normalizes IDs and dates, and returns the analysis <strong>in under a minute</strong>. Supplier reviews become always-current. Inventory rebalancing becomes a daily check.</p>
+        </div>
+      </div>
+    </div>
 
-    <h3>Problem 2: Inventory optimization is blind to supplier performance and demand signals</h3>
-    <p>Safety stock formulas are straightforward — but in practice, optimal inventory levels depend on supplier lead time variability (from ERP), current inventory across all nodes (from WMS), and real-time demand signals (from e-commerce, retail, and wholesale channels). Most inventory teams optimize within the WMS based on historical consumption — blind to supplier reliability trends and demand signal changes happening in other systems. As ThoughtSpot puts it, the goal is to <em>"surface inventory imbalances across distribution nodes"</em> and connect them to <em>"demand signal intelligence"</em> from e-commerce and retail channels. InfiniSynapse makes this connection by joining WMS inventory data with ERP supplier performance and channel demand data in a single query.</p>
+    <!-- Comparison Table -->
+    <div class="section">
+      <div class="sec-label">The Landscape</div>
+      <h2>Where InfiniSynapse fits in supply chain analytics</h2>
+      <p class="sec-lead">Supply chain analytics tools differ on one dimension that matters most: which systems they can see.</p>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>ERP-native (SAP, Oracle)</th>
+            <th>Search BI (ThoughtSpot)</th>
+            <th>InfiniSynapse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data scope</td>
+            <td>ERP data only — POs and procurement</td>
+            <td>Pre-modeled cloud data warehouse</td>
+            <td>ERP + WMS + TMS + Demand Planning — direct connect</td>
+          </tr>
+          <tr>
+            <td>OTIF root-cause</td>
+            <td>Not possible (needs WMS + quality)</td>
+            <td>Yes — if all data is in warehouse</td>
+            <td>Yes — direct to all source systems</td>
+          </tr>
+          <tr>
+            <td>Setup required</td>
+            <td>None (within ERP scope)</td>
+            <td>ETL pipeline + warehouse + modeling</td>
+            <td>Connect sources → auto-discover → query</td>
+          </tr>
+          <tr>
+            <td>Supplier scorecards</td>
+            <td>Delivery date tracking only</td>
+            <td>Custom dashboards</td>
+            <td>Auto-joined across ERP + WMS + TMS</td>
+          </tr>
+          <tr>
+            <td>Exception alerts</td>
+            <td>Single-system</td>
+            <td>Separate config required</td>
+            <td>Cross-system anomaly detection built-in</td>
+          </tr>
+          <tr>
+            <td>Deployment</td>
+            <td>On-premise</td>
+            <td>SaaS</td>
+            <td>SaaS + Air-Gapped private deployment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h3>Problem 3: Exception management is reactive because systems don't talk to each other</h3>
-    <p>When a supplier shipment is late, the TMS knows it first. When inventory drops below safety stock, the WMS knows it. When a purchase order is delayed, the ERP knows it. But these systems don't alert each other — so the supply chain team discovers exceptions by manually checking each system, or worse, when a customer order can't be fulfilled. ThoughtSpot frames the goal as <em>"reduce the time from exception alert to corrective action"</em> — but that requires exception alerts that see across all systems. InfiniSynapse's cross-source query engine can detect patterns like "supplier X is trending 3 days late on average across the last 5 POs, and inventory at DC-2 will hit safety stock in 4 days" — an exception that no single system can surface because the data lives in three places.</p>
-
-    <h2 id="solution">How InfiniSynapse unifies supply chain analytics across systems</h2>
-    <p>InfiniSynapse's architectural difference is not "another supply chain dashboard." It solves the cross-system data unification problem at the query engine level:</p>
-
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Capability</th>
-          <th>ERP-native reporting (SAP, Oracle)</th>
-          <th>Search-based BI (ThoughtSpot)</th>
-          <th>InfiniSynapse</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Data scope</td>
-          <td>ERP data only — procurement and POs</td>
-          <td>Pre-modeled cloud data warehouse</td>
-          <td>ERP + WMS + TMS + demand planning simultaneously</td>
-        </tr>
-        <tr>
-          <td>OTIF root-cause analysis</td>
-          <td>Not possible (needs WMS + quality data)</td>
-          <td>Yes, if all data is in the warehouse</td>
-          <td>Yes — direct connection to all source systems</td>
-        </tr>
-        <tr>
-          <td>Setup required</td>
-          <td>None (within ERP scope)</td>
-          <td>ETL pipeline + warehouse + data modeling</td>
-          <td>Connect sources → auto-discover schemas → query</td>
-        </tr>
-        <tr>
-          <td>Supplier scorecards</td>
-          <td>Delivery date tracking only</td>
-          <td>Buildable as custom dashboards</td>
-          <td>Built-in: auto-joined across ERP + WMS + TMS</td>
-        </tr>
-        <tr>
-          <td>Exception alerts</td>
-          <td>Single-system only</td>
-          <td>Requires separate alerting configuration</td>
-          <td>Cross-system anomaly detection and alerts</td>
-        </tr>
-        <tr>
-          <td>Deployment</td>
-          <td>On-premise</td>
-          <td>SaaS</td>
-          <td>SaaS + private deployment (Air-Gapped)</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>Concretely: you connect your ERP (SAP/Oracle/Netsuite), WMS (Manhattan/Blue Yonder), TMS, and demand planning system. InfiniSynapse auto-discovers the schema of all four sources. When you ask "which suppliers missed OTIF targets last quarter, what was root cause, and what was the total cost impact?", it queries POs from ERP, receipts from WMS, and freight costs from TMS — joins on supplier ID and PO number — normalizes date formats — and returns a ranked supplier scorecard with root-cause breakdown and cost impact. You don't need to know which data lives in which system.</p>
-
-    <div class="viz">
-      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+    <!-- Data Flow SVG -->
+    <div style="background:#FFF;border:1px solid #E2E8F0;border-radius:16px;padding:32px 24px;margin:20px 0">
+      <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
         <defs>
-          <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#5B5BFF"/></marker>
+          <marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0284C7"/></marker>
         </defs>
-        <rect x="15" y="15" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="35" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">ERP</text>
-        <text x="82" y="52" text-anchor="middle" font-size="9.5" fill="#9CA3AF">SAP · Oracle · Netsuite</text>
-        <rect x="15" y="85" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="105" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">WMS</text>
-        <text x="82" y="122" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Manhattan · Blue Yonder</text>
-        <rect x="15" y="155" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="175" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">TMS</text>
-        <text x="82" y="192" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Freight · Shipment Data</text>
-        <rect x="15" y="225" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="245" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Demand Planning</text>
-        <text x="82" y="262" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Forecasts · Channel Signals</text>
-        <line x1="150" y1="40" x2="285" y2="115" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="110" x2="285" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="180" x2="285" y2="145" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="250" x2="285" y2="160" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="290" y="90" width="155" height="80" rx="12" fill="#5B5BFF" opacity="0.12" stroke="#5B5BFF" stroke-width="2"/>
-        <text x="367" y="122" text-anchor="middle" font-size="14" fill="#5B5BFF" font-weight="700">InfiniSynapse</text>
-        <text x="367" y="142" text-anchor="middle" font-size="11" fill="#5B5BFF">Multi-Source Federation</text>
-        <text x="367" y="158" text-anchor="middle" font-size="10" fill="#6B7280">Zero ETL · Auto JOIN</text>
-        <line x1="445" y1="130" x2="525" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
+        <rect x="15" y="15" width="135" height="50" rx="8" fill="#F0F9FF" stroke="#7DD3FC" stroke-width="1.5"/>
+        <text x="82" y="35" text-anchor="middle" font-size="11" fill="#0F172A" font-weight="600">ERP</text>
+        <text x="82" y="52" text-anchor="middle" font-size="9.5" fill="#94A3B8">SAP · Oracle · Netsuite</text>
+        <rect x="15" y="85" width="135" height="50" rx="8" fill="#F0F9FF" stroke="#7DD3FC" stroke-width="1.5"/>
+        <text x="82" y="105" text-anchor="middle" font-size="11" fill="#0F172A" font-weight="600">WMS</text>
+        <text x="82" y="122" text-anchor="middle" font-size="9.5" fill="#94A3B8">Manhattan · Blue Yonder</text>
+        <rect x="15" y="155" width="135" height="50" rx="8" fill="#F0F9FF" stroke="#7DD3FC" stroke-width="1.5"/>
+        <text x="82" y="175" text-anchor="middle" font-size="11" fill="#0F172A" font-weight="600">TMS</text>
+        <text x="82" y="192" text-anchor="middle" font-size="9.5" fill="#94A3B8">Freight · Shipment Data</text>
+        <rect x="15" y="225" width="135" height="50" rx="8" fill="#F0F9FF" stroke="#7DD3FC" stroke-width="1.5"/>
+        <text x="82" y="245" text-anchor="middle" font-size="11" fill="#0F172A" font-weight="600">Demand Planning</text>
+        <text x="82" y="262" text-anchor="middle" font-size="9.5" fill="#94A3B8">Forecasts · Channel Signals</text>
+        <line x1="150" y1="40" x2="285" y2="115" stroke="#0284C7" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="150" y1="110" x2="285" y2="127" stroke="#0284C7" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="150" y1="180" x2="285" y2="139" stroke="#0284C7" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="150" y1="250" x2="285" y2="151" stroke="#0284C7" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="290" y="90" width="155" height="75" rx="12" fill="#F0F9FF" stroke="#0284C7" stroke-width="2"/>
+        <text x="367" y="120" text-anchor="middle" font-size="14" fill="#0284C7" font-weight="700">InfiniSynapse</text>
+        <text x="367" y="139" text-anchor="middle" font-size="10.5" fill="#0369A1">Multi-Source Federation</text>
+        <text x="367" y="154" text-anchor="middle" font-size="9.5" fill="#94A3B8">Zero ETL · Auto JOIN</text>
+        <line x1="445" y1="127" x2="525" y2="127" stroke="#0284C7" stroke-width="2" marker-end="url(#ar)"/>
         <rect x="535" y="15" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
         <text x="620" y="33" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">OTIF Performance Dashboard</text>
-        <text x="620" y="48" text-anchor="middle" font-size="9" fill="#6B7280">By Supplier · DC · Lane</text>
-        <rect x="535" y="72" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="90" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Supplier Scorecards</text>
-        <text x="620" y="105" text-anchor="middle" font-size="9" fill="#6B7280">Delivery · Quality · Cost</text>
-        <rect x="535" y="129" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="147" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Inventory Optimization</text>
-        <text x="620" y="162" text-anchor="middle" font-size="9" fill="#6B7280">Imbalance Detection · Safety Stock</text>
-        <rect x="535" y="186" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="204" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Freight Cost Analysis</text>
-        <text x="620" y="219" text-anchor="middle" font-size="9" fill="#6B7280">By Lane · Mode · Carrier</text>
-        <rect x="535" y="243" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="261" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Perfect Order Rate</text>
-        <text x="620" y="276" text-anchor="middle" font-size="9" fill="#6B7280">End-to-End Order Quality</text>
+        <text x="620" y="48" text-anchor="middle" font-size="9" fill="#94A3B8">By Supplier · DC · Lane</text>
+        <rect x="535" y="70" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="88" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Supplier Scorecards</text>
+        <text x="620" y="103" text-anchor="middle" font-size="9" fill="#94A3B8">Delivery · Quality · Cost</text>
+        <rect x="535" y="125" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="143" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Inventory Optimization</text>
+        <text x="620" y="158" text-anchor="middle" font-size="9" fill="#94A3B8">Imbalance Detection · Safety Stock</text>
+        <rect x="535" y="180" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="198" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Freight Cost Analysis</text>
+        <text x="620" y="213" text-anchor="middle" font-size="9" fill="#94A3B8">By Lane · Mode · Carrier</text>
+        <rect x="535" y="235" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="253" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Perfect Order Rate</text>
+        <text x="620" y="268" text-anchor="middle" font-size="9" fill="#94A3B8">End-to-End Order Quality</text>
       </svg>
-      <div class="viz-caption">InfiniSynapse supply chain analytics data flow: four independent supply chain systems connected directly, zero ETL, plain-English questions produce unified cross-system answers.</div>
+      <p style="text-align:center;font-size:12.5px;color:#94A3B8;margin-top:12px">Supply chain data flow: four operational systems connected directly, zero ETL, plain-English questions produce cross-system answers.</p>
     </div>
 
-    <h2 id="workflows">Six core supply chain analytics workflows</h2>
-    <p>These are the six highest-frequency supply chain analytics workflows procurement, logistics, and planning teams run on InfiniSynapse, each mapped to competitor-verified SEO keywords:</p>
-
-    <h3>1. OTIF performance tracking by supplier, DC, and lane — <code>OTIF Performance Tracking</code></h3>
-    <p>Ask: "Calculate OTIF by supplier across all DCs for Q1. For suppliers below 90% OTIF, break down misses into late shipments, short shipments, and quality rejections. Show trend over the last 4 quarters." InfiniSynapse pulls POs from ERP, receipts from WMS, and quality data simultaneously — joining on PO number and supplier ID. ThoughtSpot identifies OTIF as a core supply chain KPI, but the bottleneck has always been the multi-system data join. InfiniSynapse automates it.</p>
-
-    <h3>2. Inventory imbalance detection and optimization — <code>inventory optimization</code></h3>
-    <p>Ask: "Identify SKUs with more than 30% inventory imbalance across DCs relative to regional demand the last 90 days. For each imbalanced SKU, calculate the cost of rebalancing vs. the carrying cost of the current imbalance." InfiniSynapse joins WMS inventory levels with demand planning forecasts and calculates node-level Days of Supply. As ThoughtSpot describes it, the goal is to <em>"surface inventory imbalances across distribution nodes"</em> — InfiniSynapse makes this a single-query operation.</p>
-
-    <h3>3. Supplier performance scorecards — <code>supplier performance</code></h3>
-    <p>Ask: "Generate a supplier scorecard for all tier-1 suppliers: on-time delivery %, fill rate %, quality acceptance %, average lead time, lead time variability, and total cost of poor performance (expedited freight + stockout margin loss). Rank from best to worst." This requires joining ERP PO data, WMS receiving data, and TMS freight cost data — three systems that don't share a common supplier ID format. InfiniSynapse handles the cross-system join and ID normalization.</p>
-
-    <h3>4. Freight cost analysis by lane, mode, and carrier — <code>freight cost analysis</code></h3>
-    <p>Ask: "Compare freight cost per unit by lane and mode for the last 6 months. Identify lanes where cost per unit increased more than 15% QoQ. For those lanes, show whether the increase is driven by rate changes, mix shift toward expedited, or lower utilization." InfiniSynapse queries TMS freight data, joins with ERP PO and WMS shipment data for unit-level cost allocation, and surfaces cost drivers — an analysis that normally requires a dedicated logistics analyst and a week of spreadsheet work.</p>
-
-    <h3>5. Demand signal intelligence — <code>demand signal intelligence</code></h3>
-    <p>Ask: "Compare actual demand by region against forecast for the last 90 days. Where is demand exceeding forecast by more than 20%? What's the current inventory coverage at those nodes? Which suppliers have the capacity to flex up?" InfiniSynapse joins demand planning forecasts with actual channel demand data (e-commerce, retail, wholesale) and WMS inventory levels — connecting demand signals to supply reality. ThoughtSpot's supply chain page highlights <em>"Demand Signal Intelligence"</em> as connecting e-commerce and retail signals to supply planning; InfiniSynapse executes this cross-source join in plain English.</p>
-
-    <h3>6. Perfect Order Rate optimization — <code>Perfect Order Rate Optimization</code></h3>
-    <p>Ask: "Calculate Perfect Order Rate — orders delivered on time, in full, damage-free, with correct documentation — by customer, by DC, and by month. Which failure mode is the biggest contributor to imperfect orders? What's the cost of imperfection by failure mode?" InfiniSynapse pulls order data from ERP, delivery data from WMS, damage claims from QMS, and documentation status from TMS — computing the end-to-end Perfect Order metric that no single system tracks. ThoughtSpot's supply chain page positions this as <em>"Perfect Order Rate Optimization"</em>; InfiniSynapse brings the multi-system data together to actually calculate it.</p>
-
-    <div class="concession-box" id="why-not">
-      <h3>When InfiniSynapse is not the right choice for supply chain analytics</h3>
-      <p>Honest framing — you likely don't need InfiniSynapse if:</p>
-      <ul>
-        <li><strong>You operate a single-DC, single-system supply chain.</strong> If your entire supply chain runs on one ERP and you ship from one warehouse, your ERP's native reporting likely covers most of your needs. InfiniSynapse's value grows with the number of systems and distribution nodes you manage.</li>
-        <li><strong>You already have a mature supply chain data platform.</strong> If you have a dedicated supply chain data warehouse (e.g., Snowflake with Fivetran-ingested ERP/WMS/TMS data and dbt-modeled supply chain metrics), and your team is proficient in SQL or has a BI layer on top — InfiniSynapse may be redundant. Its strongest value is compressing the path from "scattered operational systems" to "unified supply chain answers" without the warehouse intermediary.</li>
-        <li><strong>Your supplier base and network complexity are low.</strong> If you have fewer than 20 suppliers and 2 distribution nodes, the multi-system data join problem is manageable with spreadsheets. InfiniSynapse creates the most value at scale: dozens of suppliers, multiple DCs, multiple logistics partners, and cross-system questions that would take days to answer manually.</li>
-      </ul>
-      <p>InfiniSynapse creates the most value when your supply chain questions require joining <strong>3+ operational systems</strong> that don't naturally share data — and when the speed of exception detection (daily vs. monthly) directly impacts your service levels and logistics costs.</p>
+    <!-- Workflows -->
+    <div class="section">
+      <div class="sec-label">Core Workflows</div>
+      <h2>Six analyses that run your supply chain control tower</h2>
+      <p class="sec-lead">The highest-frequency supply chain analytics workflows, spanning procurement, logistics, and planning.</p>
+      <div class="wf-grid">
+        <div class="wf-card">
+          <div class="wf-num">01</div>
+          <h4>OTIF Performance Tracking</h4>
+          <p>Calculate OTIF by supplier, DC, and lane. Break down misses into late, short, and quality rejections. Join PO data (ERP), receipts (WMS), and quality data in one query.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">02</div>
+          <h4>Inventory Imbalance Detection</h4>
+          <p>Identify SKUs with >30% imbalance across DCs relative to regional demand. Calculate rebalancing cost vs. carrying cost of inaction. WMS + demand planning joined.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">03</div>
+          <h4>Supplier Performance Scorecards</h4>
+          <p>On-time %, fill rate, quality acceptance, lead time variability, and total cost of poor performance — ranked from best to worst. ERP + WMS + TMS joined.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">04</div>
+          <h4>Freight Cost Analysis</h4>
+          <p>Cost per unit by lane and mode. Identify lanes with >15% QoQ increase. Break down rate changes vs. mix shift vs. utilization. TMS + ERP unit-cost allocation.</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">05</div>
+          <h4>Demand Signal Intelligence</h4>
+          <p>Compare actual demand vs. forecast by region. Where is demand exceeding forecast by >20%? Current inventory coverage at those nodes? Supplier flex capacity?</p>
+        </div>
+        <div class="wf-card">
+          <div class="wf-num">06</div>
+          <h4>Perfect Order Rate Optimization</h4>
+          <p>Orders on time, in full, damage-free, correct docs — by customer, DC, month. Which failure mode dominates? Cost of imperfection by mode. End-to-end across all systems.</p>
+        </div>
+      </div>
     </div>
 
-    <h2 id="quickstart">Quick start: 3 steps to AI supply chain analytics</h2>
-
-    <div class="step-box">
-      <span class="step-num">1</span>
-      <strong>Connect your supply chain data sources</strong>
-      <p>Connect your ERP (SAP/Oracle/Netsuite via database connection or CSV export), WMS (database connection or report export), TMS, and demand planning system. InfiniSynapse auto-discovers each source's schema. Private deployment available for teams handling supplier contracts and cost data.</p>
-    </div>
-    <div class="step-box">
-      <span class="step-num">2</span>
-      <strong>Define your supply chain metrics in the Knowledge Base</strong>
-      <p>Document your methodology once: OTIF calculation (delivery window, what counts as "in full"), Perfect Order criteria, supplier scorecard weights, safety stock formula, and inventory turn target. The AI references these on every analysis, so your procurement, logistics, and planning teams all work from the same definitions.</p>
-    </div>
-    <div class="step-box">
-      <span class="step-num">3</span>
-      <strong>Ask your first cross-system supply chain question</strong>
-      <p>Start with the question your team spends days answering: "Which suppliers are causing the most OTIF misses and what's the total cost impact?" InfiniSynapse queries ERP, WMS, and TMS simultaneously and returns a ranked analysis with root causes in under a minute.</p>
+    <!-- When NOT -->
+    <div class="concession">
+      <h4>Honest Framing: When InfiniSynapse is not the right choice</h4>
+      <p>You likely don't need InfiniSynapse if: <strong>(1)</strong> You operate a single-DC, single-system supply chain — your ERP's native reporting covers most needs. <strong>(2)</strong> You already have a mature supply chain data warehouse with Fivetran-ingested ERP/WMS/TMS data and dbt-modeled metrics, with a proficient SQL team. <strong>(3)</strong> Your supplier base is under 20 with 2 or fewer DCs — the multi-system join problem is manageable in spreadsheets. InfiniSynapse creates the most value when questions require joining <strong>3+ operational systems</strong> and when detection speed (daily vs. monthly) directly impacts service levels and logistics costs.</p>
     </div>
 
-    <div class="cta-box">
+    <!-- Steps -->
+    <div class="section">
+      <div class="sec-label">Get Started</div>
+      <h2>Three steps to supply chain control tower</h2>
+      <div class="steps-flow">
+        <div class="step-node">
+          <div class="step-dot">1</div>
+          <h4>Connect your systems</h4>
+          <p>ERP (SAP/Oracle/Netsuite), WMS (Manhattan/Blue Yonder), TMS, and demand planning — via database, CSV, or API. Auto-discovered schemas. Air-Gapped deployment keeps supplier contracts and cost data on your servers.</p>
+        </div>
+        <div class="step-node">
+          <div class="step-dot">2</div>
+          <h4>Define your metrics once</h4>
+          <p>OTIF calculation methodology, Perfect Order criteria, supplier scorecard weights, safety stock formulas, inventory turn targets. The AI references these on every analysis — procurement, logistics, and planning all work from the same definitions.</p>
+        </div>
+        <div class="step-node">
+          <div class="step-dot">3</div>
+          <h4>Ask your first cross-system question</h4>
+          <p>"Which suppliers are causing the most OTIF misses and what's the total cost impact?" InfiniSynapse queries ERP, WMS, and TMS simultaneously and returns a ranked analysis with root causes in under a minute.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
       <h3>Stop spending days compiling supply chain reports</h3>
-      <p>Free to start. Connect your ERP and WMS. Ask the OTIF question you've been manually calculating in Excel for years.</p>
+      <p>Free to start. Connect your ERP and WMS. Ask the OTIF question you've been manually calculating in Excel.</p>
       <a href="https://app.infinisynapse.com/" class="cta-btn">Try InfiniSynapse Free →</a>
     </div>
 
-    <h2 id="faq">FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">Can InfiniSynapse connect to our ERP and WMS systems?</div>
-      <div class="faq-a">Yes, through three methods: direct database connection (PostgreSQL, MySQL, SQL Server, Oracle DB, etc.), CSV export (export reports from SAP, Oracle EBS, Netsuite, Manhattan, Blue Yonder and drag them in), or API integration via your existing data pipeline. InfiniSynapse auto-discovers each source's schema and can join inventory data from WMS with supplier data from ERP and shipment data from TMS in a single query.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How is this different from our ERP's built-in supply chain reporting?</div>
-      <div class="faq-a">ERP-native reporting shows you what happened inside that system — inventory levels, purchase orders, production orders. It cannot answer: "Across our 3 DCs, which suppliers are causing the most OTIF misses, and what's the total freight cost impact?" or "How does supplier lead time variability correlate with stockout incidents at each node?" These questions require joining ERP, WMS, and TMS data — which no single system's reporting can do. InfiniSynapse's multi-source federation joins all three simultaneously.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How does InfiniSynapse compare to ThoughtSpot for supply chain analytics?</div>
-      <div class="faq-a">ThoughtSpot's supply chain page highlights OTIF tracking, inventory optimization, and demand signal intelligence — with a strong search-based analytics experience. ThoughtSpot requires that your supply chain data already be modeled in a cloud data warehouse. InfiniSynapse connects directly to operational systems (ERP, WMS, TMS) without requiring a warehouse first — compressing the path from "scattered supply chain data" to "unified supply chain intelligence." Both tools offer natural language querying; the difference is whether you need the warehouse step in between.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What supply chain metrics and analyses can I run?</div>
-      <div class="faq-a">Core workflows include: OTIF performance by supplier, DC, and lane; inventory optimization — identifying imbalances and optimizing safety stock; supplier scorecards — on-time delivery, quality, lead time variability; freight cost analysis by lane, mode, and carrier; Perfect Order Rate and root-cause analysis; and demand signal intelligence — connecting channel demand to supply planning. Because InfiniSynapse joins across ERP, WMS, and TMS, you can also analyze metrics no single system tracks: total cost of supplier unreliability, inventory imbalance carrying costs, and Perfect Order failure mode trends.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is my supply chain and supplier data secure?</div>
-      <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All ERP data, supplier contracts, inventory levels, cost data, and logistics information stay on your own servers, processed locally. Most AI analytics tools are SaaS-only and require uploading sensitive supply chain data to external cloud services. Private deployment is essential for supply chain teams managing supplier pricing, cost structures, and competitive sourcing strategies.</div>
+    <!-- FAQ -->
+    <div class="section">
+      <h2 style="font-size:1.5rem;font-weight:700;color:#0F172A;margin-bottom:20px;letter-spacing:-0.02em">FAQ</h2>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q">Can InfiniSynapse connect to our ERP and WMS?</div><div class="faq-a">Yes — direct database connection (PostgreSQL, MySQL, SQL Server, Oracle), CSV export (SAP, Oracle EBS, Netsuite, Manhattan, Blue Yonder), or API. Auto-discovers schemas and joins inventory (WMS) with suppliers (ERP) and shipments (TMS) in a single query.</div></div>
+        <div class="faq-item"><div class="faq-q">How is this different from ERP-native reporting?</div><div class="faq-a">ERP reporting shows what happened inside one system. It cannot answer "across our 3 DCs, which suppliers cause the most OTIF misses and what's the freight cost impact?" — that requires joining ERP, WMS, and TMS simultaneously, which no single system can do.</div></div>
+        <div class="faq-item"><div class="faq-q">How does this compare to ThoughtSpot?</div><div class="faq-a">ThoughtSpot offers strong search-based analytics for supply chain — but requires data already modeled in a cloud warehouse. InfiniSynapse connects directly to operational systems without the warehouse prerequisite. Both offer natural language; the difference is the warehouse step in between.</div></div>
+        <div class="faq-item"><div class="faq-q">What supply chain metrics can I analyze?</div><div class="faq-a">OTIF by supplier/DC/lane, inventory imbalance detection and optimization, supplier scorecards (delivery, quality, lead time), freight cost by lane/mode/carrier, Perfect Order Rate and failure mode trends, demand signal vs. supply reality checks — all by joining ERP, WMS, and TMS.</div></div>
+        <div class="faq-item"><div class="faq-q">Is our supplier and cost data secure?</div><div class="faq-a">Yes. Air-Gapped private deployment keeps all ERP data, supplier contracts, inventory levels, and cost data on your own servers. Critical for teams managing competitive sourcing data and supplier pricing — unlike SaaS-only tools that require uploading to external clouds.</div></div>
+      </div>
     </div>
 
+    <!-- Methodology -->
     <div class="methodology">
       <h2>About this guide</h2>
       <p><strong>Last updated:</strong> 2026-06-01</p>
-      <p><strong>Methodology:</strong> Supply chain analytics scenarios described here are based on InfiniSynapse product capabilities matched against common procurement, logistics, and supply chain planning workflows. Competitor capability descriptions are sourced from official documentation and product pages of ThoughtSpot, SAP, Oracle, Blue Yonder, and other supply chain analytics tools (accessed May 2026). ThoughtSpot quotes — including "OTIF Performance Tracking," "surface inventory imbalances across distribution nodes," "monitor supplier on-time delivery," "reduce the time from exception alert to corrective action," and "Demand Signal Intelligence" — are sourced from ThoughtSpot's supply chain solutions page.</p>
-      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher of this page. We explicitly call out scenarios where ERP-native reporting or warehouse-based BI (ThoughtSpot) are the better fit. Competitor keyword references are included so readers can conduct independent comparisons.</p>
-      <p><strong>Update cadence:</strong> Reviewed quarterly. Competitor product capabilities, supply chain platform integrations, and pricing refreshed every 90 days.</p>
+      <p><strong>Methodology:</strong> Supply chain analytics scenarios based on InfiniSynapse capabilities matched against common procurement, logistics, and planning workflows. Competitor descriptions sourced from official documentation of ThoughtSpot, SAP, Oracle, Blue Yonder (accessed May 2026).</p>
+      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher. We explicitly call out scenarios where ERP-native reporting or warehouse-based BI (ThoughtSpot) are the better fit.</p>
+      <p><strong>Update cadence:</strong> Reviewed quarterly. Competitor capabilities refreshed every 90 days.</p>
     </div>
 
-    <h2>Related guides</h2>
-    <div class="related">
-      <a href="../scenarios/retail-analytics.html">AI Retail Analytics: Customer 360 & Demand Forecasting</a>
-      <a href="../scenarios/ecommerce-analytics.html">Ecommerce Analytics AI: Cross-Platform Without ETL</a>
-      <a href="../scenarios/manufacturing-analytics.html">AI Manufacturing Analytics: Predictive Maintenance & Process Optimization</a>
-      <a href="../scenarios/operations-analytics.html">AI Operations Analytics: OEE, Scheduling & Resource Planning</a>
-      <a href="../scenarios/business-analytics.html">AI Business Analytics: Self-Service Cross-Department Insights</a>
-      <a href="../scenarios/log-analytics.html">AI Log Analytics: Real-Time Error Tracking & Anomaly Detection</a>
+    <!-- Related -->
+    <div class="section">
+      <h2 style="font-size:1.3rem;font-weight:700;color:#0F172A;margin-bottom:18px">Related guides</h2>
+      <div class="related-grid">
+        <a href="../scenarios/retail-analytics.html">AI Retail Analytics: Customer 360 & Demand Forecasting</a>
+        <a href="../scenarios/ecommerce-analytics.html">Ecommerce Analytics AI: Cross-Platform Without ETL</a>
+        <a href="../scenarios/manufacturing-analytics.html">AI Manufacturing Analytics: Predictive Maintenance & Process Optimization</a>
+        <a href="../scenarios/operations-analytics.html">AI Operations Analytics: OEE, Scheduling & Resource Planning</a>
+        <a href="../scenarios/business-analytics.html">AI Business Analytics: Self-Service Cross-Department Insights</a>
+        <a href="../scenarios/log-analytics.html">AI Log Analytics: Real-Time Error Tracking & Anomaly Detection</a>
+      </div>
     </div>
 
   </div>
@@ -545,39 +629,15 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
-          <div style="font-size:18px;font-weight:600;color:#0A0A0A;margin-bottom:12px">InfiniSynapse</div>
-          <p style="font-size:14px;color:#6B7280;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
-          <a href="https://app.infinisynapse.com/" class="cta-btn" style="padding:8px 20px;font-size:13px">Try Online →</a>
+          <div style="font-size:18px;font-weight:600;color:#0F172A;margin-bottom:12px">InfiniSynapse</div>
+          <p style="font-size:14px;color:#64748B;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
+          <a href="https://app.infinisynapse.com/" style="display:inline-block;background:#0F172A;color:#FFF;padding:8px 20px;border-radius:24px;font-weight:600;font-size:13px;text-decoration:none">Try Online →</a>
         </div>
-        <div>
-          <h4>Product</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/#features">Features</a>
-            <a href="https://infinisynapse.com/tools">Tools Market</a>
-            <a href="https://app.infinisynapse.com/">Try Online</a>
-            <a href="https://infinisynapse.com/download">Download</a>
-          </div>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/zh/docs">Documentation</a>
-            <a href="https://infinisynapse.com/zh/blog">Blog</a>
-            <a href="https://infinisynapse.com/#vision">Vision</a>
-          </div>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/#contact">Contact</a>
-            <a href="https://infinisynapse.com/careers">Careers</a>
-          </div>
-        </div>
+        <div><h4>Product</h4><div class="footer-links"><a href="https://infinisynapse.com/#features">Features</a><a href="https://infinisynapse.com/tools">Tools Market</a><a href="https://app.infinisynapse.com/">Try Online</a><a href="https://infinisynapse.com/download">Download</a></div></div>
+        <div><h4>Resources</h4><div class="footer-links"><a href="https://infinisynapse.com/zh/docs">Documentation</a><a href="https://infinisynapse.com/zh/blog">Blog</a><a href="https://infinisynapse.com/#vision">Vision</a></div></div>
+        <div><h4>Company</h4><div class="footer-links"><a href="https://infinisynapse.com/#contact">Contact</a><a href="https://infinisynapse.com/careers">Careers</a></div></div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 InfiniSynapse. All rights reserved.</span>
-        <span>From question to insight, in seconds.</span>
-      </div>
+      <div class="footer-bottom"><span>&copy; 2026 InfiniSynapse. All rights reserved.</span><span>From question to insight, in seconds.</span></div>
     </div>
   </footer>
 </body>

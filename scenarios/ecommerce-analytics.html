@@ -111,133 +111,168 @@
 
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1F2937;background:#FFFFFF;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
-    ::selection{background:rgba(91,91,255,0.2)}
-    a{color:#5B5BFF;text-decoration:none}
-    a:hover{color:#5B5BFF}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1C1917;background:#FFFDFA;font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased}
+    ::selection{background:rgba(190,24,93,0.15)}
 
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB;padding:14px 0}
-    .nav-inner{max-width:1024px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{display:flex;align-items:center;gap:10px}
-    .nav-logo-mark{height:28px;display:flex;align-items:center}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,253,250,0.88);backdrop-filter:blur(16px);border-bottom:1px solid #FCE7F3;padding:14px 0}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo-mark{height:28px}
     .nav-logo-mark img{height:28px;width:auto;display:block}
-    .nav-logo span{font-size:16px;font-weight:600;color:#0A0A0A;letter-spacing:-0.01em}
+    .nav-logo span{font-size:16px;font-weight:600;color:#1C1917;letter-spacing:-0.01em}
     .nav-links{display:flex;align-items:center;gap:22px;font-size:14px}
-    .nav-links a{color:#374151;transition:color 0.15s}
-    .nav-links a:hover{color:#0A0A0A}
-    .nav-cta{background:#0A0A0A !important;color:#FFF !important;border-radius:24px;padding:9px 20px}
-    .nav-cta:hover{background:#1F2937 !important;color:#FFF !important;opacity:1}
+    .nav-links a{color:#57534E;text-decoration:none;transition:color 0.15s}
+    .nav-links a:hover{color:#1C1917}
+    .nav-cta{background:#1C1917;color:#FFF;border-radius:24px;padding:9px 20px;text-decoration:none}
+    .nav-cta:hover{background:#BE185D;color:#FFF}
 
-    .wrap{max-width:1024px;margin:0 auto;padding:48px 24px}
+    .container{max-width:1280px;margin:0 auto;padding:0 28px}
 
-    h1{font-size:2.8rem;font-weight:800;line-height:1.15;margin-bottom:16px;color:#0A0A0A;letter-spacing:-0.03em}
-    h2{font-size:1.32rem;font-weight:600;margin:44px 0 16px;color:#0A0A0A;border-bottom:1px solid #E5E7EB;padding-bottom:10px;letter-spacing:-0.01em}
-    h3{font-size:17px;font-weight:600;margin:26px 0 10px;color:#111827}
-    p{margin:0 0 18px;color:#4B5563}
-    strong{color:#0A0A0A;font-weight:600}
-    ul,ol{margin:14px 0 18px 24px}
-    li{margin:8px 0;color:#4B5563}
-    code{background:rgba(91,91,255,0.08);padding:2px 7px;border-radius:4px;font-size:14px;font-family:'SF Mono','Fira Code','JetBrains Mono',monospace;color:#5B5BFF;border:1px solid rgba(91,91,255,0.14)}
+    /* ── Hero ── */
+    .hero{background:linear-gradient(160deg,#FDF2F8 0%,#FFFDFA 35%,#FFF1F2 100%);border-bottom:1px solid #FCE7F3;padding:52px 0 0;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center}
+    .hero-badge{display:inline-block;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px;background:#FDF2F8;color:#BE185D;border:1px solid #F9A8D4;letter-spacing:0.3px}
+    .hero h1{font-size:2.6rem;font-weight:800;line-height:1.12;color:#1C1917;letter-spacing:-0.03em;margin-bottom:14px}
+    .hero h1 em{font-style:normal;color:#BE185D}
+    .hero-desc{font-size:1.02rem;color:#78716C;line-height:1.6;margin-bottom:22px}
+    .hero-cta{display:inline-flex;align-items:center;gap:8px;background:#1C1917;color:#FFF;padding:13px 28px;border-radius:26px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s}
+    .hero-cta:hover{background:#BE185D;transform:translateY(-1px)}
 
-    .meta-desc{font-size:1.08rem;color:#6B7280;margin-bottom:32px;line-height:1.55;max-width:740px}
-    .breadcrumb{font-size:13px;color:#9CA3AF;margin-bottom:20px}
-    .breadcrumb a{color:#6B7280}
-    .breadcrumb a:hover{color:#5B5BFF}
-    .breadcrumb span{margin:0 6px}
-    .badge{display:inline-block;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;margin-right:8px;margin-bottom:14px}
-    .badge-client{background:rgba(91,91,255,0.08);color:#5B5BFF;border:1px solid rgba(91,91,255,0.25)}
-    .badge-cat{background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB}
+    .hero-dash{background:#FFF;border:1px solid #FCE7F3;border-radius:18px;padding:20px 22px;box-shadow:0 4px 24px rgba(190,24,93,0.06)}
+    .dash-label{font-size:10.5px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:14px}
+    .platform-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .platform-name{font-size:12px;font-weight:600;color:#44403C;width:75px}
+    .platform-bar{flex:1;height:20px;background:#FDF2F8;border-radius:10px;overflow:hidden}
+    .platform-fill{height:100%;border-radius:10px}
+    .platform-fill.shopify{background:linear-gradient(90deg,#DB2777,#BE185D);width:45%}
+    .platform-fill.amazon{background:linear-gradient(90deg,#F9A8D4,#DB2777);width:35%}
+    .platform-fill.walmart{background:linear-gradient(90deg,#FCE7F3,#F9A8D4);width:20%}
+    .platform-rev{font-size:11.5px;font-weight:600;color:#78716C;width:55px;text-align:right}
+    .dash-insight{margin-top:12px;padding-top:12px;border-top:1px solid #FCE7F3;font-size:11px;color:#BE185D;font-weight:600;text-align:center}
 
-    .toc{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 22px;margin:0 0 36px}
-    .toc-label{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
-    .toc ul{margin:0;padding-left:18px;font-size:14.5px}
-    .toc a{color:#374151}
-    .toc a:hover{color:#5B5BFF}
+    /* ── Stats ── */
+    .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #FCE7F3;background:#FFF}
+    .stat-item{text-align:center;padding:26px 16px;border-right:1px solid #FDF2F8}
+    .stat-item:last-child{border-right:none}
+    .stat-val{font-size:1.7rem;font-weight:800;color:#1C1917;letter-spacing:-0.02em}
+    .stat-val span{color:#BE185D}
+    .stat-label{font-size:12px;color:#78716C;margin-top:3px;font-weight:500}
 
-    .author-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;padding:16px 0;border-bottom:1px solid #F3F4F6}
-    .author-meta img{width:44px;height:44px;border-radius:50%}
-    .author-info{font-size:14px;color:#374151}
-    .author-info a{font-weight:600;color:#0A0A0A}
-    .author-bio{font-size:13px;color:#6B7280;margin:2px 0 0}
-    .dates{margin-left:auto;font-size:13px;color:#9CA3AF;text-align:right;line-height:1.6}
+    /* ── Section ── */
+    .section{padding:48px 0}
+    .sec-label{font-size:11.5px;font-weight:700;color:#BE185D;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+    .section h2{font-size:1.75rem;font-weight:700;color:#1C1917;letter-spacing:-0.02em;margin-bottom:10px;line-height:1.2}
+    .sec-lead{color:#78716C;font-size:1rem;max-width:700px;margin-bottom:24px;line-height:1.6}
 
-    .tldr{background:rgba(91,91,255,0.05);border-left:3px solid #5B5BFF;border-radius:0 10px 10px 0;padding:18px 22px;margin:0 0 32px}
-    .tldr-label{font-size:12px;font-weight:600;color:#5B5BFF;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px}
-    .tldr ul{margin:0;padding-left:18px;font-size:14.5px}
-    .tldr li{color:#374151;margin:5px 0}
+    /* ── TL;DR ── */
+    .tldr-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
+    .tldr-card{border-radius:14px;padding:22px 24px;border:1px solid #FCE7F3;background:#FFF}
+    .tldr-card h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px}
+    .tldr-card:nth-child(1) h4{color:#DC2626}
+    .tldr-card:nth-child(2) h4{color:#BE185D}
+    .tldr-card:nth-child(3) h4{color:#16A34A}
+    .tldr-card p{font-size:13px;color:#57534E;line-height:1.6}
 
-    .snippet-answer{background:#F9FAFB;border-left:3px solid #5B5BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:15.5px;color:#1F2937;margin:8px 0 24px}
+    /* ── Pain: Platform silos ── */
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .pain-card{background:#FFF;border:1px solid #FCE7F3;border-radius:14px;padding:22px;text-align:center;transition:box-shadow 0.2s}
+    .pain-card:hover{box-shadow:0 6px 20px rgba(190,24,93,0.06)}
+    .pain-icon{font-size:28px;margin-bottom:8px}
+    .pain-card h4{font-size:14px;font-weight:700;color:#1C1917;margin-bottom:8px}
+    .pain-card p{font-size:13px;color:#78716C;line-height:1.6}
 
-    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-    .ba-card{border-radius:10px;padding:20px 24px}
+    /* ── Before/After ── */
+    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .ba-panel{border-radius:16px;padding:26px}
     .ba-before{background:#FEF2F2;border:1px solid #FECACA}
     .ba-after{background:#F0FDF4;border:1px solid #BBF7D0}
-    .ba-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
-    .ba-before .ba-label{color:#DC2626}
-    .ba-after .ba-label{color:#16A34A}
-    .ba-text{font-size:14.5px;color:#4B5563;line-height:1.7}
+    .ba-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;padding:4px 12px;border-radius:10px;margin-bottom:10px}
+    .ba-before .ba-tag{background:#FEE2E2;color:#DC2626}
+    .ba-after .ba-tag{background:#DCFCE7;color:#16A34A}
+    .ba-panel h4{font-size:15px;font-weight:700;color:#1C1917;margin-bottom:8px}
+    .ba-panel p{font-size:13.5px;color:#57534E;line-height:1.65}
 
-    .viz{margin:28px 0;padding:24px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px}
-    .viz img,.viz svg{width:100%;height:auto;display:block;border-radius:8px}
-    .viz-caption{margin-top:12px;font-size:13px;color:#6B7280;text-align:center;font-style:italic}
+    /* ── Comparison table ── */
+    .comp-table{width:100%;border-collapse:collapse;font-size:13.5px;border-radius:14px;overflow:hidden;border:1px solid #FCE7F3}
+    .comp-table thead{background:#1C1917}
+    .comp-table thead th{color:#FFF;padding:13px 14px;text-align:left;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.8px}
+    .comp-table thead th:last-child{background:#BE185D}
+    .comp-table td{padding:12px 14px;border-bottom:1px solid #FDF2F8;color:#57534E;vertical-align:top}
+    .comp-table tbody tr:nth-child(even){background:#FFF}
+    .comp-table tbody tr:nth-child(odd){background:#FFFDFA}
+    .comp-table td:last-child{font-weight:500;color:#1C1917}
 
-    .compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-    .compare-table th,.compare-table td{padding:13px 12px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
-    .compare-table th{background:#F9FAFB;color:#111827;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:0.5px}
-    .compare-table td{color:#4B5563}
+    /* ── Workflows: Grid ── */
+    .wf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .wf-card{background:#FFF;border:1px solid #FCE7F3;border-radius:14px;padding:20px;transition:all 0.2s}
+    .wf-card:hover{border-color:#BE185D;box-shadow:0 4px 16px rgba(190,24,93,0.05)}
+    .wf-num{font-size:1.8rem;font-weight:900;color:#FDF2F8;line-height:1;margin-bottom:4px}
+    .wf-card h4{font-size:14px;font-weight:700;color:#1C1917;margin-bottom:6px}
+    .wf-card p{font-size:12.5px;color:#78716C;line-height:1.55}
 
-    .step-box{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 20px;margin:14px 0;transition:border-color 0.2s}
-    .step-box:hover{border-color:#5B5BFF}
-    .step-num{display:inline-flex;width:26px;height:26px;background:#0A0A0A;color:#FFFFFF;border-radius:50%;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-right:10px;vertical-align:middle}
-    .step-box strong{display:inline;vertical-align:middle;font-size:15.5px;color:#0A0A0A}
-    .step-box p{margin:8px 0 0 36px;font-size:14.5px;color:#4B5563}
+    /* ── Steps ── */
+    .steps-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+    .steps-flow::before{content:'';position:absolute;top:28px;left:16.67%;right:16.67%;height:3px;background:linear-gradient(90deg,#F9A8D4,#BE185D,#9D174D);z-index:0;border-radius:2px}
+    .step-node{text-align:center;position:relative;z-index:1;padding:0 20px}
+    .step-dot{width:56px;height:56px;border-radius:50%;background:#BE185D;color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin-bottom:14px}
+    .step-node h4{font-size:15px;font-weight:700;color:#1C1917;margin-bottom:6px}
+    .step-node p{font-size:13px;color:#78716C;line-height:1.55}
 
-    .concession-box{background:#FFFBEB;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:8px;padding:20px 24px;margin:24px 0;color:#1F2937}
-    .concession-box h3{color:#78350F;margin:0 0 10px;font-size:17px}
-    .concession-box p{color:#374151;margin:6px 0;font-size:14.5px}
-    .concession-box ul{margin:8px 0 4px 22px}
-    .concession-box li{color:#374151;font-size:14.5px}
+    /* ── FAQ ── */
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .faq-item{border-bottom:1px solid #FCE7F3;padding:22px 0}
+    .faq-item:nth-child(odd){padding-right:24px}
+    .faq-item:nth-child(even){padding-left:24px;border-left:1px solid #FCE7F3}
+    .faq-q{font-weight:600;font-size:15px;color:#1C1917;margin-bottom:8px}
+    .faq-a{color:#78716C;font-size:13.5px;line-height:1.65}
 
-    .cta-box{background:linear-gradient(135deg,rgba(91,91,255,0.08),rgba(91,91,255,0.03));border:1px solid rgba(91,91,255,0.22);text-align:center;padding:40px;border-radius:14px;margin:48px 0}
-    .cta-box h3{color:#0A0A0A;margin:0 0 10px;font-size:22px;font-weight:600;border:none;padding:0}
-    .cta-box p{color:#4B5563;margin:0 0 22px;font-size:15px}
-    .cta-btn{display:inline-block;background:#0A0A0A;color:#FFFFFF;padding:13px 36px;border-radius:28px;font-weight:600;font-size:15px;transition:all 0.2s;text-decoration:none}
-    .cta-btn:hover{background:#1F2937;color:#FFFFFF;transform:translateY(-1px)}
+    /* ── CTA ── */
+    .cta-block{background:linear-gradient(135deg,#1C1917 0%,#831843 100%);border-radius:20px;padding:48px 40px;text-align:center;margin-top:40px}
+    .cta-block h3{color:#FFF;font-size:1.6rem;font-weight:700;margin-bottom:10px;letter-spacing:-0.02em}
+    .cta-block p{color:#F9A8D4;margin-bottom:24px;font-size:15px}
+    .cta-block .cta-btn{display:inline-block;background:#BE185D;color:#FFF;padding:14px 36px;border-radius:28px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s}
+    .cta-block .cta-btn:hover{background:#DB2777;transform:translateY(-1px)}
 
-    .faq-item{border-bottom:1px solid #E5E7EB;padding:20px 0}
-    .faq-q{font-weight:600;font-size:16px;color:#0A0A0A}
-    .faq-a{margin-top:10px;color:#4B5563;font-size:14.5px;line-height:1.7}
+    /* ── Related ── */
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .related-grid a{display:block;padding:18px;background:#FFF;border:1px solid #FCE7F3;border-radius:12px;color:#BE185D;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}
+    .related-grid a:hover{background:#FDF2F8;border-color:#BE185D}
 
-    .methodology{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:22px 26px;margin:36px 0;font-size:14px;color:#4B5563}
-    .methodology h2{font-size:13px;border:none;padding:0;margin:0 0 14px;color:#111827;text-transform:uppercase;letter-spacing:1.2px}
-    .methodology p{margin:6px 0;font-size:13.5px}
+    .methodology{background:#FFF;border:1px solid #FCE7F3;border-radius:14px;padding:22px 26px;margin-top:36px;font-size:13.5px;color:#78716C}
+    .methodology h2{font-size:12px;font-weight:700;padding:0;margin:0 0 14px;color:#1C1917;text-transform:uppercase;letter-spacing:1.2px;border:none}
+    .methodology p{margin:6px 0;font-size:13px}
 
-    .related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
-    .related a{display:block;padding:16px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:10px;color:#5B5BFF;font-size:14px;font-weight:500;transition:all 0.2s;line-height:1.5}
-    .related a:hover{background:rgba(91,91,255,0.04);border-color:#5B5BFF}
+    .concession{background:#FFF;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0}
+    .concession h4{font-size:12px;font-weight:700;color:#92400E;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:10px}
+    .concession p{font-size:13.5px;color:#57534E;line-height:1.6;margin-bottom:6px}
 
-    .footer{background:#F9FAFB;border-top:1px solid #E5E7EB;padding:48px 24px;margin-top:60px}
-    .footer-inner{max-width:1024px;margin:0 auto}
+    .footer{background:#FFF;border-top:1px solid #FCE7F3;padding:48px 28px;margin-top:60px}
+    .footer-inner{max-width:1280px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
-    .footer h4{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .footer h4{font-size:12px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
     .footer-links{display:flex;flex-direction:column;gap:10px;font-size:14px}
-    .footer-links a{color:#6B7280}
-    .footer-links a:hover{color:#0A0A0A}
-    .footer-bottom{border-top:1px solid #E5E7EB;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
+    .footer-links a{color:#78716C;text-decoration:none}
+    .footer-links a:hover{color:#1C1917}
+    .footer-bottom{border-top:1px solid #FDF2F8;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
 
-    @media(max-width:720px){
+    @media(max-width:768px){
+      .hero-grid{grid-template-columns:1fr;gap:24px}
+      .hero h1{font-size:1.85rem}
+      .stats-bar{grid-template-columns:repeat(2,1fr)}
+      .tldr-row{grid-template-columns:1fr}
+      .pain-grid{grid-template-columns:1fr}
       .ba-grid{grid-template-columns:1fr}
-      .related{grid-template-columns:1fr}
-      h1{font-size:1.85rem}
-      h2{font-size:1.18rem}
+      .wf-grid{grid-template-columns:1fr}
+      .steps-flow{grid-template-columns:1fr;gap:16px}
+      .steps-flow::before{display:none}
+      .faq-grid{grid-template-columns:1fr}
+      .faq-item:nth-child(even){padding-left:0;border-left:none}
+      .related-grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
       .nav-links a:not(.nav-cta){display:none}
-      .wrap{padding:32px 20px}
-      .compare-table{font-size:12px}
-      .compare-table th,.compare-table td{padding:8px 6px}
-      .step-box p{margin-left:0}
-      .author-meta{flex-wrap:wrap}
-      .dates{margin-left:0;text-align:left}
+      .container{padding:0 20px}
+      .comp-table{font-size:11px}
+      .comp-table th,.comp-table td{padding:8px 6px}
     }
   </style>
 </head>
@@ -259,272 +294,215 @@
     </div>
   </nav>
 
-  <div class="wrap">
-
-    <nav class="breadcrumb">
-      <a href="https://infinisynapse.com">Home</a><span>/</span>
-      <a href="https://infinisynapse.com/scenarios/">Scenarios</a><span>/</span>
-      AI E-commerce Analytics
-    </nav>
-
-    <div>
-      <span class="badge badge-client">InfiniSynapse</span>
-      <span class="badge badge-cat">Scenario</span>
-    </div>
-
-    <h1>AI E-commerce Analytics: Know Which Platform Actually Makes You Money</h1>
-
-    <p class="meta-desc">A practical guide to <strong>AI e-commerce analytics</strong> for DTC brands, marketplace sellers, and omnichannel retailers. Covers <strong>cross-platform sales analysis</strong>, <strong>marketplace analytics</strong>, <strong>demand signal intelligence</strong>, <strong>conversion optimization</strong>, and <strong>inventory forecasting</strong> — unifying Shopify, Amazon, ad platforms, social media, and offline sales without a data engineering team.</p>
-
-    <div class="author-meta">
-      <img src="https://infinisynapse.com/authors/editorial-team.jpg" alt="InfiniSynapse Editorial Team" width="44" height="44">
-      <div class="author-info">
-        <a href="https://infinisynapse.com/authors/editorial-team">InfiniSynapse Editorial Team</a> · Enterprise AI Analytics Research
-        <p class="author-bio">Specializing in AI-powered e-commerce analytics and marketplace intelligence, serving DTC brands, marketplace sellers, and omnichannel commerce teams.</p>
-      </div>
-      <div class="dates">
-        <span>Published: 2026-06-01</span><br>
-        <span>Last Updated: 2026-06-01</span>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">E-commerce Analytics</div>
+          <h1>Know <em>which platform</em> actually makes you money</h1>
+          <p class="hero-desc">Unify Shopify, Amazon, Walmart, ad platforms, and social media. Ask questions in plain English. Get the cross-platform P&L that tells you where your margin really lives — not just where revenue shows up.</p>
+          <a href="https://app.infinisynapse.com/" class="hero-cta">Start Analyzing Free →</a>
+        </div>
+        <div class="hero-dash">
+          <div class="dash-label">Cross-Platform Revenue Mix</div>
+          <div class="platform-row"><span class="platform-name">Shopify</span><span class="platform-bar"><span class="platform-fill shopify"></span></span><span class="platform-rev">$452K</span></div>
+          <div class="platform-row"><span class="platform-name">Amazon</span><span class="platform-bar"><span class="platform-fill amazon"></span></span><span class="platform-rev">$348K</span></div>
+          <div class="platform-row"><span class="platform-name">Walmart</span><span class="platform-bar"><span class="platform-fill walmart"></span></span><span class="platform-rev">$198K</span></div>
+          <div class="dash-insight">Amazon: highest revenue. Shopify: 2.3× higher net margin after fees.</div>
+        </div>
       </div>
     </div>
-
-    <nav class="toc">
-      <div class="toc-label">Contents</div>
-      <ul>
-        <li><a href="#snippet">What is AI-powered e-commerce analytics?</a></li>
-        <li><a href="#before-after">Before vs After: platform-siloed reporting vs unified commerce intelligence</a></li>
-        <li><a href="#pain">Three hard problems with fragmented e-commerce data</a></li>
-        <li><a href="#solution">How InfiniSynapse unifies e-commerce analytics</a></li>
-        <li><a href="#workflows">Six core e-commerce analytics workflows</a></li>
-        <li><a href="#why-not">When InfiniSynapse is not the right choice</a></li>
-        <li><a href="#quickstart">Quick start: 3 steps to AI e-commerce analytics</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-
-    <div class="tldr">
-      <div class="tldr-label">TL;DR</div>
-      <ul>
-        <li><strong>Problem:</strong> E-commerce brands sell across Shopify, Amazon, Walmart Marketplace, social commerce, and sometimes wholesale — each platform with its own analytics dashboard, its own fee structure, and its own definition of "revenue." Answering "which platform is most profitable after all fees and ad costs?" requires exporting data from 4-5 platforms and merging everything in a spreadsheet. ThoughtSpot's supply chain page captures the need to <em>"connect real-time demand signals from e-commerce, retail, and wholesale channels"</em> — but getting those signals into one place is the hard part.</li>
-        <li><strong>Solution:</strong> InfiniSynapse connects to your Shopify store, Amazon Seller Central reports, ad platforms, social media data, and offline sales data simultaneously. You ask questions in plain English. It queries across all platforms and returns unified profitability answers.</li>
-        <li><strong>Result:</strong> Cross-platform P&L analysis drops from a weekly spreadsheet exercise to a 30-second question. Inventory allocation across channels becomes data-driven. Ad budget shifts from "best guess per platform" to "highest net margin across all platforms."</li>
-      </ul>
+    <div class="stats-bar" style="margin-top:40px">
+      <div class="stat-item"><div class="stat-val"><span>5</span> platforms</div><div class="stat-label">Shopify · Amazon · Walmart · Ads · Social</div></div>
+      <div class="stat-item"><div class="stat-val">30<span>s</span></div><div class="stat-label">Cross-platform P&L</div></div>
+      <div class="stat-item"><div class="stat-val">0<span> ETL</span></div><div class="stat-label">No warehouse required</div></div>
+      <div class="stat-item"><div class="stat-val">24/7</div><div class="stat-label">Competitor price monitoring</div></div>
     </div>
+  </section>
 
-    <h2 id="snippet">What is AI-powered e-commerce analytics?</h2>
-    <p class="snippet-answer"><strong>AI-powered e-commerce analytics uses an AI data analyst to automatically unify sales data from Shopify, Amazon, Walmart Marketplace, social commerce channels, and offline sales — then perform cross-platform analysis to answer questions like "which platform generates the highest net margin after fees and ad costs?", "how should we allocate inventory across channels?", and "which products should we list on which marketplace?" Unlike platform-native dashboards that only show one channel, or manual spreadsheet processes that take days to update, InfiniSynapse gives you the cross-platform truth that determines where you actually make money.</strong></p>
+  <div class="container">
 
-    <h2 id="before-after">Before vs After: platform-siloed reporting vs unified commerce intelligence</h2>
-    <div class="ba-grid">
-      <div class="ba-card ba-before">
-        <div class="ba-label">Before — Traditional approach</div>
-        <div class="ba-text">Every Monday, the e-commerce manager logs into Shopify (DTC sales), Amazon Seller Central (marketplace sales), Walmart Seller Center, Meta Ads Manager, and Google Ads. Each platform reports "revenue" differently — Shopify shows gross merchandise value, Amazon deducts fees before reporting, ad platforms report platform-attributed conversions. To answer "what was our net margin by platform this month?", someone spends 5 hours exporting, normalizing, and joining data across platforms. The "cross-platform P&L" spreadsheet is the most important document in the company — and it's held together by VLOOKUPs.</div>
-      </div>
-      <div class="ba-card ba-after">
-        <div class="ba-label">After — With InfiniSynapse</div>
-        <div class="ba-text">Connect Shopify, Amazon, ad platforms, and social media once. Then ask: "Show net margin by platform for the last 30 days: gross revenue, marketplace fees, shipping costs, ad spend, and net margin. For each SKU, show which platform generates the highest net margin and recommend the optimal channel mix." InfiniSynapse queries all platforms, applies your cost accounting from the Knowledge Base, and returns the cross-platform P&L — in under a minute. Budget decisions shift from "how much should we spend on Amazon ads?" to "where does each incremental dollar of ad spend generate the highest net margin?"</div>
+    <div class="section">
+      <div class="tldr-row">
+        <div class="tldr-card">
+          <h4>Problem</h4>
+          <p>E-commerce brands sell across Shopify, Amazon, Walmart, and social — each with its own dashboard, fee structure, and revenue definition. "Which platform is most profitable after fees and ad costs?" requires exporting from 4-5 platforms and merging in Excel. The cross-platform P&L is your most important document — held together by VLOOKUPs.</p>
+        </div>
+        <div class="tldr-card">
+          <h4>Solution</h4>
+          <p>InfiniSynapse connects to Shopify, Amazon Seller Central, ad platforms, and social media simultaneously. You ask questions in plain English. It queries all platforms, applies your fee structures from the Knowledge Base, and returns unified profitability answers — no ETL, no spreadsheet merging.</p>
+        </div>
+        <div class="tldr-card">
+          <h4>Result</h4>
+          <p>Cross-platform P&L: weekly spreadsheet → 30-second question. Inventory allocation: lagging indicator → profit-maximizing. Ad budget: "best guess per platform" → "highest net margin across all platforms." Competitor monitoring: manual checks → automated daily updates.</p>
+        </div>
       </div>
     </div>
 
-    <h2 id="pain">Three hard problems with fragmented e-commerce data</h2>
+    <div class="section">
+      <div class="sec-label">Platform Silos</div>
+      <h2>Three ways fragmented data costs you margin</h2>
+      <p class="sec-lead">Each platform tells you its version of the truth. None of them show you the combined picture that determines profitability.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">📊</div>
+          <h4>Every platform defines revenue differently</h4>
+          <p>Shopify reports gross merchandise value. Amazon deducts fees before reporting. Walmart has its own structure. Four platforms, four revenue definitions, no way to compare margin per unit without manual normalization in a spreadsheet that takes hours to update.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">📡</div>
+          <h4>Demand signals are scattered everywhere</h4>
+          <p>On-site search queries (Shopify), search term reports (Amazon), social engagement (Meta/TikTok), Google Trends — each channel signals demand differently. No single dashboard connects these dots. You're making inventory bets on partial information.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">📦</div>
+          <h4>Inventory allocation is a guessing game</h4>
+          <p>You have 500 units. 300 to Amazon FBA? 150 to Shopify? 50 to Walmart? Today's answer is based on last month's sales — a lagging indicator. You're not factoring in current velocity, upcoming promotions, or competitor stockouts on each platform.</p>
+        </div>
+      </div>
+    </div>
 
-    <h3>Problem 1: Revenue is reported differently on every platform</h3>
-    <p>Shopify reports gross merchandise value. Amazon deducts referral fees, FBA fees, and advertising costs before showing "sales." Walmart has its own fee structure. Your wholesale channel reports net revenue. Four platforms, four revenue definitions, zero ability to compare apples to apples without manual normalization. InfiniSynapse's Knowledge Base stores your cost structure definitions — referral fee rates by category, FBA fee estimates by product size/weight, ad cost attribution rules — and applies them consistently across platforms so you get true net margin comparisons.</p>
+    <div class="section">
+      <div class="sec-label">The Shift</div>
+      <h2>Platform-siloed reporting → Unified commerce intelligence</h2>
+      <div class="ba-grid">
+        <div class="ba-panel ba-before">
+          <span class="ba-tag">Before · 5 Platforms, 5 Dashboards</span>
+          <h4>The spreadsheet is your most important asset</h4>
+          <p>Every Monday: log into Shopify, Amazon Seller Central, Walmart, Meta Ads, Google Ads. Each reports "revenue" differently. "What was our net margin by platform this month?" takes <strong>5 hours</strong> of exporting, normalizing, and VLOOKUP-ing. The cross-platform P&L spreadsheet is the company's single most important document — and it lives on one person's laptop.</p>
+        </div>
+        <div class="ba-panel ba-after">
+          <span class="ba-tag">After · InfiniSynapse</span>
+          <h4>One question, all platforms, under a minute</h4>
+          <p>Connect Shopify, Amazon, ad platforms, and social once. Ask: "Show net margin by platform for the last 30 days: gross revenue, marketplace fees, shipping, ad spend, net margin. For each SKU, which platform generates the highest net margin?" InfiniSynapse queries all platforms, applies your cost accounting, and returns the truth <strong>in under a minute</strong>.</p>
+        </div>
+      </div>
+    </div>
 
-    <h3>Problem 2: Demand signals are scattered across platforms</h3>
-    <p>Your Shopify store shows which products people search for but don't find. Amazon shows which search terms drive the most clicks. Social media shows which products generate the most engagement. Google Trends shows rising category interest. ThoughtSpot describes the goal as <em>"connect real-time demand signals from e-commerce, retail, and wholesale channels"</em> — but those signals live in separate systems. InfiniSynapse unifies internal demand signals (on-site search, cart abandonment, wishlist adds) with external signals (competitor pricing via Browser Use, category trends via web search) to produce demand forecasts informed by the full picture.</p>
+    <div class="section">
+      <div class="sec-label">The Landscape</div>
+      <h2>Where InfiniSynapse fits in e-commerce analytics</h2>
+      <table class="comp-table">
+        <thead>
+          <tr><th>Capability</th><th>Platform-native (Shopify, Amazon)</th><th>E-commerce BI (Triple Whale, Glew)</th><th>InfiniSynapse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Data scope</td><td>One platform only</td><td>Multi-platform via integrations</td><td>Any platform + spreadsheets + databases + web data</td></tr>
+          <tr><td>True net margin by platform</td><td>Not possible (single platform)</td><td>Good for connected platforms</td><td>Built-in: Knowledge Base stores fee structures, applies consistently</td></tr>
+          <tr><td>Demand signal intelligence</td><td>Platform-only signals</td><td>Limited to integrated data</td><td>Internal signals + web search + Browser Use for external intelligence</td></tr>
+          <tr><td>Competitor monitoring</td><td>Not available</td><td>Not available</td><td>Browser Use scrapes competitor prices, listings, stock status</td></tr>
+          <tr><td>Query interface</td><td>Pre-built dashboards</td><td>Pre-built dashboards + limited customization</td><td>Natural language + Agentic multi-step analysis</td></tr>
+          <tr><td>Deployment</td><td>SaaS</td><td>SaaS</td><td>SaaS + Air-Gapped private deployment</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h3>Problem 3: Inventory allocation across channels is a guessing game</h3>
-    <p>You have 500 units of a product. Should 300 go to Amazon FBA, 150 to Shopify-fulfilled inventory, and 50 to Walmart? Today, the answer is based on last month's sales per channel — a lagging indicator. InfiniSynapse can factor in current sales velocity per channel, upcoming promotions, competitor stockout status (via Browser Use monitoring competitor listings), and margin per unit per channel — producing allocation recommendations that maximize total profit, not just total revenue.</p>
-
-    <h2 id="solution">How InfiniSynapse unifies e-commerce analytics across platforms</h2>
-
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Capability</th>
-          <th>Platform-native (Shopify, Amazon)</th>
-          <th>E-commerce BI (Triple Whale, Glew)</th>
-          <th>InfiniSynapse</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Data scope</td>
-          <td>One platform only</td>
-          <td>Multi-platform via integrations</td>
-          <td>Any platform + spreadsheets + databases + web data</td>
-        </tr>
-        <tr>
-          <td>True net margin by platform</td>
-          <td>Not possible (single platform)</td>
-          <td>Good for connected platforms</td>
-          <td>Built-in: Knowledge Base stores fee structures, applies consistently</td>
-        </tr>
-        <tr>
-          <td>Demand signal intelligence</td>
-          <td>Platform-only signals</td>
-          <td>Limited to integrated data</td>
-          <td>Internal signals + web search + Browser Use for external intelligence</td>
-        </tr>
-        <tr>
-          <td>Competitor monitoring</td>
-          <td>Not available</td>
-          <td>Not available</td>
-          <td>Browser Use scrapes competitor prices, listings, stock status</td>
-        </tr>
-        <tr>
-          <td>Query interface</td>
-          <td>Pre-built dashboards</td>
-          <td>Pre-built dashboards + limited customization</td>
-          <td>Natural language + Agentic multi-step analysis</td>
-        </tr>
-        <tr>
-          <td>Deployment</td>
-          <td>SaaS</td>
-          <td>SaaS</td>
-          <td>SaaS + private deployment (Air-Gapped)</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="viz">
-      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-        <defs>
-          <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#5B5BFF"/></marker>
-        </defs>
-        <rect x="15" y="15" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="35" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Shopify / DTC</text>
-        <text x="82" y="52" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Orders · Products · Traffic</text>
-        <rect x="15" y="85" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="105" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Amazon / Walmart</text>
-        <text x="82" y="122" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Marketplace Sales · FBA</text>
-        <rect x="15" y="155" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="175" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Ad Platforms</text>
-        <text x="82" y="192" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Google · Meta · TikTok</text>
-        <rect x="15" y="225" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="245" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Offline / Wholesale</text>
-        <text x="82" y="262" text-anchor="middle" font-size="9.5" fill="#9CA3AF">B2B Orders · Retail Partners</text>
-        <line x1="150" y1="40" x2="285" y2="115" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="110" x2="285" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="180" x2="285" y2="145" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="250" x2="285" y2="160" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="290" y="90" width="155" height="80" rx="12" fill="#5B5BFF" opacity="0.12" stroke="#5B5BFF" stroke-width="2"/>
-        <text x="367" y="122" text-anchor="middle" font-size="14" fill="#5B5BFF" font-weight="700">InfiniSynapse</text>
-        <text x="367" y="142" text-anchor="middle" font-size="11" fill="#5B5BFF">Multi-Source Federation</text>
-        <text x="367" y="158" text-anchor="middle" font-size="10" fill="#6B7280">Zero ETL · Auto JOIN</text>
-        <line x1="445" y1="130" x2="525" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="535" y="15" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="33" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Cross-Platform P&L</text>
-        <text x="620" y="48" text-anchor="middle" font-size="9" fill="#6B7280">Revenue · Fees · Ad Cost · Margin</text>
-        <rect x="535" y="72" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="90" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Demand Signal Intelligence</text>
-        <text x="620" y="105" text-anchor="middle" font-size="9" fill="#6B7280">Search · Trends · Competitors</text>
-        <rect x="535" y="129" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="147" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Inventory Allocation</text>
-        <text x="620" y="162" text-anchor="middle" font-size="9" fill="#6B7280">Per Channel · Profit-Maximizing</text>
-        <rect x="535" y="186" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="204" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Conversion Optimization</text>
-        <text x="620" y="219" text-anchor="middle" font-size="9" fill="#6B7280">Funnel · Abandonment · CRO</text>
-        <rect x="535" y="243" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="261" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Competitor Intelligence</text>
-        <text x="620" y="276" text-anchor="middle" font-size="9" fill="#6B7280">Browser Use · Price Tracking</text>
+    <div style="background:#FFF;border:1px solid #FCE7F3;border-radius:16px;padding:32px 24px;margin:20px 0">
+      <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+        <defs><marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#BE185D"/></marker></defs>
+        <rect x="15" y="15" width="135" height="48" rx="8" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+        <text x="82" y="34" text-anchor="middle" font-size="11" fill="#1C1917" font-weight="600">Shopify / DTC</text>
+        <text x="82" y="50" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Orders · Products · Traffic</text>
+        <rect x="15" y="83" width="135" height="48" rx="8" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+        <text x="82" y="102" text-anchor="middle" font-size="11" fill="#1C1917" font-weight="600">Amazon / Walmart</text>
+        <text x="82" y="118" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Marketplace · FBA</text>
+        <rect x="15" y="151" width="135" height="48" rx="8" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+        <text x="82" y="170" text-anchor="middle" font-size="11" fill="#1C1917" font-weight="600">Ad Platforms</text>
+        <text x="82" y="186" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Google · Meta · TikTok</text>
+        <rect x="15" y="219" width="135" height="48" rx="8" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+        <text x="82" y="238" text-anchor="middle" font-size="11" fill="#1C1917" font-weight="600">Offline / Wholesale</text>
+        <text x="82" y="254" text-anchor="middle" font-size="9.5" fill="#9CA3AF">B2B · Retail Partners</text>
+        <line x1="150" y1="39" x2="285" y2="110" stroke="#BE185D" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="150" y1="107" x2="285" y2="125" stroke="#BE185D" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="150" y1="175" x2="285" y2="140" stroke="#BE185D" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="150" y1="243" x2="285" y2="155" stroke="#BE185D" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="290" y="85" width="155" height="80" rx="12" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
+        <text x="367" y="117" text-anchor="middle" font-size="14" fill="#BE185D" font-weight="700">InfiniSynapse</text>
+        <text x="367" y="137" text-anchor="middle" font-size="10.5" fill="#9D174D">Multi-Source Federation</text>
+        <text x="367" y="152" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Zero ETL · Auto JOIN</text>
+        <line x1="445" y1="125" x2="525" y2="125" stroke="#BE185D" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="535" y="15" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="32" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Cross-Platform P&L</text>
+        <text x="620" y="47" text-anchor="middle" font-size="9" fill="#9CA3AF">Revenue · Fees · Ad Cost · Margin</text>
+        <rect x="535" y="68" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="85" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Demand Signal Intelligence</text>
+        <text x="620" y="100" text-anchor="middle" font-size="9" fill="#9CA3AF">Search · Trends · Competitors</text>
+        <rect x="535" y="121" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="138" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Inventory Allocation</text>
+        <text x="620" y="153" text-anchor="middle" font-size="9" fill="#9CA3AF">Per Channel · Profit-Maximizing</text>
+        <rect x="535" y="174" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="191" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Conversion Optimization</text>
+        <text x="620" y="206" text-anchor="middle" font-size="9" fill="#9CA3AF">Funnel · Abandonment · CRO</text>
+        <rect x="535" y="227" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="244" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Competitor Intelligence</text>
+        <text x="620" y="259" text-anchor="middle" font-size="9" fill="#9CA3AF">Browser Use · Price Tracking</text>
       </svg>
-      <div class="viz-caption">InfiniSynapse e-commerce analytics data flow: four independent commerce data sources connected directly, zero ETL, plain-English questions produce cross-platform answers.</div>
+      <p style="text-align:center;font-size:12.5px;color:#9CA3AF;margin-top:12px">E-commerce data flow: four independent commerce sources connected directly, zero ETL, plain-English questions produce cross-platform answers.</p>
     </div>
 
-    <h2 id="workflows">Six core e-commerce analytics workflows</h2>
-
-    <h3>1. Cross-platform P&L — <code>omnichannel analytics</code> / <code>marketplace analytics</code></h3>
-    <p>Ask: "Show a cross-platform P&L for the last 30 days: gross revenue, marketplace fees, shipping, ad costs, and net margin — broken down by Shopify, Amazon, and Walmart. Which SKUs have the highest gross revenue but lowest net margin on each platform?" InfiniSynapse queries all three platforms, applies your fee structure from the Knowledge Base, and returns true platform profitability. This is the question every e-commerce operator needs to answer and currently answers with a spreadsheet that takes hours to update.</p>
-
-    <h3>2. Demand signal intelligence — <code>demand signal intelligence</code></h3>
-    <p>Ask: "Combine on-site search queries from Shopify, Amazon search term reports, social media product mentions, and Google Trends for our product categories. Which products have rising demand signals across multiple sources but low inventory?" ThoughtSpot describes this as connecting <em>"real-time demand signals from e-commerce, retail, and wholesale channels."</em> InfiniSynapse operationalizes it by joining internal signals (search queries, wishlists, cart abandons) with external signals (trend data, competitor stockout status) to produce a multi-signal demand picture.</p>
-
-    <h3>3. Inventory allocation optimization — <code>inventory allocation</code></h3>
-    <p>Ask: "We have 1,000 units of SKU-123 arriving next week. Based on current sell-through velocity, margin per unit per channel, and competitor stockout status on each platform, how should we allocate units across Amazon FBA, Shopify, and Walmart to maximize 30-day profit?" InfiniSynapse queries sales velocity from each platform, margin data from your Knowledge Base, and uses Browser Use to check if competitors are in or out of stock — producing a profit-maximizing allocation recommendation.</p>
-
-    <h3>4. Conversion funnel analysis across platforms — <code>conversion optimization</code></h3>
-    <p>Ask: "Compare the conversion funnel on Shopify vs. Amazon for our top 20 products: impression to click, click to add-to-cart, add-to-cart to purchase. Where is the biggest drop-off on each platform? Which products convert better on which platform?" InfiniSynapse joins Shopify analytics, Amazon Brand Analytics, and ad platform data to produce a cross-platform conversion comparison — revealing not just where you convert, but where you should invest to improve each stage of the funnel per platform.</p>
-
-    <h3>5. Competitor price and assortment monitoring — <code>competitive intelligence</code></h3>
-    <p>Ask: "Use Browser Use to check the current price and stock status of our top 20 competing ASINs on Amazon. Compare to our prices. Flag any competitor that has dropped price by more than 10% or gone out of stock. Show the estimated revenue opportunity from out-of-stock competitors." InfiniSynapse's Browser Use capability automates the competitive monitoring that most e-commerce teams do manually (or don't do at all) — turning it into a scheduled analysis that updates daily.</p>
-
-    <h3>6. Advertising efficiency by platform and product — <code>e-commerce ad analytics</code></h3>
-    <p>Ask: "Calculate true ROAS by platform: for each dollar of ad spend on Amazon Ads, Google Shopping, and Meta Ads, how much net margin (not just revenue) did we generate? Break down by product category. Flag products where ad spend exceeds net margin." This requires joining ad spend data with sales data and margin data from multiple platforms — the kind of cross-source analysis that InfiniSynapse's multi-source federation handles natively.</p>
-
-    <div class="concession-box" id="why-not">
-      <h3>When InfiniSynapse is not the right choice for e-commerce analytics</h3>
-      <p>Honest framing — you likely don't need InfiniSynapse if:</p>
-      <ul>
-        <li><strong>You sell on one platform only.</strong> If you're exclusively on Shopify or exclusively on Amazon, platform-native analytics plus the platform's ad dashboard may be sufficient. InfiniSynapse's value grows with platform count.</li>
-        <li><strong>You already use an e-commerce BI tool (Triple Whale, Glew, Peel) and it meets your needs.</strong> These tools are purpose-built for multi-platform e-commerce analytics with pre-built integrations. InfiniSynapse differentiates on flexibility: connecting to any data source (not just pre-built integrations), natural language queries, Agentic multi-step analysis, and Browser Use for competitive intelligence.</li>
-        <li><strong>Your questions are operational, not analytical.</strong> "How many orders did we ship yesterday?" is a platform question. "Which platform should we expand to next, based on margin data and competitor analysis?" is an InfiniSynapse question.</li>
-      </ul>
+    <div class="section">
+      <div class="sec-label">Core Workflows</div>
+      <h2>Six analyses that reveal where your margin lives</h2>
+      <div class="wf-grid">
+        <div class="wf-card"><div class="wf-num">01</div><h4>Cross-Platform P&L</h4><p>Gross revenue, marketplace fees, shipping, ad costs, net margin — by Shopify, Amazon, and Walmart. Which SKUs have the highest revenue but lowest net margin on each platform? The question every operator needs answered.</p></div>
+        <div class="wf-card"><div class="wf-num">02</div><h4>Demand Signal Intelligence</h4><p>Combine on-site search (Shopify), Amazon search terms, social mentions, and Google Trends. Which products have rising demand across multiple signals but low inventory coverage? Internal + external signals in one view.</p></div>
+        <div class="wf-card"><div class="wf-num">03</div><h4>Inventory Allocation Optimization</h4><p>1,000 units arriving. How to split across Amazon FBA, Shopify, and Walmart? InfiniSynapse factors sell-through velocity, margin per unit per channel, and competitor stockout status for profit-maximizing allocation.</p></div>
+        <div class="wf-card"><div class="wf-num">04</div><h4>Conversion Funnel Analysis</h4><p>Compare impression → click → add-to-cart → purchase across Shopify and Amazon for your top 20 products. Where's the biggest drop-off on each platform? Which products convert better where?</p></div>
+        <div class="wf-card"><div class="wf-num">05</div><h4>Competitor Price & Assortment</h4><p>Browser Use checks prices and stock status of your top competing ASINs daily. Flag price drops >10% or stockouts. Estimate revenue opportunity from out-of-stock competitors. Automated, not manual.</p></div>
+        <div class="wf-card"><div class="wf-num">06</div><h4>True ROAS by Platform</h4><p>For each dollar of ad spend on Amazon Ads, Google Shopping, and Meta — how much net margin (not just revenue) did you generate? Break down by product category. Flag products where ad spend exceeds margin.</p></div>
+      </div>
     </div>
 
-    <h2 id="quickstart">Quick start: 3 steps to AI e-commerce analytics</h2>
-
-    <div class="step-box">
-      <span class="step-num">1</span>
-      <strong>Connect your e-commerce platforms</strong>
-      <p>Connect Shopify, Amazon Seller Central data, ad platforms (Google, Meta), and any offline sales spreadsheets. InfiniSynapse auto-discovers each source's schema. Private deployment keeps your sales and customer data on your own servers.</p>
-    </div>
-    <div class="step-box">
-      <span class="step-num">2</span>
-      <strong>Define your cost and margin structure in the Knowledge Base</strong>
-      <p>Document your fee structures by platform, COGS by SKU, shipping costs, and margin calculation methodology. The AI references these on every analysis, so your cross-platform P&L uses consistent cost accounting.</p>
-    </div>
-    <div class="step-box">
-      <span class="step-num">3</span>
-      <strong>Ask your first cross-platform profitability question</strong>
-      <p>Start with the question that currently takes your team a full day to answer: "Which platform generates the highest net margin per unit for our top 20 SKUs, and where should we shift ad budget next month?"</p>
+    <div class="concession">
+      <h4>Honest Framing: When InfiniSynapse is not the right choice</h4>
+      <p>You likely don't need InfiniSynapse if: <strong>(1)</strong> You sell on one platform only — Shopify or Amazon native analytics may suffice. <strong>(2)</strong> You already use an e-commerce BI tool (Triple Whale, Glew) and it meets your needs — these are purpose-built for multi-platform e-commerce. <strong>(3)</strong> Your questions are operational ("how many orders yesterday?") not analytical ("which platform should we expand to next, based on margin data and competitor analysis?"). InfiniSynapse differentiates on flexibility (any source, not just pre-built integrations), natural language queries, Agentic multi-step analysis, and Browser Use for competitive intelligence.</p>
     </div>
 
-    <div class="cta-box">
+    <div class="section">
+      <div class="sec-label">Get Started</div>
+      <h2>Three steps to cross-platform clarity</h2>
+      <div class="steps-flow">
+        <div class="step-node"><div class="step-dot">1</div><h4>Connect your platforms</h4><p>Shopify, Amazon Seller Central, ad platforms (Google, Meta), social media, and any offline sales spreadsheets. Auto-discovered schemas. Air-Gapped deployment keeps customer and sales data on your servers.</p></div>
+        <div class="step-node"><div class="step-dot">2</div><h4>Define your cost structure</h4><p>Fee structures by platform, COGS by SKU, shipping costs, margin calculation methodology. The AI references these on every analysis — your cross-platform P&L uses consistent cost accounting every time.</p></div>
+        <div class="step-node"><div class="step-dot">3</div><h4>Ask: where's the margin?</h4><p>"Which platform generates the highest net margin per unit for our top 20 SKUs, and where should we shift ad budget next month?" InfiniSynapse queries all platforms and returns the cross-platform truth.</p></div>
+      </div>
+    </div>
+
+    <div class="cta-block">
       <h3>Stop guessing which platform makes you money</h3>
       <p>Free to start. Connect your Shopify and Amazon data. Get a cross-platform P&L in minutes, not days.</p>
       <a href="https://app.infinisynapse.com/" class="cta-btn">Try InfiniSynapse Free →</a>
     </div>
 
-    <h2 id="faq">FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">Can InfiniSynapse connect to Shopify and Amazon Seller Central?</div>
-      <div class="faq-a">Yes, through database connection, CSV export, or API integration. InfiniSynapse joins Shopify sales, Amazon marketplace performance, ad platform spend, and social media metrics in a single query — giving you a cross-platform e-commerce view no single marketplace dashboard provides.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How is this different from Shopify or Amazon analytics?</div>
-      <div class="faq-a">Shopify Analytics shows your Shopify store. Amazon Brand Analytics shows Amazon. Neither shows the combined picture: total sales across platforms, which platform generates the highest net margin after fees and ad costs, or which products sell better on which platform. InfiniSynapse unifies all platforms for the cross-platform truth.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How does InfiniSynapse use demand signals for e-commerce?</div>
-      <div class="faq-a">InfiniSynapse combines internal signals (sales velocity, on-site search queries, cart abandonment, wishlist additions) with external signals gathered via web search and Browser Use (competitor pricing, Google Trends, social media sentiment). This multi-signal approach produces more accurate demand forecasts than historical sales data alone.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What e-commerce metrics can I analyze?</div>
-      <div class="faq-a">Core workflows include: cross-platform P&L (revenue, fees, ad costs, net margin by platform and SKU), marketplace comparison (Amazon vs. Walmart vs. DTC), demand forecasting based on internal and external signals, conversion funnel analysis across platforms, inventory allocation optimization by channel, and ad spend efficiency (true ROAS = net margin / ad spend by platform and product).</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is my e-commerce data secure?</div>
-      <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All order data, customer information, sales figures, and competitive pricing analysis stay on your own servers, processed locally. Private deployment is essential for e-commerce businesses handling customer PII, payment data, or operating under PCI DSS and GDPR.</div>
+    <div class="section">
+      <h2 style="font-size:1.5rem;font-weight:700;color:#1C1917;margin-bottom:20px;letter-spacing:-0.02em">FAQ</h2>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q">Can InfiniSynapse connect to Shopify and Amazon?</div><div class="faq-a">Yes — database connection, CSV export, or API. InfiniSynapse joins Shopify sales, Amazon marketplace performance, ad platform spend, and social media metrics in a single query — giving you a cross-platform view no single marketplace dashboard provides.</div></div>
+        <div class="faq-item"><div class="faq-q">How is this different from Shopify/Amazon analytics?</div><div class="faq-a">Shopify Analytics shows your Shopify store. Amazon Brand Analytics shows Amazon. Neither shows the combined picture: total sales across platforms, which platform drives the highest net margin after fees, or which products sell better where. InfiniSynapse unifies everything.</div></div>
+        <div class="faq-item"><div class="faq-q">How does demand signal intelligence work?</div><div class="faq-a">InfiniSynapse combines internal signals (sales velocity, on-site search, cart abandonment, wishlists) with external signals via web search and Browser Use (competitor pricing, Google Trends, social sentiment). This multi-signal approach produces more accurate forecasts than historical sales alone.</div></div>
+        <div class="faq-item"><div class="faq-q">What e-commerce metrics can I analyze?</div><div class="faq-a">Cross-platform P&L (revenue, fees, ad costs, net margin by platform/SKU), marketplace comparison, demand forecasting, conversion funnel analysis, inventory allocation optimization, and true ROAS (net margin / ad spend by platform and product).</div></div>
+        <div class="faq-item"><div class="faq-q">Is my e-commerce data secure?</div><div class="faq-a">Yes. Air-Gapped private deployment keeps all order data, customer information, sales figures, and competitive analysis on your own servers. Essential for businesses handling customer PII, payment data, or operating under PCI DSS and GDPR.</div></div>
+      </div>
     </div>
 
     <div class="methodology">
       <h2>About this guide</h2>
       <p><strong>Last updated:</strong> 2026-06-01</p>
-      <p><strong>Methodology:</strong> E-commerce analytics scenarios described here are based on InfiniSynapse product capabilities matched against common DTC, marketplace, and omnichannel commerce workflows. Competitor capability descriptions are sourced from official documentation and product pages. ThoughtSpot quotes are sourced from their supply chain analytics page. Databricks retail page references are included for demand forecasting context.</p>
-      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher of this page. We explicitly call out scenarios where platform-native tools (Shopify, Amazon) or e-commerce BI tools (Triple Whale, Glew) are the better fit.</p>
+      <p><strong>Methodology:</strong> E-commerce analytics scenarios based on InfiniSynapse capabilities matched against DTC, marketplace, and omnichannel commerce workflows. Competitor descriptions sourced from official documentation (accessed May 2026).</p>
+      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher. We explicitly note where platform-native tools or e-commerce BI tools (Triple Whale, Glew) are the better fit.</p>
       <p><strong>Update cadence:</strong> Reviewed quarterly.</p>
     </div>
 
-    <h2>Related guides</h2>
-    <div class="related">
-      <a href="../scenarios/retail-analytics.html">AI Retail Analytics: Unified Customer View & Demand Forecasting</a>
-      <a href="../scenarios/supply-chain-analytics.html">AI Supply Chain Analytics: OTIF & Inventory Optimization</a>
-      <a href="../scenarios/marketing-analytics.html">AI Marketing Analytics: Multi-Channel Campaign ROI</a>
-      <a href="../scenarios/competitive-analysis.html">AI Competitive Analysis: Browser Use & Market Intelligence</a>
-      <a href="../scenarios/sales-analytics.html">AI Sales Analytics: Pipeline Health & Revenue Forecasting</a>
-      <a href="../scenarios/saas-analytics.html">AI SaaS Analytics: MRR, Retention & PLG</a>
+    <div class="section">
+      <h2 style="font-size:1.3rem;font-weight:700;color:#1C1917;margin-bottom:18px">Related guides</h2>
+      <div class="related-grid">
+        <a href="../scenarios/retail-analytics.html">AI Retail Analytics: Unified Customer View & Demand Forecasting</a>
+        <a href="../scenarios/supply-chain-analytics.html">AI Supply Chain Analytics: OTIF & Inventory Optimization</a>
+        <a href="../scenarios/marketing-analytics.html">AI Marketing Analytics: Multi-Channel Campaign ROI</a>
+        <a href="../scenarios/competitive-analysis.html">AI Competitive Analysis: Browser Use & Market Intelligence</a>
+        <a href="../scenarios/sales-analytics.html">AI Sales Analytics: Pipeline Health & Revenue Forecasting</a>
+        <a href="../scenarios/saas-analytics.html">AI SaaS Analytics: MRR, Retention & PLG</a>
+      </div>
     </div>
 
   </div>
@@ -533,39 +511,15 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
-          <div style="font-size:18px;font-weight:600;color:#0A0A0A;margin-bottom:12px">InfiniSynapse</div>
-          <p style="font-size:14px;color:#6B7280;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
-          <a href="https://app.infinisynapse.com/" class="cta-btn" style="padding:8px 20px;font-size:13px">Try Online →</a>
+          <div style="font-size:18px;font-weight:600;color:#1C1917;margin-bottom:12px">InfiniSynapse</div>
+          <p style="font-size:14px;color:#78716C;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
+          <a href="https://app.infinisynapse.com/" style="display:inline-block;background:#1C1917;color:#FFF;padding:8px 20px;border-radius:24px;font-weight:600;font-size:13px;text-decoration:none">Try Online →</a>
         </div>
-        <div>
-          <h4>Product</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/#features">Features</a>
-            <a href="https://infinisynapse.com/tools">Tools Market</a>
-            <a href="https://app.infinisynapse.com/">Try Online</a>
-            <a href="https://infinisynapse.com/download">Download</a>
-          </div>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/zh/docs">Documentation</a>
-            <a href="https://infinisynapse.com/zh/blog">Blog</a>
-            <a href="https://infinisynapse.com/#vision">Vision</a>
-          </div>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/#contact">Contact</a>
-            <a href="https://infinisynapse.com/careers">Careers</a>
-          </div>
-        </div>
+        <div><h4>Product</h4><div class="footer-links"><a href="https://infinisynapse.com/#features">Features</a><a href="https://infinisynapse.com/tools">Tools Market</a><a href="https://app.infinisynapse.com/">Try Online</a><a href="https://infinisynapse.com/download">Download</a></div></div>
+        <div><h4>Resources</h4><div class="footer-links"><a href="https://infinisynapse.com/zh/docs">Documentation</a><a href="https://infinisynapse.com/zh/blog">Blog</a><a href="https://infinisynapse.com/#vision">Vision</a></div></div>
+        <div><h4>Company</h4><div class="footer-links"><a href="https://infinisynapse.com/#contact">Contact</a><a href="https://infinisynapse.com/careers">Careers</a></div></div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 InfiniSynapse. All rights reserved.</span>
-        <span>From question to insight, in seconds.</span>
-      </div>
+      <div class="footer-bottom"><span>&copy; 2026 InfiniSynapse. All rights reserved.</span><span>From question to insight, in seconds.</span></div>
     </div>
   </footer>
 </body>

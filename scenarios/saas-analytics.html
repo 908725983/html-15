@@ -116,14 +116,15 @@
   </script>
 
   <style>
+    :root{--accent:#7C3AED;--accent-dark:#6D28D9;--accent-light:rgba(124,58,237,0.08);--accent-glow:rgba(124,58,237,0.3);--bg:#FAFAFA;--card:#FFFFFF;--text:#1E293B;--muted:#64748B;--border:#E2E8F0;--green:#10B981;--red:#EF4444;--amber:#F59E0B}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1F2937;background:#FFFFFF;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
-    ::selection{background:rgba(91,91,255,0.2)}
-    a{color:#5B5BFF;text-decoration:none}
-    a:hover{color:#5B5BFF}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    ::selection{background:rgba(124,58,237,0.2)}
+    a{color:var(--accent);text-decoration:none;transition:color .15s}
+    a:hover{color:var(--accent-dark)}
 
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB;padding:14px 0}
-    .nav-inner{max-width:1024px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
     .nav-logo{display:flex;align-items:center;gap:10px}
     .nav-logo-mark{height:28px;display:flex;align-items:center}
     .nav-logo-mark img{height:28px;width:auto;display:block}
@@ -131,119 +132,149 @@
     .nav-links{display:flex;align-items:center;gap:22px;font-size:14px}
     .nav-links a{color:#374151;transition:color 0.15s}
     .nav-links a:hover{color:#0A0A0A}
-    .nav-cta{background:#0A0A0A !important;color:#FFF !important;border-radius:24px;padding:9px 20px}
-    .nav-cta:hover{background:#1F2937 !important;color:#FFF !important;opacity:1}
+    .nav-cta{background:var(--accent)!important;color:#FFF!important;border-radius:24px;padding:9px 20px}
+    .nav-cta:hover{background:var(--accent-dark)!important;color:#FFF!important}
 
-    .wrap{max-width:1024px;margin:0 auto;padding:48px 24px}
+    .wrap{max-width:1280px;margin:0 auto;padding:48px 24px}
 
-    h1{font-size:2.8rem;font-weight:800;line-height:1.15;margin-bottom:16px;color:#0A0A0A;letter-spacing:-0.03em}
-    h2{font-size:1.32rem;font-weight:600;margin:44px 0 16px;color:#0A0A0A;border-bottom:1px solid #E5E7EB;padding-bottom:10px;letter-spacing:-0.01em}
-    h3{font-size:17px;font-weight:600;margin:26px 0 10px;color:#111827}
-    p{margin:0 0 18px;color:#4B5563}
-    strong{color:#0A0A0A;font-weight:600}
-    ul,ol{margin:14px 0 18px 24px}
-    li{margin:8px 0;color:#4B5563}
-    code{background:rgba(91,91,255,0.08);padding:2px 7px;border-radius:4px;font-size:14px;font-family:'SF Mono','Fira Code','JetBrains Mono',monospace;color:#5B5BFF;border:1px solid rgba(91,91,255,0.14)}
-
-    .meta-desc{font-size:1.08rem;color:#6B7280;margin-bottom:32px;line-height:1.55;max-width:740px}
     .breadcrumb{font-size:13px;color:#9CA3AF;margin-bottom:20px}
     .breadcrumb a{color:#6B7280}
-    .breadcrumb a:hover{color:#5B5BFF}
+    .breadcrumb a:hover{color:var(--accent)}
     .breadcrumb span{margin:0 6px}
+
     .badge{display:inline-block;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;margin-right:8px;margin-bottom:14px}
-    .badge-client{background:rgba(91,91,255,0.08);color:#5B5BFF;border:1px solid rgba(91,91,255,0.25)}
+    .badge-scenario{background:rgba(124,58,237,0.08);color:var(--accent);border:1px solid rgba(124,58,237,0.2)}
     .badge-cat{background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB}
 
-    .toc{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 22px;margin:0 0 36px}
-    .toc-label{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
-    .toc ul{margin:0;padding-left:18px;font-size:14.5px}
-    .toc a{color:#374151}
-    .toc a:hover{color:#5B5BFF}
+    /* ── Hero: Metrics Command Center ── */
+    .hero{background:linear-gradient(135deg,rgba(124,58,237,0.04),rgba(124,58,237,0.01));border:1px solid rgba(124,58,237,0.1);border-radius:20px;padding:40px 44px;margin-bottom:40px}
+    .hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+    .hero-text h1{font-size:2.4rem;font-weight:800;line-height:1.12;color:#0A0A0A;letter-spacing:-0.03em;margin-bottom:12px}
+    .hero-text h1 span{color:var(--accent)}
+    .hero-text p{color:var(--muted);font-size:1.02rem;max-width:540px;line-height:1.55}
+    .hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#FFF;padding:12px 28px;border-radius:24px;font-weight:600;font-size:14px;transition:all .2s;white-space:nowrap}
+    .hero-cta:hover{background:var(--accent-dark);color:#FFF;box-shadow:0 4px 20px var(--accent-glow)}
 
-    .author-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;padding:16px 0;border-bottom:1px solid #F3F4F6}
-    .author-meta img{width:44px;height:44px;border-radius:50%}
-    .author-info{font-size:14px;color:#374151}
-    .author-info a{font-weight:600;color:#0A0A0A}
-    .author-bio{font-size:13px;color:#6B7280;margin:2px 0 0}
-    .dates{margin-left:auto;font-size:13px;color:#9CA3AF;text-align:right;line-height:1.6}
+    /* KPI Tiles */
+    .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .kpi-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;transition:all .2s}
+    .kpi-card:hover{border-color:var(--accent);box-shadow:0 2px 12px rgba(124,58,237,0.06)}
+    .kpi-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+    .kpi-value{font-size:1.8rem;font-weight:800;color:#0A0A0A;letter-spacing:-0.02em;line-height:1}
+    .kpi-sub{font-size:12px;color:var(--muted);margin-top:6px}
+    .kpi-trend{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:600;padding:2px 8px;border-radius:12px;margin-top:4px}
+    .kpi-trend.up{background:rgba(16,185,129,0.08);color:#059669}
+    .kpi-trend.down{background:rgba(239,68,68,0.08);color:#DC2626}
+    .kpi-trend.warn{background:rgba(245,158,11,0.08);color:#D97706}
 
-    .tldr{background:rgba(91,91,255,0.05);border-left:3px solid #5B5BFF;border-radius:0 10px 10px 0;padding:18px 22px;margin:0 0 32px}
-    .tldr-label{font-size:12px;font-weight:600;color:#5B5BFF;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px}
-    .tldr ul{margin:0;padding-left:18px;font-size:14.5px}
-    .tldr li{color:#374151;margin:5px 0}
+    h2{font-size:1.4rem;font-weight:700;margin:44px 0 16px;color:#0A0A0A;letter-spacing:-0.01em;display:flex;align-items:center;gap:10px}
+    h2::before{content:'';width:4px;height:22px;background:var(--accent);border-radius:2px;display:inline-block}
+    h3{font-size:17px;font-weight:600;margin:26px 0 10px;color:#1E293B}
+    p{margin:0 0 16px;color:#475569}
+    strong{color:#0F172A;font-weight:600}
+    ul,ol{margin:14px 0 18px 24px}
+    li{margin:8px 0;color:#475569}
 
-    .snippet-answer{background:#F9FAFB;border-left:3px solid #5B5BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:15.5px;color:#1F2937;margin:8px 0 24px}
+    .toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin:0 0 36px}
+    .toc-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+    .toc ul{margin:0;padding-left:18px;font-size:14px;columns:2}
+    .toc a{color:#475569}
+    .toc a:hover{color:var(--accent)}
 
-    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-    .ba-card{border-radius:10px;padding:20px 24px}
-    .ba-before{background:#FEF2F2;border:1px solid #FECACA}
-    .ba-after{background:#F0FDF4;border:1px solid #BBF7D0}
-    .ba-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
-    .ba-before .ba-label{color:#DC2626}
-    .ba-after .ba-label{color:#16A34A}
-    .ba-text{font-size:14.5px;color:#4B5563;line-height:1.7}
+    .tldr{background:rgba(124,58,237,0.04);border:1px solid rgba(124,58,237,0.12);border-radius:14px;padding:20px 24px;margin:0 0 36px}
+    .tldr-label{font-size:11px;font-weight:600;color:var(--accent);margin-bottom:12px;text-transform:uppercase;letter-spacing:1.5px}
+    .tldr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tldr-card{background:var(--card);border-radius:10px;padding:16px;border-top:3px solid var(--accent)}
+    .tldr-card .tl{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+    .tldr-card .tb{font-size:13px;color:#475569;line-height:1.55}
 
-    .viz{margin:28px 0;padding:24px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px}
-    .viz img,.viz svg{width:100%;height:auto;display:block;border-radius:8px}
-    .viz-caption{margin-top:12px;font-size:13px;color:#6B7280;text-align:center;font-style:italic}
+    /* Pain cards: Monthly Close style */
+    .close-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+    .close-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .2s}
+    .close-card:hover{border-color:var(--accent)}
+    .close-card .cc-date{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+    .close-card .cc-title{font-size:16px;font-weight:600;color:#0A0A0A;margin-bottom:8px}
+    .close-card .cc-systems{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+    .close-card .cc-sys{font-size:10px;font-weight:500;padding:3px 8px;border-radius:10px;background:rgba(124,58,237,0.06);color:var(--accent);border:1px solid rgba(124,58,237,0.15)}
+    .close-card .cc-body{font-size:13px;color:var(--muted);line-height:1.6}
+    .close-card .cc-q{display:block;margin-top:10px;font-size:12px;color:var(--accent);font-weight:500;font-style:italic}
 
-    .compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-    .compare-table th,.compare-table td{padding:13px 12px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
-    .compare-table th{background:#F9FAFB;color:#111827;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:0.5px}
-    .compare-table td{color:#4B5563}
+    .compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+    .compare-table th,.compare-table td{padding:14px 16px;text-align:left;vertical-align:top}
+    .compare-table th{background:var(--accent);color:#FFF;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+    .compare-table td{background:var(--card);color:#475569;border-bottom:1px solid var(--border)}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table .hl-col{background:rgba(124,58,237,0.04);color:var(--accent);font-weight:500}
 
-    .step-box{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 20px;margin:14px 0;transition:border-color 0.2s}
-    .step-box:hover{border-color:#5B5BFF}
-    .step-num{display:inline-flex;width:26px;height:26px;background:#0A0A0A;color:#FFFFFF;border-radius:50%;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-right:10px;vertical-align:middle}
-    .step-box strong{display:inline;vertical-align:middle;font-size:15.5px;color:#0A0A0A}
-    .step-box p{margin:8px 0 0 36px;font-size:14.5px;color:#4B5563}
+    .snippet-answer{background:var(--card);border-left:3px solid var(--accent);padding:18px 22px;border-radius:0 10px 10px 0;font-size:15px;color:#334155;margin:8px 0 24px}
 
-    .concession-box{background:#FFFBEB;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:8px;padding:20px 24px;margin:24px 0;color:#1F2937}
+    /* 6 workflow metric cards */
+    .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+    .metric-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .2s}
+    .metric-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .metric-card .m-num{font-size:28px;font-weight:800;color:var(--accent);margin-bottom:2px;letter-spacing:-0.02em}
+    .metric-card .m-title{font-size:14px;font-weight:600;color:#0A0A0A;margin-bottom:6px}
+    .metric-card .m-desc{font-size:12.5px;color:var(--muted);line-height:1.55}
+    .metric-card .m-q{font-size:11.5px;color:var(--accent);margin-top:8px;display:block;font-weight:500;font-style:italic}
+
+    .concession-box{background:#FFFBEB;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:8px;padding:20px 24px;margin:24px 0}
     .concession-box h3{color:#78350F;margin:0 0 10px;font-size:17px}
-    .concession-box p{color:#374151;margin:6px 0;font-size:14.5px}
+    .concession-box p{color:#475569;margin:6px 0;font-size:14px}
     .concession-box ul{margin:8px 0 4px 22px}
-    .concession-box li{color:#374151;font-size:14.5px}
+    .concession-box li{color:#475569;font-size:14px}
 
-    .cta-box{background:linear-gradient(135deg,rgba(91,91,255,0.08),rgba(91,91,255,0.03));border:1px solid rgba(91,91,255,0.22);text-align:center;padding:40px;border-radius:14px;margin:48px 0}
-    .cta-box h3{color:#0A0A0A;margin:0 0 10px;font-size:22px;font-weight:600;border:none;padding:0}
-    .cta-box p{color:#4B5563;margin:0 0 22px;font-size:15px}
-    .cta-btn{display:inline-block;background:#0A0A0A;color:#FFFFFF;padding:13px 36px;border-radius:28px;font-weight:600;font-size:15px;transition:all 0.2s;text-decoration:none}
-    .cta-btn:hover{background:#1F2937;color:#FFFFFF;transform:translateY(-1px)}
+    .step-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:14px 0;transition:border-color .2s;display:flex;gap:16px;align-items:flex-start}
+    .step-box:hover{border-color:var(--accent)}
+    .step-num{flex-shrink:0;width:36px;height:36px;background:var(--accent);color:#FFF;border-radius:50%;align-items:center;justify-content:center;font-size:14px;font-weight:700;display:flex}
+    .step-content h4{font-size:15px;font-weight:600;color:#0A0A0A;margin-bottom:4px}
+    .step-content p{font-size:13.5px;color:var(--muted);margin:0}
 
-    .faq-item{border-bottom:1px solid #E5E7EB;padding:20px 0}
+    .cta-box{background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(124,58,237,0.02));border:1px solid rgba(124,58,237,0.2);text-align:center;padding:44px;border-radius:16px;margin:48px 0}
+    .cta-box h3{color:#0A0A0A;margin:0 0 10px;font-size:22px;font-weight:700}
+    .cta-box p{color:var(--muted);margin:0 0 22px;font-size:15px}
+    .cta-btn{display:inline-block;background:var(--accent);color:#FFF;padding:13px 36px;border-radius:28px;font-weight:600;font-size:15px;transition:all .2s}
+    .cta-btn:hover{background:var(--accent-dark);color:#FFF;transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow)}
+
+    .faq-item{border-bottom:1px solid var(--border);padding:20px 0}
     .faq-q{font-weight:600;font-size:16px;color:#0A0A0A}
-    .faq-a{margin-top:10px;color:#4B5563;font-size:14.5px;line-height:1.7}
+    .faq-a{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.7}
 
-    .methodology{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:22px 26px;margin:36px 0;font-size:14px;color:#4B5563}
-    .methodology h2{font-size:13px;border:none;padding:0;margin:0 0 14px;color:#111827;text-transform:uppercase;letter-spacing:1.2px}
-    .methodology p{margin:6px 0;font-size:13.5px}
+    .methodology{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin:36px 0;font-size:14px}
+    .methodology h2{font-size:13px;border:none;padding:0;margin:0 0 14px;color:#1E293B;text-transform:uppercase;letter-spacing:1.2px}
+    .methodology h2::before{display:none}
+    .methodology p{margin:6px 0;font-size:13px;color:var(--muted)}
 
     .related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
-    .related a{display:block;padding:16px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:10px;color:#5B5BFF;font-size:14px;font-weight:500;transition:all 0.2s;line-height:1.5}
-    .related a:hover{background:rgba(91,91,255,0.04);border-color:#5B5BFF}
+    .related a{display:block;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:10px;color:var(--accent);font-size:14px;font-weight:500;transition:all .2s;line-height:1.5}
+    .related a:hover{border-color:var(--accent);background:rgba(124,58,237,0.04)}
 
-    .footer{background:#F9FAFB;border-top:1px solid #E5E7EB;padding:48px 24px;margin-top:60px}
-    .footer-inner{max-width:1024px;margin:0 auto}
+    .footer{background:var(--card);border-top:1px solid var(--border);padding:48px 24px;margin-top:60px}
+    .footer-inner{max-width:1280px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
-    .footer h4{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .footer h4{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
     .footer-links{display:flex;flex-direction:column;gap:10px;font-size:14px}
-    .footer-links a{color:#6B7280}
+    .footer-links a{color:var(--muted)}
     .footer-links a:hover{color:#0A0A0A}
-    .footer-bottom{border-top:1px solid #E5E7EB;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
+    .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
 
-    @media(max-width:720px){
-      .ba-grid{grid-template-columns:1fr}
+    .viz{margin:28px 0;padding:24px;background:var(--card);border:1px solid var(--border);border-radius:14px}
+    .viz svg{width:100%;height:auto;display:block;border-radius:8px}
+    .viz-caption{margin-top:12px;font-size:13px;color:var(--muted);text-align:center;font-style:italic}
+
+    @media(max-width:768px){
+      .kpi-row{grid-template-columns:repeat(2,1fr)}
+      .hero{padding:28px 24px}
+      .hero-text h1{font-size:1.7rem}
+      .tldr-grid{grid-template-columns:1fr}
+      .close-grid{grid-template-columns:1fr}
+      .metric-grid{grid-template-columns:1fr}
       .related{grid-template-columns:1fr}
-      h1{font-size:1.85rem}
-      h2{font-size:1.18rem}
       .footer-grid{grid-template-columns:1fr 1fr}
       .nav-links a:not(.nav-cta){display:none}
       .wrap{padding:32px 20px}
+      .toc ul{columns:1}
       .compare-table{font-size:12px}
-      .compare-table th,.compare-table td{padding:8px 6px}
-      .step-box p{margin-left:0}
-      .author-meta{flex-wrap:wrap}
-      .dates{margin-left:0;text-align:left}
+      .compare-table th,.compare-table td{padding:10px 8px}
     }
   </style>
 </head>
@@ -274,84 +305,117 @@
     </nav>
 
     <div>
-      <span class="badge badge-client">InfiniSynapse</span>
-      <span class="badge badge-cat">Scenario</span>
+      <span class="badge badge-scenario">InfiniSynapse Scenario</span>
+      <span class="badge badge-cat">SaaS & Subscription</span>
     </div>
 
-    <h1>AI SaaS Analytics: Know Your NRR Before the Board Meeting</h1>
-
-    <p class="meta-desc">A practical guide to <strong>AI SaaS analytics</strong> for founders, revenue operations, and product-led growth teams. Covers <strong>MRR/ARR tracking</strong>, <strong>subscription analytics</strong>, <strong>LTV/CAC</strong>, <strong>usage analytics</strong>, and <strong>PLG funnel metrics</strong> — unifying Stripe billing, product usage databases, CRM, and support tickets without a data engineering team.</p>
-
-    <div class="author-meta">
-      <img src="https://infinisynapse.com/authors/editorial-team.jpg" alt="InfiniSynapse Editorial Team" width="44" height="44">
-      <div class="author-info">
-        <a href="https://infinisynapse.com/authors/editorial-team">InfiniSynapse Editorial Team</a> · Enterprise AI Analytics Research
-        <p class="author-bio">Specializing in AI-powered SaaS and subscription analytics, serving founders, revenue operations, and product-led growth teams.</p>
+    <!-- ── Hero: Metrics Command Center ── -->
+    <div class="hero">
+      <div class="hero-top">
+        <div class="hero-text">
+          <h1>Know Your <span>NRR</span> Before the Board Meeting</h1>
+          <p>Unify Stripe, product usage, CRM, and support tickets. Ask one question. Get SaaS metrics your board will trust — without the weekend spreadsheet marathon.</p>
+        </div>
+        <a href="https://app.infinisynapse.com/" class="hero-cta">Start Analyzing →</a>
       </div>
-      <div class="dates">
-        <span>Published: 2026-06-01</span><br>
-        <span>Last Updated: 2026-06-01</span>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="kpi-label">MRR</div>
+          <div class="kpi-value">$1.42M</div>
+          <div class="kpi-sub">+$86K this month</div>
+          <div class="kpi-trend up">↑ 6.4% MoM</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Net Revenue Retention</div>
+          <div class="kpi-value">118%</div>
+          <div class="kpi-sub">Enterprise: 126% · SMB: 104%</div>
+          <div class="kpi-trend up">↑ 3.2pp QoQ</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">LTV / CAC</div>
+          <div class="kpi-value">4.2×</div>
+          <div class="kpi-sub">CAC payback: 11 months</div>
+          <div class="kpi-trend up">↑ 0.3× YoY</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Gross Churn</div>
+          <div class="kpi-value">2.8%</div>
+          <div class="kpi-sub">Net churn: -1.2% (neg.)</div>
+          <div class="kpi-trend down">↓ 0.4pp MoM</div>
+        </div>
       </div>
     </div>
 
     <nav class="toc">
-      <div class="toc-label">Contents</div>
+      <div class="toc-label">Board Deck Index</div>
       <ul>
         <li><a href="#snippet">What is AI-powered SaaS analytics?</a></li>
-        <li><a href="#before-after">Before vs After: spreadsheet gymnastics vs always-on SaaS intelligence</a></li>
-        <li><a href="#pain">Three hard problems with siloed SaaS data</a></li>
+        <li><a href="#pain">Three monthly-close nightmares</a></li>
         <li><a href="#solution">How InfiniSynapse unifies SaaS analytics</a></li>
         <li><a href="#workflows">Six core SaaS analytics workflows</a></li>
         <li><a href="#why-not">When InfiniSynapse is not the right choice</a></li>
-        <li><a href="#quickstart">Quick start: 3 steps to AI SaaS analytics</a></li>
+        <li><a href="#quickstart">Quick start: 3 steps</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
 
     <div class="tldr">
-      <div class="tldr-label">TL;DR</div>
-      <ul>
-        <li><strong>Problem:</strong> SaaS companies run on metrics — MRR, NRR, churn, LTV/CAC, CAC payback — but the data to calculate them lives in separate systems: Stripe for billing, your production database for usage, Salesforce for pipeline, Zendesk for support. Answering "what's our net revenue retention by customer segment, and which product behaviors correlate with >120% NRR?" requires joining billing data with usage data with CRM data — a cross-source analysis that takes a data team weeks to set up and maintain. Most SaaS founders run board meetings on metrics they assembled manually in a spreadsheet over the previous weekend.</li>
-        <li><strong>Solution:</strong> InfiniSynapse connects to your billing database, product usage database, CRM, and support ticketing system simultaneously. You ask SaaS questions in plain English. It queries across all sources, applies your metric definitions (MRR, NRR, LTV, churn) from the Knowledge Base, and returns answers your board will trust.</li>
-        <li><strong>Result:</strong> Monthly SaaS metrics reporting goes from 3 days of spreadsheet work to 5 minutes. NRR analysis by segment becomes a daily capability, not a quarterly project. PLG funnel bottlenecks are identified in real time instead of being discovered in the quarterly retrospective.</li>
-      </ul>
+      <div class="tldr-label">Executive Summary</div>
+      <div class="tldr-grid">
+        <div class="tldr-card"><div class="tl">Problem</div><div class="tb">SaaS metrics require data from 4+ systems — Stripe (billing), production DB (usage), Salesforce (pipeline), Zendesk (support). Most founders build board decks from spreadsheets over the weekend. By Monday, the data is 2 weeks stale.</div></div>
+        <div class="tldr-card"><div class="tl">Solution</div><div class="tb">Connect all four systems to InfiniSynapse once. Define your metrics in the Knowledge Base. Ask questions in plain English. The AI joins billing, usage, CRM, and support data — applying your definitions consistently every time.</div></div>
+        <div class="tldr-card"><div class="tl">Result</div><div class="tb">Monthly SaaS reporting: 3 days → 5 minutes. NRR by segment: quarterly project → daily capability. Board meeting follow-ups: "we'll get back to you" → answered live. One source of truth for metrics across the company.</div></div>
+      </div>
     </div>
 
     <h2 id="snippet">What is AI-powered SaaS analytics?</h2>
-    <p class="snippet-answer"><strong>AI-powered SaaS analytics uses an AI data analyst to automatically integrate billing data (Stripe, Chargebee), product usage data (your production DB), CRM pipeline data (Salesforce, HubSpot), and support ticket data (Zendesk, Intercom) — then perform MRR decomposition, churn analysis, LTV/CAC calculation, NRR tracking, and PLG funnel analytics in plain English. Unlike dedicated subscription analytics tools (ChartMogul, Baremetrics) that only analyze billing data, or general-purpose BI tools that require weeks of data modeling, InfiniSynapse connects all four SaaS data pillars and answers cross-source questions immediately.</strong></p>
+    <p class="snippet-answer"><strong>AI-powered SaaS analytics uses an AI data analyst to automatically integrate billing data (Stripe, Chargebee), product usage data (production DB), CRM pipeline data (Salesforce, HubSpot), and support ticket data (Zendesk, Intercom) — then perform MRR decomposition, churn analysis, LTV/CAC calculation, NRR tracking, and PLG funnel analytics in plain English. Unlike subscription analytics tools that only analyze billing data, InfiniSynapse connects all four SaaS data pillars and answers cross-source questions immediately.</strong></p>
 
-    <h2 id="before-after">Before vs After: spreadsheet-driven reporting vs AI-driven SaaS intelligence</h2>
-    <div class="ba-grid">
-      <div class="ba-card ba-before">
-        <div class="ba-label">Before — Traditional approach</div>
-        <div class="ba-text">The first week of every month: export subscription data from Stripe, export account data from Salesforce, export product usage events from the data warehouse — three separate CSVs with three different customer ID formats. Spend 2 days in Excel: clean the data, build a pivot table for MRR by plan, manually calculate churn, attempt an LTV/CAC that the CFO will question because the CAC data only includes sales-led accounts and misses PLG self-serve. To answer "which features do our best accounts use?", someone has to write SQL across the usage DB and the billing DB — a task that sits in the data team's backlog for 3 sprints. By the time the board deck is done, the data is 2 weeks stale.</div>
+    <h2 id="pain">Three monthly-close nightmares every SaaS founder knows</h2>
+
+    <div class="close-grid">
+      <div class="close-card">
+        <div class="cc-date">Week 1 · Every Month</div>
+        <div class="cc-title">The Spreadsheet Marathon</div>
+        <div class="cc-systems">
+          <span class="cc-sys">Stripe</span>
+          <span class="cc-sys">Salesforce</span>
+          <span class="cc-sys">Excel</span>
+        </div>
+        <div class="cc-body">Export subscriptions from Stripe. Export accounts from Salesforce. Export usage events from data warehouse. Three CSVs, three different customer ID formats, two days of VLOOKUPs. The LTV/CAC number will be questioned by the CFO because CAC only includes sales-led accounts and misses PLG self-serve entirely.</div>
+        <div class="cc-q">→ InfiniSynapse: "MRR decomposition by segment for last 12 months." One query, 30 seconds.</div>
       </div>
-      <div class="ba-card ba-after">
-        <div class="ba-label">After — With InfiniSynapse</div>
-        <div class="ba-text">Connect your Stripe billing database, your product database, Salesforce, and Zendesk once. Then ask: "Show MRR growth decomposed into new, expansion, contraction, and churned by customer segment for the last 12 months. For the cohort with >120% NRR, what are the top 5 product features they use that the <100% NRR cohort doesn't?" InfiniSynapse queries billing data for revenue, CRM for segment assignments, and product usage for feature adoption — joining on customer ID — and returns a complete growth decomposition with behavioral insights. The board deck that took a week now takes 5 minutes. And you can ask follow-up questions during the board meeting instead of saying "we'll get back to you."</div>
+      <div class="close-card">
+        <div class="cc-date">Q1 Board Meeting</div>
+        <div class="cc-title">"We'll Get Back to You"</div>
+        <div class="cc-systems">
+          <span class="cc-sys">Data Warehouse</span>
+          <span class="cc-sys">SQL</span>
+          <span class="cc-sys">Jira Backlog</span>
+        </div>
+        <div class="cc-body">A board member asks: "Which features do accounts with >120% NRR use that churned accounts don't?" Answering requires joining product usage data with billing data — a SQL query across two databases. It goes into the data team's backlog. Sprint capacity means 3-week wait. The board follow-up email gets a "still investigating" reply.</div>
+        <div class="cc-q">→ InfiniSynapse: "Top 5 features correlated with >120% NRR vs. churned accounts." Answered during the meeting.</div>
+      </div>
+      <div class="close-card">
+        <div class="cc-date">Every Quarter</div>
+        <div class="cc-title">"Whose Numbers Are Right?"</div>
+        <div class="cc-systems">
+          <span class="cc-sys">3 Dashboards</span>
+          <span class="cc-sys">2 Spreadsheets</span>
+          <span class="cc-sys">Slack Threads</span>
+        </div>
+        <div class="cc-body">The CEO's MRR number (from Stripe dashboard) doesn't match the VP Finance's number (from the spreadsheet). The VP of Sales calculates churn differently than the VP of Customer Success. Three Slack threads and one meeting later: they're all using different definitions of "churn" (cancellation vs. non-renewal vs. downgrade).</div>
+        <div class="cc-q">→ InfiniSynapse: Define metrics once in the Knowledge Base. Every query uses the same definitions. No more "whose numbers."</div>
       </div>
     </div>
 
-    <h2 id="pain">Three hard problems with siloed SaaS data</h2>
-    <p>SaaS is a metrics-driven business, but the "single source of truth" is usually a spreadsheet that one person maintains. These three problems are why:</p>
-
-    <h3>Problem 1: Billing data answers "how much," but not "why"</h3>
-    <p>Stripe tells you MRR, upgrades, downgrades, and churn — the <em>what</em>. But it cannot tell you <em>why</em> a customer upgraded or churned. The "why" lives in product usage data (which features they used, how often they logged in, whether they invited teammates) and support data (how many tickets they filed, how fast they were resolved, what they complained about). Subscription analytics tools like ChartMogul and Baremetrics do an excellent job with the billing side, but they stop at the billing data boundary. InfiniSynapse crosses that boundary: join billing events with product usage patterns and support interactions to understand not just what happened to your MRR, but why.</p>
-
-    <h3>Problem 2: LTV/CAC is the most important SaaS metric — and the hardest to calculate correctly</h3>
-    <p>LTV requires: average revenue per account × gross margin ÷ churn rate. CAC requires: total sales + marketing spend ÷ new customers acquired. These sound simple. In practice: does "revenue" include discounts, credits, and one-time services? Does "churn" mean contract cancellation, non-renewal, or downgrade? Does "marketing spend" include content marketing salaries, conference sponsorships, and free-tier infrastructure costs? And which customers: all customers, or only those acquired in the last 12 months? Every SaaS company answers these differently — but within a company, the CEO, the VP of Sales, and the board need the <em>same</em> answers. InfiniSynapse's Knowledge Base stores your LTV/CAC formula once, and the AI applies it consistently across every analysis — eliminating the "your numbers look different from my numbers" conversation.</p>
-
-    <h3>Problem 3: PLG funnels span 3-4 systems that were never integrated</h3>
-    <p>A product-led growth funnel goes: visitor → signup (product DB) → activation (product DB: reached key milestone) → conversion to paid (Stripe) → expansion (Stripe: upgraded plan OR CRM: sales-assisted upsell). That's three systems — product DB, billing, CRM — with different notions of what a "customer" is. Most PLG companies cannot answer "what's our signup-to-paid conversion rate by acquisition channel?" without a data engineer building and maintaining a cross-source pipeline. InfiniSynapse was designed for exactly this: connect the three systems, define the funnel stages in the Knowledge Base, and ask the question in plain English.</p>
-
     <h2 id="solution">How InfiniSynapse unifies SaaS analytics across data silos</h2>
-    <p>InfiniSynapse's architectural difference is connecting directly to your billing, product, CRM, and support systems — and joining them on the customer identity that ties them all together:</p>
 
     <table class="compare-table">
       <thead>
         <tr>
           <th>Capability</th>
-          <th>Spreadsheets (Excel, Google Sheets)</th>
+          <th>Spreadsheets</th>
           <th>SaaS BI (ChartMogul, Baremetrics)</th>
           <th>InfiniSynapse</th>
         </tr>
@@ -359,138 +423,162 @@
       <tbody>
         <tr>
           <td>Data scope</td>
-          <td>Whatever you manually export and merge</td>
-          <td>Billing data only (Stripe, Chargebee, Recurly)</td>
-          <td>Billing + product usage + CRM + support tickets simultaneously</td>
+          <td>Whatever you manually export</td>
+          <td>Billing data only</td>
+          <td class="hl-col">Billing + product usage + CRM + support — simultaneously</td>
         </tr>
         <tr>
           <td>Metric governance</td>
-          <td>Formula in a cell that one person understands</td>
-          <td>Pre-built standard SaaS metrics</td>
-          <td>Knowledge Base stores your custom metric definitions; AI enforces them</td>
+          <td>Formula in a cell one person understands</td>
+          <td>Pre-built standard metrics</td>
+          <td class="hl-col">Knowledge Base stores your custom definitions; AI enforces them</td>
         </tr>
         <tr>
           <td>NRR by segment</td>
           <td>Hours of pivot table work</td>
           <td>NRR overall, limited segmentation</td>
-          <td>NRR by any dimension in CRM or product DB — segment, plan, geo, feature</td>
+          <td class="hl-col">NRR by any dimension: segment, plan, geo, feature usage</td>
         </tr>
         <tr>
           <td>PLG funnel analytics</td>
-          <td>Not possible (data in 3+ systems)</td>
-          <td>Not possible (billing-only limitation)</td>
-          <td>Built-in: signup → activation → conversion → expansion</td>
+          <td>Not possible (3+ systems)</td>
+          <td>Not possible (billing-only)</td>
+          <td class="hl-col">Signup → Activation → Conversion → Expansion — full funnel</td>
         </tr>
         <tr>
           <td>Churn reason analysis</td>
-          <td>Manual: read through support tickets</td>
-          <td>Churn rate only, no qualitative context</td>
-          <td>Join churn events with support tickets and usage decline patterns</td>
+          <td>Manual: read support tickets</td>
+          <td>Churn rate only, no context</td>
+          <td class="hl-col">Join churn events with support tickets and usage decline patterns</td>
         </tr>
         <tr>
           <td>Deployment</td>
           <td>Local</td>
           <td>SaaS-only</td>
-          <td>SaaS + private deployment (Air-Gapped) — SOC 2, GDPR compliant</td>
+          <td class="hl-col">SaaS + Air-Gapped — SOC 2, GDPR compliant</td>
         </tr>
       </tbody>
     </table>
 
-    <p>Concretely: you connect your Stripe database (or Chargebee/Recurly), your product's PostgreSQL or MySQL database, your Salesforce CRM, and your Zendesk support system. InfiniSynapse auto-discovers each source's schema. When you ask "show net revenue retention by customer segment for Q1, and for each segment, list the top 3 reasons cited in churn tickets," it queries billing for revenue movements, CRM for segment assignments, and support tickets for churn reasons — joining on customer ID or email — and returns a complete NRR analysis with qualitative churn context. No ETL, no pipeline maintenance, no SQL.</p>
-
     <div class="viz">
-      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+      <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#5B5BFF"/></marker>
+          <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#7C3AED"/></marker>
         </defs>
-        <rect x="15" y="15" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="35" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Billing System</text>
-        <text x="82" y="52" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Stripe · Chargebee · Recurly</text>
-        <rect x="15" y="85" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="105" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Product Usage DB</text>
-        <text x="82" y="122" text-anchor="middle" font-size="9.5" fill="#9CA3AF">PostgreSQL · MySQL · Snowflake</text>
-        <rect x="15" y="155" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="175" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">CRM</text>
-        <text x="82" y="192" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Salesforce · HubSpot</text>
-        <rect x="15" y="225" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="245" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Support Tickets</text>
-        <text x="82" y="262" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Zendesk · Intercom</text>
-        <line x1="150" y1="40" x2="285" y2="115" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="110" x2="285" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="180" x2="285" y2="145" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="250" x2="285" y2="160" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="290" y="90" width="155" height="80" rx="12" fill="#5B5BFF" opacity="0.12" stroke="#5B5BFF" stroke-width="2"/>
-        <text x="367" y="122" text-anchor="middle" font-size="14" fill="#5B5BFF" font-weight="700">InfiniSynapse</text>
-        <text x="367" y="142" text-anchor="middle" font-size="11" fill="#5B5BFF">Multi-Source Federation</text>
-        <text x="367" y="158" text-anchor="middle" font-size="10" fill="#6B7280">Zero ETL · Auto JOIN</text>
-        <line x1="445" y1="130" x2="525" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="535" y="15" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="33" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">MRR/ARR Decomposition</text>
-        <text x="620" y="48" text-anchor="middle" font-size="9" fill="#6B7280">New · Expansion · Contraction · Churn</text>
-        <rect x="535" y="72" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="90" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">NRR & LTV/CAC</text>
-        <text x="620" y="105" text-anchor="middle" font-size="9" fill="#6B7280">by Segment · Cohort · Channel</text>
-        <rect x="535" y="129" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="147" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Churn Reason Analysis</text>
-        <text x="620" y="162" text-anchor="middle" font-size="9" fill="#6B7280">Usage Drop · Ticket Themes</text>
-        <rect x="535" y="186" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="204" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">PLG Funnel Analytics</text>
-        <text x="620" y="219" text-anchor="middle" font-size="9" fill="#6B7280">Signup → Activation → Paid → Expand</text>
-        <rect x="535" y="243" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="261" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Usage Analytics</text>
-        <text x="620" y="276" text-anchor="middle" font-size="9" fill="#6B7280">Features · DAU/MAU · Stickiness</text>
+        <rect x="10" y="20" width="140" height="46" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="80" y="40" text-anchor="middle" font-size="11" fill="#1E293B" font-weight="600">Billing System</text>
+        <text x="80" y="56" text-anchor="middle" font-size="9" fill="#64748B">Stripe · Chargebee · Recurly</text>
+        <rect x="10" y="82" width="140" height="46" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="80" y="102" text-anchor="middle" font-size="11" fill="#1E293B" font-weight="600">Product Usage DB</text>
+        <text x="80" y="118" text-anchor="middle" font-size="9" fill="#64748B">PostgreSQL · MySQL · Snowflake</text>
+        <rect x="10" y="144" width="140" height="46" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="80" y="164" text-anchor="middle" font-size="11" fill="#1E293B" font-weight="600">CRM</text>
+        <text x="80" y="180" text-anchor="middle" font-size="9" fill="#64748B">Salesforce · HubSpot</text>
+        <rect x="10" y="206" width="140" height="46" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+        <text x="80" y="226" text-anchor="middle" font-size="11" fill="#1E293B" font-weight="600">Support Tickets</text>
+        <text x="80" y="242" text-anchor="middle" font-size="9" fill="#64748B">Zendesk · Intercom</text>
+        <line x1="150" y1="43" x2="285" y2="110" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="150" y1="105" x2="285" y2="125" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="150" y1="167" x2="285" y2="140" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="150" y1="229" x2="285" y2="155" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr)"/>
+        <rect x="290" y="90" width="160" height="80" rx="12" fill="rgba(124,58,237,0.1)" stroke="#7C3AED" stroke-width="2"/>
+        <text x="370" y="120" text-anchor="middle" font-size="14" fill="#7C3AED" font-weight="700">InfiniSynapse</text>
+        <text x="370" y="140" text-anchor="middle" font-size="11" fill="#8B5CF6">Multi-Source Federation</text>
+        <text x="370" y="157" text-anchor="middle" font-size="10" fill="#64748B">Zero ETL · Auto JOIN</text>
+        <line x1="450" y1="130" x2="530" y2="130" stroke="#7C3AED" stroke-width="2" marker-end="url(#arr)"/>
+        <rect x="540" y="15" width="170" height="38" rx="8" fill="rgba(124,58,237,0.06)" stroke="rgba(124,58,237,0.15)" stroke-width="1"/>
+        <text x="625" y="31" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="600">MRR/ARR Decomposition</text>
+        <text x="625" y="46" text-anchor="middle" font-size="8.5" fill="#64748B">New · Expansion · Contraction · Churn</text>
+        <rect x="540" y="63" width="170" height="38" rx="8" fill="rgba(124,58,237,0.06)" stroke="rgba(124,58,237,0.15)" stroke-width="1"/>
+        <text x="625" y="79" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="600">NRR & LTV/CAC</text>
+        <text x="625" y="94" text-anchor="middle" font-size="8.5" fill="#64748B">by Segment · Cohort · Channel</text>
+        <rect x="540" y="111" width="170" height="38" rx="8" fill="rgba(124,58,237,0.06)" stroke="rgba(124,58,237,0.15)" stroke-width="1"/>
+        <text x="625" y="127" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="600">Churn Reason Analysis</text>
+        <text x="625" y="142" text-anchor="middle" font-size="8.5" fill="#64748B">Usage Drop · Ticket Themes</text>
+        <rect x="540" y="159" width="170" height="38" rx="8" fill="rgba(124,58,237,0.06)" stroke="rgba(124,58,237,0.15)" stroke-width="1"/>
+        <text x="625" y="175" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="600">PLG Funnel Analytics</text>
+        <text x="625" y="190" text-anchor="middle" font-size="8.5" fill="#64748B">Signup → Activation → Paid → Expand</text>
+        <rect x="540" y="207" width="170" height="38" rx="8" fill="rgba(124,58,237,0.06)" stroke="rgba(124,58,237,0.15)" stroke-width="1"/>
+        <text x="625" y="223" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="600">Usage Analytics</text>
+        <text x="625" y="238" text-anchor="middle" font-size="8.5" fill="#64748B">Features · DAU/MAU · Stickiness</text>
       </svg>
-      <div class="viz-caption">InfiniSynapse SaaS analytics data flow: four independent SaaS data sources connected directly, zero ETL, plain-English questions produce unified subscription metrics — from MRR decomposition to PLG funnel analysis.</div>
+      <div class="viz-caption">InfiniSynapse SaaS analytics: four independent data sources connected directly — zero ETL, plain-English questions produce unified subscription metrics across billing, product, CRM, and support.</div>
     </div>
 
     <h2 id="workflows">Six core SaaS analytics workflows</h2>
-    <p>These are the six highest-frequency SaaS analytics workflows founders, revenue operations, and product teams run on InfiniSynapse:</p>
 
-    <h3>1. MRR/ARR growth decomposition — <code>MRR tracking</code> / <code>ARR tracking</code></h3>
-    <p>Ask: "Decompose MRR growth for the last 12 months into new, expansion, contraction, and churned components. Show as a waterfall by month. Which month had the highest gross churn, and which customers drove it?" InfiniSynapse queries subscription events from Stripe (new subscriptions, plan changes, cancellations), applies your MRR definitions from the Knowledge Base, and produces a complete growth decomposition — a report that typically takes a finance analyst 2 days in Excel. For SaaS companies tracking ARR, the same query works with annual contract values.</p>
-
-    <h3>2. Net revenue retention by segment, plan, and cohort — <code>subscription analytics</code></h3>
-    <p>Ask: "Calculate NRR by customer segment (SMB, Mid-Market, Enterprise) and by plan tier for the last 4 quarters. For each segment, show the expansion rate and the churn rate separately. Which segment has NRR below 100% — and within that segment, what are the common characteristics of churned accounts?" InfiniSynapse joins billing data (revenue movements) with CRM data (segment, plan tier) and product usage data (engagement of churned accounts). NRR analysis that would take a week of SQL and cross-referencing is now a single query.</p>
-
-    <h3>3. LTV/CAC by acquisition channel and cohort — <code>LTV/CAC analysis</code></h3>
-    <p>Ask: "Compare LTV, CAC, and LTV/CAC ratio by acquisition channel (paid search, organic, outbound sales, partner) for cohorts starting Q1 2025 through Q1 2026. Use a 12-month LTV window with gross margin at 75%. Which channel has a payback period over 18 months?" InfiniSynapse queries billing data for LTV (avg revenue × gross margin ÷ churn rate), CRM data for acquisition channel and CAC (sales + marketing spend by channel ÷ new customers), and your Knowledge Base for the formula parameters. This is the analysis that every SaaS board asks for and most companies spend 2 weeks preparing.</p>
-
-    <h3>4. PLG funnel analytics: signup to expansion — <code>usage analytics</code> / <code>PLG metrics</code></h3>
-    <p>Ask: "Show the PLG funnel conversion rates for Q1: website visitor → signup → activated (reached key milestone within 7 days) → converted to paid → expanded (upgraded plan or added 2+ seats). Break down by acquisition channel. Where is the biggest conversion drop-off, and what product behaviors differentiate accounts that pass that stage from those that don't?" InfiniSynapse joins your product database (signup events, activation milestones, usage events), Stripe (conversion to paid, plan upgrades), and CRM (acquisition channel). This is the holy grail of PLG analytics — and it requires data from 3 separate systems that no single SaaS tool connects.</p>
-
-    <h3>5. Churn prediction and reason analysis — <code>churn analysis</code></h3>
-    <p>Ask: "Identify accounts that churned in the last 90 days. For each, show: MRR lost, tenure at churn, support ticket volume in the 60 days before churn, product usage trend in the 30 days before churn (declining, flat, or increasing), and the primary reason cited in the cancellation survey or final support ticket." InfiniSynapse joins billing data (churn events), product usage data (engagement trend), and support tickets (cancellation reasons) — producing a churn post-mortem that connects the financial impact (MRR lost) with the behavioral leading indicators (usage decline) and the stated reasons (support feedback). This transforms churn from a number into something you can act on.</p>
-
-    <h3>6. Feature-product usage correlation with retention — <code>usage analytics</code> / <code>product analytics</code></h3>
-    <p>Ask: "For accounts active in the last 12 months, correlate feature usage (which features, how frequently, by how many users) with account retention status at month 12. Which 5 features have the strongest positive correlation with retention? Which features are used by accounts that churned but almost never by accounts that renewed — indicating possible UX or value communication issues?" InfiniSynapse joins product usage events from your production DB with retention status from Stripe — a cross-source correlation analysis that quantifies which features actually drive retention, not just which features get the most clicks.</p>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="m-num">01</div>
+        <div class="m-title">MRR/ARR Growth Decomposition</div>
+        <div class="m-desc">Decompose MRR into new, expansion, contraction, and churned by month. Identify which month had the highest gross churn and which customers drove it. The report that takes a finance analyst 2 days in Excel — now one query.</div>
+        <span class="m-q">"Waterfall MRR growth by month for last 12 months"</span>
+      </div>
+      <div class="metric-card">
+        <div class="m-num">02</div>
+        <div class="m-title">NRR by Segment & Cohort</div>
+        <div class="m-desc">Calculate NRR by segment (SMB, Mid-Market, Enterprise) and plan tier for last 4 quarters. Separate expansion from churn. Identify which segment has NRR below 100% and the common traits of churned accounts.</div>
+        <span class="m-q">"NRR by segment Q1-Q4 with churn characteristics"</span>
+      </div>
+      <div class="metric-card">
+        <div class="m-num">03</div>
+        <div class="m-title">LTV/CAC by Channel & Cohort</div>
+        <div class="m-desc">Compare LTV, CAC, and ratio by acquisition channel (paid search, organic, outbound, partner) for the last 4 quarters. Which channel has a payback period over 18 months? The analysis every board asks for — on demand.</div>
+        <span class="m-q">"LTV/CAC by acquisition channel Q1 2025 through Q1 2026"</span>
+      </div>
+      <div class="metric-card">
+        <div class="m-num">04</div>
+        <div class="m-title">PLG Funnel Analytics</div>
+        <div class="m-desc">Full PLG funnel: signup → activation (milestone in 7d) → conversion (free → paid) → expansion (upgrade +2 seats). Breakdown by acquisition channel. Find the biggest drop-off and what behaviors predict passing each stage.</div>
+        <span class="m-q">"PLG funnel conversion rates by channel for Q1"</span>
+      </div>
+      <div class="metric-card">
+        <div class="m-num">05</div>
+        <div class="m-title">Churn Prediction & Reason Analysis</div>
+        <div class="m-desc">Identify churned accounts in last 90 days. For each: MRR lost, support ticket volume in 60d before churn, usage trend in 30d before churn, and primary cancellation reason. Transforms churn from a number into something actionable.</div>
+        <span class="m-q">"Churn post-mortem: who churned, why, and what were the leading indicators?"</span>
+      </div>
+      <div class="metric-card">
+        <div class="m-num">06</div>
+        <div class="m-title">Feature-Retention Correlation</div>
+        <div class="m-desc">Correlate feature usage (which features, frequency, user count) with 12-month retention. Top 5 features with strongest positive correlation vs. features used by churned accounts but rarely by retained — revealing UX or value communication gaps.</div>
+        <span class="m-q">"Feature adoption vs. retention: which features actually drive retention?"</span>
+      </div>
+    </div>
 
     <div class="concession-box" id="why-not">
       <h3>When InfiniSynapse is not the right choice for SaaS analytics</h3>
       <p>Honest framing — you likely don't need InfiniSynapse if:</p>
       <ul>
-        <li><strong>You only need billing metrics (MRR, churn, LTV from Stripe data alone).</strong> ChartMogul, Baremetrics, and ProfitWell are purpose-built for subscription revenue analytics and do it well. If your questions are limited to "what is MRR this month?" and "what is churn?", these tools have you covered.</li>
-        <li><strong>You're pre-product-market-fit with <50 customers.</strong> If you have 30 customers, you can manually track everything in a spreadsheet. InfiniSynapse's value grows with customer count (200+) and data source count (3+ systems).</li>
-        <li><strong>You already have a full modern data stack with a dedicated analytics team.</strong> If you have Fivetran piping Stripe and product data into Snowflake, dbt models maintaining your SaaS metrics, and a BI tool with dashboards that everyone trusts — InfiniSynapse may overlap with your existing investment. Its strongest value is compressing the path from "data in 3+ silos" to "trusted SaaS metrics" for teams that don't have (and don't want to build) a data engineering function.</li>
+        <li><strong>You only need billing metrics (MRR, churn, LTV from Stripe alone).</strong> ChartMogul, Baremetrics, and ProfitWell are purpose-built for subscription revenue analytics and do it well.</li>
+        <li><strong>You're pre-product-market-fit with under 50 customers.</strong> A spreadsheet works fine. InfiniSynapse's value grows with customer count (200+) and data source count (3+ systems).</li>
+        <li><strong>You already have a full modern data stack with a dedicated analytics team.</strong> Fivetran → Snowflake → dbt → BI tool. InfiniSynapse's strongest value is compressing the path from "data in 3+ silos" to "trusted SaaS metrics" for teams without a data engineering function.</li>
       </ul>
-      <p>InfiniSynapse creates the most value when your SaaS analytics questions require joining <strong>3+ data sources</strong> (billing + product + CRM + support), when metric definitions need to be governed across the organization, and when the speed of getting answers (5 minutes vs. 5 days) directly impacts your ability to manage the business.</p>
+      <p>InfiniSynapse creates the most value when your SaaS analytics questions require joining <strong>3+ data sources</strong>, when metric definitions need governance, and when the speed of answers (5 min vs. 5 days) directly impacts business decisions.</p>
     </div>
 
     <h2 id="quickstart">Quick start: 3 steps to AI SaaS analytics</h2>
 
     <div class="step-box">
-      <span class="step-num">1</span>
-      <strong>Connect your SaaS data sources</strong>
-      <p>Connect your billing database (Stripe, Chargebee, or Recurly), your product database (PostgreSQL, MySQL, Snowflake), your CRM (Salesforce, HubSpot), and your support system (Zendesk, Intercom). InfiniSynapse auto-discovers each source's schema. Private deployment available for SOC 2 and GDPR compliance.</p>
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Connect your SaaS data sources</h4>
+        <p>Connect your billing database (Stripe, Chargebee), product database (PostgreSQL, MySQL, Snowflake), CRM (Salesforce, HubSpot), and support system (Zendesk, Intercom). InfiniSynapse auto-discovers schemas. Private deployment for SOC 2/GDPR.</p>
+      </div>
     </div>
     <div class="step-box">
-      <span class="step-num">2</span>
-      <strong>Define your SaaS metrics in the Knowledge Base</strong>
-      <p>Document your key definitions once: MRR calculation (including or excluding discounts, credits, one-time), churn definition (cancellation, non-renewal, or downgrade), LTV formula (ARPA × gross margin ÷ churn rate), CAC components (which sales and marketing costs are included), and PLG activation milestones. The AI references these on every analysis — your board deck, investor update, and weekly ops review all use the same numbers.</p>
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Define your SaaS metrics in the Knowledge Base — once</h4>
+        <p>Document MRR calculation (include/exclude discounts, credits, one-time), churn definition (cancellation, non-renewal, downgrade), LTV formula, CAC components, and PLG activation milestones. The AI enforces these on every analysis — your board deck, investor update, and weekly ops review all use identical definitions.</p>
+      </div>
     </div>
     <div class="step-box">
-      <span class="step-num">3</span>
-      <strong>Ask your first cross-source SaaS question</strong>
-      <p>Start with the question your board asks every quarter: "What's our net revenue retention by segment, and which product behaviors predict >120% NRR?" InfiniSynapse queries billing, CRM, and product usage data — and returns the answer while your previous-quarter spreadsheet is still loading.</p>
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Ask your first cross-source SaaS question</h4>
+        <p>Start with the question your board asks every quarter: "What's our NRR by segment, and which product behaviors predict >120% NRR?" InfiniSynapse queries billing, CRM, and product usage data — returns the answer while your previous-quarter spreadsheet is still loading.</p>
+      </div>
     </div>
 
     <div class="cta-box">
@@ -502,30 +590,30 @@
     <h2 id="faq">FAQ</h2>
     <div class="faq-item">
       <div class="faq-q">Can InfiniSynapse connect to Stripe and other billing systems?</div>
-      <div class="faq-a">Yes. InfiniSynapse connects to your billing system's database (Stripe, Chargebee, Recurly all back onto PostgreSQL or MySQL), your product usage database, your CRM (Salesforce, HubSpot), and your support ticketing system (Zendesk, Intercom). It auto-discovers schemas and joins subscription revenue with product usage data, sales pipeline, and support tickets — all in one query, without ETL or data warehouse modeling.</div>
+      <div class="faq-a">Yes. InfiniSynapse connects to your billing system's database (Stripe, Chargebee, Recurly all back onto PostgreSQL or MySQL), your product usage database, your CRM (Salesforce, HubSpot), and your support ticketing system (Zendesk, Intercom). It auto-discovers schemas and joins subscription revenue with product usage, sales pipeline, and support tickets — all in one query, without ETL or data warehouse modeling.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What SaaS metrics can InfiniSynapse calculate?</div>
-      <div class="faq-a">Core SaaS metrics include: MRR/ARR (with new, expansion, contraction, and churned breakdown), net revenue retention (NRR), gross and net churn rate, LTV/CAC ratio by cohort and acquisition channel, CAC payback period, expansion revenue rate, feature adoption and DAU/WAU/MAU, conversion rates through PLG funnels (signup → activation → conversion → expansion), and support ticket trends correlated with churn risk. All metrics are defined once in your Knowledge Base and calculated consistently across every analysis — no more "whose numbers are right?" conversations.</div>
+      <div class="faq-a">Core SaaS metrics: MRR/ARR (with new, expansion, contraction, churned breakdown), net revenue retention (NRR), gross and net churn rate, LTV/CAC ratio by cohort and channel, CAC payback period, expansion revenue rate, feature adoption and DAU/WAU/MAU, PLG funnel conversion rates, and support ticket trends correlated with churn risk. All metrics are defined once in your Knowledge Base and calculated consistently across every analysis.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How is this different from SaaS BI tools like ChartMogul or Baremetrics?</div>
-      <div class="faq-a">ChartMogul and Baremetrics specialize in subscription revenue analytics — MRR, churn, LTV — from your billing data. They are excellent at what they do but are limited to billing data. They cannot answer: "Which product features do our highest-NRR customers use that our churned customers didn't?" or "Is there a correlation between support ticket volume in month 1 and churn in month 3?" These questions require joining billing data with product usage data with support data — which is what InfiniSynapse's multi-source federation enables. Think of ChartMogul/Baremetrics as best-in-class for billing-only metrics; InfiniSynapse for cross-source SaaS intelligence.</div>
+      <div class="faq-a">ChartMogul and Baremetrics specialize in subscription revenue analytics — MRR, churn, LTV — from your billing data. They are excellent at what they do but are limited to billing data. They cannot answer: "Which product features do our highest-NRR customers use that our churned customers didn't?" These questions require joining billing with product usage with support data — InfiniSynapse's multi-source federation enables this. ChartMogul/Baremetrics = billing-only metrics. InfiniSynapse = cross-source SaaS intelligence.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Can InfiniSynapse handle PLG (product-led growth) metrics?</div>
-      <div class="faq-a">Yes. PLG metrics require joining product usage data (who signed up, who activated, who hit the paywall) with billing data (who converted, at what plan) with CRM data (which sales-assisted accounts expanded). No single SaaS tool connects all three. InfiniSynapse can analyze the full PLG funnel: signup → activation (reached key milestone within N days) → conversion (free to paid) → expansion (upgraded plan or added seats) — and correlate each stage transition with specific product behaviors, acquisition channels, and account characteristics.</div>
+      <div class="faq-a">Yes. PLG metrics require joining product usage (who signed up, activated, hit the paywall) with billing (who converted, at what plan) with CRM (sales-assisted expansions). No single SaaS tool connects all three. InfiniSynapse analyzes the full PLG funnel: signup → activation → conversion → expansion — and correlates each stage transition with specific product behaviors, acquisition channels, and account characteristics.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Is our customer and financial data secure?</div>
-      <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All billing data, subscription records, customer PII, product usage logs, and support ticket data stay on your own servers, processed locally. Most SaaS analytics tools are SaaS-only and require piping your financial and customer data to external cloud services. Private deployment is essential for SaaS companies subject to SOC 2, GDPR, or enterprise customer data processing agreements (DPAs) that prohibit third-party data access — which includes most B2B SaaS companies above $10M ARR.</div>
+      <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All billing data, subscription records, customer PII, product usage logs, and support ticket data stay on your own servers, processed locally. Essential for SaaS companies subject to SOC 2, GDPR, or enterprise DPAs that prohibit third-party data access — which includes most B2B SaaS companies above $10M ARR.</div>
     </div>
 
     <div class="methodology">
       <h2>About this guide</h2>
       <p><strong>Last updated:</strong> 2026-06-01</p>
-      <p><strong>Methodology:</strong> SaaS analytics scenarios described here are based on InfiniSynapse product capabilities matched against common founder, revenue operations, and product-led growth workflows. Competitor capability descriptions are sourced from official documentation and product pages of ChartMogul, Baremetrics, Stripe, and other SaaS analytics tools (accessed May 2026). This domain has fewer direct AI-analytics competitor pages; the comparison is drawn against the tools SaaS companies actually use today for these workflows.</p>
-      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher of this page. We explicitly call out scenarios where dedicated subscription analytics tools (ChartMogul, Baremetrics) or spreadsheets are the better fit — particularly for billing-only metric tracking. Competitor keyword references are included so readers can conduct independent comparisons.</p>
+      <p><strong>Methodology:</strong> SaaS analytics scenarios based on InfiniSynapse product capabilities matched against common founder, revenue operations, and product-led growth workflows. Competitor capability descriptions sourced from official documentation of ChartMogul, Baremetrics, Stripe, and other SaaS analytics tools (accessed May 2026).</p>
+      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher. We explicitly call out scenarios where dedicated subscription analytics tools or spreadsheets are the better fit — particularly for billing-only metric tracking.</p>
       <p><strong>Update cadence:</strong> Reviewed quarterly. SaaS metrics best practices, competitor product capabilities, and subscription analytics trends refreshed every 90 days.</p>
     </div>
 
@@ -546,7 +634,7 @@
       <div class="footer-grid">
         <div>
           <div style="font-size:18px;font-weight:600;color:#0A0A0A;margin-bottom:12px">InfiniSynapse</div>
-          <p style="font-size:14px;color:#6B7280;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
+          <p style="font-size:14px;color:#64748B;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
           <a href="https://app.infinisynapse.com/" class="cta-btn" style="padding:8px 20px;font-size:13px">Try Online →</a>
         </div>
         <div>

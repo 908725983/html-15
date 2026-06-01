@@ -26,7 +26,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Schema #1: Organization -->
   <script type="application/ld+json">
@@ -116,134 +116,170 @@
   </script>
 
   <style>
+    :root{--accent:#4338CA;--accent-dark:#3730A3;--accent-light:rgba(67,56,202,0.08);--accent-glow:rgba(67,56,202,0.25);--bg-dark:#0F172A;--bg-card:#1E293B;--text-muted:#94A3B8;--green:#10B981;--red:#EF4444;--amber:#F59E0B}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1F2937;background:#FFFFFF;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
-    ::selection{background:rgba(91,91,255,0.2)}
-    a{color:#5B5BFF;text-decoration:none}
-    a:hover{color:#5B5BFF}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#E2E8F0;background:#0F172A;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    ::selection{background:rgba(67,56,202,0.4);color:#FFF}
+    a{color:var(--accent);text-decoration:none;transition:color .15s}
+    a:hover{color:#6366F1}
 
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB;padding:14px 0}
-    .nav-inner{max-width:1024px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(15,23,42,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(67,56,202,0.15);padding:14px 0}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
     .nav-logo{display:flex;align-items:center;gap:10px}
     .nav-logo-mark{height:28px;display:flex;align-items:center}
     .nav-logo-mark img{height:28px;width:auto;display:block}
-    .nav-logo span{font-size:16px;font-weight:600;color:#0A0A0A;letter-spacing:-0.01em}
+    .nav-logo span{font-size:16px;font-weight:600;color:#F1F5F9;letter-spacing:-0.01em}
     .nav-links{display:flex;align-items:center;gap:22px;font-size:14px}
-    .nav-links a{color:#374151;transition:color 0.15s}
-    .nav-links a:hover{color:#0A0A0A}
-    .nav-cta{background:#0A0A0A !important;color:#FFF !important;border-radius:24px;padding:9px 20px}
-    .nav-cta:hover{background:#1F2937 !important;color:#FFF !important;opacity:1}
+    .nav-links a{color:#94A3B8;transition:color 0.15s}
+    .nav-links a:hover{color:#F1F5F9}
+    .nav-cta{background:var(--accent)!important;color:#FFF!important;border-radius:24px;padding:9px 20px}
+    .nav-cta:hover{background:var(--accent-dark)!important;color:#FFF!important}
 
-    .wrap{max-width:1024px;margin:0 auto;padding:48px 24px}
+    .wrap{max-width:1280px;margin:0 auto;padding:48px 24px}
 
-    h1{font-size:2.8rem;font-weight:800;line-height:1.15;margin-bottom:16px;color:#0A0A0A;letter-spacing:-0.03em}
-    h2{font-size:1.32rem;font-weight:600;margin:44px 0 16px;color:#0A0A0A;border-bottom:1px solid #E5E7EB;padding-bottom:10px;letter-spacing:-0.01em}
-    h3{font-size:17px;font-weight:600;margin:26px 0 10px;color:#111827}
-    p{margin:0 0 18px;color:#4B5563}
-    strong{color:#0A0A0A;font-weight:600}
-    ul,ol{margin:14px 0 18px 24px}
-    li{margin:8px 0;color:#4B5563}
-    code{background:rgba(91,91,255,0.08);padding:2px 7px;border-radius:4px;font-size:14px;font-family:'SF Mono','Fira Code','JetBrains Mono',monospace;color:#5B5BFF;border:1px solid rgba(91,91,255,0.14)}
-
-    .meta-desc{font-size:1.08rem;color:#6B7280;margin-bottom:32px;line-height:1.55;max-width:740px}
-    .breadcrumb{font-size:13px;color:#9CA3AF;margin-bottom:20px}
-    .breadcrumb a{color:#6B7280}
-    .breadcrumb a:hover{color:#5B5BFF}
+    .breadcrumb{font-size:13px;color:#64748B;margin-bottom:20px}
+    .breadcrumb a{color:#94A3B8}
+    .breadcrumb a:hover{color:#C7D2FE}
     .breadcrumb span{margin:0 6px}
+
     .badge{display:inline-block;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;margin-right:8px;margin-bottom:14px}
-    .badge-client{background:rgba(91,91,255,0.08);color:#5B5BFF;border:1px solid rgba(91,91,255,0.25)}
-    .badge-cat{background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB}
+    .badge-scenario{background:rgba(67,56,202,0.1);color:#A5B4FC;border:1px solid rgba(67,56,202,0.2)}
+    .badge-cat{background:rgba(255,255,255,0.05);color:#64748B;border:1px solid rgba(255,255,255,0.08)}
 
-    .toc{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 22px;margin:0 0 36px}
-    .toc-label{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
-    .toc ul{margin:0;padding-left:18px;font-size:14.5px}
-    .toc a{color:#374151}
-    .toc a:hover{color:#5B5BFF}
+    /* ── Hero: Live Debug Console ── */
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .hero h1{font-size:2.6rem;font-weight:800;line-height:1.12;color:#F1F5F9;letter-spacing:-0.03em;margin-bottom:16px}
+    .hero h1 span{color:var(--accent)}
+    .hero p{color:#94A3B8;font-size:1.05rem;line-height:1.6;margin-bottom:24px}
+    .hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#FFF;padding:12px 28px;border-radius:24px;font-weight:600;font-size:14px;transition:all .2s}
+    .hero-cta:hover{background:var(--accent-dark);color:#FFF;box-shadow:0 0 24px var(--accent-glow)}
 
-    .author-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;padding:16px 0;border-bottom:1px solid #F3F4F6}
-    .author-meta img{width:44px;height:44px;border-radius:50%}
-    .author-info{font-size:14px;color:#374151}
-    .author-info a{font-weight:600;color:#0A0A0A}
-    .author-bio{font-size:13px;color:#6B7280;margin:2px 0 0}
-    .dates{margin-left:auto;font-size:13px;color:#9CA3AF;text-align:right;line-height:1.6}
+    .terminal{background:#0B1120;border:1px solid rgba(67,56,202,0.25);border-radius:14px;overflow:hidden;box-shadow:0 0 40px rgba(67,56,202,0.08)}
+    .terminal-bar{background:rgba(30,41,59,0.6);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .terminal-dot{width:10px;height:10px;border-radius:50%}
+    .terminal-body{font-family:'JetBrains Mono','SF Mono','Fira Code',monospace;font-size:12px;padding:16px;line-height:1.9;color:#94A3B8;max-height:320px;overflow:hidden}
+    .log-line{display:block;white-space:nowrap}
+    .log-time{color:#64748B;margin-right:12px}
+    .log-ERROR{color:#EF4444;font-weight:600}
+    .log-WARN{color:#F59E0B;font-weight:600}
+    .log-INFO{color:#10B981;font-weight:600}
+    .log-DEBUG{color:#6366F1;font-weight:600}
+    .log-highlight{color:#A5B4FC}
+    .log-cursor{display:inline-block;width:8px;height:14px;background:var(--accent);animation:blink 1s steps(1) infinite;vertical-align:middle;margin-left:2px}
+    @keyframes blink{50%{opacity:0}}
 
-    .tldr{background:rgba(91,91,255,0.05);border-left:3px solid #5B5BFF;border-radius:0 10px 10px 0;padding:18px 22px;margin:0 0 32px}
-    .tldr-label{font-size:12px;font-weight:600;color:#5B5BFF;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px}
-    .tldr ul{margin:0;padding-left:18px;font-size:14.5px}
-    .tldr li{color:#374151;margin:5px 0}
+    h2{font-size:1.5rem;font-weight:700;margin:44px 0 16px;color:#F1F5F9;letter-spacing:-0.01em;display:flex;align-items:center;gap:10px}
+    h2::before{content:'';width:4px;height:24px;background:var(--accent);border-radius:2px;display:inline-block}
+    h3{font-size:17px;font-weight:600;margin:26px 0 10px;color:#E2E8F0}
+    p{margin:0 0 16px;color:#94A3B8}
+    strong{color:#F1F5F9;font-weight:600}
+    ul,ol{margin:14px 0 18px 24px}
+    li{margin:8px 0;color:#94A3B8}
 
-    .snippet-answer{background:#F9FAFB;border-left:3px solid #5B5BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:15.5px;color:#1F2937;margin:8px 0 24px}
+    .toc{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px 24px;margin:0 0 36px}
+    .toc-label{font-size:11px;font-weight:600;color:#64748B;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+    .toc ul{margin:0;padding-left:18px;font-size:14px;columns:2}
+    .toc a{color:#94A3B8}
+    .toc a:hover{color:#A5B4FC}
 
-    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-    .ba-card{border-radius:10px;padding:20px 24px}
-    .ba-before{background:#FEF2F2;border:1px solid #FECACA}
-    .ba-after{background:#F0FDF4;border:1px solid #BBF7D0}
-    .ba-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
-    .ba-before .ba-label{color:#DC2626}
-    .ba-after .ba-label{color:#16A34A}
-    .ba-text{font-size:14.5px;color:#4B5563;line-height:1.7}
+    .tldr{background:rgba(67,56,202,0.06);border:1px solid rgba(67,56,202,0.15);border-radius:14px;padding:20px 24px;margin:0 0 36px}
+    .tldr-label{font-size:11px;font-weight:600;color:var(--accent);margin-bottom:12px;text-transform:uppercase;letter-spacing:1.5px}
+    .tldr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tldr-card{background:var(--bg-card);border-radius:10px;padding:16px;border-top:3px solid var(--accent)}
+    .tldr-card .tl{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+    .tldr-card .tb{font-size:13px;color:#CBD5E1;line-height:1.55}
 
-    .viz{margin:28px 0;padding:24px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px}
-    .viz img,.viz svg{width:100%;height:auto;display:block;border-radius:8px}
-    .viz-caption{margin-top:12px;font-size:13px;color:#6B7280;text-align:center;font-style:italic}
+    /* Incident Timeline */
+    .timeline{position:relative;padding-left:32px;margin:20px 0}
+    .timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:rgba(67,56,202,0.3)}
+    .timeline-item{position:relative;margin-bottom:28px;background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px 20px}
+    .timeline-dot{position:absolute;left:-28px;top:22px;width:18px;height:18px;border-radius:50%;border:3px solid var(--accent);background:var(--bg-dark)}
+    .timeline-dot.critical{border-color:#EF4444;box-shadow:0 0 8px rgba(239,68,68,0.4)}
+    .timeline-dot.high{border-color:#F59E0B;box-shadow:0 0 8px rgba(245,158,11,0.4)}
+    .timeline-dot.info{border-color:var(--accent);box-shadow:0 0 8px var(--accent-glow)}
+    .timeline-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .timeline-header .sev{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px}
+    .sev-critical{background:rgba(239,68,68,0.15);color:#EF4444}
+    .sev-high{background:rgba(245,158,11,0.15);color:#F59E0B}
+    .sev-info{background:rgba(67,56,202,0.15);color:#A5B4FC}
+    .timeline-header .ts{font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B}
+    .timeline-body{font-size:14px;color:#94A3B8;line-height:1.65}
+    .timeline-body .q{color:#A5B4FC;font-weight:500;display:block;margin-top:8px;font-size:13px}
 
-    .compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-    .compare-table th,.compare-table td{padding:13px 12px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
-    .compare-table th{background:#F9FAFB;color:#111827;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:0.5px}
-    .compare-table td{color:#4B5563}
+    .compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:12px;overflow:hidden}
+    .compare-table th,.compare-table td{padding:14px 16px;text-align:left;vertical-align:top}
+    .compare-table th{background:var(--accent);color:#FFF;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+    .compare-table td{background:var(--bg-card);color:#94A3B8;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table .highlight-col{background:rgba(67,56,202,0.12);color:#C7D2FE;font-weight:500}
 
-    .step-box{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 20px;margin:14px 0;transition:border-color 0.2s}
-    .step-box:hover{border-color:#5B5BFF}
-    .step-num{display:inline-flex;width:26px;height:26px;background:#0A0A0A;color:#FFFFFF;border-radius:50%;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-right:10px;vertical-align:middle}
-    .step-box strong{display:inline;vertical-align:middle;font-size:15.5px;color:#0A0A0A}
-    .step-box p{margin:8px 0 0 36px;font-size:14.5px;color:#4B5563}
+    /* 5-workflow terminal cards */
+    .wf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:20px 0}
+    .wf-card{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px;transition:border-color .2s,transform .15s}
+    .wf-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .wf-card .wnum{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px}
+    .wf-card .wcmd{font-family:'JetBrains Mono',monospace;font-size:12px;color:#10B981;margin-bottom:10px;background:rgba(16,185,129,0.06);padding:6px 10px;border-radius:6px;display:inline-block}
+    .wf-card h4{font-size:15px;font-weight:600;color:#E2E8F0;margin-bottom:8px}
+    .wf-card p{font-size:13px;color:#94A3B8;margin:0;line-height:1.6}
 
-    .concession-box{background:#FFFBEB;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:8px;padding:20px 24px;margin:24px 0;color:#1F2937}
-    .concession-box h3{color:#78350F;margin:0 0 10px;font-size:17px}
-    .concession-box p{color:#374151;margin:6px 0;font-size:14.5px}
+    .concession-box{background:rgba(245,158,11,0.05);border:1px solid rgba(245,158,11,0.2);border-left:4px solid #F59E0B;border-radius:8px;padding:20px 24px;margin:24px 0;color:#CBD5E1}
+    .concession-box h3{color:#FBBF24;margin:0 0 10px;font-size:17px}
+    .concession-box p{color:#94A3B8;margin:6px 0;font-size:14px}
     .concession-box ul{margin:8px 0 4px 22px}
-    .concession-box li{color:#374151;font-size:14.5px}
+    .concession-box li{color:#94A3B8;font-size:14px}
 
-    .cta-box{background:linear-gradient(135deg,rgba(91,91,255,0.08),rgba(91,91,255,0.03));border:1px solid rgba(91,91,255,0.22);text-align:center;padding:40px;border-radius:14px;margin:48px 0}
-    .cta-box h3{color:#0A0A0A;margin:0 0 10px;font-size:22px;font-weight:600;border:none;padding:0}
-    .cta-box p{color:#4B5563;margin:0 0 22px;font-size:15px}
-    .cta-btn{display:inline-block;background:#0A0A0A;color:#FFFFFF;padding:13px 36px;border-radius:28px;font-weight:600;font-size:15px;transition:all 0.2s;text-decoration:none}
-    .cta-btn:hover{background:#1F2937;color:#FFFFFF;transform:translateY(-1px)}
+    .step-box{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px 20px;margin:14px 0;transition:border-color .2s;display:flex;gap:16px;align-items:flex-start}
+    .step-box:hover{border-color:var(--accent)}
+    .step-num{flex-shrink:0;width:36px;height:36px;background:var(--accent);color:#FFF;border-radius:50%;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;display:flex}
+    .step-content h4{font-size:15px;font-weight:600;color:#E2E8F0;margin-bottom:4px}
+    .step-content p{font-size:13.5px;color:#94A3B8;margin:0}
 
-    .faq-item{border-bottom:1px solid #E5E7EB;padding:20px 0}
-    .faq-q{font-weight:600;font-size:16px;color:#0A0A0A}
-    .faq-a{margin-top:10px;color:#4B5563;font-size:14.5px;line-height:1.7}
+    .cta-box{background:linear-gradient(135deg,rgba(67,56,202,0.1),rgba(67,56,202,0.02));border:1px solid var(--accent-glow);text-align:center;padding:44px;border-radius:16px;margin:48px 0}
+    .cta-box h3{color:#F1F5F9;margin:0 0 10px;font-size:22px;font-weight:700}
+    .cta-box p{color:#94A3B8;margin:0 0 22px;font-size:15px}
+    .cta-btn{display:inline-block;background:var(--accent);color:#FFF;padding:13px 36px;border-radius:28px;font-weight:600;font-size:15px;transition:all .2s}
+    .cta-btn:hover{background:var(--accent-dark);color:#FFF;transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow)}
 
-    .methodology{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:22px 26px;margin:36px 0;font-size:14px;color:#4B5563}
-    .methodology h2{font-size:13px;border:none;padding:0;margin:0 0 14px;color:#111827;text-transform:uppercase;letter-spacing:1.2px}
-    .methodology p{margin:6px 0;font-size:13.5px}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0}
+    .faq-q{font-weight:600;font-size:16px;color:#E2E8F0}
+    .faq-a{margin-top:10px;color:#94A3B8;font-size:14px;line-height:1.7}
+
+    .methodology{background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:22px 26px;margin:36px 0;font-size:14px}
+    .methodology h2{font-size:13px;border:none;padding:0;margin:0 0 14px;color:#CBD5E1;text-transform:uppercase;letter-spacing:1.2px}
+    .methodology h2::before{display:none}
+    .methodology p{margin:6px 0;font-size:13px;color:#94A3B8}
 
     .related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
-    .related a{display:block;padding:16px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:10px;color:#5B5BFF;font-size:14px;font-weight:500;transition:all 0.2s;line-height:1.5}
-    .related a:hover{background:rgba(91,91,255,0.04);border-color:#5B5BFF}
+    .related a{display:block;padding:16px;background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:10px;color:#A5B4FC;font-size:14px;font-weight:500;transition:all .2s;line-height:1.5}
+    .related a:hover{border-color:var(--accent);background:rgba(67,56,202,0.06)}
 
-    .footer{background:#F9FAFB;border-top:1px solid #E5E7EB;padding:48px 24px;margin-top:60px}
-    .footer-inner{max-width:1024px;margin:0 auto}
+    .footer{background:rgba(15,23,42,0.6);border-top:1px solid rgba(255,255,255,0.06);padding:48px 24px;margin-top:60px}
+    .footer-inner{max-width:1280px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
-    .footer h4{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .footer h4{font-size:12px;font-weight:600;color:#64748B;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
     .footer-links{display:flex;flex-direction:column;gap:10px;font-size:14px}
-    .footer-links a{color:#6B7280}
-    .footer-links a:hover{color:#0A0A0A}
-    .footer-bottom{border-top:1px solid #E5E7EB;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
+    .footer-links a{color:#64748B}
+    .footer-links a:hover{color:#F1F5F9}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#64748B}
 
-    @media(max-width:720px){
-      .ba-grid{grid-template-columns:1fr}
+    .snippet-answer{background:var(--bg-card);border-left:3px solid var(--accent);padding:18px 22px;border-radius:0 10px 10px 0;font-size:15px;color:#CBD5E1;margin:8px 0 24px}
+
+    .viz{margin:28px 0;padding:24px;background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:14px}
+    .viz svg{width:100%;height:auto;display:block;border-radius:8px}
+    .viz-caption{margin-top:12px;font-size:13px;color:#64748B;text-align:center;font-style:italic}
+
+    @media(max-width:768px){
+      .hero{grid-template-columns:1fr;gap:24px}
+      .hero h1{font-size:1.85rem}
+      .tldr-grid{grid-template-columns:1fr}
+      .wf-grid{grid-template-columns:1fr}
       .related{grid-template-columns:1fr}
-      h1{font-size:1.85rem}
-      h2{font-size:1.18rem}
       .footer-grid{grid-template-columns:1fr 1fr}
       .nav-links a:not(.nav-cta){display:none}
       .wrap{padding:32px 20px}
+      .toc ul{columns:1}
       .compare-table{font-size:12px}
-      .compare-table th,.compare-table td{padding:8px 6px}
-      .step-box p{margin-left:0}
-      .author-meta{flex-wrap:wrap}
-      .dates{margin-left:0;text-align:left}
+      .compare-table th,.compare-table td{padding:10px 8px}
     }
   </style>
 </head>
@@ -274,85 +310,111 @@
     </nav>
 
     <div>
-      <span class="badge badge-client">InfiniSynapse</span>
-      <span class="badge badge-cat">Scenario</span>
+      <span class="badge badge-scenario">InfiniSynapse Scenario</span>
+      <span class="badge badge-cat">DevOps & SRE</span>
     </div>
 
-    <h1>AI Log Analytics: From Raw Logs to Interactive Insights in Plain English</h1>
-
-    <p class="meta-desc">A practical guide to <strong>AI log analytics</strong> for DevOps, SRE, and engineering teams. Covers <strong>error tracking</strong>, <strong>anomaly detection</strong>, <strong>real-time log monitoring</strong>, <strong>root cause analysis</strong>, and <strong>operational metrics</strong> — connecting application logs, server logs, and monitoring data without building a data pipeline.</p>
-
-    <div class="author-meta">
-      <img src="https://infinisynapse.com/authors/editorial-team.jpg" alt="InfiniSynapse Editorial Team" width="44" height="44">
-      <div class="author-info">
-        <a href="https://infinisynapse.com/authors/editorial-team">InfiniSynapse Editorial Team</a> · Enterprise AI Analytics Research
-        <p class="author-bio">Specializing in AI-powered log analytics and operational intelligence, serving DevOps, SRE, and platform engineering teams.</p>
+    <!-- ── Hero: Debug Console ── -->
+    <div class="hero">
+      <div>
+        <h1>From <span>Raw Logs</span> to Root Cause in One Query</h1>
+        <p>Stop grepping through 4 different tools at 2am. InfiniSynapse connects your logs, deployments, monitoring, and support tickets — so you ask one question in plain English and get a cross-source answer in seconds.</p>
+        <a href="https://app.infinisynapse.com/" class="hero-cta">Start Debugging →</a>
       </div>
-      <div class="dates">
-        <span>Published: 2026-06-01</span><br>
-        <span>Last Updated: 2026-06-01</span>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="terminal-dot" style="background:#EF4444"></div>
+          <div class="terminal-dot" style="background:#F59E0B"></div>
+          <div class="terminal-dot" style="background:#10B981"></div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748B;margin-left:8px">InfiniSynapse — log-analytics session</span>
+        </div>
+        <div class="terminal-body">
+          <span class="log-line"><span class="log-time">14:32:01</span> <span class="log-INFO">INFO</span>  InfiniSynapse <span class="log-highlight">connected to log store</span> (PostgreSQL)</span>
+          <span class="log-line"><span class="log-time">14:32:01</span> <span class="log-INFO">INFO</span>  InfiniSynapse <span class="log-highlight">connected to CI/CD pipeline</span> (GitHub Actions)</span>
+          <span class="log-line"><span class="log-time">14:32:02</span> <span class="log-INFO">INFO</span>  InfiniSynapse <span class="log-highlight">connected to monitoring</span> (Datadog)</span>
+          <span class="log-line"><span class="log-time">14:32:02</span> <span class="log-INFO">INFO</span>  InfiniSynapse <span class="log-highlight">connected to support tickets</span> (Zendesk)</span>
+          <span class="log-line"><span class="log-time">14:32:10</span> <span class="log-WARN">WARN</span>  Anomaly detected: <span class="log-highlight">error rate spike</span> in payment-service (4.2σ above baseline)</span>
+          <span class="log-line"><span class="log-time">14:32:10</span> <span class="log-INFO">INFO</span>  Cross-referencing <span class="log-highlight">deployment log</span>... match found: deploy #8472 at 13:58 UTC</span>
+          <span class="log-line"><span class="log-time">14:32:11</span> <span class="log-INFO">INFO</span>  Cross-referencing <span class="log-highlight">support tickets</span>... 3 new tickets matching error signature</span>
+          <span class="log-line"><span class="log-time">14:32:11</span> <span class="log-INFO">INFO</span>  Cross-referencing <span class="log-highlight">user impact</span>... 142 affected users, $18K ARR at risk</span>
+          <span class="log-line"><span class="log-time">14:32:12</span> <span class="log-ERROR">ROOT</span>  <span class="log-highlight">Deploy #8472 introduced N+1 query</span> causing DB timeout cascade</span>
+          <span class="log-line"><span class="log-time">14:32:12</span> <span class="log-INFO">REC</span>  <span class="log-highlight">Rollback deploy #8472</span> — estimated recovery: 3 minutes<span class="log-cursor"></span></span>
+        </div>
       </div>
     </div>
 
     <nav class="toc">
-      <div class="toc-label">Contents</div>
+      <div class="toc-label">On-Call Runbook</div>
       <ul>
         <li><a href="#snippet">What is AI-powered log analytics?</a></li>
-        <li><a href="#before-after">Before vs After: grep and dashboards vs AI-driven log intelligence</a></li>
-        <li><a href="#pain">Three hard problems with traditional log analysis</a></li>
-        <li><a href="#solution">How InfiniSynapse adds AI analytics to your log data</a></li>
+        <li><a href="#pain">Three incident patterns that take too long to debug</a></li>
+        <li><a href="#solution">How InfiniSynapse adds cross-source analytics</a></li>
         <li><a href="#workflows">Five core log analytics workflows</a></li>
         <li><a href="#why-not">When InfiniSynapse is not the right choice</a></li>
-        <li><a href="#quickstart">Quick start: 3 steps to AI log analytics</a></li>
+        <li><a href="#quickstart">Quick start: 3 steps</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
 
     <div class="tldr">
-      <div class="tldr-label">TL;DR</div>
-      <ul>
-        <li><strong>Problem:</strong> Engineering teams are drowning in logs. Application logs, server logs, access logs, error logs — terabytes per day, spread across services, stored in different systems. When something breaks, the debugging workflow is: grep through logs, find error patterns, check if they correlate with a recent deployment, check if support tickets spiked at the same time, and check if user activity dropped. Each of these checks requires a different tool (Splunk/ELK for logs, CI/CD for deployments, Zendesk for tickets, product analytics for user activity) — and manually correlating findings across tools takes hours during an incident. InfiniSynapse connects log data with deployment data, support data, and product data simultaneously — so you can ask one question and get a cross-source answer in seconds.</li>
-        <li><strong>Solution:</strong> InfiniSynapse connects to your log database, deployment pipeline, monitoring systems, and support ticketing. You ask operational questions in plain English. It queries across all sources and returns correlated answers.</li>
-        <li><strong>Result:</strong> Root cause analysis during incidents goes from "check 4 tools and manually correlate" to "ask one question and get the answer." Anomaly detection connects log patterns to business impact (support tickets, user churn) — not just technical metrics. Weekly operational reviews go from manual report compilation to automated cross-source summaries.</li>
-      </ul>
+      <div class="tldr-label">TL;DR — Incident Postmortem Summary</div>
+      <div class="tldr-grid">
+        <div class="tldr-card"><div class="tl">Problem</div><div class="tb">Engineering teams drown in logs across 4+ tools. When an alert fires, the debugging workflow is: grep logs, check deployments, check traffic, check tickets — each in a separate tool. Manually correlating findings takes 40+ minutes per incident.</div></div>
+        <div class="tldr-card"><div class="tl">Solution</div><div class="tb">InfiniSynapse connects your log store, CI/CD pipeline, monitoring system, and support tickets simultaneously. One plain-English question returns a cross-source answer — root cause in seconds, not 40 minutes.</div></div>
+        <div class="tldr-card"><div class="tl">Result</div><div class="tb">MTTR (mean time to resolution) drops from 50 minutes to under 10. Anomaly detection connects log patterns to business impact. Weekly ops reviews go from manual compilation to automated cross-source summaries.</div></div>
+      </div>
     </div>
 
     <h2 id="snippet">What is AI-powered log analytics?</h2>
-    <p class="snippet-answer"><strong>AI-powered log analytics uses an AI data analyst to connect application logs, server logs, deployment data, and monitoring systems — then perform error tracking, anomaly detection, and root cause analysis in plain English. Unlike log management platforms (Splunk, ELK, Datadog) that excel at log ingestion and search, or manual grep/debugging workflows that are slow and single-source, InfiniSynapse adds an AI analytics layer that can correlate log events with deployments, support tickets, and user impact — answering operational questions that span your entire engineering data estate.</strong></p>
+    <p class="snippet-answer"><strong>AI-powered log analytics uses an AI data analyst to connect application logs, server logs, deployment data, and monitoring systems — then perform error tracking, anomaly detection, and root cause analysis in plain English. InfiniSynapse isn't a log management platform (you keep Splunk/ELK for ingestion); it's the analytics layer that correlates log events with deployments, support tickets, and user impact — answering questions that span your entire operational data estate.</strong></p>
 
-    <h2 id="before-after">Before vs After: manual log debugging vs AI-driven operational intelligence</h2>
-    <div class="ba-grid">
-      <div class="ba-card ba-before">
-        <div class="ba-label">Before — Traditional approach</div>
-        <div class="ba-text">An error rate spike triggers a PagerDuty alert at 2am. The on-call engineer opens Splunk, searches for error patterns in the last hour, finds a spike in database timeout errors, then checks the deployment log in a separate CI/CD tool to see if anything was deployed recently. Then checks Datadog to see if traffic spiked. Then messages the support lead to ask if ticket volume increased. After 45 minutes of correlating data across 4 tools, the picture emerges: a deployment 90 minutes ago introduced a query pattern that's timing out under normal load. The fix is a rollback. Total time from alert to root cause: 50 minutes. Time spent manually correlating data across tools: 40 of those minutes.</div>
+    <h2 id="pain">Three incident patterns that take too long to debug</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot critical"></div>
+        <div class="timeline-header">
+          <span class="sev sev-critical">Critical</span>
+          <span class="ts">2026-05-28 02:14 UTC — Duration: 47 min</span>
+        </div>
+        <div class="timeline-body">
+          <strong>Error spike after deploy — root cause found in 47 minutes across 4 tools.</strong> PagerDuty fires at 2am. On-call opens Splunk to search error patterns (7 min), checks CI/CD for recent deploys (3 min), checks Datadog for traffic anomaly (5 min), messages support lead about ticket volume (15 min wait). Manual correlation finally reveals deploy #8472 introduced a query regression. Rollback at 3:01am.
+          <span class="q">→ InfiniSynapse query: "Error spike in last hour — correlate with deployments and support tickets." Answer in 30 seconds.</span>
+        </div>
       </div>
-      <div class="ba-card ba-after">
-        <div class="ba-label">After — With InfiniSynapse</div>
-        <div class="ba-text">The on-call engineer asks InfiniSynapse: "Error rates spiked in the last hour. Show me: top error messages by frequency, whether any deployments happened in the 2 hours before the spike, whether traffic volume changed from baseline, and whether related support tickets increased." InfiniSynapse queries logs for error patterns, deployment pipeline for recent changes, monitoring for traffic data, and support system for ticket volume — all in one query. Answer in 30 seconds: a specific deployment 90 minutes ago correlates with the error spike, traffic is at normal levels, and 3 related support tickets just came in. Root cause identified in under a minute. Rollback initiated. Incident duration cut from 50 minutes to 10.</div>
+      <div class="timeline-item">
+        <div class="timeline-dot high"></div>
+        <div class="timeline-header">
+          <span class="sev sev-high">High</span>
+          <span class="ts">2026-05-15 11:30 UTC — Duration: 3 days discovery</span>
+        </div>
+        <div class="timeline-body">
+          <strong>Gradual latency degradation went unnoticed for 3 days.</strong> p95 latency crept from 180ms to 420ms over 72 hours — no single alert fired because thresholds were static. Discovered when customers complained. Root cause: a background job was gradually consuming more connection pool, leaving fewer connections for request-serving paths.
+          <span class="q">→ InfiniSynapse query: "Show p95 latency trend by service for last 7 days. Flag services where trend slope > 10ms/day." Detected on day 1 instead of day 3.</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot info"></div>
+        <div class="timeline-header">
+          <span class="sev sev-info">Operational</span>
+          <span class="ts">Every Monday — Duration: 3 hours per ops review</span>
+        </div>
+        <div class="timeline-body">
+          <strong>Weekly ops review: 3 hours compiling data from 4 dashboards.</strong> Engineering manager pulls error rates from Splunk dashboard, deployment frequency from GitHub, latency from Datadog, and incident MTTR from Jira — then stitches everything into a spreadsheet. The quarterly trend analysis takes an additional afternoon.
+          <span class="q">→ InfiniSynapse query: "Weekly ops summary: error rate trend, deployment count, p95 latency, MTTR by service — for the last quarter." One query, under a minute.</span>
+        </div>
       </div>
     </div>
 
-    <h2 id="pain">Three hard problems with traditional log analysis</h2>
-    <p>Engineering teams don't lack log data — they lack <strong>connected</strong> operational intelligence. These three problems affect any team running production systems:</p>
-
-    <h3>Problem 1: Logs tell you what happened — but not why, or what else was happening at the same time</h3>
-    <p>A log message says "database query timeout on users table." But is this because a deployment changed the query pattern? Because traffic spiked? Because the database was under maintenance? Because a background job was running? Answering this requires checking deployment logs (CI/CD), traffic data (monitoring), DB maintenance schedules (calendar/wiki), and job execution logs (scheduler) — data that lives in 4+ different systems. Log management platforms (Splunk, ELK) excel at searching and aggregating logs but can't join log data with deployment data, monitoring data, or support data. They show you the log lines; they don't answer "why."</p>
-
-    <h3>Problem 2: Operational metrics are tracked in silos — error rate in one dashboard, deployment frequency in another, user impact in a third</h3>
-    <p>Engineering managers need to answer: "Are we getting more reliable over time? How does deployment frequency correlate with error rates? When errors spike, what's the average time to resolution and how does that trend quarter over quarter?" These questions require joining data from logs (error rates), CI/CD (deployment frequency and timing), incident management (time to resolution), and sometimes product analytics (user impact). Each data source has its own dashboard and its own time granularity. Building a unified operational metrics view requires either a data engineering project or hours of manual cross-referencing every review cycle.</p>
-
-    <h3>Problem 3: Anomaly detection stops at the technical layer — it doesn't connect to business impact</h3>
-    <p>Monitoring tools alert when error rates exceed a threshold — a technical anomaly. But not all technical anomalies matter equally. A 5xx spike that affects paying customers during business hours is a crisis; the same spike affecting free-tier users at 3am is a low-priority issue. Understanding the business impact of a log anomaly requires joining error logs with user data (who was affected?), support data (are they complaining?), and CRM data (are they important customers?). Traditional monitoring stops at "error rate > threshold." InfiniSynapse can answer "error rate > threshold — and here's who was affected, whether they're complaining, and what revenue is at risk."</p>
-
-    <h2 id="solution">How InfiniSynapse adds AI analytics to your log data</h2>
-    <p>InfiniSynapse is not a log management platform. It's an AI analytics layer that connects to log data alongside your other operational and business data sources:</p>
+    <h2 id="solution">How InfiniSynapse adds cross-source analytics to your logs</h2>
+    <p>InfiniSynapse is not a log management platform — it's an AI analytics layer that works alongside Splunk, ELK, or Datadog. You keep your existing log stack for ingestion and search. InfiniSynapse connects to the same data stores and adds cross-source correlation:</p>
 
     <table class="compare-table">
       <thead>
         <tr>
           <th>Capability</th>
-          <th>Log management (Splunk, ELK, Datadog)</th>
-          <th>Manual debugging (grep, jq, spreadsheets)</th>
+          <th>Log Management (Splunk, ELK, Datadog)</th>
+          <th>Manual Debugging (grep, jq)</th>
           <th>InfiniSynapse</th>
         </tr>
       </thead>
@@ -361,113 +423,128 @@
           <td>Log ingestion & indexing</td>
           <td>Excellent — purpose-built</td>
           <td>N/A</td>
-          <td>Not a log ingestion tool; connects to existing log stores</td>
+          <td class="highlight-col">Connects to existing log stores — not an ingestion tool</td>
         </tr>
         <tr>
           <td>Log search & aggregation</td>
           <td>Excellent — SPL, KQL, Lucene</td>
           <td>Manual (grep, awk, jq)</td>
-          <td>Plain English queries on log data</td>
+          <td class="highlight-col">Plain English queries on log data</td>
         </tr>
         <tr>
           <td>Cross-source correlation</td>
           <td>Limited — logs only</td>
           <td>Manual — check each tool separately</td>
-          <td>Logs + deployments + monitoring + support tickets simultaneously</td>
+          <td class="highlight-col">Logs + deployments + monitoring + support simultaneously</td>
         </tr>
         <tr>
           <td>Business impact analysis</td>
           <td>Not available</td>
-          <td>Manual (ask support team, check CRM)</td>
-          <td>Join log errors with user data, support tickets, CRM</td>
+          <td>Manual (ask support, check CRM)</td>
+          <td class="highlight-col">Join errors with user data, tickets, revenue at risk</td>
         </tr>
         <tr>
           <td>Query method</td>
           <td>Query languages (SPL, KQL)</td>
           <td>CLI tools</td>
-          <td>Plain English</td>
+          <td class="highlight-col">Plain English — no query language to learn</td>
         </tr>
         <tr>
           <td>Deployment</td>
           <td>SaaS or self-hosted</td>
           <td>N/A</td>
-          <td>SaaS + private deployment (Air-Gapped)</td>
+          <td class="highlight-col">SaaS + Air-Gapped private deployment</td>
         </tr>
       </tbody>
     </table>
 
-    <p>Concretely: InfiniSynapse complements your existing log management stack. You keep using Splunk/ELK/Datadog for log ingestion, indexing, and raw search. You connect InfiniSynapse to the same log data stores (plus your deployment pipeline, monitoring, and support systems) for cross-source analytical questions that span beyond what log management tools can answer alone.</p>
-
     <div class="viz">
-      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+      <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#5B5BFF"/></marker>
+          <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#4338CA"/></marker>
         </defs>
-        <rect x="15" y="15" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="35" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Application Logs</text>
-        <text x="82" y="52" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Error · Access · App Logs</text>
-        <rect x="15" y="85" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="105" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Deployments</text>
-        <text x="82" y="122" text-anchor="middle" font-size="9.5" fill="#9CA3AF">CI/CD · Release History</text>
-        <rect x="15" y="155" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="175" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Monitoring</text>
-        <text x="82" y="192" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Traffic · Latency · Alerts</text>
-        <rect x="15" y="225" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="245" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Support & Impact</text>
-        <text x="82" y="262" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Tickets · User Reports</text>
-        <line x1="150" y1="40" x2="285" y2="115" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="110" x2="285" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="180" x2="285" y2="145" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="250" x2="285" y2="160" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="290" y="90" width="155" height="80" rx="12" fill="#5B5BFF" opacity="0.12" stroke="#5B5BFF" stroke-width="2"/>
-        <text x="367" y="122" text-anchor="middle" font-size="14" fill="#5B5BFF" font-weight="700">InfiniSynapse</text>
-        <text x="367" y="142" text-anchor="middle" font-size="11" fill="#5B5BFF">Multi-Source Federation</text>
-        <text x="367" y="158" text-anchor="middle" font-size="10" fill="#6B7280">Zero ETL · Cross-Source</text>
-        <line x1="445" y1="130" x2="525" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="535" y="15" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="33" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Error Tracking & Trends</text>
-        <text x="620" y="48" text-anchor="middle" font-size="9" fill="#6B7280">Frequency · Severity · Services</text>
-        <rect x="535" y="72" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="90" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Anomaly Detection</text>
-        <text x="620" y="105" text-anchor="middle" font-size="9" fill="#6B7280">Spikes · Patterns · Baselines</text>
-        <rect x="535" y="129" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="147" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Root Cause Analysis</text>
-        <text x="620" y="162" text-anchor="middle" font-size="9" fill="#6B7280">Logs + Deploys + Traffic</text>
-        <rect x="535" y="186" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="204" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Operational Dashboards</text>
-        <text x="620" y="219" text-anchor="middle" font-size="9" fill="#6B7280">Error Rate · Latency · Volume</text>
-        <rect x="535" y="243" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="261" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Business Impact Analysis</text>
-        <text x="620" y="276" text-anchor="middle" font-size="9" fill="#6B7280">Errors → Tickets · Users · Revenue</text>
+        <rect x="10" y="20" width="140" height="46" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+        <text x="80" y="40" text-anchor="middle" font-size="11" fill="#E2E8F0" font-weight="600">Application Logs</text>
+        <text x="80" y="56" text-anchor="middle" font-size="9" fill="#64748B">Error · Access · App</text>
+        <rect x="10" y="82" width="140" height="46" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+        <text x="80" y="102" text-anchor="middle" font-size="11" fill="#E2E8F0" font-weight="600">Deployments</text>
+        <text x="80" y="118" text-anchor="middle" font-size="9" fill="#64748B">CI/CD · Release History</text>
+        <rect x="10" y="144" width="140" height="46" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+        <text x="80" y="164" text-anchor="middle" font-size="11" fill="#E2E8F0" font-weight="600">Monitoring</text>
+        <text x="80" y="180" text-anchor="middle" font-size="9" fill="#64748B">Traffic · Latency · Alerts</text>
+        <rect x="10" y="206" width="140" height="46" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+        <text x="80" y="226" text-anchor="middle" font-size="11" fill="#E2E8F0" font-weight="600">Support & Impact</text>
+        <text x="80" y="242" text-anchor="middle" font-size="9" fill="#64748B">Tickets · User Reports</text>
+        <line x1="150" y1="43" x2="285" y2="110" stroke="#4338CA" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="150" y1="105" x2="285" y2="125" stroke="#4338CA" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="150" y1="167" x2="285" y2="140" stroke="#4338CA" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="150" y1="229" x2="285" y2="155" stroke="#4338CA" stroke-width="2" marker-end="url(#arr)"/>
+        <rect x="290" y="90" width="160" height="80" rx="12" fill="rgba(67,56,202,0.15)" stroke="#4338CA" stroke-width="2"/>
+        <text x="370" y="120" text-anchor="middle" font-size="14" fill="#A5B4FC" font-weight="700">InfiniSynapse</text>
+        <text x="370" y="140" text-anchor="middle" font-size="11" fill="#818CF8">Multi-Source Federation</text>
+        <text x="370" y="157" text-anchor="middle" font-size="10" fill="#64748B">Zero ETL · Cross-Source JOIN</text>
+        <line x1="450" y1="130" x2="530" y2="130" stroke="#4338CA" stroke-width="2" marker-end="url(#arr)"/>
+        <rect x="540" y="15" width="170" height="38" rx="8" fill="rgba(67,56,202,0.1)" stroke="rgba(67,56,202,0.2)" stroke-width="1"/>
+        <text x="625" y="31" text-anchor="middle" font-size="10" fill="#A5B4FC" font-weight="600">Error Tracking & Trends</text>
+        <text x="625" y="46" text-anchor="middle" font-size="8.5" fill="#64748B">Frequency · Severity · Service</text>
+        <rect x="540" y="63" width="170" height="38" rx="8" fill="rgba(67,56,202,0.1)" stroke="rgba(67,56,202,0.2)" stroke-width="1"/>
+        <text x="625" y="79" text-anchor="middle" font-size="10" fill="#A5B4FC" font-weight="600">Anomaly Detection</text>
+        <text x="625" y="94" text-anchor="middle" font-size="8.5" fill="#64748B">Spikes · Baselines · Patterns</text>
+        <rect x="540" y="111" width="170" height="38" rx="8" fill="rgba(67,56,202,0.1)" stroke="rgba(67,56,202,0.2)" stroke-width="1"/>
+        <text x="625" y="127" text-anchor="middle" font-size="10" fill="#A5B4FC" font-weight="600">Root Cause Analysis</text>
+        <text x="625" y="142" text-anchor="middle" font-size="8.5" fill="#64748B">Logs + Deploys + Traffic</text>
+        <rect x="540" y="159" width="170" height="38" rx="8" fill="rgba(67,56,202,0.1)" stroke="rgba(67,56,202,0.2)" stroke-width="1"/>
+        <text x="625" y="175" text-anchor="middle" font-size="10" fill="#A5B4FC" font-weight="600">Operational Dashboards</text>
+        <text x="625" y="190" text-anchor="middle" font-size="8.5" fill="#64748B">Error Rate · p95 · Volume</text>
+        <rect x="540" y="207" width="170" height="38" rx="8" fill="rgba(67,56,202,0.1)" stroke="rgba(67,56,202,0.2)" stroke-width="1"/>
+        <text x="625" y="223" text-anchor="middle" font-size="10" fill="#A5B4FC" font-weight="600">Business Impact Analysis</text>
+        <text x="625" y="238" text-anchor="middle" font-size="8.5" fill="#64748B">Errors → Tickets · Users · Revenue</text>
       </svg>
-      <div class="viz-caption">InfiniSynapse log analytics data flow: complements your existing log management stack by adding cross-source analytics — connecting logs with deployments, monitoring, and business impact data.</div>
+      <div class="viz-caption">InfiniSynapse complements your log management stack — adding cross-source analytics that connect logs to deployments, monitoring, and business impact.</div>
     </div>
 
     <h2 id="workflows">Five core log analytics workflows</h2>
-    <p>These are the five highest-frequency log analytics workflows DevOps, SRE, and engineering teams run on InfiniSynapse:</p>
 
-    <h3>1. Error tracking and frequency analysis — <code>error tracking</code></h3>
-    <p>Ask: "Show the top 20 error messages from the last 7 days, ranked by frequency. For each, show: daily trend (is it increasing, decreasing, or stable?), affected services, first seen date, and whether it's a new error (first appeared this week) or recurring." InfiniSynapse queries your log data directly — parsing error messages, counting frequencies, detecting trends, and flagging new error patterns. This is the analysis engineers do manually with SPL or KQL queries; InfiniSynapse does it in plain English and produces the trend analysis automatically.</p>
-
-    <h3>2. Anomaly detection with cross-source context — <code>log anomaly detection</code></h3>
-    <p>Ask: "Flag any service where the error rate in the last hour is more than 3 standard deviations above its 30-day hourly baseline. For each flagged service, show: the error spike magnitude, whether a deployment occurred within the preceding 2 hours, whether traffic changed significantly from baseline, and whether related support tickets increased." InfiniSynapse queries logs, deployments, monitoring, and support data simultaneously — turning a single-source anomaly alert into a multi-source root cause hypothesis in one query.</p>
-
-    <h3>3. Deployment impact analysis — <code>deployment impact analysis</code></h3>
-    <p>Ask: "For each deployment in the last 7 days, compare the error rate, p95 latency, and traffic volume in the 2 hours before vs. the 2 hours after deployment. Flag any deployment where error rate increased more than 50% post-deployment. Show the specific errors introduced." InfiniSynapse joins deployment timestamps from CI/CD with error logs and monitoring metrics — automatically identifying which deployments introduced regressions, something that normally requires manually cross-referencing deployment times with error dashboards.</p>
-
-    <h3>4. Operational metrics and trends — <code>operational metrics</code></h3>
-    <p>Ask: "Show weekly operational metrics for the last quarter: total errors, error rate (errors per 1K requests), p95 and p99 latency, deployment count, and mean time to resolution for P1 incidents. Break down by service. Flag any metric trending in the wrong direction for 3+ consecutive weeks." InfiniSynapse queries logs, monitoring, and incident management data — producing a unified operational review that normally requires pulling data from 3-4 separate dashboards and stitching it together in a spreadsheet. Engineering managers get their weekly ops review in one query instead of 3 hours of data compilation.</p>
-
-    <h3>5. Business impact of technical incidents — <code>incident business impact analysis</code></h3>
-    <p>Ask: "For the API outage on Tuesday from 14:00-14:45 UTC: how many users were affected (from access logs), how many support tickets were created (from support system), what was the affected ARR (join affected user IDs with CRM), and did user activity recover to normal levels within 24 hours (from product analytics)?" InfiniSynapse joins log data (affected users), support data (ticket volume), CRM (customer ARR), and product data (user activity) — quantifying the business impact of technical incidents. This is the analysis that goes into incident postmortems but normally takes days of cross-team data gathering.</p>
+    <div class="wf-grid">
+      <div class="wf-card">
+        <div class="wnum">01 / workflow</div>
+        <div class="wcmd">> error-tracking --period 7d --top 20</div>
+        <h4>Error Tracking & Frequency Analysis</h4>
+        <p>Top 20 errors ranked by frequency, daily trend direction, affected services, first-seen date. Flags new errors that appeared this week vs. recurring patterns. Same analysis engineers do manually with SPL/KQL — InfiniSynapse does it in plain English.</p>
+      </div>
+      <div class="wf-card">
+        <div class="wnum">02 / workflow</div>
+        <div class="wcmd">> anomaly-detect --sigma 3 --cross-source</div>
+        <h4>Anomaly Detection with Cross-Source Context</h4>
+        <p>Flags services where error rate exceeds 3σ above 30-day baseline. For each: shows error spike magnitude, whether a deploy occurred in prior 2 hours, traffic changes, and related support ticket volume — all in one query.</p>
+      </div>
+      <div class="wf-card">
+        <div class="wnum">03 / workflow</div>
+        <div class="wcmd">> deploy-impact --period 7d --threshold 50pct</div>
+        <h4>Deployment Impact Analysis</h4>
+        <p>Compares error rate, p95 latency, and traffic volume in 2h windows before/after each deployment. Flags deploys where error rate increased >50% post-deploy, with specific errors introduced. Automates what normally requires manual cross-referencing.</p>
+      </div>
+      <div class="wf-card">
+        <div class="wnum">04 / workflow</div>
+        <div class="wcmd">> ops-metrics --period quarterly --by-service</div>
+        <h4>Operational Metrics & Trends</h4>
+        <p>Weekly ops summary: error rate, p95/p99 latency, deployment count, MTTR for P1 incidents — by service. Flags metrics trending wrong for 3+ consecutive weeks. Replaces 3 hours of dashboard-stitching with a single query.</p>
+      </div>
+      <div class="wf-card" style="grid-column:1/-1">
+        <div class="wnum">05 / workflow</div>
+        <div class="wcmd">> incident-impact --incident-id api-outage-may28 --join users,crm,support</div>
+        <h4>Business Impact of Technical Incidents</h4>
+        <p>For any incident: how many users affected (access logs), how many support tickets created, what ARR was at risk (join affected user IDs with CRM), did user activity recover within 24h (product analytics). The analysis that goes into postmortems but normally takes days — done in one query.</p>
+      </div>
+    </div>
 
     <div class="concession-box" id="why-not">
       <h3>When InfiniSynapse is not the right choice for log analytics</h3>
-      <p>Honest framing — you likely don't need InfiniSynapse if:</p>
+      <p>InfiniSynapse is complementary to your log stack — not a replacement. You likely don't need it if:</p>
       <ul>
-        <li><strong>You need a log ingestion and search platform.</strong> If you don't already have a way to collect, store, and search your logs, you need Splunk, ELK, or Datadog first. InfiniSynapse is an analytics layer, not a log management platform. It works alongside — not instead of — your log management stack.</li>
-        <li><strong>Your operational questions are single-source.</strong> "Show me all 500 errors in the last hour" is a question Splunk or ELK answers perfectly. InfiniSynapse differentiates when questions span logs + deployments + monitoring + business data — cross-source questions that require joining operational and business context.</li>
-        <li><strong>You have a small engineering team with simple infrastructure.</strong> If you run a monolith on a single cloud service with straightforward logging, your existing cloud monitoring and log tools are likely sufficient. InfiniSynapse's cross-source value grows with microservice complexity, multi-system architectures, and the need to connect technical metrics to business impact.</li>
+        <li><strong>You need a log ingestion and search platform first.</strong> If you don't already collect, store, and search your logs, you need Splunk, ELK, or Datadog first. InfiniSynapse sits on top, not underneath.</li>
+        <li><strong>Your operational questions are single-source.</strong> "Show all 500 errors in the last hour" is a question Splunk answers perfectly. InfiniSynapse differentiates when questions span logs + deployments + support + business data.</li>
+        <li><strong>You run a simple monolith with straightforward logging.</strong> Cloud monitoring + basic log tools are sufficient. InfiniSynapse's cross-source value grows with microservice complexity and multi-system architectures.</li>
       </ul>
       <p>InfiniSynapse creates the most value as a <strong>complement to your existing log management stack</strong> — adding cross-source analytics that connect log data to deployments, support tickets, and business impact.</p>
     </div>
@@ -475,19 +552,25 @@
     <h2 id="quickstart">Quick start: 3 steps to AI log analytics</h2>
 
     <div class="step-box">
-      <span class="step-num">1</span>
-      <strong>Connect your log and operational data sources</strong>
-      <p>Connect your log database (where logs are stored), CI/CD deployment pipeline, monitoring system, and support ticketing. InfiniSynapse auto-discovers log schemas and field structures. It works alongside — not instead of — your existing log management platform.</p>
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Connect your log and operational data sources</h4>
+        <p>Connect your log database (where logs are stored), CI/CD pipeline, monitoring system, and support ticketing. InfiniSynapse auto-discovers log schemas and field structures. Works alongside — not instead of — your existing log management platform.</p>
+      </div>
     </div>
     <div class="step-box">
-      <span class="step-num">2</span>
-      <strong>Define your operational baselines in the Knowledge Base</strong>
-      <p>Document your key operational patterns: error severity classifications, normal operating ranges for error rates and latency, deployment windows, SLA thresholds, and critical service dependencies. The AI references these for anomaly detection and impact assessment.</p>
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Define your operational baselines in the Knowledge Base</h4>
+        <p>Document error severity classifications, normal operating ranges for error rates and latency, deployment windows, SLA thresholds, and critical service dependencies. The AI references these for anomaly detection and impact assessment.</p>
+      </div>
     </div>
     <div class="step-box">
-      <span class="step-num">3</span>
-      <strong>Ask your first cross-source operational question</strong>
-      <p>Start with the question your on-call team spends the most time on: "Show me errors that spiked in the last 24 hours, correlated with deployments and support ticket volume." InfiniSynapse queries logs, deployments, and support data simultaneously — answer in under a minute.</p>
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Ask your first cross-source operational question</h4>
+        <p>Start with the question your on-call team spends 40 minutes on: "Show errors that spiked in the last 24 hours, correlated with deployments and support ticket volume." InfiniSynapse queries logs, deployments, and support data — answer in under a minute.</p>
+      </div>
     </div>
 
     <div class="cta-box">
@@ -499,30 +582,30 @@
     <h2 id="faq">FAQ</h2>
     <div class="faq-item">
       <div class="faq-q">Can InfiniSynapse parse and analyze raw log files?</div>
-      <div class="faq-a">Yes. Connect InfiniSynapse to log files (CSV, JSON, or database-stored logs), and it auto-discovers the schema — extracting fields like timestamps, error codes, request paths, response times, and user IDs. The AI understands common log formats and can answer questions like "show me the top 10 error messages in the last 24 hours" by querying your log data directly.</div>
+      <div class="faq-a">Yes. Connect InfiniSynapse to log files (CSV, JSON, or database-stored logs), and it auto-discovers the schema — extracting fields like timestamps, error codes, request paths, response times, and user IDs. The AI understands common log formats and can answer "show me the top 10 error messages in the last 24 hours" by querying your log data directly.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How is this different from Splunk, ELK, or Datadog?</div>
-      <div class="faq-a">Splunk, ELK, and Datadog are purpose-built for log ingestion, indexing, and search — and they're excellent at it. InfiniSynapse is not a replacement; it's an AI analytics layer that connects to log data alongside other operational and business data sources. Its differentiation: cross-source questions like "do the errors spiking in our logs correlate with the support ticket surge and user activity drop?" — joining log data with support, deployment, and product data. Splunk/ELK = log management. InfiniSynapse = cross-source operational analytics that includes logs.</div>
+      <div class="faq-a">Splunk, ELK, and Datadog are purpose-built for log ingestion, indexing, and search — and they're excellent at it. InfiniSynapse is not a replacement; it's an AI analytics layer that connects to log data alongside other operational and business data sources. Its differentiation: cross-source questions like "do the errors spiking in our logs correlate with the support ticket surge and user activity drop?" — joining log data with support, deployment, and product data. InfiniSynapse = cross-source operational analytics that includes logs.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What log analytics workflows can I run?</div>
-      <div class="faq-a">Core workflows: error tracking and frequency trends, anomaly detection (spikes vs. baselines), deployment impact analysis (which deployments introduced errors), operational metrics dashboards (error rate, latency, volume trends), root cause analysis (logs + deployments + traffic + support tickets in one query), and business impact analysis (which customers and how much revenue was affected by an incident). Because InfiniSynapse joins log data with other sources, you can answer questions no log management tool alone can address.</div>
+      <div class="faq-a">Core workflows: error tracking and frequency trends, anomaly detection (spikes vs. baselines), deployment impact analysis (which deployments introduced errors), operational metrics dashboards (error rate, latency, volume trends), root cause analysis (logs + deployments + traffic + support tickets in one query), and business impact analysis (which customers and how much revenue was affected by an incident).</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Can InfiniSynapse handle large volumes of log data?</div>
-      <div class="faq-a">InfiniSynapse connects to your existing databases where logs are stored. For very large log volumes (billions of lines), we recommend using a dedicated log management platform (Splunk, ELK, Datadog) for ingestion and indexing, and connecting InfiniSynapse to aggregated or sampled log data for cross-source analytical queries. InfiniSynapse is optimized for analytical queries — aggregation, trend analysis, correlation — rather than raw log search at petabyte scale.</div>
+      <div class="faq-a">InfiniSynapse connects to your existing databases where logs are stored. For very large log volumes (billions of lines), we recommend using a dedicated log management platform (Splunk, ELK, Datadog) for ingestion and indexing, and connecting InfiniSynapse to aggregated or sampled log data for cross-source analytical queries.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Is my log data secure?</div>
-      <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All log data — which often contains sensitive information like user IDs, IP addresses, request payloads, and internal system architecture details — stays on your own servers, processed locally. Private deployment is essential for security-conscious engineering teams.</div>
+      <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All log data — which often contains sensitive information like user IDs, IP addresses, and internal system architecture details — stays on your own servers, processed locally. Essential for security-conscious engineering teams.</div>
     </div>
 
     <div class="methodology">
       <h2>About this guide</h2>
       <p><strong>Last updated:</strong> 2026-06-01</p>
-      <p><strong>Methodology:</strong> Log analytics scenarios described here are based on InfiniSynapse product capabilities matched against common DevOps, SRE, and platform engineering workflows. Competitor capability descriptions are sourced from official documentation and product pages of Splunk, Elastic (ELK), Datadog, and other observability platforms (accessed May 2026).</p>
-      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher of this page. We explicitly position InfiniSynapse as complementary to — not a replacement for — log management platforms like Splunk, ELK, and Datadog. Readers should evaluate InfiniSynapse as an analytics layer on top of their existing observability stack.</p>
+      <p><strong>Methodology:</strong> Log analytics scenarios based on InfiniSynapse product capabilities matched against common DevOps, SRE, and platform engineering workflows. Competitor capability descriptions sourced from official documentation of Splunk, Elastic, Datadog, and other observability platforms (accessed May 2026).</p>
+      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher. We explicitly position InfiniSynapse as complementary to — not a replacement for — log management platforms. Readers should evaluate InfiniSynapse as an analytics layer on top of their existing observability stack.</p>
       <p><strong>Update cadence:</strong> Reviewed quarterly. Observability platform capabilities and integrations refreshed every 90 days.</p>
     </div>
 
@@ -542,8 +625,8 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
-          <div style="font-size:18px;font-weight:600;color:#0A0A0A;margin-bottom:12px">InfiniSynapse</div>
-          <p style="font-size:14px;color:#6B7280;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
+          <div style="font-size:18px;font-weight:600;color:#F1F5F9;margin-bottom:12px">InfiniSynapse</div>
+          <p style="font-size:14px;color:#94A3B8;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
           <a href="https://app.infinisynapse.com/" class="cta-btn" style="padding:8px 20px;font-size:13px">Try Online →</a>
         </div>
         <div>

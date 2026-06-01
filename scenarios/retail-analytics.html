@@ -111,133 +111,154 @@
 
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1F2937;background:#FFFFFF;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
-    ::selection{background:rgba(91,91,255,0.2)}
-    a{color:#5B5BFF;text-decoration:none}
-    a:hover{color:#5B5BFF}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1A2E05;background:#F7FEE7;font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased}
+    ::selection{background:rgba(101,163,13,0.18)}
 
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB;padding:14px 0}
-    .nav-inner{max-width:1024px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{display:flex;align-items:center;gap:10px}
-    .nav-logo-mark{height:28px;display:flex;align-items:center}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(247,254,231,0.88);backdrop-filter:blur(16px);border-bottom:1px solid #D9F99D;padding:14px 0}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-logo-mark{height:28px}
     .nav-logo-mark img{height:28px;width:auto;display:block}
-    .nav-logo span{font-size:16px;font-weight:600;color:#0A0A0A;letter-spacing:-0.01em}
+    .nav-logo span{font-size:16px;font-weight:600;color:#1A2E05;letter-spacing:-0.01em}
     .nav-links{display:flex;align-items:center;gap:22px;font-size:14px}
-    .nav-links a{color:#374151;transition:color 0.15s}
-    .nav-links a:hover{color:#0A0A0A}
-    .nav-cta{background:#0A0A0A !important;color:#FFF !important;border-radius:24px;padding:9px 20px}
-    .nav-cta:hover{background:#1F2937 !important;color:#FFF !important;opacity:1}
+    .nav-links a{color:#3F6212;text-decoration:none;transition:color 0.15s}
+    .nav-links a:hover{color:#1A2E05}
+    .nav-cta{background:#1A2E05;color:#FFF;border-radius:24px;padding:9px 20px;text-decoration:none}
+    .nav-cta:hover{background:#65A30D;color:#FFF}
 
-    .wrap{max-width:1024px;margin:0 auto;padding:48px 24px}
+    .container{max-width:1280px;margin:0 auto;padding:0 28px}
 
-    h1{font-size:2.8rem;font-weight:800;line-height:1.15;margin-bottom:16px;color:#0A0A0A;letter-spacing:-0.03em}
-    h2{font-size:1.32rem;font-weight:600;margin:44px 0 16px;color:#0A0A0A;border-bottom:1px solid #E5E7EB;padding-bottom:10px;letter-spacing:-0.01em}
-    h3{font-size:17px;font-weight:600;margin:26px 0 10px;color:#111827}
-    p{margin:0 0 18px;color:#4B5563}
-    strong{color:#0A0A0A;font-weight:600}
-    ul,ol{margin:14px 0 18px 24px}
-    li{margin:8px 0;color:#4B5563}
-    code{background:rgba(91,91,255,0.08);padding:2px 7px;border-radius:4px;font-size:14px;font-family:'SF Mono','Fira Code','JetBrains Mono',monospace;color:#5B5BFF;border:1px solid rgba(91,91,255,0.14)}
+    .hero{background:linear-gradient(160deg,#ECFCCB 0%,#F7FEE7 35%,#F0FDF4 100%);border-bottom:1px solid #D9F99D;padding:52px 0 0;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center}
+    .hero-badge{display:inline-block;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px;background:#ECFCCB;color:#4D7C0F;border:1px solid #BEF264;letter-spacing:0.3px}
+    .hero h1{font-size:2.6rem;font-weight:800;line-height:1.12;color:#1A2E05;letter-spacing:-0.03em;margin-bottom:14px}
+    .hero h1 em{font-style:normal;color:#65A30D}
+    .hero-desc{font-size:1.02rem;color:#3F6212;line-height:1.6;margin-bottom:22px}
+    .hero-cta{display:inline-flex;align-items:center;gap:8px;background:#1A2E05;color:#FFF;padding:13px 28px;border-radius:26px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s}
+    .hero-cta:hover{background:#65A30D;transform:translateY(-1px)}
 
-    .meta-desc{font-size:1.08rem;color:#6B7280;margin-bottom:32px;line-height:1.55;max-width:740px}
-    .breadcrumb{font-size:13px;color:#9CA3AF;margin-bottom:20px}
-    .breadcrumb a{color:#6B7280}
-    .breadcrumb a:hover{color:#5B5BFF}
-    .breadcrumb span{margin:0 6px}
-    .badge{display:inline-block;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;margin-right:8px;margin-bottom:14px}
-    .badge-client{background:rgba(91,91,255,0.08);color:#5B5BFF;border:1px solid rgba(91,91,255,0.25)}
-    .badge-cat{background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB}
+    .hero-cust{background:#FFF;border:1px solid #D9F99D;border-radius:18px;padding:20px;box-shadow:0 4px 24px rgba(101,163,13,0.06)}
+    .cust-label{font-size:10.5px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:14px}
+    .cust-seg{display:flex;gap:10px;margin-bottom:12px}
+    .cust-chip{flex:1;text-align:center;padding:10px 8px;border-radius:10px;font-size:11px}
+    .cust-chip.omni{background:#ECFCCB;color:#4D7C0F;font-weight:700}
+    .cust-chip.online{background:#F0FDF4;color:#16A34A;font-weight:600}
+    .cust-chip.store{background:#EFF6FF;color:#2563EB;font-weight:600}
+    .cust-chip span{display:block;font-size:20px;margin-bottom:2px}
+    .cust-insight{margin-top:10px;padding-top:10px;border-top:1px solid #F3F4F6;font-size:11px;color:#65A30D;font-weight:600;text-align:center}
 
-    .toc{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 22px;margin:0 0 36px}
-    .toc-label{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
-    .toc ul{margin:0;padding-left:18px;font-size:14.5px}
-    .toc a{color:#374151}
-    .toc a:hover{color:#5B5BFF}
+    .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #D9F99D;background:#FFF}
+    .stat-item{text-align:center;padding:26px 16px;border-right:1px solid #ECFCCB}
+    .stat-item:last-child{border-right:none}
+    .stat-val{font-size:1.7rem;font-weight:800;color:#1A2E05;letter-spacing:-0.02em}
+    .stat-val span{color:#65A30D}
+    .stat-label{font-size:12px;color:#3F6212;margin-top:3px;font-weight:500}
 
-    .author-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;padding:16px 0;border-bottom:1px solid #F3F4F6}
-    .author-meta img{width:44px;height:44px;border-radius:50%}
-    .author-info{font-size:14px;color:#374151}
-    .author-info a{font-weight:600;color:#0A0A0A}
-    .author-bio{font-size:13px;color:#6B7280;margin:2px 0 0}
-    .dates{margin-left:auto;font-size:13px;color:#9CA3AF;text-align:right;line-height:1.6}
+    .section{padding:48px 0}
+    .sec-label{font-size:11.5px;font-weight:700;color:#65A30D;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+    .section h2{font-size:1.75rem;font-weight:700;color:#1A2E05;letter-spacing:-0.02em;margin-bottom:10px;line-height:1.2}
+    .sec-lead{color:#3F6212;font-size:1rem;max-width:700px;margin-bottom:24px;line-height:1.6}
 
-    .tldr{background:rgba(91,91,255,0.05);border-left:3px solid #5B5BFF;border-radius:0 10px 10px 0;padding:18px 22px;margin:0 0 32px}
-    .tldr-label{font-size:12px;font-weight:600;color:#5B5BFF;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px}
-    .tldr ul{margin:0;padding-left:18px;font-size:14.5px}
-    .tldr li{color:#374151;margin:5px 0}
+    .tldr-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
+    .tldr-card{border-radius:14px;padding:22px 24px;border:1px solid #D9F99D;background:#FFF}
+    .tldr-card h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px}
+    .tldr-card:nth-child(1) h4{color:#DC2626}
+    .tldr-card:nth-child(2) h4{color:#65A30D}
+    .tldr-card:nth-child(3) h4{color:#16A34A}
+    .tldr-card p{font-size:13px;color:#3F6212;line-height:1.6}
 
-    .snippet-answer{background:#F9FAFB;border-left:3px solid #5B5BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:15.5px;color:#1F2937;margin:8px 0 24px}
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .pain-card{background:#FFF;border:1px solid #D9F99D;border-radius:14px;padding:22px;transition:box-shadow 0.2s}
+    .pain-card:hover{box-shadow:0 6px 20px rgba(101,163,13,0.06)}
+    .pain-icon{font-size:26px;margin-bottom:8px}
+    .pain-card h4{font-size:14px;font-weight:700;color:#1A2E05;margin-bottom:8px}
+    .pain-card p{font-size:13px;color:#3F6212;line-height:1.6}
 
-    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-    .ba-card{border-radius:10px;padding:20px 24px}
+    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .ba-panel{border-radius:16px;padding:26px}
     .ba-before{background:#FEF2F2;border:1px solid #FECACA}
     .ba-after{background:#F0FDF4;border:1px solid #BBF7D0}
-    .ba-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
-    .ba-before .ba-label{color:#DC2626}
-    .ba-after .ba-label{color:#16A34A}
-    .ba-text{font-size:14.5px;color:#4B5563;line-height:1.7}
+    .ba-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;padding:4px 12px;border-radius:10px;margin-bottom:10px}
+    .ba-before .ba-tag{background:#FEE2E2;color:#DC2626}
+    .ba-after .ba-tag{background:#DCFCE7;color:#16A34A}
+    .ba-panel h4{font-size:15px;font-weight:700;color:#1A2E05;margin-bottom:8px}
+    .ba-panel p{font-size:13.5px;color:#3F6212;line-height:1.65}
 
-    .viz{margin:28px 0;padding:24px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px}
-    .viz img,.viz svg{width:100%;height:auto;display:block;border-radius:8px}
-    .viz-caption{margin-top:12px;font-size:13px;color:#6B7280;text-align:center;font-style:italic}
+    .comp-table{width:100%;border-collapse:collapse;font-size:13.5px;border-radius:14px;overflow:hidden;border:1px solid #D9F99D}
+    .comp-table thead{background:#1A2E05}
+    .comp-table thead th{color:#FFF;padding:13px 14px;text-align:left;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.8px}
+    .comp-table thead th:last-child{background:#65A30D}
+    .comp-table td{padding:12px 14px;border-bottom:1px solid #ECFCCB;color:#3F6212;vertical-align:top}
+    .comp-table tbody tr:nth-child(even){background:#FFF}
+    .comp-table tbody tr:nth-child(odd){background:#F7FEE7}
+    .comp-table td:last-child{font-weight:500;color:#1A2E05}
 
-    .compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-    .compare-table th,.compare-table td{padding:13px 12px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
-    .compare-table th{background:#F9FAFB;color:#111827;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:0.5px}
-    .compare-table td{color:#4B5563}
+    .wf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .wf-card{background:#FFF;border:1px solid #D9F99D;border-radius:14px;padding:20px;transition:all 0.2s}
+    .wf-card:hover{border-color:#65A30D;box-shadow:0 4px 16px rgba(101,163,13,0.05)}
+    .wf-num{font-size:1.8rem;font-weight:900;color:#ECFCCB;line-height:1;margin-bottom:4px}
+    .wf-card h4{font-size:14px;font-weight:700;color:#1A2E05;margin-bottom:6px}
+    .wf-card p{font-size:12.5px;color:#3F6212;line-height:1.55}
 
-    .step-box{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 20px;margin:14px 0;transition:border-color 0.2s}
-    .step-box:hover{border-color:#5B5BFF}
-    .step-num{display:inline-flex;width:26px;height:26px;background:#0A0A0A;color:#FFFFFF;border-radius:50%;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-right:10px;vertical-align:middle}
-    .step-box strong{display:inline;vertical-align:middle;font-size:15.5px;color:#0A0A0A}
-    .step-box p{margin:8px 0 0 36px;font-size:14.5px;color:#4B5563}
+    .steps-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+    .steps-flow::before{content:'';position:absolute;top:28px;left:16.67%;right:16.67%;height:3px;background:linear-gradient(90deg,#BEF264,#65A30D,#4D7C0F);z-index:0;border-radius:2px}
+    .step-node{text-align:center;position:relative;z-index:1;padding:0 20px}
+    .step-dot{width:56px;height:56px;border-radius:50%;background:#65A30D;color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin-bottom:14px}
+    .step-node h4{font-size:15px;font-weight:700;color:#1A2E05;margin-bottom:6px}
+    .step-node p{font-size:13px;color:#3F6212;line-height:1.55}
 
-    .concession-box{background:#FFFBEB;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:8px;padding:20px 24px;margin:24px 0;color:#1F2937}
-    .concession-box h3{color:#78350F;margin:0 0 10px;font-size:17px}
-    .concession-box p{color:#374151;margin:6px 0;font-size:14.5px}
-    .concession-box ul{margin:8px 0 4px 22px}
-    .concession-box li{color:#374151;font-size:14.5px}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .faq-item{border-bottom:1px solid #D9F99D;padding:22px 0}
+    .faq-item:nth-child(odd){padding-right:24px}
+    .faq-item:nth-child(even){padding-left:24px;border-left:1px solid #D9F99D}
+    .faq-q{font-weight:600;font-size:15px;color:#1A2E05;margin-bottom:8px}
+    .faq-a{color:#3F6212;font-size:13.5px;line-height:1.65}
 
-    .cta-box{background:linear-gradient(135deg,rgba(91,91,255,0.08),rgba(91,91,255,0.03));border:1px solid rgba(91,91,255,0.22);text-align:center;padding:40px;border-radius:14px;margin:48px 0}
-    .cta-box h3{color:#0A0A0A;margin:0 0 10px;font-size:22px;font-weight:600;border:none;padding:0}
-    .cta-box p{color:#4B5563;margin:0 0 22px;font-size:15px}
-    .cta-btn{display:inline-block;background:#0A0A0A;color:#FFFFFF;padding:13px 36px;border-radius:28px;font-weight:600;font-size:15px;transition:all 0.2s;text-decoration:none}
-    .cta-btn:hover{background:#1F2937;color:#FFFFFF;transform:translateY(-1px)}
+    .cta-block{background:linear-gradient(135deg,#1A2E05 0%,#3F6212 100%);border-radius:20px;padding:48px 40px;text-align:center;margin-top:40px}
+    .cta-block h3{color:#FFF;font-size:1.6rem;font-weight:700;margin-bottom:10px;letter-spacing:-0.02em}
+    .cta-block p{color:#BEF264;margin-bottom:24px;font-size:15px}
+    .cta-block .cta-btn{display:inline-block;background:#65A30D;color:#FFF;padding:14px 36px;border-radius:28px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s}
+    .cta-block .cta-btn:hover{background:#84CC16;transform:translateY(-1px)}
 
-    .faq-item{border-bottom:1px solid #E5E7EB;padding:20px 0}
-    .faq-q{font-weight:600;font-size:16px;color:#0A0A0A}
-    .faq-a{margin-top:10px;color:#4B5563;font-size:14.5px;line-height:1.7}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .related-grid a{display:block;padding:18px;background:#FFF;border:1px solid #D9F99D;border-radius:12px;color:#65A30D;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}
+    .related-grid a:hover{background:#F7FEE7;border-color:#65A30D}
 
-    .methodology{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:22px 26px;margin:36px 0;font-size:14px;color:#4B5563}
-    .methodology h2{font-size:13px;border:none;padding:0;margin:0 0 14px;color:#111827;text-transform:uppercase;letter-spacing:1.2px}
-    .methodology p{margin:6px 0;font-size:13.5px}
+    .methodology{background:#FFF;border:1px solid #D9F99D;border-radius:14px;padding:22px 26px;margin-top:36px;font-size:13.5px;color:#3F6212}
+    .methodology h2{font-size:12px;font-weight:700;padding:0;margin:0 0 14px;color:#1A2E05;text-transform:uppercase;letter-spacing:1.2px;border:none}
+    .methodology p{margin:6px 0;font-size:13px}
 
-    .related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
-    .related a{display:block;padding:16px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:10px;color:#5B5BFF;font-size:14px;font-weight:500;transition:all 0.2s;line-height:1.5}
-    .related a:hover{background:rgba(91,91,255,0.04);border-color:#5B5BFF}
+    .concession{background:#FFF;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:0 14px 14px 0;padding:24px 28px;margin:28px 0}
+    .concession h4{font-size:12px;font-weight:700;color:#92400E;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:10px}
+    .concession p{font-size:13.5px;color:#3F6212;line-height:1.6;margin-bottom:6px}
 
-    .footer{background:#F9FAFB;border-top:1px solid #E5E7EB;padding:48px 24px;margin-top:60px}
-    .footer-inner{max-width:1024px;margin:0 auto}
+    .footer{background:#FFF;border-top:1px solid #D9F99D;padding:48px 28px;margin-top:60px}
+    .footer-inner{max-width:1280px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
-    .footer h4{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .footer h4{font-size:12px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
     .footer-links{display:flex;flex-direction:column;gap:10px;font-size:14px}
-    .footer-links a{color:#6B7280}
-    .footer-links a:hover{color:#0A0A0A}
-    .footer-bottom{border-top:1px solid #E5E7EB;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
+    .footer-links a{color:#3F6212;text-decoration:none}
+    .footer-links a:hover{color:#1A2E05}
+    .footer-bottom{border-top:1px solid #ECFCCB;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
 
-    @media(max-width:720px){
+    @media(max-width:768px){
+      .hero-grid{grid-template-columns:1fr;gap:24px}
+      .hero h1{font-size:1.85rem}
+      .stats-bar{grid-template-columns:repeat(2,1fr)}
+      .tldr-row{grid-template-columns:1fr}
+      .pain-grid{grid-template-columns:1fr}
       .ba-grid{grid-template-columns:1fr}
-      .related{grid-template-columns:1fr}
-      h1{font-size:1.85rem}
-      h2{font-size:1.18rem}
+      .wf-grid{grid-template-columns:1fr}
+      .steps-flow{grid-template-columns:1fr;gap:16px}
+      .steps-flow::before{display:none}
+      .faq-grid{grid-template-columns:1fr}
+      .faq-item:nth-child(even){padding-left:0;border-left:none}
+      .related-grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
       .nav-links a:not(.nav-cta){display:none}
-      .wrap{padding:32px 20px}
-      .compare-table{font-size:12px}
-      .compare-table th,.compare-table td{padding:8px 6px}
-      .step-box p{margin-left:0}
-      .author-meta{flex-wrap:wrap}
-      .dates{margin-left:0;text-align:left}
+      .container{padding:0 20px}
+      .comp-table{font-size:11px}
+      .comp-table th,.comp-table td{padding:8px 6px}
     }
   </style>
 </head>
@@ -259,320 +280,151 @@
     </div>
   </nav>
 
-  <div class="wrap">
-
-    <nav class="breadcrumb">
-      <a href="https://infinisynapse.com">Home</a><span>/</span>
-      <a href="https://infinisynapse.com/scenarios/">Scenarios</a><span>/</span>
-      AI Retail Analytics
-    </nav>
-
-    <div>
-      <span class="badge badge-client">InfiniSynapse</span>
-      <span class="badge badge-cat">Scenario</span>
-    </div>
-
-    <h1>AI Retail Analytics: Know Every Customer Across Every Channel</h1>
-
-    <p class="meta-desc">A practical guide to <strong>AI retail analytics</strong> for omnichannel retailers, category managers, and merchandising teams. Covers <strong>Customer 360 profiles</strong>, <strong>demand forecasting</strong>, <strong>dynamic pricing</strong>, <strong>inventory optimization</strong>, and <strong>retail media analytics</strong> — unifying POS, e-commerce, loyalty, inventory, and supply chain data without a data engineering team.</p>
-
-    <div class="author-meta">
-      <img src="https://infinisynapse.com/authors/editorial-team.jpg" alt="InfiniSynapse Editorial Team" width="44" height="44">
-      <div class="author-info">
-        <a href="https://infinisynapse.com/authors/editorial-team">InfiniSynapse Editorial Team</a> · Enterprise AI Analytics Research
-        <p class="author-bio">Specializing in AI-powered retail analytics and omnichannel intelligence, serving retail chains, DTC brands, and category management teams.</p>
-      </div>
-      <div class="dates">
-        <span>Published: 2026-06-01</span><br>
-        <span>Last Updated: 2026-06-01</span>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">Omnichannel Retail</div>
+          <h1>Know <em>every customer</em> across every channel</h1>
+          <p class="hero-desc">Unify POS, e-commerce, loyalty, inventory, and supply chain data. Ask questions in plain English. Get the omnichannel truth — Customer 360, demand forecasts, dynamic pricing — without a data warehouse.</p>
+          <a href="https://app.infinisynapse.com/" class="hero-cta">Start Analyzing Free →</a>
+        </div>
+        <div class="hero-cust">
+          <div class="cust-label">Customer Segment Mix</div>
+          <div class="cust-seg">
+            <div class="cust-chip omni"><span>34%</span>Omnichannel</div>
+            <div class="cust-chip online"><span>41%</span>Online Only</div>
+            <div class="cust-chip store"><span>25%</span>Store Only</div>
+          </div>
+          <div class="cust-insight">Omnichannel customers: 3.2× higher LTV than single-channel</div>
+        </div>
       </div>
     </div>
-
-    <nav class="toc">
-      <div class="toc-label">Contents</div>
-      <ul>
-        <li><a href="#snippet">What is AI-powered retail analytics?</a></li>
-        <li><a href="#before-after">Before vs After: channel-siloed retail vs unified omnichannel intelligence</a></li>
-        <li><a href="#pain">Three hard problems with fragmented retail data</a></li>
-        <li><a href="#solution">How InfiniSynapse unifies retail analytics</a></li>
-        <li><a href="#workflows">Six core retail analytics workflows</a></li>
-        <li><a href="#why-not">When InfiniSynapse is not the right choice</a></li>
-        <li><a href="#quickstart">Quick start: 3 steps to AI retail analytics</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-
-    <div class="tldr">
-      <div class="tldr-label">TL;DR</div>
-      <ul>
-        <li><strong>Problem:</strong> Retailers operate across POS systems in stores, e-commerce platforms online, loyalty programs, inventory management, and supply chain — each generating data in its own silo. Answering "which customers buy both in-store and online, what do they spend, and which products drive omnichannel loyalty?" requires joining 5 separate systems. Databricks's retail page frames this as the need to <em>"unify customer data across POS, e-commerce, loyalty to create Customer 360 profiles"</em> — but traditional approaches require 6-12 months of data platform engineering.</li>
-        <li><strong>Solution:</strong> InfiniSynapse connects to your POS, e-commerce platform, loyalty database, inventory system, and supply chain data directly. You ask retail questions in plain English. It queries across all sources and returns unified omnichannel answers.</li>
-        <li><strong>Result:</strong> Customer 360 profiles built in days, not months. Demand forecasts that incorporate promotions, seasons, and external signals. Inventory decisions backed by real-time sell-through data across channels.</li>
-      </ul>
+    <div class="stats-bar" style="margin-top:40px">
+      <div class="stat-item"><div class="stat-val"><span>5</span> systems</div><div class="stat-label">POS · Ecom · Loyalty · Inventory · Supply</div></div>
+      <div class="stat-item"><div class="stat-val">360<span>°</span></div><div class="stat-label">Customer profiles in days</div></div>
+      <div class="stat-item"><div class="stat-val">0<span> ETL</span></div><div class="stat-label">No warehouse needed</div></div>
+      <div class="stat-item"><div class="stat-val">SKU<span>-level</span></div><div class="stat-label">Demand forecasts per store</div></div>
     </div>
+  </section>
 
-    <h2 id="snippet">What is AI-powered retail analytics?</h2>
-    <p class="snippet-answer"><strong>AI-powered retail analytics uses an AI data analyst to automatically unify POS transaction data, e-commerce platform data, loyalty program records, inventory levels, and supply chain information — then perform cross-channel analysis to answer questions like "what is the omnichannel LTV of our top customers?", "which products should we reorder and at what quantity by store?", and "how should we adjust prices based on competitor moves and inventory levels?" Unlike legacy BI tools that require months of data warehouse modeling, or single-channel dashboards that can't see the full customer journey, InfiniSynapse provides the cross-channel truth retailers need to compete in an omnichannel world.</strong></p>
+  <div class="container">
 
-    <h2 id="before-after">Before vs After: channel-siloed reporting vs unified omnichannel intelligence</h2>
-    <div class="ba-grid">
-      <div class="ba-card ba-before">
-        <div class="ba-label">Before — Traditional approach</div>
-        <div class="ba-text">The merchandising team runs a weekly report from the POS system (in-store sales by SKU). The e-commerce team pulls Shopify data (online sales, traffic, conversion). The loyalty team exports member activity from a separate database. The supply chain team tracks inventory in yet another system. To answer "which products sell well in-store AND online, and what's the combined margin?" — someone exports four CSVs, merges them manually, deduplicates by SKU, and produces a combined report. It takes 3 days. Databricks identifies the goal as <em>"unified customer data across POS, e-commerce, loyalty"</em> — achievable, but at the cost of a major data platform investment.</div>
-      </div>
-      <div class="ba-card ba-after">
-        <div class="ba-label">After — With InfiniSynapse</div>
-        <div class="ba-text">Connect your POS database, Shopify store, loyalty database, and inventory system once. Then ask: "Which customers shop both in-store and online? What is their average basket size per channel, their combined LTV, and which product categories drive the most cross-channel purchasing?" InfiniSynapse queries all four sources, joins by customer ID and SKU, and returns a unified omnichannel picture — in under a minute. Category reviews shift from "what sold last month in this channel?" to "what products drive omnichannel customer loyalty and margin?" Databricks's vision of <em>"Customer 360 profiles"</em> and <em>"real-time personalization"</em> becomes achievable without a data engineering army.</div>
+    <div class="section">
+      <div class="tldr-row">
+        <div class="tldr-card"><h4>Problem</h4><p>Retailers operate POS in stores, e-commerce online, loyalty programs, inventory systems, and supply chain — each generating data in isolation. Answering "which customers buy in-store AND online, and what drives omnichannel loyalty?" requires joining 5 systems. Traditional approaches need 6-12 months of data platform engineering.</p></div>
+        <div class="tldr-card"><h4>Solution</h4><p>InfiniSynapse connects to POS, e-commerce, loyalty, inventory, and supply chain directly. You ask questions in plain English. It queries all sources and returns unified omnichannel answers — no warehouse migration, no identity resolution pipeline, no data engineering backlog.</p></div>
+        <div class="tldr-card"><h4>Result</h4><p>Customer 360 profiles built in days, not months. Demand forecasts incorporating promotions, seasons, and external signals. Inventory decisions backed by real-time cross-channel sell-through data. Pricing that responds to competitors and stock levels simultaneously.</p></div>
       </div>
     </div>
 
-    <h2 id="pain">Three hard problems with fragmented retail data</h2>
-    <p>Retailers do not lack data — they lack <strong>connected</strong> data across channels. These three problems affect retailers with 5 to 5,000 stores:</p>
+    <div class="section">
+      <div class="sec-label">Channel Silos</div>
+      <h2>Three ways disconnected channels hide the full picture</h2>
+      <p class="sec-lead">Each channel knows its piece. No system sees the omnichannel customer, the cross-channel inventory, or the competitive pricing landscape.</p>
+      <div class="pain-grid">
+        <div class="pain-card"><div class="pain-icon">🛒</div><h4>You can't see the omnichannel customer</h4><p>A customer browses online, buys in-store, joins loyalty, and later orders delivery. Your e-commerce platform sees the browse and delivery. POS sees the in-store purchase. Loyalty tracks points. None see the complete customer. Databricks identifies this need — but implementation requires months of pipeline work.</p></div>
+        <div class="pain-card"><div class="pain-icon">📦</div><h4>Inventory decisions are channel-by-channel</h4><p>E-commerce sees online stock. Store manager sees in-store inventory. Supply chain sees warehouse levels. When a product sells fast online but sits on store shelves, no system flags the imbalance — because no system sees both channels. Each channel optimizes in isolation.</p></div>
+        <div class="pain-card"><div class="pain-icon">💰</div><h4>Pricing is reactive and channel-specific</h4><p>Competitor drops price online — e-commerce team reacts days later. Product is overstocked in stores — markdowns happen at end-of-season, not when inventory signals first appear. Real-time pricing requires joining competitor data, inventory, demand, and margin across channels — data that's never in one place.</p></div>
+      </div>
+    </div>
 
-    <h3>Problem 1: You can't see the omnichannel customer</h3>
-    <p>A customer browses online, buys in-store, joins the loyalty program, and later orders delivery. Your e-commerce platform sees the browse and the delivery order. Your POS system sees the in-store purchase. Your loyalty database tracks points. None of them see the complete customer. Databricks retail materials identify the solution: <em>"Unified customer data across POS, e-commerce, loyalty... to create Customer 360 profiles."</em> But the implementation gap is massive — it requires data pipelines, identity resolution, and a data platform that most retail IT teams don't have. InfiniSynapse bridges this gap by connecting to each source directly and resolving identity on the fly, without a warehouse migration project.</p>
+    <div class="section">
+      <div class="sec-label">The Shift</div>
+      <h2>Channel-siloed retail → Unified omnichannel intelligence</h2>
+      <div class="ba-grid">
+        <div class="ba-panel ba-before"><span class="ba-tag">Before · 5 Systems, 0 Connections</span><h4>3 days to answer one cross-channel question</h4><p>Merchandising pulls POS reports (in-store sales). E-commerce exports Shopify data. Loyalty team queries member DB. Supply chain checks inventory separately. "Which products sell well in-store AND online, and what's the combined margin?" — export 4 CSVs, merge manually, deduplicate by SKU. <strong>3 days.</strong> Databricks' vision of "Customer 360" is achievable — at the cost of a major data platform investment.</p></div>
+        <div class="ba-panel ba-after"><span class="ba-tag">After · InfiniSynapse</span><h4>One question, all channels, under a minute</h4><p>Connect POS, Shopify, loyalty, and inventory once. Ask: "Which customers shop both in-store and online? Average basket per channel? Combined LTV? Which categories drive cross-channel purchasing?" InfiniSynapse queries all four sources, joins on customer ID and SKU, returns the unified picture — <strong>under a minute</strong>. Customer 360 without the 6-month data platform project.</p></div>
+      </div>
+    </div>
 
-    <h3>Problem 2: Inventory decisions are made channel by channel</h3>
-    <p>The e-commerce team sees online stock levels. The store manager sees in-store inventory. The supply chain team sees warehouse inventory. When a product is selling fast online but sitting on store shelves, no system flags the imbalance — because no single system sees both channels. Databricks describes this as <em>"intelligent inventory: optimize safety stock to reduce stockouts"</em> — but that intelligence requires joining e-commerce sales velocity, in-store POS data, and warehouse inventory levels in real time. Without cross-channel data unification, inventory optimization means optimizing each channel in isolation.</p>
+    <div class="section">
+      <div class="sec-label">The Landscape</div>
+      <h2>Where InfiniSynapse fits in retail analytics</h2>
+      <table class="comp-table">
+        <thead><tr><th>Capability</th><th>Channel-native (POS, Shopify)</th><th>Data Platform (Databricks)</th><th>InfiniSynapse</th></tr></thead>
+        <tbody>
+          <tr><td>Data scope</td><td>One channel only</td><td>All data — after platform engineering</td><td>POS + Ecom + Loyalty + Inventory + Supply Chain — direct</td></tr>
+          <tr><td>Customer 360</td><td>Not possible</td><td>Yes — after identity resolution pipeline (months)</td><td>Auto-resolves identity across sources in days</td></tr>
+          <tr><td>Demand forecasting</td><td>Basic per-channel trends</td><td>Custom ML models (data science team)</td><td>Multi-signal: sales + promos + external via web search</td></tr>
+          <tr><td>Dynamic pricing</td><td>Manual or rule-based</td><td>Custom models</td><td>Cross-channel: inventory + competitor + demand + margin</td></tr>
+          <tr><td>Query interface</td><td>Pre-built dashboards</td><td>SQL/Python notebooks</td><td>Natural language + Agentic multi-step</td></tr>
+          <tr><td>Deployment</td><td>SaaS</td><td>SaaS + private</td><td>SaaS + Air-Gapped private deployment</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h3>Problem 3: Pricing is reactive and channel-specific</h3>
-    <p>Competitor drops price online — your e-commerce team reacts in 2-3 days. A product is overstocked in stores — markdowns happen at end-of-season, not when the inventory signal first appears. Databricks positions <em>"dynamic pricing: use real-time demand to optimize pricing decisions"</em> — but real-time pricing requires joining competitive price data, inventory levels, demand signals, and margin data across channels. Most retailers manage pricing with spreadsheets and quarterly reviews because the underlying data isn't unified.</p>
-
-    <h2 id="solution">How InfiniSynapse unifies retail analytics across channels</h2>
-    <p>InfiniSynapse approaches retail analytics by connecting to every channel's data source directly and performing cross-channel analysis on the fly.</p>
-
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Capability</th>
-          <th>Channel-specific tools (Shopify, POS-native)</th>
-          <th>Data platform (Databricks)</th>
-          <th>InfiniSynapse</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Data scope</td>
-          <td>One channel's data only</td>
-          <td>All data — after platform engineering</td>
-          <td>POS + e-commerce + loyalty + inventory + supply chain directly</td>
-        </tr>
-        <tr>
-          <td>Customer 360</td>
-          <td>Not possible (single channel)</td>
-          <td>Possible after identity resolution pipeline (months)</td>
-          <td>Auto-resolves identity across connected sources in days</td>
-        </tr>
-        <tr>
-          <td>Demand forecasting</td>
-          <td>Basic trend lines per channel</td>
-          <td>Custom ML models (requires data science team)</td>
-          <td>Multi-signal: historical sales + promotions + external factors via web search</td>
-        </tr>
-        <tr>
-          <td>Dynamic pricing</td>
-          <td>Manual or rule-based</td>
-          <td>Custom models</td>
-          <td>Cross-channel: inventory levels + competitor data + demand + margin</td>
-        </tr>
-        <tr>
-          <td>Query interface</td>
-          <td>Pre-built channel dashboards</td>
-          <td>SQL/Python notebooks</td>
-          <td>Natural language + Agentic multi-step analysis</td>
-        </tr>
-        <tr>
-          <td>Deployment</td>
-          <td>SaaS</td>
-          <td>SaaS + private</td>
-          <td>SaaS + private deployment (Air-Gapped)</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>Concretely: you connect your POS database (store transactions, SKU-level sales), your Shopify store (online orders, traffic), your loyalty database (member profiles, points, redemptions), and your inventory management system. InfiniSynapse understands all four schemas. When you ask "which customers buy the same product category in-store AND online, what's their combined spend, and which categories drive the highest omnichannel repeat purchase rate?", it queries across all systems and returns the answer — no warehouse, no identity resolution pipeline, no SQL.</p>
-
-    <div class="viz">
-      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-        <defs>
-          <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#5B5BFF"/></marker>
-        </defs>
-        <rect x="15" y="15" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="35" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">POS System</text>
-        <text x="82" y="52" text-anchor="middle" font-size="9.5" fill="#9CA3AF">In-Store Transactions</text>
-        <rect x="15" y="85" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="105" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">E-commerce</text>
-        <text x="82" y="122" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Shopify · Magento</text>
-        <rect x="15" y="155" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="175" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Loyalty Program</text>
-        <text x="82" y="192" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Members · Points · Tiers</text>
-        <rect x="15" y="225" width="135" height="50" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="82" y="245" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Inventory System</text>
-        <text x="82" y="262" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Stock · Warehouse · DC</text>
-        <line x1="150" y1="40" x2="285" y2="115" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="110" x2="285" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="180" x2="285" y2="145" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="250" x2="285" y2="160" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="290" y="90" width="155" height="80" rx="12" fill="#5B5BFF" opacity="0.12" stroke="#5B5BFF" stroke-width="2"/>
-        <text x="367" y="122" text-anchor="middle" font-size="14" fill="#5B5BFF" font-weight="700">InfiniSynapse</text>
-        <text x="367" y="142" text-anchor="middle" font-size="11" fill="#5B5BFF">Multi-Source Federation</text>
-        <text x="367" y="158" text-anchor="middle" font-size="10" fill="#6B7280">Zero ETL · Auto JOIN</text>
-        <line x1="445" y1="130" x2="525" y2="130" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="535" y="15" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="33" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Customer 360 Profiles</text>
-        <text x="620" y="48" text-anchor="middle" font-size="9" fill="#6B7280">Omnichannel · LTV · Segments</text>
-        <rect x="535" y="72" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="90" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Demand Forecasting</text>
-        <text x="620" y="105" text-anchor="middle" font-size="9" fill="#6B7280">Store-SKU · Seasonal · Promo</text>
-        <rect x="535" y="129" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="147" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Dynamic Pricing</text>
-        <text x="620" y="162" text-anchor="middle" font-size="9" fill="#6B7280">Competitor · Margin · Stock</text>
-        <rect x="535" y="186" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="204" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Inventory Optimization</text>
-        <text x="620" y="219" text-anchor="middle" font-size="9" fill="#6B7280">Safety Stock · Reorder · DC</text>
-        <rect x="535" y="243" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="620" y="261" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Retail Media ROI</text>
-        <text x="620" y="276" text-anchor="middle" font-size="9" fill="#6B7280">Ad Spend · Incremental Sales</text>
+    <div style="background:#FFF;border:1px solid #D9F99D;border-radius:16px;padding:32px 24px;margin:20px 0">
+      <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+        <defs><marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#65A30D"/></marker></defs>
+        <rect x="15" y="15" width="135" height="48" rx="8" fill="#F7FEE7" stroke="#BEF264" stroke-width="1.5"/><text x="82" y="34" text-anchor="middle" font-size="11" fill="#1A2E05" font-weight="600">POS System</text><text x="82" y="50" text-anchor="middle" font-size="9.5" fill="#9CA3AF">In-Store Transactions</text>
+        <rect x="15" y="83" width="135" height="48" rx="8" fill="#F7FEE7" stroke="#BEF264" stroke-width="1.5"/><text x="82" y="102" text-anchor="middle" font-size="11" fill="#1A2E05" font-weight="600">E-commerce</text><text x="82" y="118" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Shopify · Magento</text>
+        <rect x="15" y="151" width="135" height="48" rx="8" fill="#F7FEE7" stroke="#BEF264" stroke-width="1.5"/><text x="82" y="170" text-anchor="middle" font-size="11" fill="#1A2E05" font-weight="600">Loyalty Program</text><text x="82" y="186" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Members · Points · Tiers</text>
+        <rect x="15" y="219" width="135" height="48" rx="8" fill="#F7FEE7" stroke="#BEF264" stroke-width="1.5"/><text x="82" y="238" text-anchor="middle" font-size="11" fill="#1A2E05" font-weight="600">Inventory System</text><text x="82" y="254" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Stock · Warehouse · DC</text>
+        <line x1="150" y1="39" x2="285" y2="110" stroke="#65A30D" stroke-width="2" marker-end="url(#ar)"/><line x1="150" y1="107" x2="285" y2="125" stroke="#65A30D" stroke-width="2" marker-end="url(#ar)"/><line x1="150" y1="175" x2="285" y2="140" stroke="#65A30D" stroke-width="2" marker-end="url(#ar)"/><line x1="150" y1="243" x2="285" y2="155" stroke="#65A30D" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="290" y="85" width="155" height="80" rx="12" fill="#F7FEE7" stroke="#65A30D" stroke-width="2"/><text x="367" y="117" text-anchor="middle" font-size="14" fill="#65A30D" font-weight="700">InfiniSynapse</text><text x="367" y="137" text-anchor="middle" font-size="10.5" fill="#4D7C0F">Multi-Source Federation</text><text x="367" y="152" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Zero ETL · Auto JOIN</text>
+        <line x1="445" y1="125" x2="525" y2="125" stroke="#65A30D" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="535" y="15" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/><text x="620" y="32" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Customer 360 Profiles</text><text x="620" y="47" text-anchor="middle" font-size="9" fill="#9CA3AF">Omnichannel · LTV · Segments</text>
+        <rect x="535" y="68" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/><text x="620" y="85" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Demand Forecasting</text><text x="620" y="100" text-anchor="middle" font-size="9" fill="#9CA3AF">Store-SKU · Seasonal · Promo</text>
+        <rect x="535" y="121" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/><text x="620" y="138" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Dynamic Pricing</text><text x="620" y="153" text-anchor="middle" font-size="9" fill="#9CA3AF">Competitor · Margin · Stock</text>
+        <rect x="535" y="174" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/><text x="620" y="191" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Inventory Optimization</text><text x="620" y="206" text-anchor="middle" font-size="9" fill="#9CA3AF">Safety Stock · Reorder · DC</text>
+        <rect x="535" y="227" width="170" height="40" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/><text x="620" y="244" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Retail Media ROI</text><text x="620" y="259" text-anchor="middle" font-size="9" fill="#9CA3AF">Ad Spend · Incremental Sales</text>
       </svg>
-      <div class="viz-caption">InfiniSynapse retail analytics data flow: four independent retail data sources connected directly, zero ETL, plain-English questions produce unified omnichannel answers.</div>
+      <p style="text-align:center;font-size:12.5px;color:#9CA3AF;margin-top:12px">Retail analytics data flow: four independent channel sources connected directly, zero ETL, plain-English questions produce unified omnichannel answers.</p>
     </div>
 
-    <h2 id="workflows">Six core retail analytics workflows</h2>
-    <p>These are the six highest-frequency retail analytics workflows that omnichannel retailers, category managers, and merchandising teams run on InfiniSynapse:</p>
-
-    <h3>1. Omnichannel Customer 360 — <code>unified customer view</code> / <code>Customer 360</code></h3>
-    <p>Ask: "Build a Customer 360 for our top 10% of customers by spend: in-store purchase frequency, online order history, loyalty tier, favorite categories per channel, and cross-channel shopping pattern (online-to-store, store-to-online, omnichannel)." InfiniSynapse queries POS, e-commerce, and loyalty databases, joins on customer identity, and produces a unified profile. Databricks identifies this as a core retail use case — <em>"unified customer data across POS, e-commerce, loyalty"</em> — and InfiniSynapse makes it achievable without the 6+ month data platform implementation that Databricks typically requires.</p>
-
-    <h3>2. Demand forecasting at the store-SKU level — <code>demand forecasting</code></h3>
-    <p>Ask: "Forecast demand for our top 500 SKUs at each store for the next 12 weeks. Factor in: historical sales (2 years), planned promotions, holiday calendar, and any external factors (weather, local events) the AI can find via web search." InfiniSynapse combines internal sales data with its web search capability to pull in external demand signals — a capability Databricks describes as generating <em>"more accurate store-SKU-level forecasts"</em> by combining <em>"historical sales, promotions, weather"</em> and more. The difference: InfiniSynapse does it with plain-English questions, not ML notebooks.</p>
-
-    <h3>3. Dynamic pricing and promotion optimization — <code>dynamic pricing</code> / <code>promotion analytics</code></h3>
-    <p>Ask: "Show products where our price is more than 10% above the market average (use Browser Use to check competitor prices). Cross-reference with inventory levels: which overpriced products also have above-target stock levels? Recommend price adjustments and estimate the margin impact." InfiniSynapse's Browser Use capability scrapes competitor prices, joins with internal inventory and sales data, and produces pricing recommendations. Databricks frames this as using <em>"real-time demand to optimize pricing decisions"</em> — InfiniSynapse adds the competitive intelligence layer that makes price optimization externally informed, not just internally modeled.</p>
-
-    <h3>4. Inventory optimization across channels — <code>inventory optimization</code></h3>
-    <p>Ask: "Identify products where online sell-through rate is 2x the in-store rate but store inventory is higher than online inventory. For each, calculate the lost online revenue from stockouts and the cost of rebalancing inventory." This requires joining e-commerce sales velocity, in-store inventory levels, and warehouse stock. Databricks calls this <em>"intelligent inventory: optimize safety stock to reduce stockouts"</em> — and it's exactly the kind of cross-channel analysis that single-system tools cannot do. InfiniSynapse connects to all three inventory data sources and answers the question in one query.</p>
-
-    <h3>5. Category and assortment performance — <code>category analytics</code> / <code>assortment optimization</code></h3>
-    <p>Ask: "For each product category, show omnichannel sell-through rate, gross margin, customer repeat purchase rate, and cannibalization index (are sales of new products stealing from existing products, or generating incremental revenue?)." InfiniSynapse joins POS, e-commerce, and loyalty data to compute these metrics by category. The cannibalization analysis — comparing the basket composition of customers who bought new products vs. those who didn't — requires joining transaction-level data across channels. This is the kind of analysis that category managers currently approximate with intuition because the data engineering cost of a proper analysis is too high.</p>
-
-    <h3>6. Retail media network ROI measurement — <code>retail media analytics</code></h3>
-    <p>Ask: "For brands running sponsored product ads on our platform, show the ROAS: ad spend vs. incremental sales (total sales during the campaign period minus baseline sales for the same products and stores in the prior period). Break down by brand, category, and ad format." Databricks references <em>"retail media networks"</em> as a growing retail data opportunity. Measuring true incrementality requires joining ad impression data, POS transaction data, and baseline sales data — a cross-source analysis that InfiniSynapse handles natively.</p>
-
-    <div class="concession-box" id="why-not">
-      <h3>When InfiniSynapse is not the right choice for retail analytics</h3>
-      <p>Honest framing — you likely don't need InfiniSynapse if:</p>
-      <ul>
-        <li><strong>You are a single-channel retailer.</strong> If you only sell through one channel (e-commerce only or physical stores only), your channel-native analytics tools likely suffice. InfiniSynapse's value grows with channel complexity — when POS, e-commerce, loyalty, and inventory data need to talk to each other.</li>
-        <li><strong>You have already invested in a retail data platform (Databricks, Snowflake + retail data model).</strong> If your POS, e-commerce, loyalty, and inventory data are already unified in a lakehouse with governed data models, InfiniSynapse may add less value. Its strongest ROI is compressing the time from "we have channel-siloed data" to "we have omnichannel answers."</li>
-        <li><strong>Your retail analytics questions are single-channel and operational.</strong> "What were yesterday's in-store sales by category?" is a POS system question. "Which omnichannel customers are most valuable, and how do we find more of them?" is a cross-channel question that requires InfiniSynapse's multi-source capability.</li>
-      </ul>
-      <p>InfiniSynapse creates the most value when your retail analytics require joining data from <strong>3+ channel systems</strong> — and when faster omnichannel insights directly impact revenue, margin, and inventory efficiency.</p>
+    <div class="section">
+      <div class="sec-label">Core Workflows</div>
+      <h2>Six analyses that connect every retail channel</h2>
+      <div class="wf-grid">
+        <div class="wf-card"><div class="wf-num">01</div><h4>Omnichannel Customer 360</h4><p>Build unified profiles: in-store frequency, online history, loyalty tier, favorite categories per channel, cross-channel shopping patterns. POS + e-commerce + loyalty joined on customer identity — in days, not months.</p></div>
+        <div class="wf-card"><div class="wf-num">02</div><h4>Store-SKU Demand Forecasting</h4><p>Forecast top 500 SKUs per store for 12 weeks. Factor in 2 years of sales, planned promotions, holidays, and external signals (weather, events) via web search. Plain English, not ML notebooks.</p></div>
+        <div class="wf-card"><div class="wf-num">03</div><h4>Dynamic Pricing & Promotions</h4><p>Flag products priced >10% above market via Browser Use competitor checks. Cross-reference with inventory: which overpriced products have excess stock? Recommend adjustments with margin impact estimates.</p></div>
+        <div class="wf-card"><div class="wf-num">04</div><h4>Cross-Channel Inventory Optimization</h4><p>Identify products where online sell-through is 2× in-store rate but store inventory is higher. Calculate lost online revenue from stockouts and rebalancing cost. Join e-commerce velocity + in-store levels + warehouse stock.</p></div>
+        <div class="wf-card"><div class="wf-num">05</div><h4>Category & Assortment Performance</h4><p>Omnichannel sell-through rate, gross margin, repeat purchase rate, and cannibalization index by category. Are new products stealing from existing ones or generating incremental revenue? Transaction-level cross-channel analysis.</p></div>
+        <div class="wf-card"><div class="wf-num">06</div><h4>Retail Media Network ROI</h4><p>True ROAS: ad spend vs. incremental sales (campaign period sales minus baseline). Break down by brand, category, and ad format. Join ad impressions, POS transactions, and baseline data for real incrementality measurement.</p></div>
+      </div>
     </div>
 
-    <h2 id="quickstart">Quick start: 3 steps to AI retail analytics</h2>
+    <div class="concession"><h4>Honest Framing: When InfiniSynapse is not the right choice</h4><p>You likely don't need InfiniSynapse if: <strong>(1)</strong> You are single-channel (e-commerce only or physical only) — channel-native tools may suffice. <strong>(2)</strong> You already have a retail data platform (Databricks, Snowflake + retail model) with POS, e-commerce, loyalty, and inventory unified — InfiniSynapse's strongest ROI is compressing time-to-answer. <strong>(3)</strong> Your questions are operational ("yesterday's in-store sales?") not analytical ("which omnichannel customers are most valuable and how do we find more?"). InfiniSynapse creates the most value when questions require joining <strong>3+ channel systems</strong>.</p></div>
 
-    <div class="step-box">
-      <span class="step-num">1</span>
-      <strong>Connect your retail data sources</strong>
-      <p>Connect your POS database, e-commerce platform (Shopify/Magento), loyalty program database, and inventory management system. InfiniSynapse auto-discovers each source's schema. Private deployment keeps all transaction and customer data on your own servers.</p>
-    </div>
-    <div class="step-box">
-      <span class="step-num">2</span>
-      <strong>Define retail KPIs and product hierarchies in the Knowledge Base</strong>
-      <p>Document your category tree, KPI definitions (sell-through rate, GMROI, basket size, omnichannel LTV), and customer segments. The AI references these on every analysis, so category managers and merchandisers get consistent numbers.</p>
-    </div>
-    <div class="step-box">
-      <span class="step-num">3</span>
-      <strong>Ask your first omnichannel question</strong>
-      <p>Start with the question your merchandising team debates every quarter: "Which product categories have the highest omnichannel customer LTV, and how does the in-store vs. online purchase mix affect repeat purchase rate?"</p>
+    <div class="section">
+      <div class="sec-label">Get Started</div>
+      <h2>Three steps to omnichannel clarity</h2>
+      <div class="steps-flow">
+        <div class="step-node"><div class="step-dot">1</div><h4>Connect your channels</h4><p>POS database, e-commerce (Shopify/Magento), loyalty program database, inventory management system. Auto-discovered schemas. Air-Gapped deployment keeps transaction and customer data on your servers.</p></div>
+        <div class="step-node"><div class="step-dot">2</div><h4>Define retail KPIs once</h4><p>Category tree, KPI definitions (sell-through, GMROI, basket size, omnichannel LTV), customer segments. The AI references these on every analysis — consistent numbers across category managers and merchandisers.</p></div>
+        <div class="step-node"><div class="step-dot">3</div><h4>Ask: who is the omnichannel customer?</h4><p>"Which product categories have the highest omnichannel customer LTV, and how does the in-store vs. online purchase mix affect repeat purchase rate?" InfiniSynapse queries all channels and returns the full picture.</p></div>
+      </div>
     </div>
 
-    <div class="cta-box">
-      <h3>See your customers across every channel — not just one</h3>
-      <p>Free to start. Connect your POS and e-commerce platform. Build your first Customer 360 profile today.</p>
-      <a href="https://app.infinisynapse.com/" class="cta-btn">Try InfiniSynapse Free →</a>
+    <div class="cta-block"><h3>See your customers across every channel — not just one</h3><p>Free to start. Connect your POS and e-commerce. Build your first Customer 360 profile today.</p><a href="https://app.infinisynapse.com/" class="cta-btn">Try InfiniSynapse Free →</a></div>
+
+    <div class="section">
+      <h2 style="font-size:1.5rem;font-weight:700;color:#1A2E05;margin-bottom:20px;letter-spacing:-0.02em">FAQ</h2>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q">Can InfiniSynapse unify POS and e-commerce data?</div><div class="faq-a">Yes — connects directly to POS databases, e-commerce platforms (Shopify, Magento), loyalty databases, and inventory systems. Ask "which customers buy in-store AND online, and what's their combined LTV?" without building a warehouse first.</div></div>
+        <div class="faq-item"><div class="faq-q">How does demand forecasting work for retail?</div><div class="faq-a">InfiniSynapse combines historical sales, promotional calendars, seasonal patterns, and external factors via web search (weather, competitor activity, trends) for store-SKU-level forecasts. Knowledge Base stores your methodology for consistency across categories.</div></div>
+        <div class="faq-item"><div class="faq-q">How does this compare to Databricks for retail?</div><div class="faq-a">Databricks excels at large-scale data processing and ML on a lakehouse — but requires significant engineering investment. InfiniSynapse connects directly to sources without pre-modeling, uses natural language, and is designed for retail analysts and category managers, not just data engineers.</div></div>
+        <div class="faq-item"><div class="faq-q">What retail metrics can I analyze?</div><div class="faq-a">Customer 360 (POS + ecom + loyalty), store-SKU demand forecasting, dynamic pricing (elasticity + competitor + inventory), cross-channel inventory optimization, category/assortment performance, and retail media network ROI with true incrementality measurement.</div></div>
+        <div class="faq-item"><div class="faq-q">Is our retail and customer data secure?</div><div class="faq-a">Yes. Air-Gapped private deployment keeps all POS transactions, customer PII, loyalty data, inventory levels, and pricing strategies on your own servers. Essential for PCI-compliant transaction data, customer PII, and competitive pricing under GDPR.</div></div>
+      </div>
     </div>
 
-    <h2 id="faq">FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">Can InfiniSynapse unify our in-store POS data with our e-commerce platform?</div>
-      <div class="faq-a">Yes. InfiniSynapse connects directly to POS databases, e-commerce platforms (Shopify, Magento), loyalty databases, and inventory management systems — then joins them in cross-source analysis. You can ask questions like "which customers buy in-store AND online, and what is their combined LTV?" without building a data warehouse first.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How does InfiniSynapse handle demand forecasting for retail?</div>
-      <div class="faq-a">InfiniSynapse combines historical sales data, promotional calendars, seasonal patterns, and external factors (via its web search capability — weather forecasts, competitor activity, market trends) to generate demand forecasts at the store-SKU level. The Knowledge Base stores your forecasting methodology and product hierarchies for consistent forecasts across categories.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How does InfiniSynapse compare to Databricks for retail analytics?</div>
-      <div class="faq-a">Databricks positions as "The Data Intelligence Platform for Retail" and excels at large-scale data processing and ML model training on a lakehouse architecture. It requires significant data engineering investment. InfiniSynapse connects directly to retail data sources without pre-modeling, uses natural language instead of code, and is designed for retail analysts, category managers, and merchandisers — not just data engineers. Databricks = powerful platform for data teams. InfiniSynapse = direct-to-answer for retail business teams.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What retail metrics can I analyze with InfiniSynapse?</div>
-      <div class="faq-a">Core workflows include: Customer 360 profiles (POS + e-commerce + loyalty), demand forecasting at store-SKU level, dynamic pricing analysis (price elasticity, competitor monitoring, promotion effectiveness), inventory optimization (cross-channel stock balancing, safety stock, reorder points), category and assortment performance, and retail media network ROI. Because InfiniSynapse joins data across channels, you can analyze metrics no single-channel system provides: omnichannel customer LTV, cross-channel cannibalization, and true incrementality of promotions.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is my retail and customer data secure?</div>
-      <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All POS transaction data, customer PII, loyalty program details, inventory levels, and pricing strategies stay on your own servers, processed locally. Most AI analytics tools are SaaS-only and require uploading sensitive retail data to external cloud services. Private deployment is essential for retailers handling PCI-compliant transaction data, customer PII, or competitive pricing strategies.</div>
-    </div>
+    <div class="methodology"><h2>About this guide</h2><p><strong>Last updated:</strong> 2026-06-01</p><p><strong>Methodology:</strong> Retail analytics scenarios based on InfiniSynapse capabilities matched against omnichannel retail and category management workflows. Competitor descriptions sourced from official documentation (accessed May 2026).</p><p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher. We note where channel-native tools or data platforms (Databricks, Snowflake) are the better fit.</p><p><strong>Update cadence:</strong> Reviewed quarterly.</p></div>
 
-    <div class="methodology">
-      <h2>About this guide</h2>
-      <p><strong>Last updated:</strong> 2026-06-01</p>
-      <p><strong>Methodology:</strong> Retail analytics scenarios described here are based on InfiniSynapse product capabilities matched against common omnichannel retail and category management workflows. Competitor capability descriptions are sourced from official documentation and product pages of Databricks, Shopify, and other retail analytics tools (accessed May 2026). Databricks quotes — including "unified customer data across POS, e-commerce, loyalty," "Customer 360 profiles," "real-time personalization," "dynamic pricing," "demand forecasting," and "intelligent inventory" — are sourced from Databricks's retail industry page.</p>
-      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher of this page. We explicitly call out scenarios where channel-native tools (POS systems, Shopify) or data platforms (Databricks, Snowflake) are the better fit. References to competitor positioning are included so readers can conduct independent comparisons.</p>
-      <p><strong>Update cadence:</strong> Reviewed quarterly. Competitor product capabilities and pricing refreshed every 90 days.</p>
+    <div class="section"><h2 style="font-size:1.3rem;font-weight:700;color:#1A2E05;margin-bottom:18px">Related guides</h2>
+      <div class="related-grid">
+        <a href="../scenarios/ecommerce-analytics.html">AI E-commerce Analytics: Cross-Platform Without ETL</a>
+        <a href="../scenarios/supply-chain-analytics.html">AI Supply Chain Analytics: OTIF & Inventory Optimization</a>
+        <a href="../scenarios/marketing-analytics.html">AI Marketing Analytics: Multi-Channel Campaign ROI</a>
+        <a href="../scenarios/manufacturing-analytics.html">AI Manufacturing Analytics: Process & Predictive Maintenance</a>
+        <a href="../scenarios/customer-success-analytics.html">AI Customer Success: Health Scores & Renewal Prediction</a>
+        <a href="../scenarios/business-analytics.html">AI Business Analytics: Self-Service KPI Analysis</a>
+      </div>
     </div>
-
-    <h2>Related guides</h2>
-    <div class="related">
-      <a href="../scenarios/ecommerce-analytics.html">AI E-commerce Analytics: Cross-Platform Without ETL</a>
-      <a href="../scenarios/supply-chain-analytics.html">AI Supply Chain Analytics: OTIF & Inventory Optimization</a>
-      <a href="../scenarios/marketing-analytics.html">AI Marketing Analytics: Multi-Channel Campaign ROI</a>
-      <a href="../scenarios/manufacturing-analytics.html">AI Manufacturing Analytics: Process & Predictive Maintenance</a>
-      <a href="../scenarios/customer-success-analytics.html">AI Customer Success: Health Scores & Renewal Prediction</a>
-      <a href="../scenarios/business-analytics.html">AI Business Analytics: Self-Service KPI Analysis</a>
-    </div>
-
   </div>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div>
-          <div style="font-size:18px;font-weight:600;color:#0A0A0A;margin-bottom:12px">InfiniSynapse</div>
-          <p style="font-size:14px;color:#6B7280;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
-          <a href="https://app.infinisynapse.com/" class="cta-btn" style="padding:8px 20px;font-size:13px">Try Online →</a>
-        </div>
-        <div>
-          <h4>Product</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/#features">Features</a>
-            <a href="https://infinisynapse.com/tools">Tools Market</a>
-            <a href="https://app.infinisynapse.com/">Try Online</a>
-            <a href="https://infinisynapse.com/download">Download</a>
-          </div>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/zh/docs">Documentation</a>
-            <a href="https://infinisynapse.com/zh/blog">Blog</a>
-            <a href="https://infinisynapse.com/#vision">Vision</a>
-          </div>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <div class="footer-links">
-            <a href="https://infinisynapse.com/#contact">Contact</a>
-            <a href="https://infinisynapse.com/careers">Careers</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 InfiniSynapse. All rights reserved.</span>
-        <span>From question to insight, in seconds.</span>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div style="font-size:18px;font-weight:600;color:#1A2E05;margin-bottom:12px">InfiniSynapse</div><p style="font-size:14px;color:#3F6212;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p><a href="https://app.infinisynapse.com/" style="display:inline-block;background:#1A2E05;color:#FFF;padding:8px 20px;border-radius:24px;font-weight:600;font-size:13px;text-decoration:none">Try Online →</a></div><div><h4>Product</h4><div class="footer-links"><a href="https://infinisynapse.com/#features">Features</a><a href="https://infinisynapse.com/tools">Tools Market</a><a href="https://app.infinisynapse.com/">Try Online</a><a href="https://infinisynapse.com/download">Download</a></div></div><div><h4>Resources</h4><div class="footer-links"><a href="https://infinisynapse.com/zh/docs">Documentation</a><a href="https://infinisynapse.com/zh/blog">Blog</a><a href="https://infinisynapse.com/#vision">Vision</a></div></div><div><h4>Company</h4><div class="footer-links"><a href="https://infinisynapse.com/#contact">Contact</a><a href="https://infinisynapse.com/careers">Careers</a></div></div></div><div class="footer-bottom"><span>&copy; 2026 InfiniSynapse. All rights reserved.</span><span>From question to insight, in seconds.</span></div></div></footer>
 </body>
 </html>

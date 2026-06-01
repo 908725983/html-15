@@ -117,133 +117,179 @@
 
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1F2937;background:#FFFFFF;font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
-    ::selection{background:rgba(91,91,255,0.2)}
-    a{color:#5B5BFF;text-decoration:none}
-    a:hover{color:#5B5BFF}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;color:#1C1917;background:#FFFDF9;font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased}
+    ::selection{background:rgba(234,88,12,0.18)}
 
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);border-bottom:1px solid #E5E7EB;padding:14px 0}
-    .nav-inner{max-width:1024px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{display:flex;align-items:center;gap:10px}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,253,249,0.88);backdrop-filter:blur(16px);border-bottom:1px solid #FED7AA;padding:14px 0}
+    .nav-inner{max-width:1280px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
     .nav-logo-mark{height:28px;display:flex;align-items:center}
     .nav-logo-mark img{height:28px;width:auto;display:block}
-    .nav-logo span{font-size:16px;font-weight:600;color:#0A0A0A;letter-spacing:-0.01em}
+    .nav-logo span{font-size:16px;font-weight:600;color:#1C1917;letter-spacing:-0.01em}
     .nav-links{display:flex;align-items:center;gap:22px;font-size:14px}
-    .nav-links a{color:#374151;transition:color 0.15s}
-    .nav-links a:hover{color:#0A0A0A}
-    .nav-cta{background:#0A0A0A !important;color:#FFF !important;border-radius:24px;padding:9px 20px}
-    .nav-cta:hover{background:#1F2937 !important;color:#FFF !important;opacity:1}
+    .nav-links a{color:#57534E;text-decoration:none;transition:color 0.15s}
+    .nav-links a:hover{color:#1C1917}
+    .nav-cta{background:#1C1917;color:#FFF;border-radius:24px;padding:9px 20px;text-decoration:none}
+    .nav-cta:hover{background:#44403C;color:#FFF}
 
-    .wrap{max-width:1024px;margin:0 auto;padding:48px 24px}
+    .container{max-width:1280px;margin:0 auto;padding:0 28px}
 
-    h1{font-size:2.8rem;font-weight:800;line-height:1.15;margin-bottom:16px;color:#0A0A0A;letter-spacing:-0.03em}
-    h2{font-size:1.32rem;font-weight:600;margin:44px 0 16px;color:#0A0A0A;border-bottom:1px solid #E5E7EB;padding-bottom:10px;letter-spacing:-0.01em}
-    h3{font-size:17px;font-weight:600;margin:26px 0 10px;color:#111827}
-    p{margin:0 0 18px;color:#4B5563}
-    strong{color:#0A0A0A;font-weight:600}
-    ul,ol{margin:14px 0 18px 24px}
-    li{margin:8px 0;color:#4B5563}
-    code{background:rgba(91,91,255,0.08);padding:2px 7px;border-radius:4px;font-size:14px;font-family:'SF Mono','Fira Code','JetBrains Mono',monospace;color:#5B5BFF;border:1px solid rgba(91,91,255,0.14)}
+    /* ── Hero ── */
+    .hero{background:linear-gradient(160deg,#FFF7ED 0%,#FFFFFF 35%,#FFF1F2 100%);border-bottom:1px solid #FED7AA;padding:56px 0 0;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
+    .hero-badge{display:inline-block;font-size:12.5px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:18px;background:#FFF7ED;color:#C2410C;border:1px solid #FDBA74;letter-spacing:0.3px}
+    .hero h1{font-size:2.7rem;font-weight:800;line-height:1.12;color:#1C1917;letter-spacing:-0.03em;margin-bottom:16px}
+    .hero h1 em{font-style:normal;color:#EA580C}
+    .hero-desc{font-size:1.05rem;color:#78716C;line-height:1.6;margin-bottom:24px;max-width:520px}
+    .hero-cta{display:inline-flex;align-items:center;gap:8px;background:#1C1917;color:#FFF;padding:13px 28px;border-radius:26px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s}
+    .hero-cta:hover{background:#EA580C;transform:translateY(-1px)}
 
-    .meta-desc{font-size:1.08rem;color:#6B7280;margin-bottom:32px;line-height:1.55;max-width:740px}
-    .breadcrumb{font-size:13px;color:#9CA3AF;margin-bottom:20px}
-    .breadcrumb a{color:#6B7280}
-    .breadcrumb a:hover{color:#5B5BFF}
-    .breadcrumb span{margin:0 6px}
-    .badge{display:inline-block;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;margin-right:8px;margin-bottom:14px}
-    .badge-client{background:rgba(91,91,255,0.08);color:#5B5BFF;border:1px solid rgba(91,91,255,0.25)}
-    .badge-cat{background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB}
+    .hero-dash{background:#FFF;border:1px solid #FED7AA;border-radius:18px;padding:20px 22px;box-shadow:0 4px 24px rgba(234,88,12,0.08)}
+    .hero-dash-label{font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .hero-dash-label .dot{width:8px;height:8px;background:#22C55E;border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+    .hero-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .hero-bar-name{font-size:12.5px;font-weight:500;color:#44403C;width:95px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .hero-bar-track{flex:1;height:22px;background:#FEF3C7;border-radius:11px;position:relative;overflow:hidden}
+    .hero-bar-fill{height:100%;border-radius:11px;transition:width 0.6s}
+    .hero-bar-fill.a{background:linear-gradient(90deg,#F97316,#EA580C);width:68%}
+    .hero-bar-fill.b{background:linear-gradient(90deg,#F97316,#EA580C);width:52%}
+    .hero-bar-fill.c{background:linear-gradient(90deg,#FDBA74,#F97316);width:41%}
+    .hero-bar-fill.d{background:linear-gradient(90deg,#FDBA74,#F97316);width:29%}
+    .hero-bar-pct{font-size:11.5px;font-weight:600;color:#78716C;width:36px}
+    .hero-sprint{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid #FEF3C7;font-size:11px;color:#9CA3AF}
+    .hero-sprint strong{color:#EA580C;font-weight:600}
 
-    .toc{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 22px;margin:0 0 36px}
-    .toc-label{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
-    .toc ul{margin:0;padding-left:18px;font-size:14.5px}
-    .toc a{color:#374151}
-    .toc a:hover{color:#5B5BFF}
+    /* ── Stats ── */
+    .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid #FED7AA;background:#FFF}
+    .stat-item{text-align:center;padding:28px 16px;border-right:1px solid #FEF3C7}
+    .stat-item:last-child{border-right:none}
+    .stat-val{font-size:1.8rem;font-weight:800;color:#1C1917;letter-spacing:-0.02em}
+    .stat-val span{color:#EA580C}
+    .stat-label{font-size:12.5px;color:#78716C;margin-top:4px;font-weight:500}
 
-    .author-meta{display:flex;align-items:center;gap:12px;margin-bottom:32px;padding:16px 0;border-bottom:1px solid #F3F4F6}
-    .author-meta img{width:44px;height:44px;border-radius:50%}
-    .author-info{font-size:14px;color:#374151}
-    .author-info a{font-weight:600;color:#0A0A0A}
-    .author-bio{font-size:13px;color:#6B7280;margin:2px 0 0}
-    .dates{margin-left:auto;font-size:13px;color:#9CA3AF;text-align:right;line-height:1.6}
+    /* ── Sections ── */
+    .section{padding:52px 0}
+    .section-label{font-size:11.5px;font-weight:700;color:#EA580C;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+    .section h2{font-size:1.8rem;font-weight:700;color:#1C1917;letter-spacing:-0.02em;margin-bottom:12px;line-height:1.2}
+    .section-lead{color:#78716C;font-size:1.02rem;max-width:700px;margin-bottom:28px;line-height:1.65}
 
-    .tldr{background:rgba(91,91,255,0.05);border-left:3px solid #5B5BFF;border-radius:0 10px 10px 0;padding:18px 22px;margin:0 0 32px}
-    .tldr-label{font-size:12px;font-weight:600;color:#5B5BFF;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px}
-    .tldr ul{margin:0;padding-left:18px;font-size:14.5px}
-    .tldr li{color:#374151;margin:5px 0}
+    /* ── TL;DR ── */
+    .tldr-card{background:#FFF;border:1px solid #FED7AA;border-left:4px solid #EA580C;border-radius:0 14px 14px 0;padding:24px 28px;margin-bottom:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .tldr-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px}
+    .tldr-col:nth-child(1) h4{color:#DC2626}
+    .tldr-col:nth-child(2) h4{color:#EA580C}
+    .tldr-col:nth-child(3) h4{color:#16A34A}
+    .tldr-col p{font-size:13.5px;color:#57534E;line-height:1.6}
 
-    .snippet-answer{background:#F9FAFB;border-left:3px solid #5B5BFF;padding:16px 20px;border-radius:0 8px 8px 0;font-size:15.5px;color:#1F2937;margin:8px 0 24px}
+    /* ── Pain: Standup style ── */
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .pain-card{background:#FFF;border:1px solid #FED7AA;border-radius:16px;padding:22px;position:relative;transition:box-shadow 0.2s}
+    .pain-card:hover{box-shadow:0 6px 24px rgba(234,88,12,0.08)}
+    .pain-day{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#EA580C;margin-bottom:10px}
+    .pain-quote{font-size:14px;color:#57534E;font-style:italic;line-height:1.65;margin-bottom:12px;padding-left:12px;border-left:2px solid #FED7AA}
+    .pain-who{font-size:12px;color:#9CA3AF;font-weight:500}
+    .pain-card::before{content:attr(data-num);position:absolute;top:-10px;right:16px;font-size:3.5rem;font-weight:900;color:#FFF7ED;line-height:1;pointer-events:none}
 
-    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-    .ba-card{border-radius:10px;padding:20px 24px}
+    /* ── Before/After: Release notes ── */
+    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .ba-panel{border-radius:16px;padding:26px}
     .ba-before{background:#FEF2F2;border:1px solid #FECACA}
     .ba-after{background:#F0FDF4;border:1px solid #BBF7D0}
-    .ba-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
-    .ba-before .ba-label{color:#DC2626}
-    .ba-after .ba-label{color:#16A34A}
-    .ba-text{font-size:14.5px;color:#4B5563;line-height:1.7}
+    .ba-ver{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;display:inline-block;padding:3px 10px;border-radius:10px}
+    .ba-before .ba-ver{background:#FEE2E2;color:#DC2626}
+    .ba-after .ba-ver{background:#DCFCE7;color:#16A34A}
+    .ba-panel h4{font-size:15px;font-weight:700;color:#1C1917;margin-bottom:8px}
+    .ba-panel p{font-size:13.5px;color:#57534E;line-height:1.65}
 
-    .viz{margin:28px 0;padding:24px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px}
-    .viz img,.viz svg{width:100%;height:auto;display:block;border-radius:8px}
-    .viz-caption{margin-top:12px;font-size:13px;color:#6B7280;text-align:center;font-style:italic}
+    /* ── Comparison table ── */
+    .comp-intro{font-size:0.98rem;color:#78716C;margin-bottom:20px}
+    .comp-table{width:100%;border-collapse:collapse;font-size:13.5px;border-radius:14px;overflow:hidden;border:1px solid #FED7AA}
+    .comp-table thead{background:#1C1917}
+    .comp-table thead th{color:#FFF;padding:13px 14px;text-align:left;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.8px}
+    .comp-table thead th:last-child{background:#EA580C}
+    .comp-table td{padding:12px 14px;border-bottom:1px solid #FEF3C7;color:#57534E;vertical-align:top}
+    .comp-table tbody tr:nth-child(even){background:#FFFDF9}
+    .comp-table tbody tr:nth-child(odd){background:#FFF}
+    .comp-table td:last-child{font-weight:500;color:#1C1917}
 
-    .compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-    .compare-table th,.compare-table td{padding:13px 12px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
-    .compare-table th{background:#F9FAFB;color:#111827;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:0.5px}
-    .compare-table td{color:#4B5563}
+    /* ── Workflow: Kanban ── */
+    .kanban-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .kanban-col{border-radius:16px;padding:16px}
+    .kanban-col:nth-child(1){background:#FFF7ED;border:1px solid #FDBA74}
+    .kanban-col:nth-child(2){background:#FFF1F2;border:1px solid #FECACA}
+    .kanban-col:nth-child(3){background:#F0FDF4;border:1px solid #BBF7D0}
+    .kanban-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .kanban-col:nth-child(1) h4{color:#C2410C}
+    .kanban-col:nth-child(2) h4{color:#DC2626}
+    .kanban-col:nth-child(3) h4{color:#16A34A}
+    .kanban-count{display:inline-flex;width:22px;height:22px;background:#1C1917;color:#FFF;border-radius:50%;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+    .kanban-card{background:#FFF;border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .kanban-card .kc-title{font-size:13.5px;font-weight:600;color:#1C1917;margin-bottom:4px}
+    .kanban-card .kc-body{font-size:12.5px;color:#78716C;line-height:1.55}
 
-    .step-box{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:18px 20px;margin:14px 0;transition:border-color 0.2s}
-    .step-box:hover{border-color:#5B5BFF}
-    .step-num{display:inline-flex;width:26px;height:26px;background:#0A0A0A;color:#FFFFFF;border-radius:50%;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-right:10px;vertical-align:middle}
-    .step-box strong{display:inline;vertical-align:middle;font-size:15.5px;color:#0A0A0A}
-    .step-box p{margin:8px 0 0 36px;font-size:14.5px;color:#4B5563}
+    /* ── Steps ── */
+    .steps-line{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+    .steps-line::before{content:'';position:absolute;top:28px;left:16.67%;right:16.67%;height:2px;background:linear-gradient(90deg,#F97316,#EA580C,#C2410C);z-index:0}
+    .step-dot{text-align:center;position:relative;z-index:1;padding:0 16px}
+    .step-circle{width:56px;height:56px;border-radius:50%;background:#EA580C;color:#FFF;display:inline-flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;margin-bottom:14px}
+    .step-dot h4{font-size:15px;font-weight:700;color:#1C1917;margin-bottom:6px}
+    .step-dot p{font-size:13px;color:#78716C;line-height:1.55}
 
-    .concession-box{background:#FFFBEB;border:1px solid #FCD34D;border-left:4px solid #F59E0B;border-radius:8px;padding:20px 24px;margin:24px 0;color:#1F2937}
-    .concession-box h3{color:#78350F;margin:0 0 10px;font-size:17px}
-    .concession-box p{color:#374151;margin:6px 0;font-size:14.5px}
-    .concession-box ul{margin:8px 0 4px 22px}
-    .concession-box li{color:#374151;font-size:14.5px}
+    /* ── FAQ ── */
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .faq-item{border-bottom:1px solid #FED7AA;padding:22px 0}
+    .faq-item:nth-child(odd){padding-right:24px}
+    .faq-item:nth-child(even){padding-left:24px;border-left:1px solid #FED7AA}
+    .faq-q{font-weight:600;font-size:15px;color:#1C1917;margin-bottom:8px}
+    .faq-a{color:#78716C;font-size:13.5px;line-height:1.65}
 
-    .cta-box{background:linear-gradient(135deg,rgba(91,91,255,0.08),rgba(91,91,255,0.03));border:1px solid rgba(91,91,255,0.22);text-align:center;padding:40px;border-radius:14px;margin:48px 0}
-    .cta-box h3{color:#0A0A0A;margin:0 0 10px;font-size:22px;font-weight:600;border:none;padding:0}
-    .cta-box p{color:#4B5563;margin:0 0 22px;font-size:15px}
-    .cta-btn{display:inline-block;background:#0A0A0A;color:#FFFFFF;padding:13px 36px;border-radius:28px;font-weight:600;font-size:15px;transition:all 0.2s;text-decoration:none}
-    .cta-btn:hover{background:#1F2937;color:#FFFFFF;transform:translateY(-1px)}
+    /* ── CTA ── */
+    .cta-block{background:linear-gradient(135deg,#1C1917 0%,#431407 100%);border-radius:20px;padding:48px 40px;text-align:center;margin-top:44px}
+    .cta-block h3{color:#FFF;font-size:1.6rem;font-weight:700;margin-bottom:10px;letter-spacing:-0.02em}
+    .cta-block p{color:#FDBA74;margin-bottom:24px;font-size:15px}
+    .cta-block .cta-btn{display:inline-block;background:#EA580C;color:#FFF;padding:14px 36px;border-radius:28px;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.2s}
+    .cta-block .cta-btn:hover{background:#F97316;transform:translateY(-1px)}
 
-    .faq-item{border-bottom:1px solid #E5E7EB;padding:20px 0}
-    .faq-q{font-weight:600;font-size:16px;color:#0A0A0A}
-    .faq-a{margin-top:10px;color:#4B5563;font-size:14.5px;line-height:1.7}
+    /* ── Related ── */
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .related-grid a{display:block;padding:18px;background:#FFF;border:1px solid #FED7AA;border-radius:12px;color:#EA580C;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}
+    .related-grid a:hover{background:#FFF7ED;border-color:#F97316}
 
-    .methodology{background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:22px 26px;margin:36px 0;font-size:14px;color:#4B5563}
-    .methodology h2{font-size:13px;border:none;padding:0;margin:0 0 14px;color:#111827;text-transform:uppercase;letter-spacing:1.2px}
-    .methodology p{margin:6px 0;font-size:13.5px}
+    /* ── Methodology ── */
+    .methodology{background:#FFF;border:1px solid #FED7AA;border-radius:14px;padding:22px 26px;margin-top:36px;font-size:13.5px;color:#78716C}
+    .methodology h2{font-size:12px;font-weight:700;padding:0;margin:0 0 14px;color:#1C1917;text-transform:uppercase;letter-spacing:1.2px;border:none}
+    .methodology p{margin:6px 0;font-size:13px}
 
-    .related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
-    .related a{display:block;padding:16px;background:#FFFFFF;border:1px solid #E5E7EB;border-radius:10px;color:#5B5BFF;font-size:14px;font-weight:500;transition:all 0.2s;line-height:1.5}
-    .related a:hover{background:rgba(91,91,255,0.04);border-color:#5B5BFF}
-
-    .footer{background:#F9FAFB;border-top:1px solid #E5E7EB;padding:48px 24px;margin-top:60px}
-    .footer-inner{max-width:1024px;margin:0 auto}
+    /* ── Footer ── */
+    .footer{background:#FFF;border-top:1px solid #FED7AA;padding:48px 28px;margin-top:60px}
+    .footer-inner{max-width:1280px;margin:0 auto}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
-    .footer h4{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+    .footer h4{font-size:12px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
     .footer-links{display:flex;flex-direction:column;gap:10px;font-size:14px}
-    .footer-links a{color:#6B7280}
-    .footer-links a:hover{color:#0A0A0A}
-    .footer-bottom{border-top:1px solid #E5E7EB;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
+    .footer-links a{color:#78716C;text-decoration:none}
+    .footer-links a:hover{color:#1C1917}
+    .footer-bottom{border-top:1px solid #F3F4F6;padding-top:24px;display:flex;justify-content:space-between;font-size:13px;color:#9CA3AF}
 
-    @media(max-width:720px){
+    @media(max-width:768px){
+      .hero-grid{grid-template-columns:1fr;gap:28px}
+      .hero h1{font-size:1.9rem}
+      .stats-strip{grid-template-columns:repeat(2,1fr)}
+      .stat-item{border-bottom:1px solid #FEF3C7}
+      .tldr-card{grid-template-columns:1fr;gap:14px}
+      .pain-grid{grid-template-columns:1fr}
       .ba-grid{grid-template-columns:1fr}
-      .related{grid-template-columns:1fr}
-      h1{font-size:1.85rem}
-      h2{font-size:1.18rem}
+      .kanban-grid{grid-template-columns:1fr}
+      .steps-line{grid-template-columns:1fr;gap:20px}
+      .steps-line::before{display:none}
+      .faq-grid{grid-template-columns:1fr}
+      .faq-item:nth-child(even){padding-left:0;border-left:none}
+      .related-grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
       .nav-links a:not(.nav-cta){display:none}
-      .wrap{padding:32px 20px}
-      .compare-table{font-size:12px}
-      .compare-table th,.compare-table td{padding:8px 6px}
-      .step-box p{margin-left:0}
-      .author-meta{flex-wrap:wrap}
-      .dates{margin-left:0;text-align:left}
+      .container{padding:0 20px}
+      .comp-table{font-size:11px}
+      .comp-table th,.comp-table td{padding:8px 6px}
     }
   </style>
 </head>
@@ -265,278 +311,313 @@
     </div>
   </nav>
 
-  <div class="wrap">
-
-    <nav class="breadcrumb">
-      <a href="https://infinisynapse.com">Home</a><span>/</span>
-      <a href="https://infinisynapse.com/scenarios/">Scenarios</a><span>/</span>
-      AI Product Analytics
-    </nav>
-
-    <div>
-      <span class="badge badge-client">InfiniSynapse</span>
-      <span class="badge badge-cat">Scenario</span>
-    </div>
-
-    <h1>AI Product Analytics: Build Your Roadmap with Data, Not Gut Feels</h1>
-
-    <p class="meta-desc">A practical guide to <strong>AI product analytics</strong> for product teams that need to understand <strong>feature adoption</strong>, <strong>user behavior</strong>, and <strong>retention dynamics</strong> across multiple data sources — without waiting for a data warehouse team to model everything first.</p>
-
-    <div class="author-meta">
-      <img src="https://infinisynapse.com/authors/editorial-team.jpg" alt="InfiniSynapse Editorial Team" width="44" height="44">
-      <div class="author-info">
-        <a href="https://infinisynapse.com/authors/editorial-team">InfiniSynapse Editorial Team</a> · Enterprise AI Analytics Research
-        <p class="author-bio">Specializing in AI-powered data analysis and product analytics, serving SaaS, consumer tech, and enterprise product teams.</p>
-      </div>
-      <div class="dates">
-        <span>Published: 2026-05-29</span><br>
-        <span>Last Updated: 2026-05-29</span>
+  <!-- ════ Hero ════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">Product Analytics</div>
+          <h1>Build your roadmap with <em>data</em>, not gut feels</h1>
+          <p class="hero-desc">Connect your production database, CRM, support tickets, and NPS surveys. Ask product questions in plain English. Get answers drawn from <strong>all</strong> your sources — not just the event stream your analytics tool sees.</p>
+          <a href="https://app.infinisynapse.com/" class="hero-cta">Start Analyzing Free →</a>
+        </div>
+        <div class="hero-dash">
+          <div class="hero-dash-label"><span class="dot"></span> Live: Feature Adoption Dashboard</div>
+          <div class="hero-bar-row"><span class="hero-bar-name">Dashboard v2</span><span class="hero-bar-track"><span class="hero-bar-fill a"></span></span><span class="hero-bar-pct">68%</span></div>
+          <div class="hero-bar-row"><span class="hero-bar-name">Search</span><span class="hero-bar-track"><span class="hero-bar-fill b"></span></span><span class="hero-bar-pct">52%</span></div>
+          <div class="hero-bar-row"><span class="hero-bar-name">Export</span><span class="hero-bar-track"><span class="hero-bar-fill c"></span></span><span class="hero-bar-pct">41%</span></div>
+          <div class="hero-bar-row"><span class="hero-bar-name">Collaboration</span><span class="hero-bar-track"><span class="hero-bar-fill d"></span></span><span class="hero-bar-pct">29%</span></div>
+          <div class="hero-sprint"><span>4 data sources connected</span><strong>Sprint 23 · Active</strong></div>
+        </div>
       </div>
     </div>
-
-    <nav class="toc">
-      <div class="toc-label">Contents</div>
-      <ul>
-        <li><a href="#snippet">What is AI-powered product analytics?</a></li>
-        <li><a href="#before-after">Before vs After: gut-feel decisions vs AI-driven product analysis</a></li>
-        <li><a href="#pain">Three hard problems with fragmented product data</a></li>
-        <li><a href="#solution">How InfiniSynapse unifies product analytics</a></li>
-        <li><a href="#workflows">Six core product analytics workflows</a></li>
-        <li><a href="#why-not">When InfiniSynapse is not the right choice</a></li>
-        <li><a href="#quickstart">Quick start: 3 steps to AI product analytics</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-
-    <div class="tldr">
-      <div class="tldr-label">TL;DR</div>
-      <ul>
-        <li><strong>Problem:</strong> Product teams sit on scattered usage data across production databases, event streams, CRM, support tickets, and NPS surveys. Answering "which features drive retention?" requires joining data from 3-5 systems — a task that takes data engineers 2-6 months to model into a warehouse. Most product decisions still happen on gut feel.</li>
-        <li><strong>Solution:</strong> InfiniSynapse connects directly to your production database, CRM, support ticket system, and survey CSVs — then performs cross-source analysis without ETL. You ask product questions in plain English and get answers drawn from all connected sources.</li>
-        <li><strong>Result:</strong> Feature adoption analysis drops from a 2-week data request to 30 seconds. Retention root-cause investigations that previously required a data scientist go from 5 days to 5 minutes. Product roadmap decisions get backed by multi-source evidence instead of the loudest voice in the room.</li>
-      </ul>
+    <div class="stats-strip" style="margin-top:44px">
+      <div class="stat-item"><div class="stat-val"><span>4</span> sources</div><div class="stat-label">Production DB + CRM + Tickets + NPS</div></div>
+      <div class="stat-item"><div class="stat-val"><span>0</span> ETL</div><div class="stat-label">No warehouse modeling required</div></div>
+      <div class="stat-item"><div class="stat-val">30<span>s</span></div><div class="stat-label">Feature adoption analysis</div></div>
+      <div class="stat-item"><div class="stat-val">5<span>min</span></div><div class="stat-label">Churn root-cause investigation</div></div>
     </div>
+  </section>
 
-    <h2 id="snippet">What is AI-powered product analytics?</h2>
-    <p class="snippet-answer"><strong>AI-powered product analytics uses an AI data analyst to automatically integrate product usage events, user behavior logs, CRM account data, support tickets, and survey responses — then perform cross-source queries to answer questions like "which features predict retention?", "which user segments are at risk of churn?", and "what should we build next?" Unlike traditional product analytics tools that only see their own event stream, or warehouse-based approaches that require months of modeling, you connect your sources directly and ask questions in plain English.</strong></p>
+  <!-- ════ Body ════ -->
+  <div class="container">
 
-    <h2 id="before-after">Before vs After: gut-feel roadmap vs AI-driven product analysis</h2>
-    <div class="ba-grid">
-      <div class="ba-card ba-before">
-        <div class="ba-label">Before — Traditional approach</div>
-        <div class="ba-text">The PM opens Amplitude to check one funnel, exports a CSV, opens the CRM to pull account data, asks support for ticket volume by topic, and merges everything in Excel. A simple question like "which features do retained users adopt that churned users skip?" takes 2-3 weeks of cross-team coordination. The data engineering team has a 6-month backlog. Roadmap prioritization happens in a conference room with opinions, not evidence. As Hex puts it: too many teams <em>"build their product roadmap with gut feels"</em> because the data is technically accessible but practically unreachable.</div>
-      </div>
-      <div class="ba-card ba-after">
-        <div class="ba-label">After — With InfiniSynapse</div>
-        <div class="ba-text">Connect your production database (user events, feature flags), CRM (account tier, MRR), support tickets, and NPS survey once. Then ask: "Compare feature adoption patterns of users who retained past 90 days vs. users who churned. Which features create the biggest retention gap? What is the revenue impact?" InfiniSynapse queries all four sources, applies your metric definitions from the Knowledge Base, and returns a complete analysis with visualizations — in under a minute. No data engineering ticket. No SQL. No merging CSVs. Your roadmap gains evidence, not opinions.</div>
+    <!-- TL;DR -->
+    <div class="section">
+      <div class="tldr-card">
+        <div class="tldr-col">
+          <h4>Problem</h4>
+          <p>Product teams sit on scattered data across production DBs, event streams, CRM, support tickets, and NPS surveys. Answering "which features drive retention?" needs 3-5 systems joined — a 2-6 month data engineering project. Most roadmap decisions happen on gut feel.</p>
+        </div>
+        <div class="tldr-col">
+          <h4>Solution</h4>
+          <p>InfiniSynapse connects directly to your production database, CRM, support tickets, and surveys — then performs cross-source analysis without ETL. Ask product questions in plain English. The AI discovers JOIN paths and queries all sources automatically.</p>
+        </div>
+        <div class="tldr-col">
+          <h4>Result</h4>
+          <p>Feature adoption analysis drops from a 2-week data request to 30 seconds. Retention investigations go from 5 days to 5 minutes. Roadmap decisions backed by multi-source evidence instead of the loudest voice in the room.</p>
+        </div>
       </div>
     </div>
 
-    <h2 id="pain">Three hard problems with fragmented product data</h2>
-    <p>Product teams do not lack data — they lack <strong>joined</strong> data. These three problems affect product teams from Series A startups to public companies:</p>
+    <!-- Pain Points: PM Standup -->
+    <div class="section">
+      <div class="section-label">The Daily Struggle</div>
+      <h2>Three standup updates no PM wants to give</h2>
+      <p class="section-lead">Every product team generates enough data to answer its hardest questions. The problem: the data lives in five different systems, and joining them requires engineering capacity that's already allocated to the roadmap.</p>
+      <div class="pain-grid">
+        <div class="pain-card" data-num="1">
+          <div class="pain-day">Monday Standup</div>
+          <div class="pain-quote">"I opened Amplitude, exported a CSV, pulled account data from Salesforce, asked Support for ticket volume by topic, and merged everything in Excel. It's Wednesday. I still don't know which features predict retention."</div>
+          <div class="pain-who">— PM, 80-person SaaS company</div>
+        </div>
+        <div class="pain-card" data-num="2">
+          <div class="pain-day">Wednesday Standup</div>
+          <div class="pain-quote">"Data Engineering says the warehouse model for product events will be done in Q3. Our board deck is due in 3 weeks. I need retention-by-cohort numbers now, and the data exists — it's just trapped in four places."</div>
+          <div class="pain-who">— Director of Product, Series B startup</div>
+        </div>
+        <div class="pain-card" data-num="3">
+          <div class="pain-day">Friday Retro</div>
+          <div class="pain-quote">"We shipped three features this quarter because the CEO, a key customer, and the loudest sales rep asked for them. We have no data on whether any of them moved retention. Next quarter's roadmap looks the same."</div>
+          <div class="pain-who">— VP Product, 200-person company</div>
+        </div>
+      </div>
+    </div>
 
-    <h3>Problem 1: Usage data lives in one place, business context lives everywhere else</h3>
-    <p>Your product analytics tool (Amplitude, Mixpanel, PostHog) knows which users clicked which buttons. But it does not know which users are on an enterprise plan (CRM), which ones filed 5 support tickets last month (Zendesk), or which ones gave you a 3 on the last NPS survey (Typeform). Answering "are our support-heavy enterprise users adopting the new dashboard?" requires joining event data with CRM data with ticket data. Traditional product analytics tools cannot do this. Warehouse-based product analytics (the approach Hex and Snowflake-native tools recommend) can — but only after a data team spends months building and maintaining the pipeline. Hex's own product analytics page acknowledges this: <em>"Why warehouse-based product analytics tells you more"</em> — more insight, yes, but also more engineering prerequisite.</p>
+    <!-- Before/After -->
+    <div class="section">
+      <div class="section-label">The Shift</div>
+      <h2>Sprint 0 → Sprint 1: the before and after</h2>
+      <div class="ba-grid">
+        <div class="ba-panel ba-before">
+          <span class="ba-ver">Sprint 0 · Before</span>
+          <h4>Gut-feel roadmap</h4>
+          <p>The PM opens one analytics tool, exports a CSV, opens the CRM to cross-reference account data, asks support for ticket volume by topic, and merges everything in Excel. A question like "which features do retained users adopt that churned users skip?" takes <strong>2-3 weeks</strong> of cross-team coordination. The data engineering team has a 6-month backlog. Prioritization happens in a conference room with opinions.</p>
+        </div>
+        <div class="ba-panel ba-after">
+          <span class="ba-ver">Sprint 1 · After</span>
+          <h4>Evidence-driven roadmap</h4>
+          <p>Connect your production database, CRM, support tickets, and NPS survey once. Ask: "Compare feature adoption patterns of retained vs. churned users. Which features create the biggest retention gap? Revenue impact?" InfiniSynapse queries all four sources, applies your metric definitions, and returns a complete analysis with visualizations — <strong>under a minute</strong>. No data engineering ticket. No SQL. No merging CSVs.</p>
+        </div>
+      </div>
+    </div>
 
-    <h3>Problem 2: Metric definitions drift across teams</h3>
-    <p>What counts as an "active user"? Engineering defines it as "any user with ≥1 event in 30 days." Product defines it as "any user who completed a core action in 7 days." CS defines it as "any paying account that logged in this month." Three teams, three definitions, three different answers to "how many active users do we have?" This is partly organizational, but tools can enforce consistency. InfiniSynapse's Knowledge Base stores metric definitions centrally: write "active user = completed ≥1 core action (search, create, export, share) in trailing 7 days" once, and every subsequent query references that definition.</p>
+    <!-- Solution: Comparison Table -->
+    <div class="section">
+      <div class="section-label">The Landscape</div>
+      <h2>Where InfiniSynapse fits in product analytics</h2>
+      <p class="comp-intro">Product analytics tools fall into three camps. Only one connects across all your product data sources without a warehouse project first.</p>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Event-stream tools<br>(Amplitude, Mixpanel)</th>
+            <th>Warehouse-native<br>(Hex, Snowflake)</th>
+            <th>InfiniSynapse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data scope</td>
+            <td>Product event stream only</td>
+            <td>All data — after warehouse modeling</td>
+            <td>Production DB + CRM + Tickets + Surveys — direct connect, no pre-modeling</td>
+          </tr>
+          <tr>
+            <td>Time to first analysis</td>
+            <td>Hours (SDK install)</td>
+            <td>2-6 months (warehouse + dbt + semantic layer)</td>
+            <td>Days (connect sources, define metrics once)</td>
+          </tr>
+          <tr>
+            <td>Cross-source joins</td>
+            <td>Not possible</td>
+            <td>Possible after modeling</td>
+            <td>Built-in: auto-discovers JOIN paths across sources</td>
+          </tr>
+          <tr>
+            <td>Query interface</td>
+            <td>Point-and-click funnel builder</td>
+            <td>SQL or Python notebooks</td>
+            <td>Natural language + Agentic multi-step analysis</td>
+          </tr>
+          <tr>
+            <td>Metric governance</td>
+            <td>Per-tool definitions only</td>
+            <td>dbt semantic layer (requires engineering)</td>
+            <td>Knowledge Base: define once, AI references on every query</td>
+          </tr>
+          <tr>
+            <td>Primary user</td>
+            <td>PM + product analyst</td>
+            <td>Data team</td>
+            <td>PM + product ops + data team</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h3>Problem 3: Retention and churn analysis require longitudinal joins that most tools cannot handle</h3>
-    <p>"Show me the 90-day retention curve for users who adopted feature X in week 1, compared to users who did not. Break it down by acquisition channel, plan tier, and onboarding completion status." This is a standard product analytics question. It requires: (a) event data going back 90 days, (b) CRM data for plan tier, (c) acquisition source from marketing attribution, (d) onboarding completion from your app database. Most product analytics tools handle (a) only. The rest lives in separate systems. The product manager ends up running 5 separate queries and stitching results manually — or, more commonly, never asks the question at all because it is too painful to answer.</p>
-
-    <h2 id="solution">How InfiniSynapse unifies product analytics across sources</h2>
-    <p>InfiniSynapse approaches product analytics differently: instead of asking you to centralize all data into a warehouse first, it connects to each source where it lives and performs cross-source analysis on the fly.</p>
-
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Capability</th>
-          <th>Traditional product analytics (Amplitude, Mixpanel)</th>
-          <th>Warehouse-based (Hex, Snowflake-native)</th>
-          <th>InfiniSynapse</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Data scope</td>
-          <td>Product event stream only</td>
-          <td>All data — after warehouse modeling</td>
-          <td>Product DB + CRM + tickets + surveys — directly, no pre-modeling</td>
-        </tr>
-        <tr>
-          <td>Time to first analysis</td>
-          <td>Hours (SDK install)</td>
-          <td>2-6 months (warehouse + dbt + semantic layer)</td>
-          <td>Days (connect sources, define metrics once)</td>
-        </tr>
-        <tr>
-          <td>Cross-source joins</td>
-          <td>Not possible</td>
-          <td>Possible after modeling</td>
-          <td>Built-in: InfiniSQL auto-discovers JOIN paths across sources</td>
-        </tr>
-        <tr>
-          <td>Query interface</td>
-          <td>Point-and-click funnel builder</td>
-          <td>SQL or Python notebooks</td>
-          <td>Natural language + Agentic multi-step analysis</td>
-        </tr>
-        <tr>
-          <td>Metric governance</td>
-          <td>Per-tool definitions only</td>
-          <td>dbt semantic layer (requires engineering)</td>
-          <td>Knowledge Base: write definitions once, AI references them on every query</td>
-        </tr>
-        <tr>
-          <td>Persona</td>
-          <td>PM + product analyst</td>
-          <td>Data team</td>
-          <td>PM + product ops + data team</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>Concretely: you connect your production PostgreSQL database (user events, feature flags, accounts), your CRM (plan tier, MRR, account owner), a Zendesk CSV export (ticket volume by account and topic), and your latest NPS survey results. InfiniSynapse understands the schema of all four sources automatically. When you ask "which features have the lowest adoption rate among enterprise accounts, and are those same accounts filing above-average support tickets?", it queries across all four sources, joins on account ID, computes the answer, and visualizes the relationship. The cross-source complexity is invisible to you.</p>
-
-    <div class="viz">
-      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+    <!-- Data Flow SVG -->
+    <div style="background:#FFF;border:1px solid #FED7AA;border-radius:16px;padding:32px 24px;margin:20px 0">
+      <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
         <defs>
-          <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#5B5BFF"/></marker>
+          <marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#EA580C"/></marker>
         </defs>
-        <rect x="15" y="15" width="145" height="55" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="87" y="38" text-anchor="middle" font-size="11.5" fill="#374151" font-weight="600">Production Database</text>
-        <text x="87" y="55" text-anchor="middle" font-size="10" fill="#9CA3AF">Events · Features · Users</text>
-        <rect x="15" y="90" width="145" height="55" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="87" y="113" text-anchor="middle" font-size="11.5" fill="#374151" font-weight="600">CRM</text>
-        <text x="87" y="130" text-anchor="middle" font-size="10" fill="#9CA3AF">Plan · MRR · Segment</text>
-        <rect x="15" y="165" width="145" height="55" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="87" y="188" text-anchor="middle" font-size="11.5" fill="#374151" font-weight="600">Support Tickets</text>
-        <text x="87" y="205" text-anchor="middle" font-size="10" fill="#9CA3AF">Zendesk · Intercom CSV</text>
-        <rect x="15" y="235" width="145" height="55" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1.5"/>
-        <text x="87" y="258" text-anchor="middle" font-size="11.5" fill="#374151" font-weight="600">NPS &amp; Surveys</text>
-        <text x="87" y="275" text-anchor="middle" font-size="10" fill="#9CA3AF">Typeform · Delighted CSV</text>
-        <line x1="160" y1="42" x2="290" y2="120" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="160" y1="117" x2="290" y2="135" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="160" y1="192" x2="290" y2="150" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="160" y1="262" x2="290" y2="165" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="295" y="95" width="160" height="80" rx="12" fill="#5B5BFF" opacity="0.12" stroke="#5B5BFF" stroke-width="2"/>
-        <text x="375" y="127" text-anchor="middle" font-size="14" fill="#5B5BFF" font-weight="700">InfiniSynapse</text>
-        <text x="375" y="147" text-anchor="middle" font-size="11" fill="#5B5BFF">Multi-Source Federation</text>
-        <text x="375" y="163" text-anchor="middle" font-size="10" fill="#6B7280">Zero ETL · Auto JOIN</text>
-        <line x1="455" y1="135" x2="530" y2="135" stroke="#5B5BFF" stroke-width="2" marker-end="url(#arrow)"/>
-        <rect x="540" y="15" width="165" height="45" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="622" y="34" text-anchor="middle" font-size="11" fill="#16A34A" font-weight="600">Feature Adoption Reports</text>
-        <text x="622" y="49" text-anchor="middle" font-size="9.5" fill="#6B7280">Adoption · Stickiness · DAU/MAU</text>
-        <rect x="540" y="75" width="165" height="45" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="622" y="94" text-anchor="middle" font-size="11" fill="#16A34A" font-weight="600">Retention Cohort Analysis</text>
-        <text x="622" y="109" text-anchor="middle" font-size="9.5" fill="#6B7280">Day 1/7/30 · By Channel</text>
-        <rect x="540" y="135" width="165" height="45" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="622" y="154" text-anchor="middle" font-size="11" fill="#16A34A" font-weight="600">Churn Root-Cause Analysis</text>
-        <text x="622" y="169" text-anchor="middle" font-size="9.5" fill="#6B7280">Usage + Tickets + NPS</text>
-        <rect x="540" y="195" width="165" height="45" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="622" y="214" text-anchor="middle" font-size="11" fill="#16A34A" font-weight="600">Roadmap Impact Estimates</text>
-        <text x="622" y="229" text-anchor="middle" font-size="9.5" fill="#6B7280">Users Affected · Revenue</text>
-        <rect x="540" y="250" width="165" height="45" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
-        <text x="622" y="269" text-anchor="middle" font-size="11" fill="#16A34A" font-weight="600">User Behavior Segmentation</text>
-        <text x="622" y="284" text-anchor="middle" font-size="9.5" fill="#6B7280">Power · Core · At-Risk</text>
+        <rect x="15" y="15" width="140" height="50" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+        <text x="85" y="36" text-anchor="middle" font-size="11" fill="#1C1917" font-weight="600">Production DB</text>
+        <text x="85" y="52" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Events · Features · Users</text>
+        <rect x="15" y="85" width="140" height="50" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+        <text x="85" y="106" text-anchor="middle" font-size="11" fill="#1C1917" font-weight="600">CRM</text>
+        <text x="85" y="122" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Plan · MRR · Segment</text>
+        <rect x="15" y="155" width="140" height="50" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+        <text x="85" y="176" text-anchor="middle" font-size="11" fill="#1C1917" font-weight="600">Support Tickets</text>
+        <text x="85" y="192" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Zendesk · Intercom CSV</text>
+        <rect x="15" y="220" width="140" height="50" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+        <text x="85" y="241" text-anchor="middle" font-size="11" fill="#1C1917" font-weight="600">NPS &amp; Surveys</text>
+        <text x="85" y="257" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Typeform · Delighted CSV</text>
+        <line x1="155" y1="40" x2="290" y2="115" stroke="#EA580C" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="155" y1="110" x2="290" y2="127" stroke="#EA580C" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="155" y1="180" x2="290" y2="139" stroke="#EA580C" stroke-width="2" marker-end="url(#ar)"/>
+        <line x1="155" y1="245" x2="290" y2="151" stroke="#EA580C" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="295" y="90" width="155" height="75" rx="12" fill="#FFF7ED" stroke="#EA580C" stroke-width="2"/>
+        <text x="372" y="120" text-anchor="middle" font-size="14" fill="#EA580C" font-weight="700">InfiniSynapse</text>
+        <text x="372" y="139" text-anchor="middle" font-size="10.5" fill="#C2410C">Multi-Source Federation</text>
+        <text x="372" y="154" text-anchor="middle" font-size="9.5" fill="#9CA3AF">Zero ETL · Auto JOIN</text>
+        <line x1="450" y1="127" x2="525" y2="127" stroke="#EA580C" stroke-width="2" marker-end="url(#ar)"/>
+        <rect x="535" y="15" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="33" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Feature Adoption Reports</text>
+        <text x="620" y="48" text-anchor="middle" font-size="9" fill="#9CA3AF">Adoption · Stickiness · DAU/MAU</text>
+        <rect x="535" y="70" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="88" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Retention Cohort Analysis</text>
+        <text x="620" y="103" text-anchor="middle" font-size="9" fill="#9CA3AF">D1/D7/D30 · By Channel · By Plan</text>
+        <rect x="535" y="125" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="143" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Churn Root-Cause Analysis</text>
+        <text x="620" y="158" text-anchor="middle" font-size="9" fill="#9CA3AF">Usage Decline + Tickets + NPS</text>
+        <rect x="535" y="180" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="198" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">Roadmap Impact Estimates</text>
+        <text x="620" y="213" text-anchor="middle" font-size="9" fill="#9CA3AF">Users Affected · MRR at Risk</text>
+        <rect x="535" y="235" width="170" height="42" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5"/>
+        <text x="620" y="253" text-anchor="middle" font-size="10.5" fill="#16A34A" font-weight="600">User Segmentation</text>
+        <text x="620" y="268" text-anchor="middle" font-size="9" fill="#9CA3AF">Power · Core · At-Risk</text>
       </svg>
-      <div class="viz-caption">InfiniSynapse product analytics data flow: four independent product data sources connected directly, zero ETL, plain-English questions produce multi-source answers.</div>
+      <p style="text-align:center;font-size:12.5px;color:#9CA3AF;margin-top:12px">InfiniSynapse product analytics data flow: four independent sources connected directly, zero ETL, plain-English questions produce cross-source answers.</p>
     </div>
 
-    <h2 id="workflows">Six core product analytics workflows</h2>
-    <p>These are the six highest-frequency product analytics workflows product teams run on InfiniSynapse, each mapped to competitor-verified SEO keywords:</p>
-
-    <h3>1. Feature adoption and usage metrics — <code>feature adoption analysis</code> / <code>usage metrics</code></h3>
-    <p>Ask: "Which features were adopted by more than 30% of weekly active users in the last 30 days? Which features have declining adoption month-over-month? Show the adoption curve for each feature released in Q1." InfiniSynapse queries your production database's feature flag and event tables, applies your adoption definition from the Knowledge Base, and generates adoption curves with trend indicators. Hex's product analytics positioning highlights exactly this: <em>"dig into feature adoption and usage metrics"</em> — but requires your data to already be in a warehouse, modeled, and queryable via SQL or Python. InfiniSynapse removes the modeling prerequisite.</p>
-
-    <h3>2. User behavior analysis and segmentation — <code>user behavior analysis</code></h3>
-    <p>Go deeper than DAU/MAU. Ask: "Segment users into power users (top 20% by core actions), core users (middle 60%), and at-risk (bottom 20% with declining activity). For each segment, show the most-used and least-used features, average session frequency, and 30-day retention rate." InfiniSynapse's Agentic workflow breaks this into steps: compute usage percentiles → label segments → pull feature adoption per segment → compute retention rates → compile into a single segmented report. This is the analysis Hex describes as <em>"dive into user behavior, run experiments, and get to the root causes of growth."</em></p>
-
-    <h3>3. Retention and churn analysis — <code>retention analysis</code> / <code>churn prediction</code></h3>
-    <p>Ask: "Show the 90-day retention curve for users who completed onboarding vs. dropped off mid-flow. Break it down by acquisition channel and plan tier. Flag the point where the curves diverge most." Traditional product analytics tools can show retention curves for events they track — but they cannot join against CRM plan tier or acquisition source. InfiniSynapse runs this as a multi-source analysis: events from your database, plan tier from CRM, acquisition channel from marketing attribution. The result is a nuanced retention picture that reveals which onboarding steps actually predict long-term retention.</p>
-
-    <h3>4. Churn root cause: joining usage decline with support and NPS — <code>churn root cause analysis</code></h3>
-    <p>Churn is rarely a single-event phenomenon. It typically follows a pattern: usage decline → support tickets spike → NPS drops → churn. Ask: "For accounts that churned in Q1, show the 60-day pre-churn trajectory: weekly active users, feature usage count, support ticket volume by topic, and last NPS score. Compare against retained accounts with similar characteristics." This requires joining four data sources — production DB, CRM, support tickets, NPS data — on a unified timeline. InfiniSynapse's multi-source federation handles this natively. No other product analytics tool on the market connects all four without a warehouse engineering project first.</p>
-
-    <h3>5. Roadmap prioritization with revenue impact estimation — <code>product roadmap analytics</code></h3>
-    <p>Ask: "If we improve feature X to match the UX quality of feature Y, how many at-risk users would that affect, and what is the associated MRR?" InfiniSynapse identifies users who use feature X infrequently (from production DB), checks their plan tier and MRR (from CRM), and estimates the revenue at risk if those users churn. This replaces the conference-room prioritization debate with data: features get prioritized by estimated impact on retention and revenue, not by the most persuasive stakeholder. Hex's product analytics page captures this aspiration: <em>"Build your product roadmap with data analysis, not gut feels."</em></p>
-
-    <h3>6. Experiment and A/B test analysis with long-term retention — <code>experiment analysis</code></h3>
-    <p>Ask: "For the Q1 checkout redesign A/B test, compare the 60-day retention and LTV of users in the treatment group vs. control. Break down by new vs. existing users." Most A/B testing tools measure conversion in the first 7-14 days. But product decisions should be evaluated on long-term retention and revenue, not short-term conversion lifts. InfiniSynapse joins your experiment assignment table (from your feature flag system or database) with 60 days of post-experiment usage data and CRM revenue data — giving you the long-term view that short-term A/B test dashboards miss.</p>
-
-    <div class="concession-box" id="why-not">
-      <h3>When InfiniSynapse is not the right choice for product analytics</h3>
-      <p>Honest framing — you likely don't need InfiniSynapse if:</p>
-      <ul>
-        <li><strong>You only need funnel and event-stream analytics.</strong> If your questions are "how many users completed onboarding this week?" or "what's the conversion rate from signup to first action?", dedicated tools like Amplitude, Mixpanel, or PostHog are purpose-built for this and have polished UX. InfiniSynapse differentiates on cross-source analysis, not single-stream event analytics.</li>
-        <li><strong>You already have a mature warehouse + dbt + semantic layer.</strong> If your data team has already modeled product events, CRM data, and support tickets into a warehouse with a governed semantic layer, Hex or a warehouse-native BI tool may be the smoother path. InfiniSynapse's advantage is compressing the time from "we have scattered data" to "we have answers."</li>
-        <li><strong>Your product data is simple and single-source.</strong> If all your product questions can be answered from one database or one analytics tool's event stream, the multi-source federation capability is overkill. InfiniSynapse creates the most value when product questions require joining data from 3+ systems that don't naturally talk to each other.</li>
-      </ul>
-      <p>InfiniSynapse creates the most value at the intersection of <strong>multiple data sources</strong> and <strong>analytical complexity</strong> — where the product question is clear but the data to answer it is scattered across your stack.</p>
+    <!-- Workflows: Kanban -->
+    <div class="section">
+      <div class="section-label">Core Workflows</div>
+      <h2>Six analyses that move from backlog to shipped</h2>
+      <p class="section-lead">The highest-frequency product analytics workflows, organized by where they sit in your product development lifecycle.</p>
+      <div class="kanban-grid">
+        <div class="kanban-col">
+          <h4><span class="kanban-count">2</span> Discovery</h4>
+          <div class="kanban-card">
+            <div class="kc-title">Feature Adoption & Usage</div>
+            <div class="kc-body">"Which features were adopted by &gt;30% of WAUs? Which have declining MoM adoption? Show the adoption curve for every Q1 release." Queries feature flag + event tables, generates trend lines.</div>
+          </div>
+          <div class="kanban-card">
+            <div class="kc-title">User Behavior Segmentation</div>
+            <div class="kc-body">Segment users into power/core/at-risk by usage percentiles. For each segment: most-used features, session frequency, 30-day retention. Agentic multi-step breakdown.</div>
+          </div>
+        </div>
+        <div class="kanban-col">
+          <h4><span class="kanban-count">2</span> Analysis</h4>
+          <div class="kanban-card">
+            <div class="kc-title">Retention & Churn Analysis</div>
+            <div class="kc-body">90-day retention curve by onboarding completion, acquisition channel, and plan tier. Cross-reference usage DB + CRM. Flag the divergence point where curves separate.</div>
+          </div>
+          <div class="kanban-card">
+            <div class="kc-title">Churn Root-Cause Investigation</div>
+            <div class="kc-body">For churned accounts: 60-day pre-churn trajectory across usage, tickets, and NPS. Compared against retained accounts with similar characteristics. Four sources joined on a unified timeline.</div>
+          </div>
+        </div>
+        <div class="kanban-col">
+          <h4><span class="kanban-count">2</span> Action</h4>
+          <div class="kanban-card">
+            <div class="kc-title">Roadmap Impact Estimation</div>
+            <div class="kc-body">"If we improve feature X to match feature Y's UX, how many at-risk users does that affect, and what's the MRR impact?" Prioritize by retention and revenue, not persuasion.</div>
+          </div>
+          <div class="kanban-card">
+            <div class="kc-title">Experiment Long-Term Analysis</div>
+            <div class="kc-body">Join A/B test assignments with 60-day post-experiment retention and LTV. Most A/B tools stop at 14-day conversion. InfiniSynapse shows whether the lift actually persisted.</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <h2 id="quickstart">Quick start: 3 steps to AI product analytics</h2>
-
-    <div class="step-box">
-      <span class="step-num">1</span>
-      <strong>Connect your product data sources</strong>
-      <p>Connect your production database (PostgreSQL/MySQL for user events, feature flags, accounts), CRM (plan tier, MRR), and upload your latest support ticket CSV and NPS survey results. InfiniSynapse auto-discovers each source's schema. Private deployment keeps all product usage data on your own servers.</p>
-    </div>
-    <div class="step-box">
-      <span class="step-num">2</span>
-      <strong>Define your product metrics in the Knowledge Base</strong>
-      <p>Document your core metric definitions once: active user, feature adoption, retention, churn, power user, engagement score. Add your feature catalog and user lifecycle stages. The AI references these definitions on every query, so your whole team gets consistent answers regardless of who asks.</p>
-    </div>
-    <div class="step-box">
-      <span class="step-num">3</span>
-      <strong>Ask your first cross-source product question</strong>
-      <p>Start with the analysis you've been putting off because it requires data from too many systems. Example: "Which features do retained users adopt in their first 14 days that churned users never touch? Show the retention difference and the associated MRR impact." InfiniSynapse plans the analysis, queries all sources, and returns a complete answer.</p>
+    <!-- When NOT to use -->
+    <div style="background:#FFF;border:1px solid #FED7AA;border-radius:16px;padding:28px;margin:20px 0">
+      <div style="font-size:12px;font-weight:700;color:#EA580C;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px">Honest Framing</div>
+      <h3 style="font-size:1.2rem;font-weight:700;color:#1C1917;margin-bottom:14px">When InfiniSynapse is not the right choice</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;font-size:13.5px;color:#57534E">
+        <div><strong style="color:#1C1917">You only need funnel analytics.</strong> If your questions are "how many users completed onboarding this week?", dedicated tools like Amplitude or PostHog are purpose-built for this. InfiniSynapse differentiates on cross-source analysis.</div>
+        <div><strong style="color:#1C1917">You have a mature warehouse + dbt.</strong> If your data team already modeled everything into a warehouse with a semantic layer, a warehouse-native BI tool may be smoother. InfiniSynapse's advantage is compressing time-to-insight.</div>
+        <div><strong style="color:#1C1917">Your data is single-source.</strong> If all product questions are answered from one database, multi-source federation is overkill. InfiniSynapse creates the most value when questions span 3+ systems that don't talk to each other.</div>
+      </div>
     </div>
 
-    <div class="cta-box">
+    <!-- Steps -->
+    <div class="section">
+      <div class="section-label">Get Started</div>
+      <h2>Three steps from scattered data to product clarity</h2>
+      <div class="steps-line">
+        <div class="step-dot">
+          <div class="step-circle">1</div>
+          <h4>Connect your sources</h4>
+          <p>Production database (PostgreSQL/MySQL for events and feature flags), CRM (plan tier, MRR), support ticket CSV, NPS survey results. Auto-schema discovery. Private deployment keeps usage data on your servers.</p>
+        </div>
+        <div class="step-dot">
+          <div class="step-circle">2</div>
+          <h4>Define metrics once</h4>
+          <p>Document active user, feature adoption, retention, churn, and engagement score in the Knowledge Base. Add your feature catalog and lifecycle stages. Every query references the same definitions — consistency by default.</p>
+        </div>
+        <div class="step-dot">
+          <div class="step-circle">3</div>
+          <h4>Ask your first cross-source question</h4>
+          <p>"Which features do retained users adopt in their first 14 days that churned users never touch? Show the retention difference and MRR impact." InfiniSynapse plans, queries all sources, returns the answer.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
       <h3>Answer the product questions you've been deferring</h3>
       <p>Free to start. Connect your production database and CRM. Ask one question you've never been able to answer because the data was scattered across too many systems.</p>
       <a href="https://app.infinisynapse.com/" class="cta-btn">Try InfiniSynapse Free →</a>
     </div>
 
-    <h2 id="faq">FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">Can InfiniSynapse connect directly to product analytics tools like Amplitude or Mixpanel?</div>
-      <div class="faq-a">Yes, through database connection if you have SQL access to your product analytics data warehouse, or via CSV export. InfiniSynapse can join Amplitude/Mixpanel event data with your production database, CRM, support tickets, and survey results in a single query — something dedicated product analytics tools cannot do because they only see their own event stream.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How is this different from warehouse-based product analytics?</div>
-      <div class="faq-a">Warehouse-based product analytics (like Hex or built-on-Snowflake solutions) assumes your product data is already centralized in a warehouse with a semantic layer. That requires 2-6 months of data engineering work to model events, users, accounts, and metrics. InfiniSynapse connects directly to your production database, CSV exports, and other sources without pre-modeling. For product teams without a dedicated data platform team, the time-to-first-insight shrinks from months to days.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What kind of product questions can I answer that I can't answer today?</div>
-      <div class="faq-a">The highest-value questions are cross-source: which features predict long-term retention (usage DB + CRM plan data), whether support-heavy users adopt features differently (usage DB + tickets), whether NPS detractors share common usage patterns (usage DB + NPS data), and what's the revenue impact of each feature gap (usage DB + CRM MRR). These questions are nearly impossible to answer without joining data from 3-4 separate systems — which is exactly what InfiniSynapse's multi-source federation automates.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How does InfiniSynapse compare to Hex for product analytics?</div>
-      <div class="faq-a">Hex is a notebook-based analytics platform that requires SQL or Python — powerful for data teams but not self-serve for product managers. Hex also assumes data already lives in a warehouse. InfiniSynapse combines multi-source connection with natural language querying, making it usable directly by PMs and product ops. The Agentic workflow is a key differentiator: instead of writing queries one at a time, you describe the analysis goal and InfiniSynapse plans and executes the full multi-step investigation, returning a complete answer with visualizations.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is my product usage data secure?</div>
-      <div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All product usage data, user behavior logs, and customer feedback stay on your own servers, processed locally. Most AI analytics tools (Hex, Julius AI, Powerdrill) are SaaS-only and require uploading sensitive user behavior data to external cloud services. Private deployment is critical for product teams handling user PII or operating under GDPR, SOC 2, or internal data governance policies.</div>
+    <!-- FAQ -->
+    <div class="section">
+      <h2 style="font-size:1.5rem;font-weight:700;color:#1C1917;margin-bottom:20px;letter-spacing:-0.02em">FAQ</h2>
+      <div class="faq-grid">
+        <div class="faq-item"><div class="faq-q">Can InfiniSynapse connect to Amplitude or Mixpanel?</div><div class="faq-a">Yes, via SQL access to your product analytics warehouse or CSV export. InfiniSynapse joins Amplitude/Mixpanel event data with your production DB, CRM, support tickets, and surveys in a single query — something dedicated analytics tools cannot do.</div></div>
+        <div class="faq-item"><div class="faq-q">How is this different from warehouse-based analytics?</div><div class="faq-a">Warehouse-based product analytics assumes data is already centralized. That requires 2-6 months of data engineering. InfiniSynapse connects directly to sources without pre-modeling. Time-to-first-insight: days, not months.</div></div>
+        <div class="faq-item"><div class="faq-q">What questions can I answer that I can't today?</div><div class="faq-a">Cross-source questions: which features predict retention (usage + CRM), whether support-heavy users adopt differently (usage + tickets), whether NPS detractors share usage patterns (usage + NPS). These require 3-4 systems joined — exactly what multi-source federation automates.</div></div>
+        <div class="faq-item"><div class="faq-q">How does this compare to Hex?</div><div class="faq-a">Hex is a notebook platform requiring SQL/Python — powerful for data teams but not self-serve for PMs. Hex assumes warehouse-first. InfiniSynapse combines multi-source connection with natural language querying, usable directly by PMs and product ops.</div></div>
+        <div class="faq-item"><div class="faq-q">Is my product data secure?</div><div class="faq-a">Yes. InfiniSynapse supports private deployment (Air-Gapped). All product usage data and user behavior logs stay on your servers, processed locally. Critical for teams handling PII or operating under GDPR/SOC 2.</div></div>
+      </div>
     </div>
 
+    <!-- Methodology -->
     <div class="methodology">
       <h2>About this guide</h2>
       <p><strong>Last updated:</strong> 2026-05-29</p>
-      <p><strong>Methodology:</strong> Product analytics scenarios described here are based on InfiniSynapse product capabilities matched against common product team workflows. Competitor capability descriptions are sourced from official documentation and product pages of Hex, Amplitude, Mixpanel, PostHog, and other product analytics tools (accessed May 2026). Competitor quotes — including Hex's "build your product roadmap with data analysis, not gut feels" and "dig into feature adoption and usage metrics" — are sourced from Hex's product analytics page.</p>
-      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher of this page. We explicitly call out scenarios where dedicated product analytics tools (Amplitude, Mixpanel, PostHog) or warehouse-native tools (Hex) are the better fit. References to competitor positioning are included so readers can conduct independent comparisons.</p>
-      <p><strong>Update cadence:</strong> Reviewed quarterly. Competitor product capabilities and pricing refreshed every 90 days.</p>
+      <p><strong>Methodology:</strong> Product analytics scenarios based on InfiniSynapse capabilities matched against common product team workflows. Competitor capability descriptions sourced from official documentation of Amplitude, Mixpanel, PostHog, Hex, and other product analytics tools (accessed May 2026).</p>
+      <p><strong>Conflict of interest:</strong> InfiniSynapse is the publisher of this page. We explicitly call out scenarios where dedicated tools (Amplitude, Mixpanel, PostHog) or warehouse-native tools (Hex) are the better fit.</p>
+      <p><strong>Update cadence:</strong> Reviewed quarterly. Competitor capabilities refreshed every 90 days.</p>
     </div>
 
-    <h2>Related guides</h2>
-    <div class="related">
-      <a href="../scenarios/user-behavior-churn-analysis.html">AI Churn Prediction: Cross-System Data + Sentiment Analysis</a>
-      <a href="../scenarios/sales-performance-analysis.html">AI Sales Performance Analytics: Multi-Source + Forecasting</a>
-      <a href="../scenarios/marketing-analytics.html">AI Marketing Analytics: Multi-Channel Campaign ROI Analysis</a>
-      <a href="../scenarios/saas-analytics.html">AI SaaS Analytics: MRR, Retention & Product-Led Growth</a>
-      <a href="../scenarios/customer-success-analytics.html">AI Customer Success Analytics: Health Scores & Renewal Prediction</a>
-      <a href="../scenarios/enterprise-management-analysis.html">Enterprise AI Data Analyst: Agentic Multi-Step Analysis</a>
+    <!-- Related -->
+    <div class="section">
+      <h2 style="font-size:1.3rem;font-weight:700;color:#1C1917;margin-bottom:18px">Related guides</h2>
+      <div class="related-grid">
+        <a href="../scenarios/user-behavior-churn-analysis.html">AI Churn Prediction: Cross-System Data + Sentiment Analysis</a>
+        <a href="../scenarios/sales-performance-analysis.html">AI Sales Performance Analytics: Multi-Source + Forecasting</a>
+        <a href="../scenarios/marketing-analytics.html">AI Marketing Analytics: Multi-Channel Campaign ROI Analysis</a>
+        <a href="../scenarios/saas-analytics.html">AI SaaS Analytics: MRR, Retention & Product-Led Growth</a>
+        <a href="../scenarios/customer-success-analytics.html">AI Customer Success Analytics: Health Scores & Renewal Prediction</a>
+        <a href="../scenarios/enterprise-management-analysis.html">Enterprise AI Data Analyst: Agentic Multi-Step Analysis</a>
+      </div>
     </div>
 
   </div>
@@ -545,9 +626,9 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
-          <div style="font-size:18px;font-weight:600;color:#0A0A0A;margin-bottom:12px">InfiniSynapse</div>
-          <p style="font-size:14px;color:#6B7280;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
-          <a href="https://app.infinisynapse.com/" class="cta-btn" style="padding:8px 20px;font-size:13px">Try Online →</a>
+          <div style="font-size:18px;font-weight:600;color:#1C1917;margin-bottom:12px">InfiniSynapse</div>
+          <p style="font-size:14px;color:#78716C;max-width:300px;margin-bottom:16px;line-height:1.6">The AI data analyst for the enterprise. Connect any source. Ask in plain English. Get validated SQL and answers.</p>
+          <a href="https://app.infinisynapse.com/" style="display:inline-block;background:#1C1917;color:#FFF;padding:8px 20px;border-radius:24px;font-weight:600;font-size:13px;text-decoration:none">Try Online →</a>
         </div>
         <div>
           <h4>Product</h4>
