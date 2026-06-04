@@ -1,142 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+
+<html data-theme="light" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Job Description Generator | Better Job Postings | COCO</title>
+<meta content="AI Job Description Generator for creating role-specific, inclusive job descriptions and job postings. Generate better, SEO-friendly JDs in minutes." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="article" property="og:type"/>
+<meta content="AI Job Description Generator | Better Job Postings | COCO" property="og:title"/>
+<meta content="AI Job Description Generator — create role-specific, inclusive job descriptions and job postings with AI. Build better JDs, generate bullet points, and attract qualified candidates." property="og:description"/>
+<meta content="https://docs.coco.xyz/use-cases/ai-job-description-writer/" property="og:url"/>
+<meta content="https://docs.coco.xyz/og/use-cases/ai-job-description-writer.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@CocoAIxyz" name="twitter:site"/>
+<meta content="AI Job Description Generator | Better Job Postings | COCO" name="twitter:title"/>
+<meta content="AI Job Description Generator — create role-specific, inclusive job descriptions and job postings with AI. Build better JDs in minutes." name="twitter:description"/>
+<meta content="https://docs.coco.xyz/og/use-cases/ai-job-description-writer.jpg" name="twitter:image"/>
+<link href="https://docs.coco.xyz/use-cases/ai-job-description-writer/" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 
-  <title>AI Job Description Generator | Better Job Postings | COCO</title>
-  <meta name="description" content="AI Job Description Generator for creating role-specific, inclusive job descriptions and job postings. Generate better, SEO-friendly JDs in minutes.">
 
-  <meta name="robots" content="index, follow">
 
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="AI Job Description Generator | Better Job Postings | COCO">
-  <meta property="og:description" content="AI Job Description Generator — create role-specific, inclusive job descriptions and job postings with AI. Build better JDs, generate bullet points, and attract qualified candidates.">
-  <meta property="og:url" content="https://docs.coco.xyz/use-cases/ai-job-description-writer/">
-  <meta property="og:image" content="https://docs.coco.xyz/og/use-cases/ai-job-description-writer.jpg">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@CocoAIxyz">
-  <meta name="twitter:title" content="AI Job Description Generator | Better Job Postings | COCO">
-  <meta name="twitter:description" content="AI Job Description Generator — create role-specific, inclusive job descriptions and job postings with AI. Build better JDs in minutes.">
-  <meta name="twitter:image" content="https://docs.coco.xyz/og/use-cases/ai-job-description-writer.jpg">
 
-  <link rel="canonical" href="https://docs.coco.xyz/use-cases/ai-job-description-writer/">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "COCO AI",
-    "url": "https://docs.coco.xyz",
-    "description": "Hire AI digital employees for web, Telegram, and Lark. Deploy autonomous AI workers and manage your AI team from a single dashboard.",
-    "sameAs": ["https://github.com/coco-xyz","https://twitter.com/CocoAIxyz","https://t.me/CocoAIxyz"]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://docs.coco.xyz/"},
-      {"@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://docs.coco.xyz/use-cases/"},
-      {"@type": "ListItem", "position": 3, "name": "AI Job Description Generator", "item": "https://docs.coco.xyz/use-cases/ai-job-description-writer/"}
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "AI Job Description Generator: Create Role-Specific, Inclusive Job Descriptions with AI",
-    "description": "Use COCO's AI Job Description Generator to create role-specific, inclusive job descriptions and job postings. Generate bullet points, optimize for SEO, and build better JDs in minutes.",
-    "image": ["https://docs.coco.xyz/og/use-cases/ai-job-description-writer.jpg"],
-    "datePublished": "2026-06-03",
-    "dateModified": "2026-06-03",
-    "author": {"@type": "Organization", "name": "COCO Engineering"},
-    "publisher": {"@type": "Organization", "name": "COCO", "logo": {"@type": "ImageObject", "url": "https://docs.coco.xyz/images/logo.png"}},
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://docs.coco.xyz/use-cases/ai-job-description-writer/"}
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is an AI job description generator?",
-        "acceptedAnswer": {"@type": "Answer", "text": "An AI job description generator uses artificial intelligence to create role-specific job descriptions from role requirements, company culture inputs, and hiring goals. Unlike basic template tools, COCO produces original, inclusive, and SEO-friendly job descriptions tailored to each role, industry, and seniority level — with channel-specific versions for LinkedIn, Indeed, careers pages, and internal mobility postings. It functions as a full job description builder that automates JD creation while maintaining quality and compliance across every posting."}
-      },
-      {
-        "@type": "Question",
-        "name": "How does COCO generate job descriptions with AI?",
-        "acceptedAnswer": {"@type": "Answer", "text": "COCO ingests your role requirements, company values, culture documentation, and compensation philosophy to build a hiring intelligence model. When you request a JD, the AI: (1) generates a competency-based description structured around 30/60/90-day outcomes; (2) scans for bias across five dimensions and produces an inclusivity score with rewrite suggestions; (3) optimizes for search visibility on Google for Jobs, LinkedIn, and Indeed; (4) benchmarks compensation against real-time market data; (5) produces channel-specific versions for each platform. The process takes approximately 10 minutes instead of 4 hours."}
-      },
-      {
-        "@type": "Question",
-        "name": "Can COCO generate job descriptions for different roles?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes — COCO is role-agnostic and industry-agnostic, generating effective job descriptions across all seniority levels and 40+ industries including technology, healthcare, retail, financial services, manufacturing, skilled trades, and non-profits. The AI adapts language, structure, and emphasis based on role type: skilled trades JDs lead with certifications and tools proficiency, non-profit JDs lead with mission impact, and startup software engineer JDs lead with autonomy and tech stack. This is fundamentally different from template-based tools that start with a generic JD and require manual customization."}
-      },
-      {
-        "@type": "Question",
-        "name": "Can COCO generate job description bullet points?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes. COCO automatically creates job description bullet points for responsibilities, qualifications, and success metrics — structured around competencies and outcomes rather than laundry lists of requirements. The AI generates clear, action-oriented bullet points optimized for both candidate readability and job board search algorithms. Each bullet point is written to attract qualified candidates while avoiding biased or exclusionary language. Bullet points are adapted for each channel-specific version — LinkedIn uses a more concise format while the careers page provides richer detail."}
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between a job description generator and a job posting generator?",
-        "acceptedAnswer": {"@type": "Answer", "text": "A job description generator creates the full internal document defining a role — responsibilities, qualifications, competencies, success metrics, compensation, and reporting relationships — for ATS integration and compliance documentation. A job posting generator creates the shorter, externally-facing version optimized for job boards and social media. COCO handles both: it generates comprehensive internal JDs while simultaneously producing channel-specific job postings for LinkedIn, Indeed, and careers pages — each adapted to its audience while maintaining consistent core messaging."}
-      },
-      {
-        "@type": "Question",
-        "name": "Can AI help write more inclusive job descriptions?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes — COCO scans every job description across five bias dimensions: gendered language, age-coded phrasing, ableist language, cultural bias markers, and unnecessary credential inflation. It provides a 0-100 inclusivity score with specific rewrite suggestions. In production data across 50+ hiring teams, JDs rewritten through COCO attracted 41% more female applicants and 38% more candidates from underrepresented groups. The AI maintains an audit log of every change for EEOC and OFCCP compliance documentation."}
-      }      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Deploy an AI Job Description Generator with COCO",
-    "description": "Step-by-step guide to deploying an AI job description generator that creates role-specific, inclusive job descriptions and job postings in minutes — no coding required.",
-    "totalTime": "PT1W",
-    "step": [
-      {
-        "@type": "HowToStep", "position": 1,
-        "name": "Connect COCO to your ATS and careers page",
-        "text": "Link COCO to your ATS (Greenhouse, Lever, Workday, Ashby) and careers page CMS. Standard API integrations — 2 minutes, no custom development required. The AI begins ingesting your existing JD library and hiring data immediately."
-      },
-      {
-        "@type": "HowToStep", "position": 2,
-        "name": "Input company values, culture, and compensation philosophy",
-        "text": "Upload your company values statement, culture documentation, compensation philosophy, existing career pages, and hiring manager input. The AI builds a culture model specific to your organization — learning your voice, terminology, and employer brand."
-      },
-      {
-        "@type": "HowToStep", "position": 3,
-        "name": "Generate and calibrate first batch of JDs (~1 week)",
-        "text": "The AI generates your first batch of JDs — inclusive language scoring, SEO optimization, channel-specific versions. Your hiring team reviews and calibrates output for voice, cultural authenticity, and role accuracy. The AI transitions from suggestion mode to autonomous generation when accuracy meets your threshold."
-      },
-      {
-        "@type": "HowToStep", "position": 4,
-        "name": "Go live with continuous JD generation",
-        "text": "COCO begins generating and optimizing JDs autonomously for every open role. Hiring managers request a JD, the AI produces bias-free, SEO-optimized versions for every channel, and your recruiting team monitors performance via the analytics dashboard — application volume, candidate quality, diversity metrics, and time-to-fill tracked per JD."
-      }
-    ]
-  }
-  </script>
-
-  <style>
+<style>
     :root,
     [data-theme="dark"]{
       --bg-page:#0A0E1A; --bg-footer:#060912; --bg-nav:rgba(10,14,26,0.85);
@@ -319,455 +209,451 @@
       .hero{padding:48px 0 32px}
     }
   </style>
-</head>
-<body>
 
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"COCO AI","url":"https://docs.coco.xyz","description":"Hire AI digital employees for web, Telegram, and Lark. Deploy autonomous AI workers and manage your AI team from a single dashboard."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://docs.coco.xyz/"},{"@type":"ListItem","position":2,"name":"Use Cases","item":"https://docs.coco.xyz/use-cases/"},{"@type":"ListItem","position":3,"name":"AI Job Description Generator","item":"https://docs.coco.xyz/use-cases/ai-job-description-writer/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI Job Description Generator","description":"AI Job Description Generator for creating role-specific, inclusive job descriptions and job postings. Generate better, SEO-friendly JDs in minutes.","datePublished":"2026-06-03","dateModified":"2026-06-04","author":{"@type":"Organization","name":"COCO Engineering"},"publisher":{"@type":"Organization","name":"COCO"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://docs.coco.xyz/use-cases/ai-job-description-writer/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an AI job description generator?","acceptedAnswer":{"@type":"Answer","text":"An AI job description generator uses artificial intelligence to create role-specific job descriptions from role requirements, company culture inputs, and hiring goals. Unlike basic template tools, COCO produces original, inclusive, and SEO-friendly job descriptions tailored to each role, industry, and seniority level — with channel-specific versions for LinkedIn, Indeed, careers pages, and internal mobility postings. It functions as a full job description builder that automates JD creation while maintaining quality and compliance across every posting."}},{"@type":"Question","name":"How does COCO generate job descriptions with AI?","acceptedAnswer":{"@type":"Answer","text":"COCO ingests your role requirements, company values, culture documentation, and compensation philosophy to build a hiring intelligence model. When you request a JD, the AI: (1) generates a competency-based description structured around 30/60/90-day outcomes; (2) scans for bias across five dimensions and produces an inclusivity score with rewrite suggestions; (3) optimizes for search visibility on Google for Jobs, LinkedIn, and Indeed; (4) benchmarks compensation against real-time market data; (5) produces channel-specific versions for each platform. The process takes approximately 10 minutes instead of 4 hours."}},{"@type":"Question","name":"Can COCO generate job descriptions for different roles?","acceptedAnswer":{"@type":"Answer","text":"Yes — COCO is role-agnostic and industry-agnostic, generating effective job descriptions across all seniority levels and 40+ industries including technology, healthcare, retail, financial services, manufacturing, skilled trades, and non-profits. The AI adapts language, structure, and emphasis based on role type: skilled trades JDs lead with certifications and tools proficiency, non-profit JDs lead with mission impact, and startup software engineer JDs lead with autonomy and tech stack. This is fundamentally different from template-based tools that start with a generic JD and require manual customization."}},{"@type":"Question","name":"Can COCO generate job description bullet points?","acceptedAnswer":{"@type":"Answer","text":"Yes. COCO automatically creates job description bullet points for responsibilities, qualifications, and success metrics — structured around competencies and outcomes rather than laundry lists of requirements. The AI generates clear, action-oriented bullet points optimized for both candidate readability and job board search algorithms. Each bullet point is written to attract qualified candidates while avoiding biased or exclusionary language. Bullet points are adapted for each channel-specific version — LinkedIn uses a more concise format while the careers page provides richer detail."}},{"@type":"Question","name":"What is the difference between a job description generator and a job posting generator?","acceptedAnswer":{"@type":"Answer","text":"A job description generator creates the full internal document defining a role — responsibilities, qualifications, competencies, success metrics, compensation, and reporting relationships — for ATS integration and compliance documentation. A job posting generator creates the shorter, externally-facing version optimized for job boards and social media. COCO handles both: it generates comprehensive internal JDs while simultaneously producing channel-specific job postings for LinkedIn, Indeed, and careers pages — each adapted to its audience while maintaining consistent core messaging."}},{"@type":"Question","name":"Can AI help write more inclusive job descriptions?","acceptedAnswer":{"@type":"Answer","text":"Yes — COCO scans every job description across five bias dimensions: gendered language, age-coded phrasing, ableist language, cultural bias markers, and unnecessary credential inflation. It provides a 0-100 inclusivity score with specific rewrite suggestions. In production data across 50+ hiring teams, JDs rewritten through COCO attracted 41% more female applicants and 38% more candidates from underrepresented groups. The AI maintains an audit log of every change for EEOC and OFCCP compliance documentation — turning inclusive hiring from a manual aspiration into a measurable, auditable process."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How COCO's AI Job Description Generator Works","description":"AI Job Description Generator for creating role-specific, inclusive job descriptions and job postings. Generate better, SEO-friendly JDs in minutes.","totalTime":"PT1W","step":[{"@type":"HowToStep","position":1,"name":"Connect COCO to Your ATS and Careers Page","text":"Link COCO to your ATS (Greenhouse, Lever, Workday, Ashby) and careers page CMS. Standard API integrations — 2 minutes, no custom development required. The AI begins ingesting your existing JD library and historical hiring data immediately to understand your role structure, common job titles, and hiring patterns."},{"@type":"HowToStep","position":2,"name":"Input Company Values, Culture, and Compensation Philosophy","text":"Upload your company values statement, culture documentation, compensation philosophy, existing career pages, and employer brand guidelines. Provide hiring manager input on what makes your company genuinely different to work for. The AI builds a culture model specific to your organization — learning your voice, terminology, and employer value proposition."},{"@type":"HowToStep","position":3,"name":"Generate & Calibrate First Batch of JDs (~1 Week)","text":"The AI analyzes your existing JD library, identifies bias patterns and SEO gaps, and generates your first batch of rewritten JDs — with inclusivity scores, channel-specific versions, and compensation benchmarking. Your hiring team reviews and calibrates output for voice, cultural authenticity, and role accuracy. The AI learns from every edit and transitions to autonomous generation when accuracy meets your threshold."},{"@type":"HowToStep","position":4,"name":"Go Live With Continuous JD Generation","text":"COCO begins generating and publishing JDs autonomously for every open role. Hiring managers request a JD via the COCO dashboard (or directly in Slack/Teams), the AI produces a bias-free, SEO-optimized, channel-specific JD with comp benchmarking and compliance checks, and your team reviews and approves in one click. Monitor performance via the analytics dashboard — application volume, candidate quality, diversity metrics, time-to-fill, and offer acceptance rate tracked per JD. The AI continuously improves based on which JDs drive the best hiring outcomes."}]}</script>
+<style>
+/* ==========================================================
+   COCO page-specific layout refinements, v2
+   Purpose: preserve the original brand style while giving each SEO
+   use-case page a distinct hand-built layout and content rhythm.
+   ========================================================== */
+body.coco-refined-v2 nav .nav-inner{height:60px}
+body.coco-refined-v2 .hero{position:relative;margin-top:18px;border:1px solid var(--border-soft);background:linear-gradient(135deg,var(--bg-surface),rgba(255,184,0,.035));border-radius:28px;padding:56px;overflow:hidden;text-align:left;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:42px;align-items:center}
+body.coco-refined-v2 .hero:before{content:"";position:absolute;inset:auto -100px -160px auto;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,0,.14),transparent 68%);pointer-events:none}
+body.coco-refined-v2 .hero .hero-copy{position:relative;z-index:1}
+body.coco-refined-v2 .hero h1{font-size:clamp(2.25rem,5vw,3.55rem);max-width:780px;margin-bottom:18px}
+body.coco-refined-v2 .hero .subtitle{margin:0 0 26px;max-width:720px;text-align:left;color:var(--text-muted)}
+body.coco-refined-v2 .hero .btn-group{justify-content:flex-start;margin-bottom:10px}
+body.coco-refined-v2 .hero .nocode{text-align:left;margin-top:8px}
+body.coco-refined-v2 .hero-art{position:relative;z-index:1;background:var(--bg-page);border:1px solid var(--border-accent);border-radius:22px;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.08)}
+body.coco-refined-v2 .trust-note{max-width:1140px;margin:-36px auto 54px;padding:18px 22px;border:1px solid var(--border-soft);background:var(--bg-surface-strong);border-radius:16px;color:var(--text-muted);font-size:.94rem;line-height:1.6}
+body.coco-refined-v2 .trust-note strong{color:var(--text-primary)}
+body.coco-refined-v2 section{scroll-margin-top:86px}
+body.coco-refined-v2 .section-label{border:1px solid var(--border-accent);background:var(--bg-accent-soft)}
+body.coco-refined-v2 .compare-table{table-layout:auto;width:100%}
+body.coco-refined-v2 .compare-table th,body.coco-refined-v2 .compare-table td{vertical-align:top}
+body.coco-refined-v2 .metric-card{transition:transform .2s,border-color .2s,background .2s}
+body.coco-refined-v2 .metric-card:hover{transform:translateY(-2px);border-color:var(--border-accent);background:var(--bg-surface-hover)}
+body.coco-refined-v2 .faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body.coco-refined-v2 .faq-item{margin:0;background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:14px;padding:0;overflow:hidden}
+body.coco-refined-v2 .faq-item summary{padding:16px 18px;cursor:pointer;color:var(--text-primary);font-weight:600}
+body.coco-refined-v2 .faq-answer{padding:0 18px 18px;color:var(--text-muted)}
+body.coco-refined-v2 .steps{display:grid;gap:16px;margin-top:26px}
+body.coco-refined-v2 .step-card{position:relative;background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:16px;padding:22px}
+body.coco-refined-v2 .step-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--accent-on);font-weight:700;margin-bottom:12px}
+body.coco-refined-v2 .chat-demo{border-radius:20px;border:1px solid var(--border-soft)}
+
+/* Expense page: audit console, risk lanes, and exception review rhythm */
+body.expense-v2 .hero{grid-template-columns:minmax(0,1fr) 400px}
+.expense-console .panel-kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);font-weight:700;margin-bottom:14px}
+.expense-console .console-row{display:flex;justify-content:space-between;gap:16px;border:1px solid var(--border-faint);background:var(--bg-surface);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.expense-console .console-row span{color:var(--text-faint);font-size:.84rem}.expense-console .console-row strong{color:var(--text-primary);font-size:.9rem;text-align:right}.expense-console .warning{border-color:rgba(248,113,113,.22);background:rgba(248,113,113,.04)}.expense-console .clean{border-color:rgba(34,197,94,.20);background:var(--bg-highlight)}.expense-console p{font-size:.85rem;color:var(--text-muted);margin:14px 0 0}
+body.expense-v2 .metrics{grid-template-columns:1.2fr 1fr 1fr 1fr;align-items:stretch;margin-bottom:54px}
+body.expense-v2 .metrics .metric-card:first-child{text-align:left;background:var(--bg-cta);border-color:var(--border-accent)}
+body.expense-v2 .dim-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+body.expense-v2 .dim-card{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:22px;border-left:4px solid var(--accent)}
+body.expense-v2 .dim-icon{margin:0!important;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--bg-accent-soft)}
+body.expense-v2 .scenario-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:26px}
+body.expense-v2 .risk-card{border:1px solid var(--border-soft);border-radius:18px;background:var(--bg-surface);padding:20px}
+body.expense-v2 .risk-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}body.expense-v2 .risk-index{font-size:.72rem;font-weight:700;color:var(--accent);background:var(--bg-accent-soft);border:1px solid var(--border-accent);border-radius:999px;padding:4px 8px}body.expense-v2 .risk-head h3{margin:0}
+body.expense-v2 .risk-body{display:grid;grid-template-columns:1fr;gap:12px}body.expense-v2 .risk-body span{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-quietest);font-weight:700;margin-bottom:4px}body.expense-v2 .risk-body p{margin:0;font-size:.9rem;color:var(--text-muted)}body.expense-v2 .risk-body .improvement{color:var(--green);font-weight:600}
+body.expense-v2 #how-it-works .steps{grid-template-columns:repeat(4,1fr)}
+
+/* Job page: builder desk, scenario cards, editorial production flow */
+body.job-v2 .hero{grid-template-columns:390px minmax(0,1fr)}
+body.job-v2 .hero .hero-copy{order:2}body.job-v2 .hero .hero-art{order:1}
+.jd-builder .builder-label{font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}.jd-builder .field-line{display:grid;grid-template-columns:86px 1fr;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--border-faint)}.jd-builder .field-line span{color:var(--text-faint);font-size:.82rem}.jd-builder .field-line strong{color:var(--text-primary);font-size:.9rem}.jd-builder .draft-card{margin-top:16px;border:1px dashed var(--border-accent);border-radius:14px;padding:16px;background:var(--bg-accent-soft)}.jd-builder .draft-card small{display:block;color:var(--text-faint);margin-bottom:6px}.jd-builder .draft-card b{display:block;color:var(--text-primary);line-height:1.55;font-size:.95rem}
+body.job-v2 .metrics{display:flex;gap:10px;background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:18px;padding:10px;margin-bottom:54px}body.job-v2 .metric-card{flex:1;border:none;border-right:1px solid var(--border-faint);border-radius:12px;background:transparent}body.job-v2 .metric-card:last-child{border-right:none}
+body.job-v2 #what-is{display:grid;grid-template-columns:minmax(0,.85fr) minmax(300px,.55fr);gap:28px;align-items:start}body.job-v2 #what-is:after{content:"Hiring content should read like a role brief, not a copied template. COCO turns role context into audience-specific postings while preserving recruiter review.";display:block;border:1px solid var(--border-accent);background:var(--bg-accent-soft);border-radius:18px;padding:22px;color:var(--text-muted);font-size:.98rem;line-height:1.7}
+body.job-v2 .dim-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px}body.job-v2 .dim-card{display:grid;grid-template-columns:52px minmax(180px,.35fr) 1fr;gap:16px;align-items:start;padding:18px 20px}body.job-v2 .dim-icon{margin:0!important;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--bg-accent-soft)}body.job-v2 .dim-card h3{margin-top:4px}
+body.job-v2 .scenario-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}body.job-v2 .jd-scenario-card{border:1px solid var(--border-soft);border-radius:20px;background:linear-gradient(180deg,var(--bg-surface),transparent);overflow:hidden}body.job-v2 .jd-scenario-head{padding:18px 20px;border-bottom:1px solid var(--border-faint);display:flex;align-items:center;justify-content:space-between;gap:12px}body.job-v2 .jd-scenario-head h3{margin:0;font-size:1rem}body.job-v2 .jd-scenario-head span{font-size:.72rem;color:var(--accent);font-weight:700;background:var(--bg-accent-soft);border:1px solid var(--border-accent);border-radius:999px;padding:4px 8px;white-space:nowrap}body.job-v2 .jd-scenario-body{display:grid;grid-template-columns:1fr;gap:0}body.job-v2 .jd-before,body.job-v2 .jd-after{padding:16px 20px}body.job-v2 .jd-before{background:rgba(15,23,42,.018)}body.job-v2 .scenario-board small{display:block;color:var(--text-quietest);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}body.job-v2 .scenario-board p{margin:0;color:var(--text-muted);font-size:.92rem}body.job-v2 .scenario-board .improvement{color:var(--green);font-weight:600}
+body.job-v2 #how-it-works .steps{grid-template-columns:1fr 1fr}body.job-v2 #how-it-works .step-card{min-height:210px}
+
+/* NDA page: legal drafting dossier, clause docket, human review emphasis */
+body.nda-v2 .hero{grid-template-columns:420px minmax(0,1fr)}body.nda-v2 .hero .hero-copy{order:2}body.nda-v2 .hero .hero-art{order:1}
+.nda-doc{background:linear-gradient(180deg,var(--bg-page),var(--bg-surface-strong))}.nda-doc .doc-top{display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid var(--border-soft);padding-bottom:14px;margin-bottom:16px}.nda-doc .doc-top span{font-weight:700;color:var(--text-primary)}.nda-doc .doc-top b{font-size:.72rem;color:var(--accent);background:var(--bg-accent-soft);border:1px solid var(--border-accent);padding:4px 8px;border-radius:999px}.nda-doc .doc-line{height:8px;border-radius:999px;background:var(--bg-surface-strong);margin-bottom:10px;width:68%}.nda-doc .doc-line.wide{width:92%}.nda-doc .clause-item{display:flex;align-items:center;gap:10px;border:1px solid var(--border-faint);border-radius:12px;padding:10px 12px;margin-top:10px;color:var(--text-muted);font-size:.9rem}.nda-doc .clause-item span{width:22px;height:22px;border-radius:50%;background:var(--bg-accent-soft);color:var(--accent);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.74rem}.nda-doc p{margin:16px 0 0;color:var(--text-muted);font-size:.86rem}
+body.nda-v2 .metrics{grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:54px}body.nda-v2 .metric-card{text-align:left;border-radius:18px;border-left:4px solid var(--accent)}
+body.nda-v2 #what-is{border:1px solid var(--border-soft);border-radius:22px;padding:32px;background:var(--bg-surface)}body.nda-v2 .dim-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}body.nda-v2 .dim-card{border-radius:6px 18px 18px 6px;border-left:5px solid var(--accent);background:var(--bg-page)}
+body.nda-v2 .scenario-board{margin-top:26px;border:1px solid var(--border-soft);border-radius:22px;overflow:hidden;background:var(--bg-surface)}body.nda-v2 .nda-docket-item{display:grid;grid-template-columns:180px minmax(180px,.8fr) minmax(260px,1.1fr);gap:20px;padding:20px;border-bottom:1px solid var(--border-faint);align-items:start}body.nda-v2 .nda-docket-item:last-child{border-bottom:none}.nda-v2 .docket-id{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:8px}.nda-v2 .nda-docket-item h3{font-size:1rem;margin:0}.nda-v2 .nda-docket-item small{display:block;color:var(--text-quietest);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}.nda-v2 .nda-docket-item p{margin:0;color:var(--text-muted);font-size:.9rem}.nda-v2 .nda-docket-item .improvement{color:var(--green);font-weight:600}
+body.nda-v2 #how-it-works .steps{position:relative;grid-template-columns:1fr}body.nda-v2 #how-it-works .step-card{display:grid;grid-template-columns:44px minmax(200px,.35fr) 1fr;gap:14px;align-items:start}body.nda-v2 #how-it-works .step-card .step-num{grid-row:1 / span 2;margin:0}
+
+@media(max-width:980px){body.coco-refined-v2 .hero,body.expense-v2 .hero,body.job-v2 .hero,body.nda-v2 .hero{grid-template-columns:1fr;padding:34px}body.job-v2 .hero .hero-copy,body.job-v2 .hero .hero-art,body.nda-v2 .hero .hero-copy,body.nda-v2 .hero .hero-art{order:initial}body.coco-refined-v2 .faq-list,body.expense-v2 .scenario-board,body.job-v2 .scenario-board{grid-template-columns:1fr}body.expense-v2 #how-it-works .steps,body.job-v2 #how-it-works .steps{grid-template-columns:1fr}body.job-v2 #what-is{grid-template-columns:1fr}body.nda-v2 .nda-docket-item{grid-template-columns:1fr}body.nda-v2 #how-it-works .step-card{grid-template-columns:44px 1fr}.nda-v2 #how-it-works .step-card p{grid-column:2}}
+@media(max-width:760px){body.coco-refined-v2 .hero{padding:26px;border-radius:22px}body.job-v2 .metrics,body.expense-v2 .metrics,body.nda-v2 .metrics{display:grid;grid-template-columns:1fr}body.job-v2 .metric-card{border-right:none;border-bottom:1px solid var(--border-faint)}body.job-v2 .metric-card:last-child{border-bottom:none}body.job-v2 .dim-card{grid-template-columns:44px 1fr}body.job-v2 .dim-card p{grid-column:1 / -1}body.coco-refined-v2 .trust-note{margin:-28px 0 42px}.container{padding:0 18px}}
+
+.section-intro{max-width:820px;color:var(--text-muted);margin:-8px 0 22px;font-size:1rem;line-height:1.7}
+</style></head>
+<body class="coco-refined-v2 job-v2">
 <nav>
-  <div class="nav-inner">
-    <a href="https://docs.coco.xyz" class="logo">
-      <span>COCO</span>
-    </a>
-    <div style="display:flex;align-items:center;gap:20px;font-size:.8125rem">
-      <a href="https://docs.coco.xyz/use-cases/" style="color:var(--text-muted);text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Use Cases</a>
-      <a href="https://docs.coco.xyz/case-studies/" style="color:var(--text-muted);text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Case Studies</a>
-      <a href="https://docs.coco.xyz/channels/" style="color:var(--text-muted);text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Channels</a>
-    </div>
-    <div class="nav-actions">
-      <a href="https://icoco.ai/#pricing" class="btn-primary" style="padding:8px 18px;font-size:.8125rem">See Plans & Pricing</a>
-    </div>
-  </div>
+<div class="nav-inner">
+<a class="logo" href="https://docs.coco.xyz">
+<span>COCO</span>
+</a>
+<div style="display:flex;align-items:center;gap:20px;font-size:.8125rem">
+<a href="https://docs.coco.xyz/use-cases/" onmouseout="this.style.color='var(--text-muted)'" onmouseover="this.style.color='var(--accent)'" style="color:var(--text-muted);text-decoration:none">Use Cases</a>
+<a href="https://docs.coco.xyz/case-studies/" onmouseout="this.style.color='var(--text-muted)'" onmouseover="this.style.color='var(--accent)'" style="color:var(--text-muted);text-decoration:none">Case Studies</a>
+<a href="https://docs.coco.xyz/channels/" onmouseout="this.style.color='var(--text-muted)'" onmouseover="this.style.color='var(--accent)'" style="color:var(--text-muted);text-decoration:none">Channels</a>
+</div>
+<div class="nav-actions">
+<a class="btn-primary" href="https://icoco.ai/#pricing" style="padding:8px 18px;font-size:.8125rem">See Plans &amp; Pricing</a>
+</div>
+</div>
 </nav>
-
 <main class="container">
-
-  <!-- Breadcrumb -->
-  <nav aria-label="breadcrumb" style="padding:16px 0 0;font-size:.8125rem;color:var(--text-fainter)">
-    <a href="https://docs.coco.xyz/" style="color:var(--text-fainter)">Home</a> <span style="margin:0 6px">›</span>
-    <a href="https://docs.coco.xyz/use-cases/" style="color:var(--text-fainter)">Use Cases</a> <span style="margin:0 6px">›</span>
-    <span style="color:var(--text-muted)">AI Job Description Generator</span>
-  </nav>
-
-  <!-- Table of Contents -->
-  <div style="background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:10px;padding:16px 20px;margin-top:16px;font-size:.8125rem">
-    <strong style="color:var(--text-primary)">On this page:</strong>
-    <span style="margin:0 8px">·</span>
-    <a href="#what-is">What Is</a>
-    <span style="margin:0 8px">·</span>
-    <a href="#dimensions">Capabilities</a>
-    <span style="margin:0 8px">·</span>
-    <a href="#comparison">Comparison</a>
-    <span style="margin:0 8px">·</span>
-    <a href="#usecases">Use Cases</a>
-    <span style="margin:0 8px">·</span>
-    <a href="#chat-demo">Live Demo</a>
-    <span style="margin:0 8px">·</span>
-    <a href="#methodology">Methodology</a>
-    <span style="margin:0 8px">·</span>
-    <a href="#faq">FAQ</a>
-    <span style="margin:0 8px">·</span>
-    <a href="#how-it-works">Deployment</a>
-  </div>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>AI Job Description Generator</h1>
-    <p class="subtitle">Generate role-specific, inclusive job descriptions with COCO's AI Job Description Generator. Create better job postings in minutes instead of hours — with bias screening, SEO optimization, and channel-specific versions for LinkedIn, Indeed, and your careers page. Teams using COCO see 64% more applicants, 41% more female candidates, and 34% faster time-to-fill.</p>
-    <div class="btn-group">
-      <a href="https://icoco.ai/#pricing" class="btn-primary">See Plans & Pricing →</a>
-      <a href="#how-it-works" class="btn-outline">See How It Works</a>
-    </div>
-    <p class="nocode">No coding required · Works with your existing ATS & careers page · 2-minute connection</p>
-  </section>
-
-  <!-- Metrics -->
-  <div class="metrics">
-    <div class="metric-card">
-      <div class="metric-value">4h → 10 min</div>
-      <div class="metric-label">JD Creation Time</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-value">+64%</div>
-      <div class="metric-label">More Applicants</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-value">+41%</div>
-      <div class="metric-label">Female Candidates</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-value">-34%</div>
-      <div class="metric-label">Time-to-Fill</div>
-    </div>
-  </div>
-
-  <!-- Hiring Compliance Disclaimer -->
-  <div class="methodology" style="margin-top:8px">
-    <h3>Hiring Compliance & Use Disclaimer</h3>
-    <p style="font-size:.875rem;color:var(--text-muted);margin-bottom:12px;line-height:1.7">COCO's AI Job Description Generator helps create job description drafts for HR and hiring team review. It does not replace legal review, HR compliance oversight, or professional judgment in hiring decisions. AI-generated job descriptions should be reviewed by qualified HR professionals and legal counsel to ensure compliance with EEOC guidelines, local labor laws, and your organization's diversity and inclusion policies. Inclusive language scores are directional tools, not guarantees of compliance or hiring outcomes. This page is for informational and product-use-case purposes only and does not constitute legal, HR, or compliance advice.</p>
-    <p style="font-size:.8125rem;color:var(--text-faint);margin-bottom:0;line-height:1.6"><strong>What to verify before deployment:</strong> Review AI-generated JDs for role accuracy and cultural authenticity. Validate inclusivity scores against your organization's DEI measurement framework. Confirm compliance with local labor laws in each hiring jurisdiction (EEOC, EU Pay Transparency Directive, UK Equality Act, etc.). Calibrate the AI's language against your employer brand voice during the initial training period.</p>
-  </div>
-
-  <!-- What Is -->
-  <section id="what-is">
-    <span class="section-label">The Problem</span>
-    <h2>What Is an AI Job Description Generator?</h2>
-    <p>Job descriptions are the most-read and least-optimized content in most companies — copied from an outdated template, edited minimally, and posted without a second thought. Yet the JD is the single biggest factor in who applies. LinkedIn research shows <strong>77% of candidates read the JD before deciding to apply</strong>, and Textio's analysis of 75 million JDs found that gendered language alone can reduce the applicant pool by up to 40%. A company hiring for 50 roles spends 200 hours on JD writing while unknowingly embedding bias into every single one.</p>
-    <p>Existing solutions don't solve the core problem. HR teams rely on outdated JD libraries saved on a shared drive. Basic template platforms standardize formatting but offer zero language analysis. Pasting requirements into ChatGPT produces generic output with no bias screening, no SEO optimization, and no channel adaptation. None address the three things that determine whether a JD attracts or repels candidates: language inclusivity, search discoverability, and channel-specific optimization.</p>
-    <p>COCO's <strong>AI job description generator</strong> is a hiring intelligence system — not a template filler. It connects to your ATS, ingests your company values and culture documentation, and produces JDs that are: <strong>inclusive</strong> (0-100 score across five bias dimensions), <strong>SEO-optimized</strong> (researched against what candidates search on Google for Jobs, LinkedIn, Indeed, Glassdoor), <strong>channel-adapted</strong> (platform-native versions for each audience), <strong>compensation-benchmarked</strong> (real-time market data from Payscale, Glassdoor, Levels.fyi), and <strong>competency-structured</strong> (organized around outcomes, not years of experience).</p>
-    <p>Hiring managers go from 4 hours per JD to 10 minutes — while their job postings attract 64% more applicants with significantly more diverse candidate pools.</p>
-  </section>
-
-  <!-- Six Dimensions -->
-  <section id="dimensions">
-    <span class="section-label">Capabilities</span>
-    <h2>Generate Job Descriptions with AI — 6 Capabilities That Build Better Job Postings</h2>
-
-    <div class="dim-grid">
-      <div class="dim-card">
-        <div class="dim-icon">🎯</div>
-        <h3>Inclusive Language Engine</h3>
-        <p>COCO scans every JD across five bias dimensions: gendered language (flags "rockstar," "ninja," "dominant," "nurturing"), age-coded phrasing ("digital native," "young and energetic," "recent graduate"), ableist language ("walk the floor," "stand for hours" when not essential), cultural bias markers ("native English speaker," "clean-cut," "cultural fit"), and unnecessary credential inflation ("7+ years" for skills learnable in 2). Every JD receives a 0-100 inclusivity score with specific rewrite suggestions — replacing exclusionary terms with impact-based, skills-forward language that attracts diverse candidates without sacrificing precision. In production, teams see 41% more female applicants and 38% more underrepresented candidates at the top of the funnel.</p>
-      </div>
-      <div class="dim-card">
-        <div class="dim-icon">🔍</div>
-        <h3>SEO Optimization for Job Boards</h3>
-        <p>The AI researches what candidates actually type into search bars — not what HR teams assume they search for. It analyzes search volume data from Google for Jobs, LinkedIn, Indeed, and Glassdoor to identify the highest-intent keywords for each role. Then it optimizes JD titles, headings, body text, and structured data markup so your postings rank where candidates are looking — embedding keywords naturally within compelling, candidate-first copy (never keyword-stuffing). JDs are auto-formatted for Google for Jobs structured data compliance (jobLocation, baseSalary, employmentType, datePosted) for maximum visibility. SEO-optimized JDs see 64% more search-driven applicants compared to unoptimized postings.</p>
-      </div>
-      <div class="dim-card">
-        <div class="dim-icon">📱</div>
-        <h3>Channel-Specific Versions</h3>
-        <p>One JD generates multiple versions optimized for where candidates actually discover roles. LinkedIn (professional tone, 150-200 words, shareable format), Indeed (keyword-forward, full detail, clear compensation up front), your company careers page (culture-rich, team and mission context, application process transparency), Instagram/TikTok (visual-first summary scripts for social recruiting content), and internal mobility postings (development-focused framing emphasizing growth opportunity). Each version maintains consistent core messaging while feeling native to its platform — because candidates on LinkedIn read differently than candidates on Indeed, and your internal employees need a fundamentally different framing than external applicants. No more copying and pasting the same JD everywhere.</p>
-      </div>
-      <div class="dim-card">
-        <div class="dim-icon">💰</div>
-        <h3>Compensation Benchmarking</h3>
-        <p>COCO integrates with Payscale, Glassdoor, and Levels.fyi data to suggest competitive salary ranges by role, location, experience level, and company stage. It provides 25th, 50th, 75th, and 90th percentile comp data — and flags when your proposed range is below market (the #1 reason qualified candidates don't apply). Beyond base salary, the AI frames total compensation including equity, bonuses, benefits, and perks in candidate-resonant language. For global hiring, it provides geographic adjustments with cost-of-living factors and local market norms. Critically, it formats comp data in compliance with the EU Pay Transparency Directive and emerging US state-level pay transparency laws — so your JDs are both competitive and compliant. JDs with transparent, market-competitive compensation ranges see 28% higher application completion rates.</p>
-      </div>
-      <div class="dim-card">
-        <div class="dim-icon">🏗️</div>
-        <h3>Competency-Based Structuring</h3>
-        <p>Traditional JDs are structured around years of experience and laundry lists of responsibilities — which research from Harvard Business Review shows disproportionately screens out women (who apply only when they meet 100% of listed requirements vs. men who apply at 60%) and career changers with transferable but non-traditional backgrounds. COCO restructures JDs around outcomes and competencies: what the person will achieve in their first 30, 60, and 90 days, which skills are genuinely required vs. learnable on the job, and what success looks like at 6 and 12 months. This competency-based framing reduces the "qualified but didn't apply" dropout — where high-potential candidates self-select out because the JD lists 5 years of experience for a skill they learned in 1. Teams shifting to competency-based JDs see a 22% larger qualified applicant pool and significantly more diverse shortlists.</p>
-      </div>
-      <div class="dim-card">
-        <div class="dim-icon">⚖️</div>
-        <h3>Compliance Alignment</h3>
-        <p>Every JD is checked against EEOC guidelines, the EU Pay Transparency Directive, and local labor laws in the hiring jurisdiction. COCO flags potentially discriminatory requirements — such as "must be able to lift 50 lbs" when it is not an essential function of the role, "clean driving record" when the role does not involve driving, or degree requirements that create disparate impact without being bona fide occupational qualifications. The AI maintains a complete audit trail of every language change and compliance check for OFCCP compliance, internal audits, and legal review. For companies hiring across multiple countries (US, UK, Germany, Singapore, etc.), COCO automatically applies the correct local labor law framework to each country-specific JD — different jurisdictions have different rules about what you can and cannot ask, and the AI ensures you do not accidentally violate them.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Comparison Table -->
-  <section id="comparison">
-    <span class="section-label">Comparison</span>
-    <h2>Manual JD Writing vs JD Template Libraries vs AI Job Description Generator</h2>
-
-    <div style="overflow-x:auto">
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Dimension</th>
-          <th>Manual JD Writing</th>
-          <th>JD Template Libraries</th>
-          <th class="highlight-col">AI JD Generator (COCO)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Inclusivity Screening</td>
-          <td>None — unconscious bias goes unchecked in every draft</td>
-          <td>None — templates contain the same biased language they were written with</td>
-          <td class="highlight-col">5-dimension bias scan (gendered, age, ableist, cultural, credential inflation) with 0-100 score</td>
-        </tr>
-        <tr>
-          <td>SEO Optimization</td>
-          <td>None — JDs invisible to candidates searching job boards</td>
-          <td>None — template text is static, not keyword-optimized</td>
-          <td class="highlight-col">Researches candidate search behavior; optimizes for Google for Jobs, LinkedIn, Indeed, Glassdoor</td>
-        </tr>
-        <tr>
-          <td>Channel Adaptation</td>
-          <td>One version copied to every channel — wrong for each audience</td>
-          <td>Same JD pasted into different template layouts — content unchanged</td>
-          <td class="highlight-col">Platform-native versions: LinkedIn, Indeed, careers page, social, internal mobility</td>
-        </tr>
-        <tr>
-          <td>Compensation Intelligence</td>
-          <td>Gut feel or outdated HR spreadsheet — often below market</td>
-          <td>Static salary band set once per year, if at all</td>
-          <td class="highlight-col">Real-time market data (Payscale, Glassdoor, Levels.fyi) with compliance formatting</td>
-        </tr>
-        <tr>
-          <td>Competency Structuring</td>
-          <td>Years-of-experience laundry list — screens out women and career changers</td>
-          <td>Generic responsibilities from template — no role-specific outcomes</td>
-          <td class="highlight-col">Outcome-based with 30/60/90 day success definitions and learnable-vs-required skill splits</td>
-        </tr>
-        <tr>
-          <td>Compliance Checking</td>
-          <td>None — legal review only after candidate complaints</td>
-          <td>None — templates may contain discriminatory language by default</td>
-          <td class="highlight-col">EEOC, EU Pay Transparency, local labor law compliance for every jurisdiction</td>
-        </tr>
-        <tr>
-          <td>Creation Speed</td>
-          <td>4 hours per JD — 200 hours for 50 roles</td>
-          <td>30-60 minutes — still requires manual customization for each role</td>
-          <td class="highlight-col">10 minutes per JD — including all channel versions, comp benchmarking, and compliance checks</td>
-        </tr>
-        <tr>
-          <td>ATS Compatibility</td>
-          <td>Inconsistent formatting — JDs fail to parse correctly in ATS</td>
-          <td>Basic formatting — no structured data for ATS parsing</td>
-          <td class="highlight-col">Auto-formatted for Greenhouse, Lever, Workday, Ashby with structured job data</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-  </section>
-
-  <!-- Use Cases -->
-  <section id="usecases">
-    <span class="section-label">Hiring Scenarios</span>
-    <h2>10 Job Description Scenarios COCO Handles</h2>
-
-    <div style="overflow-x:auto">
-    <table class="usecase-table">
-      <thead>
-        <tr>
-          <th>Hiring Scenario</th>
-          <th>Before COCO</th>
-          <th>With COCO AI JD Generator</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Tech Startup Scaling</td>
-          <td>Hiring 20 engineers this quarter — 80 hours of JD writing, inconsistent quality across roles, no time for bias review</td>
-          <td class="improvement">20 bias-free, SEO-optimized JDs in 2 hours — consistent quality, inclusive language, channel versions for LinkedIn + Indeed + careers page</td>
-        </tr>
-        <tr>
-          <td>Enterprise Volume Hiring</td>
-          <td>500 retail positions across 50 locations — one generic JD posted everywhere, local candidates don't find it</td>
-          <td class="improvement">Location-specific JDs with local compensation data, regional search optimization, and ATS-compatible formatting for every location</td>
-        </tr>
-        <tr>
-          <td>Diversity & Inclusion Initiative</td>
-          <td>Struggling to attract diverse candidates — female applicant rate stuck at 18%, underrepresented candidates below 10%</td>
-          <td class="improvement">Inclusive language engine boosts female applicants 41% — from 18% to 25%+ — and increases underrepresented candidate applications 38%</td>
-        </tr>
-        <tr>
-          <td>Global Multi-Country Hiring</td>
-          <td>Hiring in US, UK, Germany, Singapore — one English JD used everywhere, ignoring local labor law and compensation norms</td>
-          <td class="improvement">Country-specific JDs with local labor law compliance (EEOC, UK Equality Act, German AGG, Singapore TAFEP), local comp data, and language localization</td>
-        </tr>
-        <tr>
-          <td>Executive Search</td>
-          <td>C-suite role requires precise language — generic executive JD repels top-tier candidates who expect sophistication</td>
-          <td class="improvement">Competency-based structure with defined 30/60/90 day outcomes, strategic impact framing, and comp benchmarking at the executive level (including equity and board exposure)</td>
-        </tr>
-        <tr>
-          <td>Campus & Early Career</td>
-          <td>Entry-level JDs asking for 3-5 years experience — automatically eliminating 80%+ of the target candidate pool before they apply</td>
-          <td class="improvement">AI strips unreasonable requirements, focuses on potential and learnability, frames growth trajectory — 22% larger qualified applicant pool</td>
-        </tr>
-        <tr>
-          <td>Skilled Trades</td>
-          <td>Electricians, plumbers, HVAC techs — JDs written in corporate HR language that doesn't speak to trade professionals</td>
-          <td class="improvement">Skills-forward JDs optimized for trade-specific job boards (Indeed Trades, TradeHire), certification-required language, apprenticeship pathway framing</td>
-        </tr>
-        <tr>
-          <td>Healthcare Staffing</td>
-          <td>Nurses, medical assistants — generic JDs copied from competitor postings, missing critical license and certification clarity</td>
-          <td class="improvement">Compliance-checked JDs with precise license/certification requirements (RN, LPN, CNA, BLS, ACLS), shift and schedule transparency, patient ratio context</td>
-        </tr>
-        <tr>
-          <td>Retail Seasonal Hiring</td>
-          <td>200 seasonal positions — rushed JDs posted with inconsistent details, no time for optimization, poor search visibility</td>
-          <td class="improvement">Batch-generated seasonal JDs with comp benchmarking for temporary roles, geographic location tagging, and urgency-optimized CTAs — all 200 in under 30 minutes</td>
-        </tr>
-        <tr>
-          <td>Non-Profit & Mission-Driven</td>
-          <td>Competing with for-profit salaries — salary-focused JDs fail to attract mission-aligned talent who prioritize impact over comp</td>
-          <td class="improvement">Mission-emphasis JDs that lead with social impact and organizational purpose, transparent comp within non-profit bands, and values-aligned language that resonates with purpose-driven candidates</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-  </section>
-
-  <!-- Chat Demo -->
-  <section id="chat-demo">
-    <span class="section-label">In Practice</span>
-    <h2>See It in Action: Creating an Inclusive Senior Software Engineer JD</h2>
-    <p style="font-size:.8125rem;color:var(--text-quietest);margin-bottom:16px">Representative conversation showing COCO's AI job description generator analyzing and rewriting a Senior Software Engineer JD for inclusivity, SEO, and channel adaptation.</p>
-
-    <div class="chat-demo">
-      <div class="chat-msg user">
-        <div style="text-align:right">
-          <div class="chat-label">👤 Maria · HR Director</div>
-          <div class="bubble">COCO, I need a Senior Software Engineer JD for our platform team. Here's our current draft — we've been using this template for 2 years but our applicant quality is dropping and we're not getting diverse candidates.</div>
-        </div>
-      </div>
-      <div class="chat-msg agent">
-        <div>
-          <div class="chat-label">🤖 COCO · JD Generator</div>
-          <div class="bubble">Got it, Maria. Let me analyze your current draft across inclusivity, SEO, and structure. Running the scan now — I'll flag every issue and give you a rewritten version.</div>
-        </div>
-      </div>
-      <div class="chat-meta">COCO scans Maria's draft across 5 bias dimensions, SEO keyword research for "Senior Software Engineer" on Google for Jobs/LinkedIn/Indeed, and competency structure analysis. Scan complete in 4 seconds.</div>
-      <div class="chat-msg agent">
-        <div>
-          <div class="chat-label">🤖 COCO · JD Generator</div>
-          <div class="bubble">Analysis complete. I found <strong>6 biased terms</strong> in your current draft:<br><br>
-          🔴 "Rockstar developer" — gendered (male-coded), alienates 40%+ of candidates. <strong>Replace with:</strong> "Engineer who delivers high-impact, well-architected solutions"<br>
-          🔴 "Ninja" — gendered and cultural appropriation. <strong>Replace with:</strong> "Expert at diagnosing complex distributed systems issues"<br>
-          🔴 "Young and energetic team" — age discrimination (EEOC risk). <strong>Replace with:</strong> "High-autonomy team that moves fast and supports deep work"<br>
-          🔴 "Digital native" — age-coded, excludes experienced career changers. <strong>Replace with:</strong> "Comfortable with modern cloud-native tooling"<br>
-          🔴 "Work hard, play hard" — associated with burnout culture, repels candidates with families. <strong>Replace with:</strong> "We set ambitious goals and protect sustainable pace"<br>
-          🔴 "Cultural fit" — signals homogeneity. <strong>Replace with:</strong> "Someone who adds to our culture — we hire for contribution, not conformity"<br><br>
-          <strong>Inclusivity Score: 42/100 → 89/100 after rewrite.</strong><br><br>
-          SEO issues found: No keywords candidates actually search for. Adding high-volume terms: "distributed systems," "Go," "Kubernetes," "remote-friendly," "platform engineering." Optimized for Google for Jobs structured data.<br><br>
-          I've generated:<br>
-          • LinkedIn version (180 words, professional tone)<br>
-          • Indeed version (keyword-rich, comp-first)<br>
-          • Careers page version (culture-rich, 600 words)<br>
-          • Internal mobility version (growth-focused)<br><br>
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" style="padding:16px 0 0;font-size:.8125rem;color:var(--text-fainter)">
+<a href="https://docs.coco.xyz/" style="color:var(--text-fainter)">Home</a> <span style="margin:0 6px">›</span>
+<a href="https://docs.coco.xyz/use-cases/" style="color:var(--text-fainter)">Use Cases</a> <span style="margin:0 6px">›</span>
+<span style="color:var(--text-muted)">AI Job Description Generator</span>
+</nav>
+<!-- Table of Contents -->
+<div style="background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:10px;padding:16px 20px;margin-top:16px;font-size:.8125rem">
+<strong style="color:var(--text-primary)">On this page:</strong>
+<span style="margin:0 8px">·</span>
+<a href="#what-is">What Is</a>
+<span style="margin:0 8px">·</span>
+<a href="#dimensions">Capabilities</a>
+<span style="margin:0 8px">·</span>
+<a href="#comparison">Comparison</a>
+<span style="margin:0 8px">·</span>
+<a href="#usecases">Use Cases</a>
+<span style="margin:0 8px">·</span>
+<a href="#chat-demo">Live Demo</a>
+<span style="margin:0 8px">·</span>
+<a href="#methodology">Methodology</a>
+<span style="margin:0 8px">·</span>
+<a href="#faq">FAQ</a>
+<span style="margin:0 8px">·</span>
+<a href="#how-it-works">Deployment</a>
+</div>
+<!-- Hero -->
+<section class="hero"><div class="hero-copy">
+<h1>AI Job Description Generator</h1>
+<p class="subtitle">Generate role-specific, inclusive job descriptions with COCO's AI Job Description Generator. Create better job postings in minutes instead of hours — with bias screening, SEO optimization, and channel-specific versions for LinkedIn, Indeed, and your careers page. Teams using COCO see 64% more applicants, 41% more female candidates, and 34% faster time-to-fill.</p>
+<div class="btn-group">
+<a class="btn-primary" href="https://icoco.ai/#pricing">See Plans &amp; Pricing →</a>
+<a class="btn-outline" href="#how-it-works">See How It Works</a>
+</div>
+<p class="nocode">No coding required · Works with your existing ATS &amp; careers page · 2-minute connection</p>
+</div><div aria-label="Job description builder preview" class="hero-art jd-builder">
+<div class="builder-label">Role brief</div>
+<div class="field-line"><span>Title</span><strong>Senior Product Manager</strong></div>
+<div class="field-line"><span>Channel</span><strong>LinkedIn + Careers Page</strong></div>
+<div class="field-line"><span>Checks</span><strong>Bias · SEO · ATS format</strong></div>
+<div class="draft-card">
+<small>Generated output</small>
+<b>Inclusive JD with 30/60/90-day outcomes, competency-based bullets, and platform-specific posting versions.</b>
+</div>
+</div></section><div class="trust-note"><strong>Workflow note:</strong> Designed as a hiring-content workflow: hiring managers provide role context, COCO drafts channel-ready job descriptions, and recruiting teams approve the final posting.</div>
+<!-- Metrics -->
+<div class="metrics">
+<div class="metric-card">
+<div class="metric-value">4h → 10 min</div>
+<div class="metric-label">JD Creation Time</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">+64%</div>
+<div class="metric-label">More Applicants</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">+41%</div>
+<div class="metric-label">Female Candidates</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">-34%</div>
+<div class="metric-label">Time-to-Fill</div>
+</div>
+</div>
+<!-- Hiring Compliance Disclaimer -->
+<div class="methodology" style="margin-top:8px">
+<h3>Hiring Compliance &amp; Use Disclaimer</h3>
+<p style="font-size:.875rem;color:var(--text-muted);margin-bottom:12px;line-height:1.7">COCO's AI Job Description Generator helps create job description drafts for HR and hiring team review. It does not replace legal review, HR compliance oversight, or professional judgment in hiring decisions. AI-generated job descriptions should be reviewed by qualified HR professionals and legal counsel to ensure compliance with EEOC guidelines, local labor laws, and your organization's diversity and inclusion policies. Inclusive language scores are directional tools, not guarantees of compliance or hiring outcomes. This page is for informational and product-use-case purposes only and does not constitute legal, HR, or compliance advice.</p>
+<p style="font-size:.8125rem;color:var(--text-faint);margin-bottom:0;line-height:1.6"><strong>What to verify before deployment:</strong> Review AI-generated JDs for role accuracy and cultural authenticity. Validate inclusivity scores against your organization's DEI measurement framework. Confirm compliance with local labor laws in each hiring jurisdiction (EEOC, EU Pay Transparency Directive, UK Equality Act, etc.). Calibrate the AI's language against your employer brand voice during the initial training period.</p>
+</div>
+<!-- What Is -->
+<section id="what-is">
+<span class="section-label">The Problem</span>
+<h2>What Is an AI Job Description Generator?</h2>
+<p>Job descriptions are the most-read and least-optimized content in most companies — copied from an outdated template, edited minimally, and posted without a second thought. Yet the JD is the single biggest factor in who applies. LinkedIn research shows <strong>77% of candidates read the JD before deciding to apply</strong>, and Textio's analysis of 75 million JDs found that gendered language alone can reduce the applicant pool by up to 40%. A company hiring for 50 roles spends 200 hours on JD writing while unknowingly embedding bias into every single one.</p>
+<p>Existing solutions don't solve the core problem. HR teams rely on outdated JD libraries saved on a shared drive. Basic template platforms standardize formatting but offer zero language analysis. Pasting requirements into ChatGPT produces generic output with no bias screening, no SEO optimization, and no channel adaptation. None address the three things that determine whether a JD attracts or repels candidates: language inclusivity, search discoverability, and channel-specific optimization.</p>
+<p>COCO's <strong>AI job description generator</strong> is a hiring intelligence system — not a template filler. It connects to your ATS, ingests your company values and culture documentation, and produces JDs that are: <strong>inclusive</strong> (0-100 score across five bias dimensions), <strong>SEO-optimized</strong> (researched against what candidates search on Google for Jobs, LinkedIn, Indeed, Glassdoor), <strong>channel-adapted</strong> (platform-native versions for each audience), <strong>compensation-benchmarked</strong> (real-time market data from Payscale, Glassdoor, Levels.fyi), and <strong>competency-structured</strong> (organized around outcomes, not years of experience).</p>
+<p>Hiring managers go from 4 hours per JD to 10 minutes — while their job postings attract 64% more applicants with significantly more diverse candidate pools.</p>
+</section>
+<!-- Six Dimensions -->
+<section id="dimensions">
+<span class="section-label">Capabilities</span>
+<h2>Generate Job Descriptions with AI — 6 Capabilities That Build Better Job Postings</h2>
+<div class="dim-grid">
+<div class="dim-card">
+<div class="dim-icon">🎯</div>
+<h3>Inclusive Language Engine</h3>
+<p>COCO scans every JD across five bias dimensions: gendered language (flags "rockstar," "ninja," "dominant," "nurturing"), age-coded phrasing ("digital native," "young and energetic," "recent graduate"), ableist language ("walk the floor," "stand for hours" when not essential), cultural bias markers ("native English speaker," "clean-cut," "cultural fit"), and unnecessary credential inflation ("7+ years" for skills learnable in 2). Every JD receives a 0-100 inclusivity score with specific rewrite suggestions — replacing exclusionary terms with impact-based, skills-forward language that attracts diverse candidates without sacrificing precision. In production, teams see 41% more female applicants and 38% more underrepresented candidates at the top of the funnel.</p>
+</div>
+<div class="dim-card">
+<div class="dim-icon">🔍</div>
+<h3>SEO Optimization for Job Boards</h3>
+<p>The AI researches what candidates actually type into search bars — not what HR teams assume they search for. It analyzes search volume data from Google for Jobs, LinkedIn, Indeed, and Glassdoor to identify the highest-intent keywords for each role. Then it optimizes JD titles, headings, body text, and structured data markup so your postings rank where candidates are looking — embedding keywords naturally within compelling, candidate-first copy (never keyword-stuffing). JDs are auto-formatted for Google for Jobs structured data compliance (jobLocation, baseSalary, employmentType, datePosted) for maximum visibility. SEO-optimized JDs see 64% more search-driven applicants compared to unoptimized postings.</p>
+</div>
+<div class="dim-card">
+<div class="dim-icon">📱</div>
+<h3>Channel-Specific Versions</h3>
+<p>One JD generates multiple versions optimized for where candidates actually discover roles. LinkedIn (professional tone, 150-200 words, shareable format), Indeed (keyword-forward, full detail, clear compensation up front), your company careers page (culture-rich, team and mission context, application process transparency), Instagram/TikTok (visual-first summary scripts for social recruiting content), and internal mobility postings (development-focused framing emphasizing growth opportunity). Each version maintains consistent core messaging while feeling native to its platform — because candidates on LinkedIn read differently than candidates on Indeed, and your internal employees need a fundamentally different framing than external applicants. No more copying and pasting the same JD everywhere.</p>
+</div>
+<div class="dim-card">
+<div class="dim-icon">💰</div>
+<h3>Compensation Benchmarking</h3>
+<p>COCO integrates with Payscale, Glassdoor, and Levels.fyi data to suggest competitive salary ranges by role, location, experience level, and company stage. It provides 25th, 50th, 75th, and 90th percentile comp data — and flags when your proposed range is below market (the #1 reason qualified candidates don't apply). Beyond base salary, the AI frames total compensation including equity, bonuses, benefits, and perks in candidate-resonant language. For global hiring, it provides geographic adjustments with cost-of-living factors and local market norms. Critically, it formats comp data in compliance with the EU Pay Transparency Directive and emerging US state-level pay transparency laws — so your JDs are both competitive and compliant. JDs with transparent, market-competitive compensation ranges see 28% higher application completion rates.</p>
+</div>
+<div class="dim-card">
+<div class="dim-icon">🏗️</div>
+<h3>Competency-Based Structuring</h3>
+<p>Traditional JDs are structured around years of experience and laundry lists of responsibilities — which research from Harvard Business Review shows disproportionately screens out women (who apply only when they meet 100% of listed requirements vs. men who apply at 60%) and career changers with transferable but non-traditional backgrounds. COCO restructures JDs around outcomes and competencies: what the person will achieve in their first 30, 60, and 90 days, which skills are genuinely required vs. learnable on the job, and what success looks like at 6 and 12 months. This competency-based framing reduces the "qualified but didn't apply" dropout — where high-potential candidates self-select out because the JD lists 5 years of experience for a skill they learned in 1. Teams shifting to competency-based JDs see a 22% larger qualified applicant pool and significantly more diverse shortlists.</p>
+</div>
+<div class="dim-card">
+<div class="dim-icon">⚖️</div>
+<h3>Compliance Alignment</h3>
+<p>Every JD is checked against EEOC guidelines, the EU Pay Transparency Directive, and local labor laws in the hiring jurisdiction. COCO flags potentially discriminatory requirements — such as "must be able to lift 50 lbs" when it is not an essential function of the role, "clean driving record" when the role does not involve driving, or degree requirements that create disparate impact without being bona fide occupational qualifications. The AI maintains a complete audit trail of every language change and compliance check for OFCCP compliance, internal audits, and legal review. For companies hiring across multiple countries (US, UK, Germany, Singapore, etc.), COCO automatically applies the correct local labor law framework to each country-specific JD — different jurisdictions have different rules about what you can and cannot ask, and the AI ensures you do not accidentally violate them.</p>
+</div>
+</div>
+</section>
+<!-- Comparison Table -->
+<section id="comparison">
+<span class="section-label">Comparison</span>
+<h2>Manual JD Writing vs JD Template Libraries vs AI Job Description Generator</h2>
+<div style="overflow-x:auto">
+<table class="compare-table">
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Manual JD Writing</th>
+<th>JD Template Libraries</th>
+<th class="highlight-col">AI JD Generator (COCO)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inclusivity Screening</td>
+<td>None — unconscious bias goes unchecked in every draft</td>
+<td>None — templates contain the same biased language they were written with</td>
+<td class="highlight-col">5-dimension bias scan (gendered, age, ableist, cultural, credential inflation) with 0-100 score</td>
+</tr>
+<tr>
+<td>SEO Optimization</td>
+<td>None — JDs invisible to candidates searching job boards</td>
+<td>None — template text is static, not keyword-optimized</td>
+<td class="highlight-col">Researches candidate search behavior; optimizes for Google for Jobs, LinkedIn, Indeed, Glassdoor</td>
+</tr>
+<tr>
+<td>Channel Adaptation</td>
+<td>One version copied to every channel — wrong for each audience</td>
+<td>Same JD pasted into different template layouts — content unchanged</td>
+<td class="highlight-col">Platform-native versions: LinkedIn, Indeed, careers page, social, internal mobility</td>
+</tr>
+<tr>
+<td>Compensation Intelligence</td>
+<td>Gut feel or outdated HR spreadsheet — often below market</td>
+<td>Static salary band set once per year, if at all</td>
+<td class="highlight-col">Real-time market data (Payscale, Glassdoor, Levels.fyi) with compliance formatting</td>
+</tr>
+<tr>
+<td>Competency Structuring</td>
+<td>Years-of-experience laundry list — screens out women and career changers</td>
+<td>Generic responsibilities from template — no role-specific outcomes</td>
+<td class="highlight-col">Outcome-based with 30/60/90 day success definitions and learnable-vs-required skill splits</td>
+</tr>
+<tr>
+<td>Compliance Checking</td>
+<td>None — legal review only after candidate complaints</td>
+<td>None — templates may contain discriminatory language by default</td>
+<td class="highlight-col">EEOC, EU Pay Transparency, local labor law compliance for every jurisdiction</td>
+</tr>
+<tr>
+<td>Creation Speed</td>
+<td>4 hours per JD — 200 hours for 50 roles</td>
+<td>30-60 minutes — still requires manual customization for each role</td>
+<td class="highlight-col">10 minutes per JD — including all channel versions, comp benchmarking, and compliance checks</td>
+</tr>
+<tr>
+<td>ATS Compatibility</td>
+<td>Inconsistent formatting — JDs fail to parse correctly in ATS</td>
+<td>Basic formatting — no structured data for ATS parsing</td>
+<td class="highlight-col">Auto-formatted for Greenhouse, Lever, Workday, Ashby with structured job data</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Use Cases -->
+<section id="usecases">
+<span class="section-label">Hiring playbook</span>
+<h2>10 Job Description Scenarios COCO Handles</h2><p class="section-intro">The examples below are laid out as hiring situations rather than a wide comparison table, so teams can quickly match COCO to their own recruiting workflow.</p>
+<div class="scenario-board"><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Tech Startup Scaling</h3><span>Scenario 1</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>Hiring 20 engineers this quarter — 80 hours of JD writing, inconsistent quality across roles, no time for bias review</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">20 bias-free, SEO-optimized JDs in 2 hours — consistent quality, inclusive language, channel versions for LinkedIn + Indeed + careers page</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Enterprise Volume Hiring</h3><span>Scenario 2</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>500 retail positions across 50 locations — one generic JD posted everywhere, local candidates don't find it</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">Location-specific JDs with local compensation data, regional search optimization, and ATS-compatible formatting for every location</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Diversity &amp; Inclusion Initiative</h3><span>Scenario 3</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>Struggling to attract diverse candidates — female applicant rate stuck at 18%, underrepresented candidates below 10%</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">Inclusive language engine boosts female applicants 41% — from 18% to 25%+ — and increases underrepresented candidate applications 38%</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Global Multi-Country Hiring</h3><span>Scenario 4</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>Hiring in US, UK, Germany, Singapore — one English JD used everywhere, ignoring local labor law and compensation norms</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">Country-specific JDs with local labor law compliance (EEOC, UK Equality Act, German AGG, Singapore TAFEP), local comp data, and language localization</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Executive Search</h3><span>Scenario 5</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>C-suite role requires precise language — generic executive JD repels top-tier candidates who expect sophistication</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">Competency-based structure with defined 30/60/90 day outcomes, strategic impact framing, and comp benchmarking at the executive level (including equity and board exposure)</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Campus &amp; Early Career</h3><span>Scenario 6</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>Entry-level JDs asking for 3-5 years experience — automatically eliminating 80%+ of the target candidate pool before they apply</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">AI strips unreasonable requirements, focuses on potential and learnability, frames growth trajectory — 22% larger qualified applicant pool</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Skilled Trades</h3><span>Scenario 7</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>Electricians, plumbers, HVAC techs — JDs written in corporate HR language that doesn't speak to trade professionals</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">Skills-forward JDs optimized for trade-specific job boards (Indeed Trades, TradeHire), certification-required language, apprenticeship pathway framing</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Healthcare Staffing</h3><span>Scenario 8</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>Nurses, medical assistants — generic JDs copied from competitor postings, missing critical license and certification clarity</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">Compliance-checked JDs with precise license/certification requirements (RN, LPN, CNA, BLS, ACLS), shift and schedule transparency, patient ratio context</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Retail Seasonal Hiring</h3><span>Scenario 9</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>200 seasonal positions — rushed JDs posted with inconsistent details, no time for optimization, poor search visibility</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">Batch-generated seasonal JDs with comp benchmarking for temporary roles, geographic location tagging, and urgency-optimized CTAs — all 200 in under 30 minutes</p></div></div></article><article class="jd-scenario-card"><div class="jd-scenario-head"><h3>Non-Profit &amp; Mission-Driven</h3><span>Scenario 10</span></div><div class="jd-scenario-body"><div class="jd-before"><small>Before COCO</small><p>Competing with for-profit salaries — salary-focused JDs fail to attract mission-aligned talent who prioritize impact over comp</p></div><div class="jd-after"><small>With COCO AI JD Generator</small><p class="improvement">Mission-emphasis JDs that lead with social impact and organizational purpose, transparent comp within non-profit bands, and values-aligned language that resonates with purpose-driven candidates</p></div></div></article></div>
+</section>
+<!-- Chat Demo -->
+<section id="chat-demo">
+<span class="section-label">In Practice</span>
+<h2>See It in Action: Creating an Inclusive Senior Software Engineer JD</h2>
+<p style="font-size:.8125rem;color:var(--text-quietest);margin-bottom:16px">Representative conversation showing COCO's AI job description generator analyzing and rewriting a Senior Software Engineer JD for inclusivity, SEO, and channel adaptation.</p>
+<div class="chat-demo">
+<div class="chat-msg user">
+<div style="text-align:right">
+<div class="chat-label">👤 Maria · HR Director</div>
+<div class="bubble">COCO, I need a Senior Software Engineer JD for our platform team. Here's our current draft — we've been using this template for 2 years but our applicant quality is dropping and we're not getting diverse candidates.</div>
+</div>
+</div>
+<div class="chat-msg agent">
+<div>
+<div class="chat-label">🤖 COCO · JD Generator</div>
+<div class="bubble">Got it, Maria. Let me analyze your current draft across inclusivity, SEO, and structure. Running the scan now — I'll flag every issue and give you a rewritten version.</div>
+</div>
+</div>
+<div class="chat-meta">COCO scans Maria's draft across 5 bias dimensions, SEO keyword research for "Senior Software Engineer" on Google for Jobs/LinkedIn/Indeed, and competency structure analysis. Scan complete in 4 seconds.</div>
+<div class="chat-msg agent">
+<div>
+<div class="chat-label">🤖 COCO · JD Generator</div>
+<div class="bubble">Analysis complete. I found <strong>6 biased terms</strong> in your current draft:<br/><br/>
+          🔴 "Rockstar developer" — gendered (male-coded), alienates 40%+ of candidates. <strong>Replace with:</strong> "Engineer who delivers high-impact, well-architected solutions"<br/>
+          🔴 "Ninja" — gendered and cultural appropriation. <strong>Replace with:</strong> "Expert at diagnosing complex distributed systems issues"<br/>
+          🔴 "Young and energetic team" — age discrimination (EEOC risk). <strong>Replace with:</strong> "High-autonomy team that moves fast and supports deep work"<br/>
+          🔴 "Digital native" — age-coded, excludes experienced career changers. <strong>Replace with:</strong> "Comfortable with modern cloud-native tooling"<br/>
+          🔴 "Work hard, play hard" — associated with burnout culture, repels candidates with families. <strong>Replace with:</strong> "We set ambitious goals and protect sustainable pace"<br/>
+          🔴 "Cultural fit" — signals homogeneity. <strong>Replace with:</strong> "Someone who adds to our culture — we hire for contribution, not conformity"<br/><br/>
+<strong>Inclusivity Score: 42/100 → 89/100 after rewrite.</strong><br/><br/>
+          SEO issues found: No keywords candidates actually search for. Adding high-volume terms: "distributed systems," "Go," "Kubernetes," "remote-friendly," "platform engineering." Optimized for Google for Jobs structured data.<br/><br/>
+          I've generated:<br/>
+          • LinkedIn version (180 words, professional tone)<br/>
+          • Indeed version (keyword-rich, comp-first)<br/>
+          • Careers page version (culture-rich, 600 words)<br/>
+          • Internal mobility version (growth-focused)<br/><br/>
           Compensation benchmark: Senior SWE in SF Bay Area — market median $198K base. Your range of $170K-$210K is competitive at the 40th-60th percentile. Consider $185K-$225K to target top-quartile candidates.</div>
-        </div>
-      </div>
-      <div class="chat-msg user">
-        <div style="text-align:right">
-          <div class="chat-label">👤 Maria · HR Director</div>
-          <div class="bubble">This is incredibly detailed. The bias flags are eye-opening — we've been using "rockstar" and "ninja" for years without thinking about it. Can you push the rewritten version to our ATS and schedule it for posting on all channels?</div>
-        </div>
-      </div>
-      <div class="chat-msg agent">
-        <div>
-          <div class="chat-label">🤖 COCO · JD Generator</div>
-          <div class="bubble">Done. The rewritten JD (Inclusivity Score: 89/100) is now live in Greenhouse as draft #SEN-2026-047. Channel versions are queued: LinkedIn at 9:00 AM, Indeed at 9:15 AM, careers page updated now. I've also generated the Google for Jobs structured data markup — your listing will appear in the jobs carousel within 24 hours. Total time from your first message: <strong>9 minutes 47 seconds</strong>. Previously, this would have taken you 4 hours — and the bias would have gone undetected.</div>
-        </div>
-      </div>
-      <div class="chat-timestamp">JD submitted 14:03 · Analysis complete 14:03 · Rewrite + multi-channel published 14:13 · Total: 10 minutes</div>
-    </div>
-  </section>
-
-  <!-- Methodology -->
-  <section id="methodology">
-    <span class="section-label">Methodology</span>
-    <h2>How These Numbers Are Calculated</h2>
-
-    <div class="methodology">
-      <h3>Data Sources</h3>
-      <ul>
-        <li><strong>COCO Production Data (2026)</strong> — Aggregated and anonymized from 50+ hiring teams running COCO's AI job description generator in production environments. Sample: 12,000+ job descriptions across technology, healthcare, retail, financial services, manufacturing, and non-profit sectors over a 12-month period. Organizations range from startups (10-200 employees) to mid-market (200-2,000) to enterprise (2,000-50,000+). Metrics tracked: application volume pre/post COCO, candidate demographic data (self-reported gender and ethnicity where available), time-to-fill, application-to-interview conversion rate, and offer acceptance rate.</li>
-        <li><strong>Textio Inclusive Language Research (2024-2025)</strong> — Textio's analysis of 75 million job descriptions across 40+ industries, measuring the impact of gendered and exclusionary language on application rates. Key finding: job descriptions with strongly masculine-coded language receive 40% fewer female applicants. Textio identifies "rockstar," "ninja," "dominant," "competitive," and "aggressive" as the most common male-coded terms in JDs, while "collaborative," "supportive," "interpersonal," and "understanding" appear disproportionately in female-coded JDs — both patterns reduce applicant pool diversity.</li>
-        <li><strong>LinkedIn Talent Solutions Data (2025)</strong> — LinkedIn's Global Talent Trends report: 77% of candidates read the job description before deciding to apply. Job postings with inclusive language receive 25% more applications. Compensation transparency (including salary range in the JD) increases application completion rates by 28%. LinkedIn also reports that the average time a hiring manager spends writing a single job description is approximately 4 hours when including stakeholder reviews, editing cycles, and approvals.</li>
-        <li><strong>Harvard Business Review — "Why Women Don't Apply for Jobs Unless They're 100% Qualified" (Tara Sophia Mohr, 2014; updated 2024)</strong> — Foundational research showing that men apply when they meet 60% of listed qualifications, while women apply only when they meet 100%. Updated 2024 analysis with Glassdoor data confirms the gap persists: 65% of men vs. 42% of women apply to roles where they meet most but not all listed requirements. Competency-based JD structuring that separates "required" from "learnable" skills narrows this gap by 22%.</li>
-        <li><strong>Indeed & Glassdoor Hiring Data (2025)</strong> — Job postings with salary transparency receive 28% more applications. The median time-to-fill across all US roles is 47 days (SHRM 2025 Benchmarking Report). JDs optimized for Google for Jobs structured data see 64% more search-driven views compared to unstructured postings. Candidate search behavior analysis: the top 5 search terms vary significantly by platform — Google for Jobs (functional title + location), LinkedIn (role + company stage), Indeed (role + salary range), Glassdoor (company name + role + reviews).</li>
-      </ul>
-
-      <h3>How Key Metrics Are Measured</h3>
-      <ul>
-        <li><strong>JD Creation Time (4h → 10 min)</strong> — Pre-COCO baseline based on: average hiring manager time to draft a JD (2 hours), stakeholder review and editing cycles (1.5 hours), approval workflow (0.5 hours). Total: approximately 4 hours per JD. Post-COCO: AI generates draft in ~2 minutes based on role inputs and company culture model; hiring manager review and minor adjustments (~5 minutes); AI auto-generates channel-specific versions (~3 minutes). Total: approximately 10 minutes. This is a 96% reduction in creation time — measured across 12,000+ JDs generated by COCO in production.</li>
-        <li><strong>Applicant Increase (+64%)</strong> — Comparison of application volume for the same or similar roles posted before and after COCO adoption, holding role type, location, seniority, and company constant. Measured over the first 90 days post-COCO deployment. The +64% figure represents the median uplift across all roles and industries; individual results range from +35% (niche executive roles with small candidate pools) to +110% (high-volume roles in competitive markets). The increase is driven by three factors: (1) inclusive language widens the top of funnel, (2) SEO optimization increases search visibility, and (3) channel-specific versions reach candidates on their preferred platforms.</li>
-        <li><strong>Female Candidate Increase (+41%)</strong> — Percentage point increase in self-identified female applicants as a share of total applicants, measured across the same role categories pre- and post-COCO. Pre-COCO baseline across COCO customer data: 18-22% female applicants for technical and leadership roles. Post-COCO: 25-31% female applicants. The +41% represents the relative increase (e.g., from 20% to 28.2% = +41%). This metric is primarily driven by the inclusive language engine removing male-coded terminology, plus competency-based structuring that reduces the "100% qualified" barrier that disproportionately affects women.</li>
-      </ul>
-
-      <h3>Limitations & Caveats</h3>
-      <ul>
-        <li>Results vary by industry, role type, company brand strength, and local labor market conditions. Organizations with strong existing employer brands may see smaller relative gains (because they already attract more applicants). Organizations in talent-scarce markets may see larger gains in applicant volume but smaller gains in time-to-fill due to structural supply constraints.</li>
-        <li>The inclusive language engine detects known patterns of biased language based on academic research (Gaucher, Friesen & Kay, 2011; Mohr, 2014) and industry data (Textio, LinkedIn). It does not guarantee elimination of all bias — language bias is culturally and contextually specific, and new patterns emerge as workplace language evolves. We recommend regular review of inclusivity scores and flagged terms as part of ongoing DEI program management.</li>
-        <li>Compensation benchmarking data from Payscale, Glassdoor, and Levels.fyi reflects self-reported and employer-reported data, which may have sampling biases (e.g., tech industry overrepresentation on Levels.fyi). We recommend cross-referencing with internal comp data and third-party compensation surveys specific to your industry and region for executive and highly specialized roles.</li>
-      </ul>
-
-      <div class="disclaimer">
+</div>
+</div>
+<div class="chat-msg user">
+<div style="text-align:right">
+<div class="chat-label">👤 Maria · HR Director</div>
+<div class="bubble">This is incredibly detailed. The bias flags are eye-opening — we've been using "rockstar" and "ninja" for years without thinking about it. Can you push the rewritten version to our ATS and schedule it for posting on all channels?</div>
+</div>
+</div>
+<div class="chat-msg agent">
+<div>
+<div class="chat-label">🤖 COCO · JD Generator</div>
+<div class="bubble">Done. The rewritten JD (Inclusivity Score: 89/100) is now live in Greenhouse as draft #SEN-2026-047. Channel versions are queued: LinkedIn at 9:00 AM, Indeed at 9:15 AM, careers page updated now. I've also generated the Google for Jobs structured data markup — your listing will appear in the jobs carousel within 24 hours. Total time from your first message: <strong>9 minutes 47 seconds</strong>. Previously, this would have taken you 4 hours — and the bias would have gone undetected.</div>
+</div>
+</div>
+<div class="chat-timestamp">JD submitted 14:03 · Analysis complete 14:03 · Rewrite + multi-channel published 14:13 · Total: 10 minutes</div>
+</div>
+</section>
+<!-- Methodology -->
+<section id="methodology">
+<span class="section-label">Methodology</span>
+<h2>How These Numbers Are Calculated</h2>
+<div class="methodology">
+<h3>Data Sources</h3>
+<ul>
+<li><strong>COCO Production Data (2026)</strong> — Aggregated and anonymized from 50+ hiring teams running COCO's AI job description generator in production environments. Sample: 12,000+ job descriptions across technology, healthcare, retail, financial services, manufacturing, and non-profit sectors over a 12-month period. Organizations range from startups (10-200 employees) to mid-market (200-2,000) to enterprise (2,000-50,000+). Metrics tracked: application volume pre/post COCO, candidate demographic data (self-reported gender and ethnicity where available), time-to-fill, application-to-interview conversion rate, and offer acceptance rate.</li>
+<li><strong>Textio Inclusive Language Research (2024-2025)</strong> — Textio's analysis of 75 million job descriptions across 40+ industries, measuring the impact of gendered and exclusionary language on application rates. Key finding: job descriptions with strongly masculine-coded language receive 40% fewer female applicants. Textio identifies "rockstar," "ninja," "dominant," "competitive," and "aggressive" as the most common male-coded terms in JDs, while "collaborative," "supportive," "interpersonal," and "understanding" appear disproportionately in female-coded JDs — both patterns reduce applicant pool diversity.</li>
+<li><strong>LinkedIn Talent Solutions Data (2025)</strong> — LinkedIn's Global Talent Trends report: 77% of candidates read the job description before deciding to apply. Job postings with inclusive language receive 25% more applications. Compensation transparency (including salary range in the JD) increases application completion rates by 28%. LinkedIn also reports that the average time a hiring manager spends writing a single job description is approximately 4 hours when including stakeholder reviews, editing cycles, and approvals.</li>
+<li><strong>Harvard Business Review — "Why Women Don't Apply for Jobs Unless They're 100% Qualified" (Tara Sophia Mohr, 2014; updated 2024)</strong> — Foundational research showing that men apply when they meet 60% of listed qualifications, while women apply only when they meet 100%. Updated 2024 analysis with Glassdoor data confirms the gap persists: 65% of men vs. 42% of women apply to roles where they meet most but not all listed requirements. Competency-based JD structuring that separates "required" from "learnable" skills narrows this gap by 22%.</li>
+<li><strong>Indeed &amp; Glassdoor Hiring Data (2025)</strong> — Job postings with salary transparency receive 28% more applications. The median time-to-fill across all US roles is 47 days (SHRM 2025 Benchmarking Report). JDs optimized for Google for Jobs structured data see 64% more search-driven views compared to unstructured postings. Candidate search behavior analysis: the top 5 search terms vary significantly by platform — Google for Jobs (functional title + location), LinkedIn (role + company stage), Indeed (role + salary range), Glassdoor (company name + role + reviews).</li>
+</ul>
+<h3>How Key Metrics Are Measured</h3>
+<ul>
+<li><strong>JD Creation Time (4h → 10 min)</strong> — Pre-COCO baseline based on: average hiring manager time to draft a JD (2 hours), stakeholder review and editing cycles (1.5 hours), approval workflow (0.5 hours). Total: approximately 4 hours per JD. Post-COCO: AI generates draft in ~2 minutes based on role inputs and company culture model; hiring manager review and minor adjustments (~5 minutes); AI auto-generates channel-specific versions (~3 minutes). Total: approximately 10 minutes. This is a 96% reduction in creation time — measured across 12,000+ JDs generated by COCO in production.</li>
+<li><strong>Applicant Increase (+64%)</strong> — Comparison of application volume for the same or similar roles posted before and after COCO adoption, holding role type, location, seniority, and company constant. Measured over the first 90 days post-COCO deployment. The +64% figure represents the median uplift across all roles and industries; individual results range from +35% (niche executive roles with small candidate pools) to +110% (high-volume roles in competitive markets). The increase is driven by three factors: (1) inclusive language widens the top of funnel, (2) SEO optimization increases search visibility, and (3) channel-specific versions reach candidates on their preferred platforms.</li>
+<li><strong>Female Candidate Increase (+41%)</strong> — Percentage point increase in self-identified female applicants as a share of total applicants, measured across the same role categories pre- and post-COCO. Pre-COCO baseline across COCO customer data: 18-22% female applicants for technical and leadership roles. Post-COCO: 25-31% female applicants. The +41% represents the relative increase (e.g., from 20% to 28.2% = +41%). This metric is primarily driven by the inclusive language engine removing male-coded terminology, plus competency-based structuring that reduces the "100% qualified" barrier that disproportionately affects women.</li>
+</ul>
+<h3>Limitations &amp; Caveats</h3>
+<ul>
+<li>Results vary by industry, role type, company brand strength, and local labor market conditions. Organizations with strong existing employer brands may see smaller relative gains (because they already attract more applicants). Organizations in talent-scarce markets may see larger gains in applicant volume but smaller gains in time-to-fill due to structural supply constraints.</li>
+<li>The inclusive language engine detects known patterns of biased language based on academic research (Gaucher, Friesen &amp; Kay, 2011; Mohr, 2014) and industry data (Textio, LinkedIn). It does not guarantee elimination of all bias — language bias is culturally and contextually specific, and new patterns emerge as workplace language evolves. We recommend regular review of inclusivity scores and flagged terms as part of ongoing DEI program management.</li>
+<li>Compensation benchmarking data from Payscale, Glassdoor, and Levels.fyi reflects self-reported and employer-reported data, which may have sampling biases (e.g., tech industry overrepresentation on Levels.fyi). We recommend cross-referencing with internal comp data and third-party compensation surveys specific to your industry and region for executive and highly specialized roles.</li>
+</ul>
+<div class="disclaimer">
         Data as of June 2026. Methodology details and raw data available at docs.coco.xyz. COCO recommends independent evaluation with your team's specific roles, industry, and hiring goals before projecting ROI. Results are based on production deployments across 50+ hiring teams; individual results may vary. Inclusive language metrics are directional and should be used alongside your organization's full DEI measurement framework.
       </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <h2>Frequently Asked Questions About AI Job Description Generators</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>What is an AI job description generator?</summary>
-        <div class="faq-answer">An AI job description generator uses artificial intelligence to create role-specific job descriptions from role requirements, company culture inputs, and hiring goals. Unlike basic template tools, COCO produces original, inclusive, and SEO-friendly job descriptions tailored to each role, industry, and seniority level — with channel-specific versions for LinkedIn, Indeed, careers pages, and internal mobility postings. It functions as a full job description builder that automates JD creation while maintaining quality and compliance across every posting.</div>
-      </details>
-      <details class="faq-item">
-        <summary>How does COCO generate job descriptions with AI?</summary>
-        <div class="faq-answer">COCO ingests your role requirements, company values, culture documentation, and compensation philosophy to build a hiring intelligence model. When you request a JD, the AI: (1) generates a competency-based description structured around 30/60/90-day outcomes; (2) scans for bias across five dimensions and produces an inclusivity score with rewrite suggestions; (3) optimizes for search visibility on Google for Jobs, LinkedIn, and Indeed; (4) benchmarks compensation against real-time market data; (5) produces channel-specific versions for each platform. The process takes approximately 10 minutes instead of 4 hours.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Can COCO generate job descriptions for different roles?</summary>
-        <div class="faq-answer">Yes — COCO is role-agnostic and industry-agnostic, generating effective job descriptions across all seniority levels and 40+ industries including technology, healthcare, retail, financial services, manufacturing, skilled trades, and non-profits. The AI adapts language, structure, and emphasis based on role type: skilled trades JDs lead with certifications and tools proficiency, non-profit JDs lead with mission impact, and startup software engineer JDs lead with autonomy and tech stack. This is fundamentally different from template-based tools that start with a generic JD and require manual customization.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Can COCO generate job description bullet points?</summary>
-        <div class="faq-answer">Yes. COCO automatically creates job description bullet points for responsibilities, qualifications, and success metrics — structured around competencies and outcomes rather than laundry lists of requirements. The AI generates clear, action-oriented bullet points optimized for both candidate readability and job board search algorithms. Each bullet point is written to attract qualified candidates while avoiding biased or exclusionary language. Bullet points are adapted for each channel-specific version — LinkedIn uses a more concise format while the careers page provides richer detail.</div>
-      </details>
-      <details class="faq-item">
-        <summary>What is the difference between a job description generator and a job posting generator?</summary>
-        <div class="faq-answer">A job description generator creates the full internal document defining a role — responsibilities, qualifications, competencies, success metrics, compensation, and reporting relationships — for ATS integration and compliance documentation. A job posting generator creates the shorter, externally-facing version optimized for job boards and social media. COCO handles both: it generates comprehensive internal JDs while simultaneously producing channel-specific job postings for LinkedIn, Indeed, and careers pages — each adapted to its audience while maintaining consistent core messaging.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Can AI help write more inclusive job descriptions?</summary>
-        <div class="faq-answer">Yes — COCO scans every job description across five bias dimensions: gendered language, age-coded phrasing, ableist language, cultural bias markers, and unnecessary credential inflation. It provides a 0-100 inclusivity score with specific rewrite suggestions. In production data across 50+ hiring teams, JDs rewritten through COCO attracted 41% more female applicants and 38% more candidates from underrepresented groups. The AI maintains an audit log of every change for EEOC and OFCCP compliance documentation — turning inclusive hiring from a manual aspiration into a measurable, auditable process.</div>
-      </details>
-    </div>
-  </section>
-
-  <!-- How to Deploy -->
-  <section id="how-it-works">
-    <span class="section-label">Deployment</span>
-    <h2>How COCO's AI Job Description Generator Works</h2>
-
-    <div class="steps">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <h4>Connect COCO to Your ATS and Careers Page</h4>
-        <p>Link COCO to your ATS (Greenhouse, Lever, Workday, Ashby) and careers page CMS. Standard API integrations — 2 minutes, no custom development required. The AI begins ingesting your existing JD library and historical hiring data immediately to understand your role structure, common job titles, and hiring patterns.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <h4>Input Company Values, Culture, and Compensation Philosophy</h4>
-        <p>Upload your company values statement, culture documentation, compensation philosophy, existing career pages, and employer brand guidelines. Provide hiring manager input on what makes your company genuinely different to work for. The AI builds a culture model specific to your organization — learning your voice, terminology, and employer value proposition.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <h4>Generate & Calibrate First Batch of JDs (~1 Week)</h4>
-        <p>The AI analyzes your existing JD library, identifies bias patterns and SEO gaps, and generates your first batch of rewritten JDs — with inclusivity scores, channel-specific versions, and compensation benchmarking. Your hiring team reviews and calibrates output for voice, cultural authenticity, and role accuracy. The AI learns from every edit and transitions to autonomous generation when accuracy meets your threshold.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <h4>Go Live With Continuous JD Generation</h4>
-        <p>COCO begins generating and publishing JDs autonomously for every open role. Hiring managers request a JD via the COCO dashboard (or directly in Slack/Teams), the AI produces a bias-free, SEO-optimized, channel-specific JD with comp benchmarking and compliance checks, and your team reviews and approves in one click. Monitor performance via the analytics dashboard — application volume, candidate quality, diversity metrics, time-to-fill, and offer acceptance rate tracked per JD. The AI continuously improves based on which JDs drive the best hiring outcomes.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <h2>Ready to Generate Better Job Descriptions with AI?</h2>
-    <p>Deploy COCO's AI job description generator and build better job postings today. Works with your existing ATS and careers page. No coding required.</p>
-    <a href="https://icoco.ai/#pricing" class="btn-primary" style="font-size:1.0625rem;padding:14px 36px">See Plans & Pricing →</a>
-    <div class="author-line">
+</div>
+</section>
+<!-- FAQ -->
+<section id="faq">
+<h2>Frequently Asked Questions About AI Job Description Generators</h2>
+<div class="faq-list">
+<details class="faq-item">
+<summary>What is an AI job description generator?</summary>
+<div class="faq-answer">An AI job description generator uses artificial intelligence to create role-specific job descriptions from role requirements, company culture inputs, and hiring goals. Unlike basic template tools, COCO produces original, inclusive, and SEO-friendly job descriptions tailored to each role, industry, and seniority level — with channel-specific versions for LinkedIn, Indeed, careers pages, and internal mobility postings. It functions as a full job description builder that automates JD creation while maintaining quality and compliance across every posting.</div>
+</details>
+<details class="faq-item">
+<summary>How does COCO generate job descriptions with AI?</summary>
+<div class="faq-answer">COCO ingests your role requirements, company values, culture documentation, and compensation philosophy to build a hiring intelligence model. When you request a JD, the AI: (1) generates a competency-based description structured around 30/60/90-day outcomes; (2) scans for bias across five dimensions and produces an inclusivity score with rewrite suggestions; (3) optimizes for search visibility on Google for Jobs, LinkedIn, and Indeed; (4) benchmarks compensation against real-time market data; (5) produces channel-specific versions for each platform. The process takes approximately 10 minutes instead of 4 hours.</div>
+</details>
+<details class="faq-item">
+<summary>Can COCO generate job descriptions for different roles?</summary>
+<div class="faq-answer">Yes — COCO is role-agnostic and industry-agnostic, generating effective job descriptions across all seniority levels and 40+ industries including technology, healthcare, retail, financial services, manufacturing, skilled trades, and non-profits. The AI adapts language, structure, and emphasis based on role type: skilled trades JDs lead with certifications and tools proficiency, non-profit JDs lead with mission impact, and startup software engineer JDs lead with autonomy and tech stack. This is fundamentally different from template-based tools that start with a generic JD and require manual customization.</div>
+</details>
+<details class="faq-item">
+<summary>Can COCO generate job description bullet points?</summary>
+<div class="faq-answer">Yes. COCO automatically creates job description bullet points for responsibilities, qualifications, and success metrics — structured around competencies and outcomes rather than laundry lists of requirements. The AI generates clear, action-oriented bullet points optimized for both candidate readability and job board search algorithms. Each bullet point is written to attract qualified candidates while avoiding biased or exclusionary language. Bullet points are adapted for each channel-specific version — LinkedIn uses a more concise format while the careers page provides richer detail.</div>
+</details>
+<details class="faq-item">
+<summary>What is the difference between a job description generator and a job posting generator?</summary>
+<div class="faq-answer">A job description generator creates the full internal document defining a role — responsibilities, qualifications, competencies, success metrics, compensation, and reporting relationships — for ATS integration and compliance documentation. A job posting generator creates the shorter, externally-facing version optimized for job boards and social media. COCO handles both: it generates comprehensive internal JDs while simultaneously producing channel-specific job postings for LinkedIn, Indeed, and careers pages — each adapted to its audience while maintaining consistent core messaging.</div>
+</details>
+<details class="faq-item">
+<summary>Can AI help write more inclusive job descriptions?</summary>
+<div class="faq-answer">Yes — COCO scans every job description across five bias dimensions: gendered language, age-coded phrasing, ableist language, cultural bias markers, and unnecessary credential inflation. It provides a 0-100 inclusivity score with specific rewrite suggestions. In production data across 50+ hiring teams, JDs rewritten through COCO attracted 41% more female applicants and 38% more candidates from underrepresented groups. The AI maintains an audit log of every change for EEOC and OFCCP compliance documentation — turning inclusive hiring from a manual aspiration into a measurable, auditable process.</div>
+</details>
+</div>
+</section>
+<!-- How to Deploy -->
+<section id="how-it-works">
+<span class="section-label">Deployment</span>
+<h2>How COCO's AI Job Description Generator Works</h2>
+<div class="steps">
+<div class="step-card">
+<div class="step-num">1</div>
+<h4>Connect COCO to Your ATS and Careers Page</h4>
+<p>Link COCO to your ATS (Greenhouse, Lever, Workday, Ashby) and careers page CMS. Standard API integrations — 2 minutes, no custom development required. The AI begins ingesting your existing JD library and historical hiring data immediately to understand your role structure, common job titles, and hiring patterns.</p>
+</div>
+<div class="step-card">
+<div class="step-num">2</div>
+<h4>Input Company Values, Culture, and Compensation Philosophy</h4>
+<p>Upload your company values statement, culture documentation, compensation philosophy, existing career pages, and employer brand guidelines. Provide hiring manager input on what makes your company genuinely different to work for. The AI builds a culture model specific to your organization — learning your voice, terminology, and employer value proposition.</p>
+</div>
+<div class="step-card">
+<div class="step-num">3</div>
+<h4>Generate &amp; Calibrate First Batch of JDs (~1 Week)</h4>
+<p>The AI analyzes your existing JD library, identifies bias patterns and SEO gaps, and generates your first batch of rewritten JDs — with inclusivity scores, channel-specific versions, and compensation benchmarking. Your hiring team reviews and calibrates output for voice, cultural authenticity, and role accuracy. The AI learns from every edit and transitions to autonomous generation when accuracy meets your threshold.</p>
+</div>
+<div class="step-card">
+<div class="step-num">4</div>
+<h4>Go Live With Continuous JD Generation</h4>
+<p>COCO begins generating and publishing JDs autonomously for every open role. Hiring managers request a JD via the COCO dashboard (or directly in Slack/Teams), the AI produces a bias-free, SEO-optimized, channel-specific JD with comp benchmarking and compliance checks, and your team reviews and approves in one click. Monitor performance via the analytics dashboard — application volume, candidate quality, diversity metrics, time-to-fill, and offer acceptance rate tracked per JD. The AI continuously improves based on which JDs drive the best hiring outcomes.</p>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="cta-section">
+<h2>Ready to Generate Better Job Descriptions with AI?</h2>
+<p>Deploy COCO's AI job description generator and build better job postings today. Works with your existing ATS and careers page. No coding required.</p>
+<a class="btn-primary" href="https://icoco.ai/#pricing" style="font-size:1.0625rem;padding:14px 36px">See Plans &amp; Pricing →</a>
+<div class="author-line">
       By <strong>COCO Engineering Team</strong> · Edited by Khai Zou · Published June 3, 2026. Data sourced from 50+ hiring teams using COCO in production across technology, healthcare, retail, financial services, and non-profit sectors. COCO maintains open-source tools at <a href="https://github.com/coco-xyz">github.com/coco-xyz</a>.
     </div>
-    <div class="related-section" style="margin-top:48px"><h2>Related Use Cases</h2><div class="related-grid"><a href="https://docs.coco.xyz/use-cases/ai-nda-generator/"><h4>AI NDA Generator: 60-Second NDAs</h4><p>Generate jurisdiction-specific NDAs with automatic clause alignment</p></a><a href="https://docs.coco.xyz/use-cases/ai-follow-up-writer/"><h4>AI Follow-Up Writer: +29% Response Rates</h4><p>Generate personalized candidate follow-up emails from interview context</p></a><a href="https://docs.coco.xyz/use-cases/ai-knowledge-base-builder/"><h4>AI Knowledge Base Builder: 50 Articles/Hour</h4><p>Turn hiring processes and onboarding docs into search-optimized knowledge base articles</p></a><a href="https://docs.coco.xyz/use-cases/ai-document-classifier/"><h4>AI Document Classifier: Auto-Tag & Route</h4><p>Auto-classify incoming resumes by role, seniority, and skills — pair with the JD generator for a complete recruiting pipeline</p></a><a href="https://docs.coco.xyz/use-cases/ai-expense-auditor/"><h4>AI Expense Auditor: 100% Audit Coverage</h4><p>Automate expense report auditing — catch duplicate invoices, split purchases, and policy violations</p></a><a href="https://docs.coco.xyz/use-cases/ai-chat-insights-analyzer/"><h4>AI Chat Insights Analyzer</h4><p>Analyze candidate and employee chat conversations for sentiment, themes, and actionable insights</p></a></div></div>
-  </section>
-
+<div class="related-section" style="margin-top:48px"><h2>Related Use Cases</h2><div class="related-grid"><a href="https://docs.coco.xyz/use-cases/ai-nda-generator/"><h4>AI NDA Generator: 60-Second NDAs</h4><p>Generate jurisdiction-specific NDAs with automatic clause alignment</p></a><a href="https://docs.coco.xyz/use-cases/ai-follow-up-writer/"><h4>AI Follow-Up Writer: +29% Response Rates</h4><p>Generate personalized candidate follow-up emails from interview context</p></a><a href="https://docs.coco.xyz/use-cases/ai-knowledge-base-builder/"><h4>AI Knowledge Base Builder: 50 Articles/Hour</h4><p>Turn hiring processes and onboarding docs into search-optimized knowledge base articles</p></a><a href="https://docs.coco.xyz/use-cases/ai-document-classifier/"><h4>AI Document Classifier: Auto-Tag &amp; Route</h4><p>Auto-classify incoming resumes by role, seniority, and skills — pair with the JD generator for a complete recruiting pipeline</p></a><a href="https://docs.coco.xyz/use-cases/ai-expense-auditor/"><h4>AI Expense Auditor: 100% Audit Coverage</h4><p>Automate expense report auditing — catch duplicate invoices, split purchases, and policy violations</p></a><a href="https://docs.coco.xyz/use-cases/ai-chat-insights-analyzer/"><h4>AI Chat Insights Analyzer</h4><p>Analyze candidate and employee chat conversations for sentiment, themes, and actionable insights</p></a></div></div>
+</section>
 </main>
-
 <footer>
-  <div class="footer-links">
-    <a href="https://docs.coco.xyz">Home</a>
-    <a href="https://docs.coco.xyz/use-cases/">Use Cases</a>
-    <a href="https://docs.coco.xyz/case-studies/">Case Studies</a>
-    <a href="https://github.com/coco-xyz">GitHub</a>
-    <a href="https://twitter.com/CocoAIxyz">Twitter</a>
-  </div>
-  <p>&copy; 2026 COCO. All rights reserved.</p>
+<div class="footer-links">
+<a href="https://docs.coco.xyz">Home</a>
+<a href="https://docs.coco.xyz/use-cases/">Use Cases</a>
+<a href="https://docs.coco.xyz/case-studies/">Case Studies</a>
+<a href="https://github.com/coco-xyz">GitHub</a>
+<a href="https://twitter.com/CocoAIxyz">Twitter</a>
+</div>
+<p>© 2026 COCO. All rights reserved.</p>
 </footer>
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
