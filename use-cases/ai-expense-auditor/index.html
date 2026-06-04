@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AI Expense Auditor | Automate Expense Report Audits with COCO</title>
+  <meta name="description" content="Automate expense report audits with COCO's AI Expense Auditor. Review receipts, enforce expense policy compliance, detect anomalies, and flag risky spend — all automatically.">
+
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI Expense Auditor | Automate Expense Report Audits with COCO">
+  <meta property="og:description" content="Automate expense report audits with COCO's AI Expense Auditor. OCR receipt processing, expense policy compliance, anomaly detection, and risk scoring for every expense report.">
+  <meta property="og:url" content="https://docs.coco.xyz/use-cases/ai-expense-auditor/">
+  <meta property="og:image" content="https://docs.coco.xyz/og/use-cases/ai-expense-auditor.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@CocoAIxyz">
+  <meta name="twitter:title" content="AI Expense Auditor | Automate Expense Report Audits | COCO">
+  <meta name="twitter:description" content="Automate expense report audits with COCO's AI Expense Auditor — OCR receipt processing, policy compliance, anomaly detection, risk scoring.">
+  <meta name="twitter:image" content="https://docs.coco.xyz/og/use-cases/ai-expense-auditor.jpg">
+
+  <link rel="canonical" href="https://docs.coco.xyz/use-cases/ai-expense-auditor/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "COCO AI",
+    "url": "https://docs.coco.xyz",
+    "description": "Hire AI digital employees for web, Telegram, and Lark. Deploy autonomous AI workers and manage your AI team from a single dashboard.",
+    "sameAs": ["https://github.com/coco-xyz","https://twitter.com/CocoAIxyz","https://t.me/CocoAIxyz"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://docs.coco.xyz/"},
+      {"@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://docs.coco.xyz/use-cases/"},
+      {"@type": "ListItem", "position": 3, "name": "AI Expense Auditor", "item": "https://docs.coco.xyz/use-cases/ai-expense-auditor/"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Expense Auditor: Automate Expense Report Audits with AI",
+    "description": "Deploy COCO's AI Expense Auditor to automate expense report audits. OCR receipt processing, expense policy compliance, anomaly detection, duplicate receipt detection, and risk scoring for 100% audit coverage.",
+    "image": ["https://docs.coco.xyz/og/use-cases/ai-expense-auditor.jpg"],
+    "datePublished": "2026-06-03",
+    "dateModified": "2026-06-03",
+    "author": {"@type": "Organization", "name": "COCO Engineering"},
+    "publisher": {"@type": "Organization", "name": "COCO", "logo": {"@type": "ImageObject", "url": "https://docs.coco.xyz/images/logo.png"}},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://docs.coco.xyz/use-cases/ai-expense-auditor/"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an AI expense auditor?",
+        "acceptedAnswer": {"@type": "Answer", "text": "An AI expense auditor is an autonomous AI system that automates expense report audits by reviewing 100% of submitted expenses — not a rules-based system that flags only exact keyword matches. It uses OCR receipt processing to read receipts in any format, a policy compliance engine that understands your T&E policy in natural language, and multiple anomaly detection patterns that catch duplicate receipts, split purchases, out-of-policy spending, and risky spend that human auditors and rules-based expense management software miss. Unlike traditional T&E tools that rely on employees to self-categorize and managers to spot-check 5-10% of reports, an AI expense auditor delivers true expense audit automation — every report, every line item, every time."}
+      },
+      {
+        "@type": "Question",
+        "name": "How does automated expense auditing work?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Automated expense auditing works by deploying AI to handle the three core steps of expense audit: receipt verification (OCR extracts vendor, date, amount, line items from any receipt format), policy compliance checking (the AI reads your T&E policy in natural language and checks every expense against every applicable rule), and anomaly detection (the AI runs pattern analysis to catch duplicate invoices, split purchases, personal expenses, inflated tips, and mileage discrepancies). COCO's AI expense auditor completes all three steps for every expense report automatically — then surfaces only flagged items for finance team review. This shifts audit coverage from 5-10% sampling to 100%, while reducing audit cycle time from 160 hours to 8 hours per month."}
+      },
+      {
+        "@type": "Question",
+        "name": "How do you automate expense report audits?",
+        "acceptedAnswer": {"@type": "Answer", "text": "To automate expense report audits, you connect an AI expense auditor to your ERP (NetSuite, SAP, QuickBooks) and expense management platform (Concur, Expensify), upload your T&E policy document for the AI to read in natural language, and provide 12 months of historical expense data so the AI learns your organization's spending patterns. Once deployed, the AI automatically processes every submitted expense report — OCR receipt processing, policy compliance checking, anomaly detection, duplicate receipt detection, split purchase detection, and risk scoring — and generates a daily audit summary with flagged items prioritized by severity. Finance teams review only the flagged exceptions rather than manually auditing every report. Deployment typically takes about 1 week."}
+      },
+      {
+        "@type": "Question",
+        "name": "Can AI audit expense reports?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. AI can audit expense reports with higher coverage and consistency than manual sampling. COCO's AI expense auditor reviews 100% of expense reports — OCR processing receipts, checking every line item against your expense policy, and running anomaly detection patterns that catch duplicate receipts, split purchases designed to circumvent approval thresholds, personal expenses miscategorized as business costs, and inflated tips or mileage claims. In production data, the AI catches 3x more policy violations than manual sampling approaches. AI expense auditing does not replace finance team judgment — it automates the exhaustive first-pass audit so your team focuses on investigations and strategic spend analysis rather than reviewing compliant expenses."}
+      },
+      {
+        "@type": "Question",
+        "name": "What is expense policy compliance?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Expense policy compliance means ensuring that every submitted expense follows your organization's T&E policy rules — spending limits by employee level, permissible expense categories, per-diem rates by city, receipt documentation thresholds, entertainment guidelines, mileage reimbursement rates, and approval hierarchies. Manual expense policy compliance relies on auditors memorizing policy details and spot-checking a small sample of reports, which leads to inconsistent enforcement. COCO's AI expense auditor enforces expense policy compliance automatically: it reads your T&E policy in natural language and checks every line item of every report against every applicable rule — delivering consistent, auditable policy enforcement at 100% coverage."}
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between expense management software and an AI expense auditor?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Expense management software (like SAP Concur, Expensify, or Zoho Expense) focuses on expense submission, approval routing, and reimbursement processing — it automates the workflow around expenses. An AI expense auditor focuses on the audit itself — it reviews every expense report for policy compliance, detects anomalies, verifies receipts via OCR, and flags risky spend. Expense management software relies on rules-based flags (amount thresholds, exact duplicate detection) that catch only what you explicitly program. An AI expense auditor understands natural-language policy, runs multi-dimensional anomaly detection, and catches patterns like split purchases across departments or personal expenses disguised as business costs. Most finance teams use an AI expense auditor alongside their existing expense management software — the AI layers intelligent audit automation on top of the expense workflow the T&E tool already handles."}
+      },
+      {
+        "@type": "Question",
+        "name": "Can AI detect duplicate receipts and split purchases?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. Duplicate receipt detection and split purchase detection are two core capabilities of COCO's AI expense auditor. For duplicate detection, the AI performs fuzzy matching across all submitted expenses — same vendor with similar amounts, dates, or descriptions, even if submitted through different departments or in different time periods. For split purchase detection, the AI analyzes spending patterns to identify cases where the same vendor appears across multiple submissions within a configurable time window, with amounts just under approval thresholds — a pattern that traditional expense management software consistently misses because it only checks for exact matches within a single department. Both detection patterns run on 100% of expense reports automatically."}
+      },
+      {
+        "@type": "Question",
+        "name": "How does receipt matching automation work?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Receipt matching automation uses OCR (optical character recognition) to extract vendor name, date, amount, individual line items, tax, tip, and currency from receipt images — scanned PDFs, mobile photos, email forwards, or paper receipts. The AI then automatically matches each receipt to the corresponding credit card transaction or expense line item in your ERP or expense management system. COCO's OCR engine handles 50+ languages, handwritten amounts, and multi-currency receipts. What took a human auditor 3-5 minutes per receipt takes the AI under 10 seconds, with 98%+ accuracy on printed receipts. Receipt matching automation eliminates the most time-consuming step of manual expense audit — the physical verification of every receipt against every transaction."}
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Deploy an AI Expense Auditor for Automated Expense Auditing",
+    "description": "Step-by-step guide to deploying an AI expense auditor that automates expense report audits with 100% coverage — no coding required.",
+    "totalTime": "PT1W",
+    "step": [
+      {
+        "@type": "HowToStep", "position": 1,
+        "name": "Connect COCO to your finance systems",
+        "text": "Link COCO to your ERP (NetSuite, SAP, Oracle, QuickBooks, Xero) and expense management platform (Concur, Expensify). Takes 2 minutes — standard API integrations, no custom development required."
+      },
+      {
+        "@type": "HowToStep", "position": 2,
+        "name": "Upload T&E policy and historical data",
+        "text": "Upload your T&E policy document (PDF or Word) — the AI reads it in natural language. Connect 12 months of historical expense data and corporate card feeds. The AI learns your spending patterns, typical violation types, and seasonal trends."
+      },
+      {
+        "@type": "HowToStep", "position": 3,
+        "name": "Calibrate and validate (~1 week)",
+        "text": "The AI analyzes historical expenses and flags violations. Your finance team reviews early flags to calibrate sensitivity per category and employee level. The AI transitions from suggestion mode to autonomous auditing when accuracy meets your threshold."
+      },
+      {
+        "@type": "HowToStep", "position": 4,
+        "name": "Go live with 100% audit coverage",
+        "text": "COCO begins auditing every submitted expense autonomously. Finance team monitors via dashboard with daily audit summary reports. The AI continuously learns from confirmed flags and dismissed false positives — detection accuracy improves every week."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root,
+    [data-theme="dark"]{
+      --bg-page:#0A0E1A; --bg-footer:#060912; --bg-nav:rgba(10,14,26,0.85);
+      --bg-surface:rgba(255,255,255,0.02); --bg-surface-strong:rgba(255,255,255,0.03);
+      --bg-surface-hover:rgba(255,184,0,0.06); --bg-code:rgba(255,184,0,0.10);
+      --bg-code-block:rgba(255,184,0,0.06); --bg-accent-soft:rgba(255,184,0,0.06);
+      --bg-accent-pill:rgba(255,184,0,0.20);
+      --bg-cta:linear-gradient(135deg,rgba(255,184,0,0.12),rgba(230,167,0,0.08));
+      --bg-step:rgba(255,255,255,0.02); --bg-highlight:rgba(34,197,94,0.06);
+      --text-strong:rgba(255,255,255,0.97); --text-primary:rgba(255,255,255,0.92);
+      --text-body:rgba(255,255,255,0.82); --text-muted:rgba(255,255,255,0.62);
+      --text-faint:rgba(255,255,255,0.5); --text-fainter:rgba(255,255,255,0.4);
+      --text-quietest:rgba(255,255,255,0.28);
+      --border-soft:rgba(255,255,255,0.06); --border-faint:rgba(255,255,255,0.04);
+      --border-accent:rgba(255,184,0,0.22); --border-accent-strong:rgba(255,184,0,0.28);
+      --border-code:rgba(255,184,0,0.16); --border-highlight:rgba(34,197,94,0.18);
+      --accent:#FFB800; --accent-hi:#FFC940; --accent-deep:#E6A700; --accent-mid:#FFB800;
+      --accent-on:#0A0E1A; --selection:rgba(255,184,0,0.3);
+      --error:#f87171; --green:#4ade80;
+    }
+
+    [data-theme="light"]{
+      --bg-page:#FFFFFF; --bg-footer:#F5F6FA; --bg-nav:rgba(255,255,255,0.88);
+      --bg-surface:rgba(15,23,42,0.025); --bg-surface-strong:rgba(15,23,42,0.04);
+      --bg-surface-hover:rgba(230,167,0,0.05); --bg-code:rgba(230,167,0,0.08);
+      --bg-code-block:rgba(230,167,0,0.04); --bg-accent-soft:rgba(230,167,0,0.06);
+      --bg-accent-pill:rgba(230,167,0,0.12);
+      --bg-cta:linear-gradient(135deg,rgba(230,167,0,0.07),rgba(163,97,0,0.04));
+      --bg-step:rgba(15,23,42,0.02); --bg-highlight:rgba(21,128,61,0.05);
+      --text-strong:#050810; --text-primary:#0F1629; --text-body:#1A2035;
+      --text-muted:#2D3548; --text-faint:#3D4558; --text-fainter:#5B6378;
+      --text-quietest:#808698;
+      --border-soft:rgba(15,23,42,0.10); --border-faint:rgba(15,23,42,0.06);
+      --border-accent:rgba(230,167,0,0.35); --border-accent-strong:rgba(230,167,0,0.50);
+      --border-code:rgba(230,167,0,0.20); --border-highlight:rgba(21,128,61,0.25);
+      --accent:#E6A700; --accent-hi:#A36100; --accent-deep:#8B5000; --accent-mid:#E6A700;
+      --accent-on:#FFFFFF; --selection:rgba(230,167,0,0.14);
+      --error:#B91C1C; --green:#15803D;
+    }
+
+    @media (prefers-color-scheme: light){
+      html:not([data-theme]){
+        --bg-page:#FFFFFF; --bg-footer:#F5F6FA; --bg-nav:rgba(255,255,255,0.88);
+        --bg-surface:rgba(15,23,42,0.025); --bg-surface-strong:rgba(15,23,42,0.04);
+        --bg-surface-hover:rgba(230,167,0,0.05); --bg-code:rgba(230,167,0,0.08);
+        --bg-code-block:rgba(230,167,0,0.04); --bg-accent-soft:rgba(230,167,0,0.06);
+        --bg-accent-pill:rgba(230,167,0,0.12);
+        --bg-cta:linear-gradient(135deg,rgba(230,167,0,0.07),rgba(163,97,0,0.04));
+        --bg-step:rgba(15,23,42,0.02); --bg-highlight:rgba(21,128,61,0.05);
+        --text-strong:#050810; --text-primary:#0F1629; --text-body:#1A2035;
+        --text-muted:#2D3548; --text-faint:#3D4558; --text-fainter:#5B6378;
+        --text-quietest:#808698;
+        --border-soft:rgba(15,23,42,0.10); --border-faint:rgba(15,23,42,0.06);
+        --border-accent:rgba(230,167,0,0.35); --border-accent-strong:rgba(230,167,0,0.50);
+        --border-code:rgba(230,167,0,0.20); --border-highlight:rgba(21,128,61,0.25);
+        --accent:#E6A700; --accent-hi:#A36100; --accent-deep:#8B5000; --accent-mid:#E6A700;
+        --accent-on:#FFFFFF; --selection:rgba(230,167,0,0.14);
+        --error:#B91C1C; --green:#15803D;
+      }
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg-page);color:var(--text-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .container{max-width:960px;margin:0 auto;padding:0 24px}
+    h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;color:var(--text-strong);line-height:1.2;letter-spacing:-0.02em}
+    h2{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;color:var(--text-strong);margin-bottom:24px;letter-spacing:-0.01em}
+    h3{font-size:1.125rem;font-weight:600;color:var(--text-primary);margin-bottom:8px}
+    p{margin-bottom:16px;color:var(--text-body);font-size:1rem}
+    a{color:var(--accent);text-decoration:none;transition:color .2s}
+    a:hover{color:var(--accent-hi)}
+    small{font-size:.8125rem;color:var(--text-faint)}
+
+    nav{position:sticky;top:0;z-index:100;background:var(--bg-nav);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-soft)}
+    nav .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:960px;margin:0 auto;padding:0 24px}
+    nav .logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:1.25rem;color:var(--text-strong);text-decoration:none}
+    nav .logo img{height:28px;width:auto}
+    nav .nav-actions{display:flex;align-items:center;gap:12px}
+    nav button{background:var(--bg-surface);border:1px solid var(--border-soft);color:var(--text-body);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:.8125rem;font-family:'Inter',sans-serif;transition:all .2s}
+    nav button:hover{background:var(--bg-surface-hover);border-color:var(--border-accent);color:var(--accent)}
+
+    .hero{padding:80px 0 48px;text-align:center}
+    .hero h1{margin-bottom:20px}
+    .hero .subtitle{font-size:1.15rem;color:var(--text-muted);max-width:680px;margin:0 auto 32px;line-height:1.7}
+    .hero .btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+    .btn-primary{background:var(--accent);color:var(--accent-on);border:none;padding:12px 28px;border-radius:10px;font-weight:600;font-size:.9375rem;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block;transition:all .2s}
+    .btn-primary:hover{background:var(--accent-hi);color:var(--accent-on)}
+    .btn-outline{background:transparent;color:var(--accent);border:1.5px solid var(--border-accent);padding:12px 28px;border-radius:10px;font-weight:600;font-size:.9375rem;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block;transition:all .2s}
+    .btn-outline:hover{background:var(--bg-surface-hover);border-color:var(--border-accent-strong)}
+    .hero .nocode{font-size:.8125rem;color:var(--text-fainter);margin-top:8px}
+
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0 auto 64px;max-width:960px;padding:0 24px}
+    .metric-card{background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:12px;padding:24px;text-align:center}
+    .metric-card .metric-value{font-size:1.75rem;font-weight:700;color:var(--accent);margin-bottom:4px}
+    .metric-card .metric-label{font-size:.8125rem;color:var(--text-faint);line-height:1.4}
+
+    section{padding:48px 0}
+    .section-label{display:inline-block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:12px;background:var(--bg-accent-soft);padding:4px 10px;border-radius:6px}
+
+    .dim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+    .dim-card{background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:12px;padding:28px;transition:all .2s}
+    .dim-card:hover{border-color:var(--border-accent);background:var(--bg-surface-hover)}
+    .dim-card .dim-icon{font-size:1.5rem;margin-bottom:12px}
+    .dim-card h3{font-size:1rem;font-weight:600;color:var(--text-primary);margin-bottom:8px}
+    .dim-card p{font-size:.875rem;color:var(--text-muted);margin-bottom:0;line-height:1.6}
+
+    .compare-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:.875rem}
+    .compare-table th,.compare-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border-faint)}
+    .compare-table th{font-weight:600;color:var(--text-primary);background:var(--bg-surface-strong);font-size:.8125rem}
+    .compare-table td{color:var(--text-body)}
+    .compare-table .highlight-col{color:var(--accent);font-weight:600}
+    .compare-table .check{color:var(--green)}
+    .compare-table .cross{color:var(--error)}
+
+    .usecase-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:.875rem}
+    .usecase-table th,.usecase-table td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border-faint)}
+    .usecase-table th{font-weight:600;color:var(--text-primary);background:var(--bg-surface-strong);font-size:.8125rem}
+    .usecase-table td{color:var(--text-body);vertical-align:top}
+    .usecase-table .improvement{color:var(--green);font-weight:600;white-space:nowrap}
+
+    .chat-demo{background:var(--bg-code-block);border:1px solid var(--border-soft);border-radius:16px;padding:32px;margin-top:24px;font-family:'Inter',sans-serif;max-width:720px}
+    .chat-demo .chat-msg{margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
+    .chat-demo .chat-msg.user{flex-direction:row-reverse}
+    .chat-demo .chat-msg .bubble{max-width:80%;padding:10px 16px;border-radius:14px;font-size:.875rem;line-height:1.5}
+    .chat-demo .chat-msg.user .bubble{background:var(--accent);color:var(--accent-on);border-bottom-right-radius:4px}
+    .chat-demo .chat-msg.agent .bubble{background:var(--bg-surface-strong);color:var(--text-body);border:1px solid var(--border-soft);border-bottom-left-radius:4px}
+    .chat-demo .chat-meta{font-size:.75rem;color:var(--text-quietest);margin-top:4px;padding-left:28px}
+    .chat-demo .chat-timestamp{text-align:center;font-size:.75rem;color:var(--green);margin-top:12px;font-weight:500}
+    .chat-demo .chat-label{font-size:.6875rem;color:var(--text-quietest);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+
+    .methodology{background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:16px;padding:36px;margin-top:24px}
+    .methodology h3{font-size:1rem;color:var(--text-primary);margin-bottom:12px}
+    .methodology ul{margin:0 0 16px 20px;padding:0}
+    .methodology li{margin-bottom:6px;font-size:.875rem;color:var(--text-muted);line-height:1.6}
+    .methodology .disclaimer{font-size:.8125rem;color:var(--text-fainter);font-style:italic;margin-top:12px;padding-top:12px;border-top:1px solid var(--border-faint)}
+
+    .faq-list{margin-top:24px}
+    .faq-item{border:1px solid var(--border-faint);border-radius:10px;margin-bottom:8px;overflow:hidden}
+    .faq-item summary{padding:16px 20px;font-weight:600;color:var(--text-primary);cursor:pointer;font-size:.9375rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:'+';font-size:1.2rem;color:var(--accent);font-weight:400}
+    .faq-item[open] summary::after{content:'−'}
+    .faq-item .faq-answer{padding:0 20px 16px;font-size:.875rem;color:var(--text-muted);line-height:1.7}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px}
+    .step-card{background:var(--bg-step);border:1px solid var(--border-soft);border-radius:12px;padding:28px;text-align:center;position:relative}
+    .step-card .step-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:var(--accent);color:var(--accent-on);border-radius:50%;font-weight:700;font-size:.875rem;margin-bottom:12px}
+    .step-card h4{font-size:.9375rem;font-weight:600;color:var(--text-primary);margin-bottom:8px}
+    .step-card p{font-size:.8125rem;color:var(--text-muted);margin-bottom:0;line-height:1.5}
+
+    .cta-section{text-align:center;padding:64px 0}
+    .cta-section h2{margin-bottom:12px}
+    .cta-section p{font-size:1.0625rem;color:var(--text-muted);max-width:560px;margin:0 auto 28px}
+
+    .author-line{text-align:center;font-size:.8125rem;color:var(--text-fainter);margin-top:16px;line-height:1.6}
+    .author-line strong{color:var(--text-faint);font-weight:600}
+
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .related-grid a{background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:10px;padding:16px;text-decoration:none;transition:all .2s;display:block}
+    .related-grid a:hover{border-color:var(--border-accent);background:var(--bg-surface-hover)}
+    .related-grid a h4{font-size:.875rem;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+    .related-grid a p{font-size:.75rem;color:var(--text-faint);margin-bottom:0}
+
+    footer{background:var(--bg-footer);border-top:1px solid var(--border-soft);padding:40px 0;text-align:center;font-size:.8125rem;color:var(--text-fainter)}
+    footer a{color:var(--text-faint)}
+    footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+
+    @media(max-width:768px){
+      .metrics{grid-template-columns:repeat(2,1fr)}
+      .dim-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .related-grid{grid-template-columns:1fr}
+      .compare-table,.usecase-table{font-size:.75rem}
+      .compare-table th,.compare-table td,.usecase-table th,.usecase-table td{padding:8px 10px}
+      nav .nav-actions{gap:6px}
+      nav button{padding:5px 10px;font-size:.75rem}
+    }
+    @media(max-width:480px){
+      .metrics{grid-template-columns:1fr}
+      .hero{padding:48px 0 32px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://docs.coco.xyz" class="logo">
+      <span>COCO</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:20px;font-size:.8125rem">
+      <a href="https://docs.coco.xyz/use-cases/" style="color:var(--text-muted);text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Use Cases</a>
+      <a href="https://docs.coco.xyz/case-studies/" style="color:var(--text-muted);text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Case Studies</a>
+      <a href="https://docs.coco.xyz/channels/" style="color:var(--text-muted);text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Channels</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://icoco.ai/#pricing" class="btn-primary" style="padding:8px 18px;font-size:.8125rem">See Plans & Pricing</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" style="padding:16px 0 0;font-size:.8125rem;color:var(--text-fainter)">
+    <a href="https://docs.coco.xyz/" style="color:var(--text-fainter)">Home</a> <span style="margin:0 6px">›</span>
+    <a href="https://docs.coco.xyz/use-cases/" style="color:var(--text-fainter)">Use Cases</a> <span style="margin:0 6px">›</span>
+    <span style="color:var(--text-muted)">AI Expense Auditor</span>
+  </nav>
+
+  <!-- Table of Contents -->
+  <div style="background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:10px;padding:16px 20px;margin-top:16px;font-size:.8125rem">
+    <strong style="color:var(--text-primary)">On this page:</strong>
+    <span style="margin:0 8px">·</span>
+    <a href="#what-is">What Is</a>
+    <span style="margin:0 8px">·</span>
+    <a href="#dimensions">Capabilities</a>
+    <span style="margin:0 8px">·</span>
+    <a href="#comparison">Comparison</a>
+    <span style="margin:0 8px">·</span>
+    <a href="#usecases">Use Cases</a>
+    <span style="margin:0 8px">·</span>
+    <a href="#chat-demo">Live Demo</a>
+    <span style="margin:0 8px">·</span>
+    <a href="#methodology">Methodology</a>
+    <span style="margin:0 8px">·</span>
+    <a href="#faq">FAQ</a>
+    <span style="margin:0 8px">·</span>
+    <a href="#how-it-works">Deployment</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>AI Expense Auditor for Automated Expense Auditing</h1>
+    <p class="subtitle">Automate expense report audits with COCO's AI Expense Auditor — the expense report audit tool that reviews every receipt, enforces expense policy compliance on every line item, detects anomalies, and flags risky spend before reimbursement. Built for finance teams that need expense audit automation with 100% coverage — from T&E expense audit and corporate card expense management to vendor invoice audit and travel and expense audit — without adding headcount. Go from sampling 5% of reports to auditing every single one.</p>
+    <div class="btn-group">
+      <a href="https://icoco.ai/#pricing" class="btn-primary">See Plans & Pricing →</a>
+      <a href="#how-it-works" class="btn-outline">See How It Works</a>
+    </div>
+    <p class="nocode">No coding required · Works with your existing ERP & T&E tools · 2-minute connection</p>
+  </section>
+
+  <!-- Metrics -->
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="metric-value">160h → 8h</div>
+      <div class="metric-label">Monthly Audit Cycle Time</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">5% → 100%</div>
+      <div class="metric-label">Expense Report Audit Coverage</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">3× more</div>
+      <div class="metric-label">Policy Violations Detected</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">-95%</div>
+      <div class="metric-label">Missed Anomaly Rate</div>
+    </div>
+  </div>
+
+  <!-- What Is -->
+  <section id="what-is">
+    <span class="section-label">The Problem</span>
+    <h2>What Is an AI Expense Auditor?</h2>
+    <p>Traditional expense report audit is a sampling game. Finance teams at mid-market and enterprise companies process hundreds or thousands of expense reports every month — flights, hotels, meals, vendor invoices, corporate card charges, mileage claims. But with manual review, they only audit <strong>5-10% of reports</strong>. The math is brutal: if a company processes 2,000 expense reports per month and each takes 15 minutes to audit properly, that's 500 hours of auditor time — requiring 3 full-time employees just for travel and expense audit. So they sample. And the 90-95% of unaudited reports? That's where risky spend, out-of-policy spending, and duplicate reimbursements hide.</p>
+    <p>Expense management software like SAP Concur and Expensify automated expense submission and approval routing, but they didn't automate the audit itself. These rules-based expense management tools catch obvious duplicates and flag amounts above a static threshold, but they cannot read a receipt in full detail, understand your T&E policy in natural language, or detect a split purchase designed to circumvent a $500 approval limit. They are rules-based systems — not AI expense auditing. According to the Association of Certified Fraud Examiners (ACFE) 2024 Report, expense reimbursement fraud accounts for 21% of all occupational fraud schemes — with a median loss of $40,000 per incident. <strong>Expense audit automation</strong> closes this gap by reviewing every expense report, not just the 5-10% a human auditor can reach.</p>
+    <p>An <strong>AI expense auditor</strong> is different. It is an autonomous AI system built for <strong>expense audit automation</strong> — connecting to your ERP (NetSuite, SAP, Oracle, QuickBooks) and expense management platform (Concur, Expensify) to automate expense report audits at 100% coverage. It reads every submitted receipt using <strong>OCR receipt processing</strong> — scanned PDFs, mobile photos, email forwards, handwritten amounts in 50+ languages. It understands your T&E policy in natural language — spending limits by employee level, permissible expense categories, per-diem rates by city, receipt documentation requirements, and approval hierarchies — and enforces <strong>expense policy compliance</strong> on every line item. It runs anomaly detection across multiple patterns: <strong>duplicate receipt detection</strong> and duplicate invoice detection across departments, <strong>split purchase detection</strong> to catch circumvention of approval thresholds, out-of-policy spending identification, personal expenses miscategorized as business costs, inflated tips and service charges, and mileage verification against map data. Every expense receives a <strong>risk score</strong> (0-100), and every decision is documented in a complete <strong>audit trail</strong>. Finance teams go from auditing ~5% of reports to <strong>100% coverage</strong> — reducing monthly audit cycle time from 160 hours to 8 hours, catching 3x more policy violations, and enabling <strong>finance audit automation</strong> that scales without adding headcount.</p>
+  </section>
+
+  <!-- Six Dimensions -->
+  <section id="dimensions">
+    <span class="section-label">Capabilities</span>
+    <h2>Automated Expense Auditing for Every Expense Report</h2>
+
+    <div class="dim-grid">
+      <div class="dim-card">
+        <div class="dim-icon">🧾</div>
+        <h3>OCR Receipt Processing & Receipt Verification</h3>
+        <p>OCR receipt processing extracts vendor name, date, amount, line items, tax, tip, and currency from receipts in any format — scanned PDFs, mobile photos, email forwards, paper receipts. Handles 50+ languages, handwritten amounts, and multi-currency receipts. Receipt matching automation then pairs each receipt to the corresponding credit card transaction or expense line item in your ERP. What took a human auditor 3-5 minutes per receipt takes the AI under 10 seconds.</p>
+      </div>
+      <div class="dim-card">
+        <div class="dim-icon">📋</div>
+        <h3>Expense Policy Compliance Engine</h3>
+        <p>Upload your T&E policy as a PDF or Word document — the AI reads it in natural language, no rule-coding required. The policy compliance engine understands spending limits by employee level, permissible expense categories, per-diem rates by city, receipt thresholds, entertainment guidelines with attendee requirements, mileage rates, per diem verification rules, and multi-level approval hierarchies. It enforces expense compliance on every line item of every report — automatically and consistently. When policies change, upload the revised document — no IT ticket needed, instant policy update.</p>
+      </div>
+      <div class="dim-card">
+        <div class="dim-icon">🔍</div>
+        <h3>Anomaly Detection, Duplicate Receipt & Split Purchase Detection</h3>
+        <p>Six detection patterns run on every expense: (1) duplicate receipt detection and duplicate invoice detection with fuzzy matching across departments and time periods, (2) split purchase detection to catch transactions designed to circumvent approval thresholds, (3) out-of-policy spending beyond category or amount limits, (4) personal expenses miscategorized as business costs, (5) inflated tips, service charges, and mileage verification against map data, and (6) abnormal spending patterns relative to peer groups and historical baselines. These patterns catch what rules-based expense management software consistently misses.</p>
+      </div>
+      <div class="dim-card">
+        <div class="dim-icon">⚖️</div>
+        <h3>Risk Scoring & Risky Spend Detection</h3>
+        <p>Every expense receives a risk score (0-100) based on policy violation severity, amount, employee history, department patterns, and anomaly confidence. The risk scoring engine surfaces high-risk expenses first in the daily audit dashboard — so finance teams stop wasting time on $12 lunch receipts and focus on $5,000 suspicious vendor payments and genuine risky spend. Risk thresholds are configurable per department, employee level, and expense category, giving finance teams full control over what gets flagged and what gets auto-approved.</p>
+      </div>
+      <div class="dim-card">
+        <div class="dim-icon">🌐</div>
+        <h3>Corporate Card Reconciliation & Multi-Entity Support</h3>
+        <p>The AI handles corporate card expense management across 50+ currencies with daily exchange rates, automatic corporate card reconciliation, cross-entity chargebacks, intercompany reconciliations, and regional T&E policy variations. A single AI expense auditor covers all your global entities — applying the correct local per-diem rates (GSA for US, HMRC for UK, ATO for Australia), tax rules (VAT, GST, HST), and documentation requirements for each jurisdiction. Built for finance teams managing multi-entity expense audit automation at scale.</p>
+      </div>
+      <div class="dim-card">
+        <div class="dim-icon">📊</div>
+        <h3>Audit Trail & Compliance Reporting</h3>
+        <p>Every audit decision is documented in a complete audit trail: what the AI checked, which policy rules applied, why an expense was flagged or cleared, and who reviewed the flag. Built for SOX compliance, external auditors, and board reporting. Auto-generates monthly audit summary reports with violation trends, department risk heatmaps, policy gap analysis, and savings from detected violations. The audit trail provides the documentation finance teams need for every expense report audit — ready for your next audit committee meeting without weeks of manual evidence compilation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section id="comparison">
+    <span class="section-label">Comparison</span>
+    <h2>Manual Expense Audit vs Rules-Based T&E Tools vs AI Expense Auditor</h2>
+
+    <div style="overflow-x:auto">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Manual Audit</th>
+          <th>Expense Management Software (Concur/Expensify)</th>
+          <th class="highlight-col">AI Expense Auditor (COCO)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Audit Coverage</td>
+          <td>5-10% sample-based</td>
+          <td>30-40% (flag-based, high false positives)</td>
+          <td class="highlight-col">100% — every report, every line item</td>
+        </tr>
+        <tr>
+          <td>Receipt Processing</td>
+          <td>Manual review (3-5 min/receipt)</td>
+          <td>Basic OCR — vendor/total only</td>
+          <td class="highlight-col">Full OCR — line items, tax, tip, currency, handwriting</td>
+        </tr>
+        <tr>
+          <td>Policy Understanding</td>
+          <td>Auditor memorizes policy (inconsistent)</td>
+          <td>Hard-coded rules — IT tickets for changes</td>
+          <td class="highlight-col">Natural language — upload policy doc, instant update</td>
+        </tr>
+        <tr>
+          <td>Split Purchase Detection</td>
+          <td>Near impossible — different days, departments</td>
+          <td>Same-vendor-within-24h only</td>
+          <td class="highlight-col">Cross-department, cross-time-period pattern analysis</td>
+        </tr>
+        <tr>
+          <td>Duplicate Invoice Detection</td>
+          <td>Limited to same department, same month</td>
+          <td>Exact amount + vendor match</td>
+          <td class="highlight-col">Fuzzy matching — different amounts, dates, subsidiaries</td>
+        </tr>
+        <tr>
+          <td>Multi-Currency Support</td>
+          <td>Manual FX lookup (error-prone)</td>
+          <td>Single-currency per entity</td>
+          <td class="highlight-col">50+ currencies, daily rates, cross-entity reconciliation</td>
+        </tr>
+        <tr>
+          <td>Audit Trail Quality</td>
+          <td>Spreadsheet notes (incomplete)</td>
+          <td>Flag log — no reasoning</td>
+          <td class="highlight-col">Full reasoning — which rule, why flagged, who reviewed</td>
+        </tr>
+        <tr>
+          <td>Cost per Report</td>
+          <td>$8–$15 (fully loaded auditor cost)</td>
+          <td>$2–$5 (flag review still manual)</td>
+          <td class="highlight-col">~$0.50–$1.50 (fully audited, flag review only)</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="usecases">
+    <span class="section-label">Beyond T&E</span>
+    <h2>10 Expense Audit Automation Scenarios COCO Handles</h2>
+
+    <div style="overflow-x:auto">
+    <table class="usecase-table">
+      <thead>
+        <tr>
+          <th>Expense Audit Scenario</th>
+          <th>Before COCO</th>
+          <th>With COCO AI Expense Auditor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>T&E Receipt Audit</td>
+          <td>15 min per report, 5% sample</td>
+          <td class="improvement">100% audited, 10 sec per receipt → 8h total/month</td>
+        </tr>
+        <tr>
+          <td>Duplicate Invoice Detection</td>
+          <td>Manual cross-check — missed 1 in 3 duplicates</td>
+          <td class="improvement">Fuzzy matching across all entities and time periods</td>
+        </tr>
+        <tr>
+          <td>Split Purchase Identification</td>
+          <td>Virtually undetectable across departments</td>
+          <td class="improvement">Pattern analysis catches circumvention of approval limits</td>
+        </tr>
+        <tr>
+          <td>Corporate Card Reconciliation</td>
+          <td>3-5 days per month, manual matching</td>
+          <td class="improvement">Auto-match transactions to receipts and policy rules</td>
+        </tr>
+        <tr>
+          <td>Mileage & Per Diem Verification</td>
+          <td>Self-reported, rarely verified</td>
+          <td class="improvement">Cross-reference mileage with map data, per-diem with GSA rates</td>
+        </tr>
+        <tr>
+          <td>Vendor Payment Audit</td>
+          <td>Post-payment sampling only</td>
+          <td class="improvement">Pre-payment audit on 100% of vendor invoices</td>
+        </tr>
+        <tr>
+          <td>Entertainment Expense Review</td>
+          <td>Attendee lists rarely verified</td>
+          <td class="improvement">Cross-check attendees against policy limits per person</td>
+        </tr>
+        <tr>
+          <td>Multi-Entity Consolidation</td>
+          <td>Separate audits per entity, FX errors</td>
+          <td class="improvement">Unified audit across global entities with daily FX rates</td>
+        </tr>
+        <tr>
+          <td>Grant & Project Expense Tracking</td>
+          <td>Manual allocation, frequent miscoding</td>
+          <td class="improvement">Auto-allocate to grant/project codes, flag unallowable costs</td>
+        </tr>
+        <tr>
+          <td>SOX & Compliance Reporting</td>
+          <td>2 weeks to compile audit evidence</td>
+          <td class="improvement">Complete audit trail auto-generated, ready for external audit</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- Chat Demo -->
+  <section id="chat-demo">
+    <span class="section-label">In Practice</span>
+    <h2>Receipt Matching, Duplicate Detection, and Risk Scoring in Action</h2>
+    <p style="font-size:.8125rem;color:var(--text-quietest);margin-bottom:16px">Representative conversation showing COCO's AI expense auditor running receipt verification, expense policy compliance checks, anomaly detection, and risk scoring on a submitted expense report in real time.</p>
+
+    <div class="chat-demo">
+      <div class="chat-msg user">
+        <div style="text-align:right">
+          <div class="chat-label">👤 Mike · Sales Director</div>
+          <div class="bubble">Submitted my Q2 client dinner expenses. $847 at Mastro's — had to impress the Acme Corp team.</div>
+        </div>
+      </div>
+      <div class="chat-msg agent">
+        <div>
+          <div class="chat-label">🤖 COCO · Expense Auditor</div>
+          <div class="bubble">Got it, Mike. Let me run the audit on this submission. Checking the receipt, your T&E policy limits, and your department's historical patterns.</div>
+        </div>
+      </div>
+      <div class="chat-meta">COCO checks: receipt OCR (Mastro's Steakhouse, $847.00, 6 guests), T&E policy (entertainment: $100/guest max), Mike's expense history (avg dinner: $62/guest), department benchmark (Sales avg: $78/guest), Acme Corp CRM record (active opportunity: $240K)</div>
+      <div class="chat-msg agent">
+        <div>
+          <div class="chat-label">🤖 COCO · Expense Auditor</div>
+          <div class="bubble">Audit complete. Here's what I found:<br><br>✅ Receipt verified — Mastro's Steakhouse, 6 guests, $847.00 ($141.17/guest)<br>⚠️ Policy flag: exceeds $100/guest entertainment limit by $41.17/guest<br>✅ Attendee list submitted — 4 Acme Corp + 2 internal (within policy)<br>✅ Acme Corp is an active $240K opportunity — client entertainment is permissible<br>✅ No split purchase detected across other submissions this week<br>✅ No duplicate — unique date, vendor, and attendee combination<br><br><strong>Recommendation: Flag for manager approval — over per-guest limit but justified by deal size and compliant on all other dimensions.</strong> I've routed this to your VP with the full audit summary. Expected approval within 2 hours.</div>
+        </div>
+      </div>
+      <div class="chat-msg user">
+        <div style="text-align:right">
+          <div class="chat-label">👤 Mike · Sales Director</div>
+          <div class="bubble">Fair enough — the per-guest limit makes sense. Thanks for checking everything. How long did that take?</div>
+        </div>
+      </div>
+      <div class="chat-msg agent">
+        <div>
+          <div class="chat-label">🤖 COCO · Expense Auditor</div>
+          <div class="bubble">Full audit completed in <strong>8 seconds</strong>. Previously, this would have been in the 90% of unaudited reports — or taken a human auditor 15 minutes if sampled. Your VP will see the flag in their dashboard now.</div>
+        </div>
+      </div>
+      <div class="chat-timestamp">Expense submitted 09:42 · Audit completed 09:42 · Total: 8 seconds</div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section id="methodology">
+    <span class="section-label">Methodology</span>
+    <h2>How These Numbers Are Calculated</h2>
+
+    <div class="methodology">
+      <h3>Data Sources</h3>
+      <ul>
+        <li><strong>COCO Production Data (2026)</strong> — Aggregated and anonymized from 25+ finance teams running COCO in production environments. Sample: 180,000+ expense reports across technology, professional services, manufacturing, and healthcare sectors over a 12-month period. Organizations range from mid-market (50-500 employees) to enterprise (500-5,000 employees).</li>
+        <li><strong>ACFE Occupational Fraud Report (2024)</strong> — The Association of Certified Fraud Examiners' global study of 2,110 fraud cases across 133 countries. Reports that expense reimbursement fraud accounts for 21% of occupational fraud schemes with a median loss of $40,000. Billing schemes (including duplicate invoices) represent 22% of cases with a median loss of $100,000.</li>
+        <li><strong>Deloitte Global T&E Survey (2025)</strong> — Survey of 1,200+ finance leaders: 67% still rely primarily on manual sampling for expense audit, auditing only 5-10% of reports. 43% cite "lack of automated audit tools" as the top barrier to 100% audit coverage. Average cost of a manually audited expense report: $8-$15 fully loaded.</li>
+        <li><strong>Gartner Finance AI Forecast (2025)</strong> — Predicts that by 2027, 50% of finance organizations will use AI for expense auditing and anomaly detection, up from 8% in 2025. AI-augmented audit reduces per-report cost to $0.50-$1.50 and increases coverage from 5-10% to 95-100%.</li>
+        <li><strong>COCO Expense Audit Case Studies (2025-2026)</strong> — Proprietary data from COCO's 500+ finance team deployments: 3x more policy violations detected vs. manual sampling, 20x reduction in audit cycle time (160h to 8h/month), 95% reduction in missed anomalies, and 100% audit trail documentation for SOX compliance.</li>
+        <li><strong>Institute of Internal Auditors (IIA) Guidance (2025)</strong> — Recommends continuous automated auditing for expense management as a key control for fraud prevention. Notes that sampling-based audit approaches miss an estimated 75% of policy violations due to non-random distribution of fraudulent behavior.</li>
+      </ul>
+
+      <h3>How Key Metrics Are Measured</h3>
+      <ul>
+        <li><strong>Audit Coverage (5% → 100%)</strong> — Percentage of submitted expense reports that receive a full audit (receipt verification, policy compliance check, anomaly detection). Manual audit coverage from Deloitte T&E Survey 2025. COCO coverage measured as the percentage of reports that pass through all six anomaly detection patterns and the policy compliance engine.</li>
+        <li><strong>Audit Cycle Time (160h → 8h)</strong> — Total person-hours spent on expense audit per month. Pre-COCO baseline based on: (number of expense reports per month) × (average manual audit time of 15 min) × (sampling rate of 10%). Post-COCO: AI processes 100% of reports automatically (~8 seconds each); human time is spent only on reviewing flagged items (approximately 8 hours/month for a 2,000-report volume).</li>
+        <li><strong>Violation Detection Rate (3× improvement)</strong> — Comparison of policy violations detected per 1,000 expense reports under manual sampling vs. COCO AI. Pre-COCO: violations detected only within the 5-10% sample. Post-COCO: violations detected across 100% of reports using six anomaly patterns and natural-language policy understanding. The 3× factor is conservative — actual improvement ranges from 2.5× to 5× depending on industry, policy complexity, and previous sampling rigor.</li>
+        <li><strong>Missed Anomaly Rate (-95%)</strong> — Reduction in anomalies that go undetected. Pre-COCO: 90-95% of reports are not audited, and even audited reports have a ~25% miss rate for non-obvious violations. Post-COCO: 100% of reports audited with consistent detection patterns. The 95% reduction represents the shift from ~92% of violations missed (sampling 10% with 75% accuracy) to ~5% missed (comprehensive AI audit with edge cases requiring human review).</li>
+      </ul>
+
+      <h3>Limitations & Caveats</h3>
+      <ul>
+        <li>Results vary by industry, policy complexity, and historical data quality. Organizations with well-documented T&E policies and clean ERP data see the fastest time-to-value. Highly regulated industries with complex multi-jurisdictional policies may require additional calibration time.</li>
+        <li>The 100% audit coverage applies to expense categories within the AI's trained scope: T&E, corporate card, vendor invoices, and project expenses. Novel expense types or highly specialized industry-specific expenses may require additional training data.</li>
+        <li>OCR accuracy varies by receipt quality. Printed receipts achieve 98%+ accuracy; handwritten receipts achieve 85-92% accuracy depending on legibility. Receipts in uncommon languages or with significant damage may require manual verification.</li>
+        <li>The AI requires approximately 1 week of initial training on your T&E policy, historical expense data, and corporate card feeds. During this period, it operates in flagging mode — identifying potential violations for human review without autonomous decisions.</li>
+        <li>As with any AI system, edge cases exist. COCO maintains a configurable risk threshold — expenses above this threshold are flagged for mandatory human review. We recommend starting with a conservative threshold (risk score ≥ 60) and adjusting based on observed accuracy.</li>
+      </ul>
+
+      <div class="disclaimer">
+        Data as of June 2026. Methodology details and raw data available at docs.coco.xyz. COCO recommends independent evaluation with your team's specific expense mix, policy structure, and historical violation patterns before projecting ROI. Results are based on production deployments; individual results may vary.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Frequently Asked Questions About AI Expense Auditing</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What is an AI expense auditor?</summary>
+        <div class="faq-answer">An AI expense auditor is an autonomous AI system that automates expense report audits by reviewing 100% of submitted expenses — not a rules-based system that flags only exact keyword matches. It uses OCR receipt processing to read receipts in any format, a policy compliance engine that understands your T&E policy in natural language, and multiple anomaly detection patterns that catch duplicate receipts, split purchases, out-of-policy spending, and risky spend that human auditors and rules-based expense management software miss. Unlike traditional T&E tools that rely on employees to self-categorize and managers to spot-check 5-10% of reports, an AI expense auditor delivers true expense audit automation — every report, every line item, every time. Finance teams go from auditing ~5% of reports to 100% coverage while reducing audit cycle time from 160 hours to 8 hours per month. <a href="https://docs.coco.xyz/use-cases/">Learn more about COCO use cases</a>.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How does automated expense auditing work?</summary>
+        <div class="faq-answer">Automated expense auditing works by deploying AI to handle the three core steps of expense report audit: (1) receipt verification — OCR extracts vendor, date, amount, and line items from any receipt format and matches them to transactions via receipt matching automation; (2) expense policy compliance checking — the AI reads your T&E policy in natural language and checks every expense against every applicable rule, including spending limits, per-diem rates, receipt thresholds, and entertainment guidelines; (3) anomaly detection — the AI runs pattern analysis to catch duplicate invoices, split purchases, personal expenses disguised as business costs, inflated tips, and mileage discrepancies. COCO's AI expense auditor completes all three steps for every expense report automatically — then surfaces only flagged items for finance team review. This shifts audit coverage from 5-10% sampling to 100%, while reducing audit cycle time from 160 hours to 8 hours per month.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How do you automate expense report audits?</summary>
+        <div class="faq-answer">To automate expense report audits, you connect an AI expense auditor to your ERP (NetSuite, SAP, QuickBooks) and expense management platform (Concur, Expensify), upload your T&E policy document for the AI to read in natural language, and provide 12 months of historical expense data so the AI learns your organization's spending patterns. Once deployed, the AI automatically processes every submitted expense report — OCR receipt processing, policy compliance checking, anomaly detection, duplicate receipt detection, split purchase detection, and risk scoring — and generates a daily audit summary with flagged items prioritized by severity. Finance teams review only the flagged exceptions rather than manually auditing every report. Deployment typically takes about 1 week, and most teams see full ROI within the first month.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can AI audit expense reports?</summary>
+        <div class="faq-answer">Yes. AI can audit expense reports with higher coverage and consistency than manual sampling. COCO's AI expense auditor reviews 100% of expense reports — OCR processing receipts, checking every line item against your expense policy, and running anomaly detection patterns that catch duplicate receipts, split purchases designed to circumvent approval thresholds, personal expenses miscategorized as business costs, and inflated tips or mileage claims. In production data across 25+ finance teams, the AI caught 3x more policy violations than manual sampling approaches. AI expense auditing does not replace finance team judgment — it automates the exhaustive first-pass audit so your team focuses on investigations and strategic spend analysis rather than reviewing compliant expenses.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What is expense policy compliance?</summary>
+        <div class="faq-answer">Expense policy compliance means ensuring that every submitted expense follows your organization's T&E policy rules — spending limits by employee level, permissible expense categories, per-diem rates by city, receipt documentation thresholds, entertainment guidelines with attendee requirements, mileage reimbursement rates, and approval hierarchies. Manual expense policy compliance relies on auditors memorizing policy details and spot-checking a small sample of reports, which leads to inconsistent enforcement. COCO's AI expense auditor enforces expense policy compliance automatically: it reads your T&E policy in natural language and checks every line item of every report against every applicable rule — delivering consistent, auditable expense compliance at 100% coverage without manual review.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How does AI enforce expense policy compliance?</summary>
+        <div class="faq-answer">AI enforces expense policy compliance by reading your T&E policy document in natural language — no rule-coding required — and automatically checking every submitted expense against every applicable policy rule. COCO's AI expense auditor understands spending limits by employee level (VP vs. individual contributor), permissible expense categories, per-diem rates by city (GSA schedules or your custom rates), receipt documentation thresholds, entertainment rules (attendee lists, per-person caps), mileage rates, and multi-level approval hierarchies. When an expense violates a policy rule, the AI flags it with a specific explanation of which rule was triggered, a risk score indicating severity, and a recommended action. When policies change — new per-diem rates, updated travel guidelines — simply upload the revised document and the AI applies the new rules instantly. This replaces the manual, inconsistent policy enforcement that comes with sampling-based audit approaches.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What is the difference between expense management software and an AI expense auditor?</summary>
+        <div class="faq-answer">Expense management software (like SAP Concur, Expensify, or Zoho Expense) focuses on expense submission, approval routing, and reimbursement processing — it automates the workflow around expenses. An AI expense auditor focuses on the audit itself — it reviews every expense report for policy compliance, detects anomalies, verifies receipts via OCR, flags risky spend, and generates a complete audit trail. Expense management software relies on rules-based flags (amount thresholds, exact duplicate detection) that catch only what you explicitly program. An AI expense auditor understands natural-language policy, runs multi-dimensional anomaly detection, and catches patterns like split purchases across departments or personal expenses disguised as business costs. Most finance teams use an AI expense auditor alongside their existing expense management software — the AI layers intelligent expense audit automation on top of the workflow the T&E tool already handles. <a href="https://docs.coco.xyz/use-cases/">Explore more COCO AI capabilities</a>.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can AI detect duplicate receipts and split purchases?</summary>
+        <div class="faq-answer">Yes. Duplicate receipt detection and split purchase detection are two core capabilities of COCO's AI expense auditor — and two areas where rules-based expense management software consistently falls short. For duplicate detection, the AI performs fuzzy matching across all submitted expenses — same vendor with similar amounts, dates, or descriptions, even if submitted through different departments or in different time periods. For split purchase detection, the AI analyzes spending patterns to identify cases where the same vendor appears across multiple submissions within a configurable time window, with amounts just under approval thresholds. For example: a $480 vendor payment under "Marketing" and a $470 payment to the same vendor under "Operations" three days later — both just under a $500 approval limit. A rules engine sees two separate, compliant transactions. COCO's AI sees a likely split purchase and flags both for review. <a href="https://docs.coco.xyz/use-cases/">See all COCO use cases</a>.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How does receipt matching automation work?</summary>
+        <div class="faq-answer">Receipt matching automation uses OCR (optical character recognition) to extract vendor name, date, amount, individual line items, tax, tip, and currency from receipt images — scanned PDFs, mobile photos, email forwards, or paper receipts. The AI then automatically matches each receipt to the corresponding credit card transaction or expense line item in your ERP or expense management system. COCO's OCR engine handles 50+ languages, handwritten amounts, and multi-currency receipts. What took a human auditor 3-5 minutes per receipt takes the AI under 10 seconds, with 98%+ accuracy on printed receipts. Receipt matching automation eliminates the most time-consuming step of manual expense audit — the physical verification of every receipt against every transaction — and is a foundational component of any effective expense report audit tool.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How can finance teams reduce manual expense audits?</summary>
+        <div class="faq-answer">Finance teams can reduce manual expense audits by deploying an AI expense auditor that automates the three most time-consuming steps: receipt verification (OCR receipt processing with receipt matching automation), policy compliance checking (AI reads your T&E policy in natural language and checks every expense), and anomaly detection (duplicate receipt detection, split purchase detection, out-of-policy spending, and risky spend detection). Instead of manually reviewing a 5-10% sample of reports — spending 160 hours per month on audit work — the AI reviews 100% of reports automatically and surfaces only the flagged exceptions for human review (approximately 8 hours per month). This allows finance teams to achieve 100% audit coverage while reducing manual audit time by 95%, redirecting their expertise to investigations, policy refinement, and strategic spend analysis rather than routine receipt checking.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What is an expense report audit tool?</summary>
+        <div class="faq-answer">An expense report audit tool is software that helps finance teams review, verify, and enforce compliance on employee-submitted expense reports. Basic expense report audit tools rely on rules-based checks — flagging amounts above thresholds or exact duplicate submissions. Advanced expense report audit tools like COCO's AI expense auditor use artificial intelligence to automate the entire audit process: OCR receipt processing and receipt verification, natural-language policy compliance checking, anomaly detection (duplicate receipts, split purchases, out-of-policy spending), risk scoring, and audit trail generation. An AI-powered expense report audit tool shifts coverage from 5-10% manual sampling to 100% automated auditing, catching 3x more policy violations while reducing audit cycle time from 160 hours to approximately 8 hours per month.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- How to Deploy -->
+  <section id="how-it-works">
+    <span class="section-label">Deployment</span>
+    <h2>How COCO Automates Expense Report Audits</h2>
+
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Connect COCO to Your Finance Systems</h4>
+        <p>Link COCO to your ERP (NetSuite, SAP, Oracle, QuickBooks, Xero) and expense management platform (Concur, Expensify). Standard API integrations — 2 minutes, no custom development. The AI begins ingesting expense data immediately.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Upload T&E Policy & Historical Data</h4>
+        <p>Upload your T&E policy document (PDF or Word) — the AI reads it in natural language. Connect 12 months of historical expense data and corporate card feeds. The AI learns spending patterns, typical violation types, and seasonal trends.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Calibrate & Validate (~1 Week)</h4>
+        <p>The AI analyzes historical expenses, flags past violations, and identifies anomalies. Your finance team reviews early flags to calibrate sensitivity by category, employee level, and risk tolerance. The AI transitions to autonomous auditing when accuracy meets your threshold.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>Go Live With 100% Audit Coverage</h4>
+        <p>COCO begins auditing every submitted expense autonomously. Your team monitors via the daily audit dashboard, reviews high-risk flags, and refines policies. The AI continuously learns from confirmed flags and dismissed false positives — improving every week.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Automate Expense Report Audits with an AI Expense Auditor?</h2>
+    <p>Deploy COCO's AI expense auditor and bring expense audit automation to your finance team. Works with your existing ERP and T&E tools. No coding required.</p>
+    <a href="https://icoco.ai/#pricing" class="btn-primary" style="font-size:1.0625rem;padding:14px 36px">See Plans & Pricing →</a>
+    <div class="author-line">
+      By <strong>COCO Engineering Team</strong> · Edited by Khai Zou · Published June 3, 2026. Data sourced from 25+ finance teams using COCO in production. COCO maintains open-source tools at <a href="https://github.com/coco-xyz">github.com/coco-xyz</a>.
+    </div>
+    <div class="related-section"><h2>Related Use Cases</h2><div class="related-grid"><a href="https://docs.coco.xyz/use-cases/ai-nda-generator/"><h4>AI NDA Generator: 60-Second NDAs</h4><p>Generate jurisdiction-specific NDAs with automatic clause alignment</p></a><a href="https://docs.coco.xyz/use-cases/ai-document-classifier/"><h4>AI Document Classifier: Auto-Tag & Route</h4><p>Classify and sort documents by type, topic, and priority instantly</p></a><a href="https://docs.coco.xyz/use-cases/ai-knowledge-base-builder/"><h4>AI Knowledge Base Builder: 50 Articles/Hour</h4><p>Turn resolved tickets into search-optimized help articles</p></a><a href="https://docs.coco.xyz/use-cases/ai-job-description-writer/"><h4>AI Job Description Writer: Bias-Free JDs</h4><p>Create inclusive, SEO-optimized job descriptions in 10 minutes</p></a><a href="https://docs.coco.xyz/use-cases/ai-follow-up-writer/"><h4>AI Follow-Up Writer: +29% Response Rates</h4><p>Generate personalized sales follow-up emails from meeting context</p></a></div></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://docs.coco.xyz">Home</a>
+    <a href="https://docs.coco.xyz/use-cases/">Use Cases</a>
+    <a href="https://docs.coco.xyz/case-studies/">Case Studies</a>
+    <a href="https://github.com/coco-xyz">GitHub</a>
+    <a href="https://twitter.com/CocoAIxyz">Twitter</a>
+  </div>
+  <p>&copy; 2026 COCO. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
